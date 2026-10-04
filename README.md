@@ -1,6 +1,7 @@
 # Treppmann Studio
 
-Bilingual agency site for `studio.treppmann.design`.
+Bilingual process/workflow digitisation and internal tools studio site for
+`studio.treppmann.design`.
 
 - German: `/`
 - English: `/en/`

@@ -4,13 +4,18 @@ Last reviewed: 2026-10-04
 
 ## Primary audience
 
-Treppmann Studio speaks to **product, operations and transformation teams in
+Treppmann Studio speaks to **operations, transformation and product teams in
 knowledge-intensive organisations and vertical SaaS companies whose important
 workflows are too specialised for standard software**.
 
 The practical buyer is usually a Head of Product, Operations lead, digital
 transformation lead, customer-service or content-operations lead, or a founder
 responsible for turning a manual workflow into a usable product capability.
+
+The primary proposition is **process improvement and digitisation through
+internal tools**. AI-assisted workflows and customer-facing product capabilities
+are two possible outputs, not the category itself. Product design is a method
+used to create the result rather than the lead offer.
 
 This is deliberately narrower than “SMEs” and broader than “AI consulting”. The
 buyer has a specific recurring workflow, domain expertise that cannot simply be
