@@ -24,8 +24,15 @@ view. In German, the primary discovery terms are **Prozessoptimierung**,
 **Prozessautomatisierung**, **Geschäftsprozesse digitalisieren** and
 **individuelle Softwareentwicklung / Individualsoftware**. **Interne Tools** is
 useful outcome and differentiation language, but should not carry the SEO
-strategy by itself. In English, use **business process automation**, **workflow
-automation**, **custom software** and **internal tools**.
+strategy by itself. German market copy uses **KI**, not **AI**, except in
+official English product names or titles.
+
+The English site is an independently developed market version, not a
+translation of the German page. It uses internationally legible US English and
+leads with **custom internal tools**, **workflow automation**, **business
+process automation**, **custom software** and **AI-assisted operations**. Its
+copy is more outcome-led and direct for international and US buyers while
+remaining credible to European teams.
 
 Do not let search vocabulary flatten the offer into commodity automation. The
 studio specialises in complex, domain-specific workflows with exceptions,
