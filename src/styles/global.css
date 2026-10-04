@@ -102,6 +102,13 @@ img { max-width: 100%; display: block; }
 .workflow-node span { font-family: var(--mono); font-size: 0.68rem; color: var(--signal); }
 .workflow-node strong { font-size: 0.86rem; font-weight: 500; }
 
+.experience-strip { padding: 3rem 0 3.5rem; border-bottom: 1px solid var(--line); }
+.experience-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
+.experience-heading .eyebrow { margin-bottom: 1.6rem; }
+.experience-brands { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.experience-brands li { min-height: 112px; display: flex; align-items: center; justify-content: center; padding: 1rem; border-right: 1px solid var(--line); font-size: clamp(1rem, 1.55vw, 1.45rem); font-weight: 560; letter-spacing: -0.035em; text-align: center; }
+.experience-brands li:last-child { border-right: 0; }
+
 .perspective, .work, .offer, .about, .contact { padding: 9rem 0; }
 .split-heading { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: start; }
 .split-heading h2 { font-size: clamp(3.2rem, 6.4vw, 7.2rem); max-width: 1180px; }
@@ -189,6 +196,10 @@ footer a { color: var(--white); }
   .hero-actions { justify-content: flex-start; flex-wrap: wrap; }
   .workflow-line { grid-template-columns: repeat(2, 1fr); }
   .workflow-node:nth-child(2) { border-right: 0; }
+  .experience-heading { align-items: flex-start; flex-direction: column; gap: 0; }
+  .experience-brands { grid-template-columns: repeat(3, 1fr); }
+  .experience-brands li:nth-child(3n) { border-right: 0; }
+  .experience-brands li:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
   .process-grid, .more-grid { grid-template-columns: repeat(2, 1fr); }
   .process-step:nth-child(2) { border-right: 0; }
   .case, .case:nth-child(even) { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 0; }
@@ -206,6 +217,11 @@ footer a { color: var(--white); }
   .hero-actions .button { width: 100%; }
   .workflow-line { margin-top: 4rem; }
   .workflow-node { min-height: 70px; }
+  .experience-strip { padding: 2.5rem 0 3rem; }
+  .experience-brands { grid-template-columns: repeat(2, 1fr); }
+  .experience-brands li, .experience-brands li:nth-child(3n) { min-height: 86px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 1rem; }
+  .experience-brands li:nth-child(even) { border-right: 0; }
+  .experience-brands li:nth-last-child(-n+2) { border-bottom: 0; }
   .perspective, .work, .offer, .about, .contact { padding: 6rem 0; }
   .split-heading h2 { font-size: 3.25rem; }
   .process-grid, .more-grid, .offer-grid { grid-template-columns: 1fr; }

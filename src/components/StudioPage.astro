@@ -48,6 +48,15 @@ const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.s
       </div>
     </section>
 
+    <section class="experience-strip section-paper" aria-labelledby="experience-title">
+      <div class="section-shell experience-heading">
+        <p class="eyebrow" id="experience-title">{c.experience.label}</p>
+      </div>
+      <ul class="section-shell experience-brands" aria-label={c.experience.ariaLabel}>
+        {c.experience.brands.map((brand) => <li>{brand}</li>)}
+      </ul>
+    </section>
+
     <section class="perspective section-light">
       <div class="section-shell split-heading" data-reveal>
         <p class="eyebrow">{c.thesis.label}</p>

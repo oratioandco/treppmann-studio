@@ -17,6 +17,11 @@ export const content = {
       primary: 'Ablauf besprechen',
       secondary: 'Ausgewählte Arbeit',
     },
+    experience: {
+      label: 'Ausgewählte Erfahrung',
+      ariaLabel: 'Ausgewählte berufliche Erfahrung',
+      brands: ['Software AG', 'Ninox', 'Bibel TV', 'ChurchDesk', 'Datameer', 'Hypoport'],
+    },
     thesis: {
       label: 'Unsere Perspektive',
       title: 'Gute Prozessautomatisierung beginnt nicht mit Software.',
@@ -137,6 +142,11 @@ export const content = {
       audience: 'For operations, product, and transformation teams in knowledge-intensive organizations and vertical SaaS companies.',
       primary: 'Discuss your workflow',
       secondary: 'Selected work',
+    },
+    experience: {
+      label: 'Selected experience',
+      ariaLabel: 'Selected professional experience',
+      brands: ['Software AG', 'Ninox', 'Bibel TV', 'ChurchDesk', 'Datameer', 'Hypoport'],
     },
     thesis: {
       label: 'How we work',
