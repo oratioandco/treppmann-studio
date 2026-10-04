@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Locale } from '../data';
+import { content } from '../data';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = content[locale];
+const canonical = `https://studio.treppmann.design${c.path}`;
+const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.subject)}`;
+---
+
+<Layout lang={c.locale} title={c.metaTitle} description={c.metaDescription} canonical={canonical}>
+  <header class="topbar">
+    <a class="brand" href={c.path} aria-label="Treppmann Studio home">
+      <span>Treppmann</span><span class="brand-mark">/</span><span>Studio</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">{c.nav.work}</a>
+      <a href="#offer">{c.nav.offer}</a>
+      <a href="#studio">{c.nav.studio}</a>
+      <a href="#contact">{c.nav.contact}</a>
+    </nav>
+    <a class="language" href={c.switchPath} lang={locale === 'de' ? 'en' : 'de'}>{c.switchLabel}</a>
+  </header>
+
+  <main>
+    <section class="hero section-dark">
+      <div class="hero-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="section-shell hero-inner">
+        <p class="eyebrow light">{c.hero.kicker}</p>
+        <h1>{c.hero.title}</h1>
+        <div class="hero-copy">
+          <p class="hero-intro">{c.hero.intro}</p>
+          <p class="hero-audience">{c.hero.audience}</p>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href={mailto}>{c.hero.primary}</a>
+          <a class="button button-ghost" href="#work">{c.hero.secondary}</a>
+        </div>
+        <div class="workflow-line" aria-label="Understand, distil, build and embed">
+          {c.thesis.steps.map(([number, title]) => (
+            <div class="workflow-node"><span>{number}</span><strong>{title}</strong></div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="perspective section-light">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.thesis.label}</p>
+        <div>
+          <h2>{c.thesis.title}</h2>
+          <p class="lead">{c.thesis.body}</p>
+        </div>
+      </div>
+      <div class="section-shell process-grid">
+        {c.thesis.steps.map(([number, title, body]) => (
+          <article class="process-step" data-reveal>
+            <span class="step-number">{number}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="work section-paper" id="work">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.work.label}</p>
+        <div>
+          <h2>{c.work.title}</h2>
+          <p class="role-note">{c.work.note}</p>
+        </div>
+      </div>
+      <div class="case-list">
+        {c.work.cases.map((item, index) => (
+          <article class={`case case-${index + 1}`} data-reveal>
+            <div class="case-copy">
+              <div class="case-meta"><span>{item.number}</span><span>{item.context}</span></div>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <div class="case-metrics">
+                <div><strong>{item.metricA}</strong><span>{item.metricALabel}</span></div>
+                <div><strong>{item.metricB}</strong><span>{item.metricBLabel}</span></div>
+              </div>
+              <a class="text-link" href={item.href}>{item.link}<span aria-hidden="true"> ↗</span></a>
+            </div>
+            <a class="case-visual" href={item.href} aria-label={`${item.link}: ${item.title}`}>
+              <img src={item.image} alt={item.imageAlt} loading={index === 0 ? 'eager' : 'lazy'} />
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-shell more-work" data-reveal>
+        <h3>{c.work.moreTitle}</h3>
+        <div class="more-grid">
+          {c.work.more.map(([title, body], index) => (
+            <article><span>0{index + 4}</span><h4>{title}</h4><p>{body}</p></article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="offer section-signal" id="offer">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.offer.label}</p>
+        <div><h2>{c.offer.title}</h2><p class="lead">{c.offer.intro}</p></div>
+      </div>
+      <div class="section-shell offer-grid">
+        {c.offer.items.map(([title, body], index) => (
+          <article data-reveal><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+        ))}
+      </div>
+      <div class="section-shell fit-block" data-reveal>
+        <h3>{c.offer.fitTitle}</h3>
+        <ul>{c.offer.fit.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </section>
+
+    <section class="about section-dark" id="studio">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow light">{c.about.label}</p>
+        <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p></div>
+      </div>
+      <div class="section-shell principles">
+        {c.about.principles.map(([title, body], index) => (
+          <article data-reveal><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact section-light" id="contact">
+      <div class="section-shell contact-inner" data-reveal>
+        <p class="eyebrow">{c.contact.label}</p>
+        <h2>{c.contact.title}</h2>
+        <p>{c.contact.body}</p>
+        <a class="contact-link" href={mailto}>{c.contact.cta}<span aria-hidden="true">↗</span></a>
+        <p class="location">{c.contact.location}</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>{c.footer}</span>
+    <a href={c.switchPath}>{c.switchLabel}</a>
+  </footer>
+</Layout>
