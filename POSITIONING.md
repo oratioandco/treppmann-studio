@@ -17,6 +17,22 @@ internal tools**. AI-assisted workflows and customer-facing product capabilities
 are two possible outputs, not the category itself. Product design is a method
 used to create the result rather than the lead offer.
 
+## Search language
+
+The homepage should combine buyer vocabulary with the studio's sharper point of
+view. In German, the primary discovery terms are **Prozessoptimierung**,
+**Prozessautomatisierung**, **Geschäftsprozesse digitalisieren** and
+**individuelle Softwareentwicklung / Individualsoftware**. **Interne Tools** is
+useful outcome and differentiation language, but should not carry the SEO
+strategy by itself. In English, use **business process automation**, **workflow
+automation**, **custom software** and **internal tools**.
+
+Do not let search vocabulary flatten the offer into commodity automation. The
+studio specialises in complex, domain-specific workflows with exceptions,
+expert judgement and a need for a usable control surface. Dedicated service
+pages can later target the major search-intent clusters with case evidence;
+avoid creating thin pages or repeating keyword variants without substance.
+
 This is deliberately narrower than “SMEs” and broader than “AI consulting”. The
 buyer has a specific recurring workflow, domain expertise that cannot simply be
 removed, and enough organisational urgency to fund a working tool.
