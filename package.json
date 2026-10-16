@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:personal": "astro build --config astro.personal.config.mjs && node scripts/finalize-personal-build.mjs",
+    "sync:personal": "npm run build:personal && sh scripts/sync-personal-deploy.sh",
+    "preview:personal": "astro preview --config astro.personal.config.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

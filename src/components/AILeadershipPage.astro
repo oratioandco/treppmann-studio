@@ -3,12 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import type { Locale } from '../data';
 import { aiLeadershipContent } from '../aiLeadershipData';
 
-interface Props { locale: Locale }
-const { locale } = Astro.props;
+interface Props { locale: Locale; site?: 'studio' | 'personal' }
+const { locale, site = 'studio' } = Astro.props;
 const c = aiLeadershipContent[locale];
-const canonical = `https://studio.treppmann.design${c.path}`;
+const isPersonal = site === 'personal';
+const canonical = isPersonal
+  ? `https://treppmann.de${locale === 'en' ? '/' : '/de/'}`
+  : `https://studio.treppmann.design${c.path}`;
+const alternateDe = isPersonal ? 'https://treppmann.de/de/' : 'https://studio.treppmann.design/ai-transformation/';
+const alternateEn = isPersonal ? 'https://treppmann.de/' : 'https://studio.treppmann.design/en/ai-transformation/';
+const homePath = isPersonal ? (locale === 'en' ? '/' : '/de/') : c.homePath;
+const switchPath = isPersonal ? (locale === 'en' ? '/de/' : '/') : c.switchPath;
 const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.subject)}`;
 const portfolioUrl = 'https://treppmann.design';
+const studioUrl = locale === 'de' ? 'https://studio.treppmann.design/' : 'https://studio.treppmann.design/en/';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Tobias Treppmann',
+  url: isPersonal ? 'https://treppmann.de/' : canonical,
+  image: 'https://treppmann.de/images/tobias-treppmann.jpg',
+  jobTitle: locale === 'de' ? 'KI Product & Transformation Leader' : 'AI Product & Transformation Leader',
+  address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' },
+  email: c.contact.cta,
+  sameAs: [c.contact.linkedinUrl, portfolioUrl, studioUrl],
+  knowsAbout: ['AI transformation', 'Product leadership', 'Workflow design', 'Human-centered design', 'Agentic systems'],
+};
 ---
 
 <Layout
@@ -16,12 +36,15 @@ const portfolioUrl = 'https://treppmann.design';
   title={c.metaTitle}
   description={c.metaDescription}
   canonical={canonical}
-  alternateDe="https://studio.treppmann.design/ai-transformation/"
-  alternateEn="https://studio.treppmann.design/en/ai-transformation/"
+  alternateDe={alternateDe}
+  alternateEn={alternateEn}
+  image="https://treppmann.de/images/tobias-treppmann.jpg"
+  structuredData={structuredData}
 >
+  <a class="skip-link" href="#main">{locale === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
   <header class="topbar leadership-topbar">
-    <a class="brand" href={c.homePath} aria-label="Treppmann Studio home">
-      <span>Tobias</span><span class="brand-mark">/</span><span>AI Transformation</span>
+    <a class="brand" href={homePath} aria-label={isPersonal ? 'Tobias Treppmann home' : 'Treppmann Studio home'}>
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>AI Transformation</span>
     </a>
     <nav aria-label="Primary navigation">
       <a href="#needs">{c.nav.needs}</a>
@@ -29,15 +52,17 @@ const portfolioUrl = 'https://treppmann.design';
       <a href="#proof">{c.nav.proof}</a>
       <a href="#about">{c.nav.about}</a>
     </nav>
-    <a class="language" href={c.switchPath} lang={locale === 'de' ? 'en' : 'de'}>{c.switchLabel}</a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="#contact">{locale === 'de' ? 'Kontakt' : 'Contact'}</a>
+      <a class="language" href={switchPath} lang={locale === 'de' ? 'en' : 'de'}>{c.switchLabel}</a>
+    </div>
   </header>
 
-  <main class="leadership-page">
+  <main class="leadership-page" id="main">
     <section class="leadership-hero section-dark">
-      <div class="leadership-grid" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="section-shell leadership-hero-shell">
         <div class="leadership-hero-copy">
-          <p class="eyebrow light">{c.hero.kicker}</p>
+          <p class="hero-role">{c.hero.kicker}</p>
           <h1>{c.hero.title}</h1>
           <p class="hero-intro">{c.hero.intro}</p>
           <p class="hero-audience">{c.hero.audience}</p>
@@ -59,62 +84,61 @@ const portfolioUrl = 'https://treppmann.design';
 
     <section class="experience-strip section-paper" aria-labelledby="leadership-experience-title">
       <div class="section-shell experience-heading">
-        <p class="eyebrow" id="leadership-experience-title">{c.experience.label}</p>
+        <p class="experience-label" id="leadership-experience-title">{c.experience.label}</p>
       </div>
       <ul class="section-shell experience-brands" aria-label={c.experience.label}>
         {c.experience.brands.map((brand) => <li>{brand}</li>)}
       </ul>
-      <div class="section-shell enterprise-intro" data-reveal>
+      <div class="section-shell enterprise-intro">
         <h2>{c.experience.title}</h2>
         <p>{c.experience.body}</p>
       </div>
       <div class="section-shell enterprise-contexts">
         {c.experience.contexts.map(([name, body]) => (
-          <article data-reveal><h3>{name}</h3><p>{body}</p></article>
+          <article><h3>{name}</h3><p>{body}</p></article>
         ))}
       </div>
     </section>
 
     <section class="needs-section section-light" id="needs">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="eyebrow">{c.needs.label}</p>
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.needs.label}</p>
         <div><h2>{c.needs.title}</h2><p class="lead">{c.needs.body}</p></div>
       </div>
       <div class="section-shell needs-grid">
-        {c.needs.items.map(([title, body], index) => (
-          <article data-reveal><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+        {c.needs.items.map(([title, body]) => (
+          <article><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
     </section>
 
     <section class="services-section section-paper" id="services">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="eyebrow">{c.services.label}</p>
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.services.label}</p>
         <div><h2>{c.services.title}</h2><p class="lead">{c.services.intro}</p></div>
       </div>
       <div class="section-shell services-list">
         {c.services.items.map((item) => (
-          <article data-reveal>
-            <span class="service-number">{item.number}</span>
+          <article>
             <div class="service-copy"><h3>{item.title}</h3><p>{item.body}</p></div>
             <ul>{item.outcomes.map((outcome) => <li>{outcome}</li>)}</ul>
           </article>
         ))}
       </div>
-      <div class="section-shell section-cta" data-reveal>
+      <div class="section-shell section-cta">
         <a class="button button-ink" href={mailto}>{c.services.cta}<span aria-hidden="true"> ↗</span></a>
       </div>
     </section>
 
     <section class="proof-section section-light" id="proof">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="eyebrow">{c.proof.label}</p>
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.proof.label}</p>
         <div><h2>{c.proof.title}</h2><p class="role-note">{c.proof.note}</p></div>
       </div>
       <div class="section-shell compact-proof-grid">
-        {c.proof.cases.map((item, index) => (
-          <article class="compact-proof-card" data-reveal>
-            <div class="proof-context"><span>0{index + 1}</span><p>{item.context}</p></div>
+        {c.proof.cases.map((item) => (
+          <article class="compact-proof-card">
+            <div class="proof-context"><p>{item.context}</p></div>
             <h3>{item.title}</h3>
             <p class="proof-body">{item.body}</p>
             <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
@@ -125,14 +149,13 @@ const portfolioUrl = 'https://treppmann.design';
     </section>
 
     <section class="method-section section-dark" id="method">
-      <div class="section-shell method-lead" data-reveal>
-        <p class="eyebrow light">{c.method.label}</p>
+      <div class="section-shell method-lead">
         <h2>{c.method.title}</h2>
         <p>{c.method.body}</p>
       </div>
       <div class="section-shell method-path">
         {c.method.steps.map(([number, title, body], index) => (
-          <article data-reveal>
+          <article>
             <div><span>{number}</span><h3>{title}</h3></div>
             <p>{body}</p>
             {index < c.method.steps.length - 1 && <i aria-hidden="true">→</i>}
@@ -142,26 +165,26 @@ const portfolioUrl = 'https://treppmann.design';
     </section>
 
     <section class="about-section section-paper" id="about">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="eyebrow">{c.about.label}</p>
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.about.label}</p>
         <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p></div>
       </div>
       <div class="section-shell about-points">
         {c.about.points.map(([title, body]) => (
-          <article data-reveal><h3>{title}</h3><p>{body}</p></article>
+          <article><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
       <div class="section-shell about-link"><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗</span></a></div>
     </section>
 
     <section class="engagements-section section-signal">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="eyebrow">{c.engagements.label}</p>
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.engagements.label}</p>
         <div><h2>{c.engagements.title}</h2><p class="lead">{c.engagements.intro}</p></div>
       </div>
       <div class="section-shell engagement-grid">
         {c.engagements.items.map(([title, body, action, subject]) => (
-          <article data-reveal>
+          <article>
             <h3>{title}</h3>
             <p>{body}</p>
             <a href={`mailto:${c.contact.cta}?subject=${encodeURIComponent(subject)}`}>{action}<span aria-hidden="true"> ↗</span></a>
@@ -171,8 +194,7 @@ const portfolioUrl = 'https://treppmann.design';
     </section>
 
     <section class="contact leadership-contact section-dark" id="contact">
-      <div class="section-shell contact-inner" data-reveal>
-        <p class="eyebrow light">{c.contact.label}</p>
+      <div class="section-shell contact-inner">
         <h2>{c.contact.title}</h2>
         <p>{c.contact.body}</p>
         <a class="contact-link" href={mailto}>{c.contact.cta}<span aria-hidden="true">↗</span></a>
@@ -181,8 +203,12 @@ const portfolioUrl = 'https://treppmann.design';
     </section>
   </main>
 
-  <footer>
+  <footer class="leadership-footer">
     <span>{c.footer}</span>
-    <div class="footer-links"><a href={c.homePath}>Studio</a><a href={c.switchPath}>{c.switchLabel}</a></div>
+    <div class="footer-links">
+      <a href={studioUrl}>Studio</a>
+      <a href={portfolioUrl}>Portfolio</a>
+      <a href={switchPath}>{c.switchLabel}</a>
+    </div>
   </footer>
 </Layout>

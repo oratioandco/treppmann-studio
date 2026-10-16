@@ -8,6 +8,8 @@ interface Props {
   canonical: string;
   alternateDe?: string;
   alternateEn?: string;
+  image?: string;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
@@ -17,6 +19,8 @@ const {
   canonical,
   alternateDe = 'https://studio.treppmann.design/',
   alternateEn = 'https://studio.treppmann.design/en/',
+  image = 'https://studio.treppmann.design/images/tobias-treppmann.jpg',
+  structuredData,
 } = Astro.props;
 ---
 
@@ -36,6 +40,13 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="Tobias Treppmann" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
   </head>
   <body>
