@@ -64,6 +64,15 @@ const portfolioUrl = 'https://treppmann.design';
       <ul class="section-shell experience-brands" aria-label={c.experience.label}>
         {c.experience.brands.map((brand) => <li>{brand}</li>)}
       </ul>
+      <div class="section-shell enterprise-intro" data-reveal>
+        <h2>{c.experience.title}</h2>
+        <p>{c.experience.body}</p>
+      </div>
+      <div class="section-shell enterprise-contexts">
+        {c.experience.contexts.map(([name, body]) => (
+          <article data-reveal><h3>{name}</h3><p>{body}</p></article>
+        ))}
+      </div>
     </section>
 
     <section class="needs-section section-light" id="needs">

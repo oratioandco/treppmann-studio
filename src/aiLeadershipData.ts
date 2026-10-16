@@ -23,8 +23,15 @@ export const aiLeadershipContent = {
       portraitMeta: 'Produktführung · Design · Transformation · Agentische Umsetzung',
     },
     experience: {
-      label: 'Ausgewählte Erfahrung aus Produkt, Transformation und Umsetzung',
+      label: 'Ausgewählte Erfahrung aus Enterprise, Produkt, Transformation und Umsetzung',
       brands: ['Software AG', 'Ninox', 'Bibel TV', 'ChurchDesk', 'Datameer', 'Hypoport'],
+      title: 'Ich kenne die Komplexität großer Organisationen.',
+      body: 'Meine aktuelle KI-Arbeit ist bewusst praktisch. Sie baut auf Erfahrung mit regulierten Enterprise-Produkten, international verteilten Teams und Service-Transformation im Umfeld eines börsennotierten Konzerns auf. Ich verstehe die Abstimmung, die große Organisationen brauchen, und die operative Realität, die dabei leicht verloren geht.',
+      contexts: [
+        ['Datameer', 'Fünf Jahre UX-Führung für Enterprise Analytics bei führenden Banken und Versicherern in den USA, Kanada und Großbritannien; Zusammenarbeit über Deutschland und New York.'],
+        ['Hypoport', 'Zusammenarbeit mit Executive Team und Bereichsleitungen, um interne Services im Shared Service Center der börsennotierten Hypoport Gruppe stärker zu produktisieren.'],
+        ['Software AG', 'Strategisches UX-Projekt für eine Enterprise-Softwareplattform als unabhängiger Berater.'],
+      ],
     },
     needs: {
       label: 'Wann Sie mich hinzuholen',
@@ -99,7 +106,7 @@ export const aiLeadershipContent = {
     method: {
       label: 'Work-to-Adoption',
       title: 'Menschen\u00adzentrierte KI beginnt damit, wie die Organisation arbeitet.',
-      body: 'Ich setze KI nicht auf einen ungeprüften Ablauf. Fachbereich, Nutzer, Produkt, Technik und verantwortliche Spezialisten arbeiten früh an demselben realen System.',
+      body: 'Ich setze KI nicht auf einen ungeprüften Ablauf. Fachbereich, Nutzer, Produkt und Technik arbeiten früh an demselben realen System; Security, Legal, Daten, Architektur und Governance kommen passend zu Risiko und Reifegrad hinzu.',
       steps: [
         ['01', 'Outcome', 'Geschäftswirkung und Ausgangslage klären.'],
         ['02', 'Workflow', 'Reale Arbeit, Ausnahmen und Urteil verstehen.'],
@@ -111,7 +118,7 @@ export const aiLeadershipContent = {
     about: {
       label: 'Tobias Treppmann',
       title: 'Senior Leadership und praktische Umsetzung in einer Person.',
-      body: 'Ich habe Produkt- und Designfunktionen geführt, im Senior Leadership Team gearbeitet, komplexe B2B- und B2C-Systeme gestaltet und aktuelle KI-Workflows selbst gebaut. Dadurch kann ich mit Führungskräften über Prioritäten, mit Fachbereichen über reale Arbeit und mit Produkt- und Technikteams über das konkrete System sprechen.',
+      body: 'Ich habe Produkt- und Designfunktionen geführt, im Senior Leadership Team gearbeitet, regulierte Enterprise-Produkte und komplexe B2B- und B2C-Systeme gestaltet und aktuelle KI-Workflows selbst gebaut. Dadurch kann ich mit Führungskräften über Prioritäten, mit Fachbereichen über reale Arbeit und mit Produkt- und Technikteams über das konkrete System sprechen.',
       points: [
         ['Führung', 'Produkt- und Designleitung, Senior Leadership Team, verteilte Teams, Mentoring und Coaching.'],
         ['Produkt & Systeme', 'Strategie, Product Management, Service- und Workflow-Design, Prototyping in Code, APIs und n8n.'],
@@ -163,8 +170,15 @@ export const aiLeadershipContent = {
       portraitMeta: 'Product leadership · Design · Transformation · Agentic delivery',
     },
     experience: {
-      label: 'Selected experience across product, transformation, and delivery',
+      label: 'Selected experience across enterprise, product, transformation, and delivery',
       brands: ['Software AG', 'Ninox', 'Bibel TV', 'ChurchDesk', 'Datameer', 'Hypoport'],
+      title: 'Enterprise complexity is familiar territory.',
+      body: 'My current AI work is deliberately hands-on. It builds on experience with regulated enterprise products, internationally distributed teams, and service transformation inside a publicly listed group. I understand both the coordination a large organization requires and the operating reality that can disappear inside it.',
+      contexts: [
+        ['Datameer', 'Five years leading UX for enterprise analytics used by leading banks and insurers in the US, Canada, and UK, working across Germany and New York.'],
+        ['Hypoport', 'Partnered with the executive team and department heads to help productize internal services in the publicly listed Hypoport Group’s shared-service center.'],
+        ['Software AG', 'Delivered a strategic UX project for an enterprise software platform as an independent consultant.'],
+      ],
     },
     needs: {
       label: 'When to bring me in',
@@ -239,7 +253,7 @@ export const aiLeadershipContent = {
     method: {
       label: 'Work-to-Adoption',
       title: 'Human-centered AI starts with how the organization works.',
-      body: 'I do not add AI to an unexamined workflow. Domain experts, users, product, technology, and responsible specialists engage with the same real system early.',
+      body: 'I do not add AI to an unexamined workflow. Domain experts, users, product, and technology engage with the same real system early; security, legal, data, architecture, and governance join at the level the risk and maturity require.',
       steps: [
         ['01', 'Outcome', 'Clarify the business result and baseline.'],
         ['02', 'Workflow', 'Understand real work, exceptions, and judgment.'],
@@ -251,7 +265,7 @@ export const aiLeadershipContent = {
     about: {
       label: 'Tobias Treppmann',
       title: 'Senior leadership and hands-on delivery in one person.',
-      body: 'I have led product and design functions, served on a Senior Leadership Team, shaped complex B2B and B2C systems, and built current AI workflows myself. I can work with executives on priorities, domain teams on real operations, and product and engineering teams on the system itself.',
+      body: 'I have led product and design functions, served on a Senior Leadership Team, shaped regulated enterprise products and complex B2B and B2C systems, and built current AI workflows myself. I can work with executives on priorities, domain teams on real operations, and product and engineering teams on the system itself.',
       points: [
         ['Leadership', 'Product and design leadership, Senior Leadership Team, distributed teams, mentoring, and coaching.'],
         ['Product & systems', 'Strategy, product management, service and workflow design, real-code prototyping, APIs, and n8n.'],

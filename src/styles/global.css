@@ -206,6 +206,16 @@ footer a { color: var(--white); }
 .leadership-portrait figcaption { padding: 1rem; display: grid; gap: .25rem; border-top: 1px solid var(--line-dark); background: var(--ink); }
 .leadership-portrait figcaption strong { font-size: .92rem; font-weight: 600; }
 .leadership-portrait figcaption span { font-family: var(--mono); font-size: .58rem; line-height: 1.5; color: rgba(255,253,247,.58); text-transform: uppercase; }
+.leadership-page .experience-strip { padding-bottom: 7.5rem; }
+.enterprise-intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 7vw, 8rem); margin-top: 6.5rem; align-items: end; }
+.enterprise-intro h2 { max-width: 850px; font-size: clamp(3.2rem, 5.7vw, 6.5rem); }
+.enterprise-intro p { color: var(--muted); font-size: 1.05rem; max-width: 650px; }
+.enterprise-contexts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4.5rem; border-top: 1px solid var(--line); }
+.enterprise-contexts article { min-height: 220px; padding: 1.5rem 2rem 2rem 0; border-right: 1px solid var(--line); }
+.enterprise-contexts article:not(:first-child) { padding-left: 2rem; }
+.enterprise-contexts article:last-child { border-right: 0; }
+.enterprise-contexts h3 { margin: 3.5rem 0 1rem; font-size: 1.45rem; }
+.enterprise-contexts p { color: var(--muted); font-size: .88rem; max-width: 390px; }
 .needs-section, .services-section, .proof-section, .method-section, .about-section, .engagements-section { padding: 9rem 0; }
 .leadership-heading { display: grid; grid-template-columns: minmax(180px, .48fr) minmax(0, 1.52fr); gap: clamp(2rem, 6vw, 7rem); align-items: start; }
 .leadership-heading h2 { font-size: clamp(3.25rem, 5.8vw, 6.7rem); max-width: 1120px; }
@@ -286,6 +296,10 @@ footer a { color: var(--white); }
   .leadership-hero-shell { grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr); gap: 2.5rem; }
   .leadership-hero h1 { font-size: clamp(4rem, 10vw, 6.7rem); }
   .leadership-hero .hero-intro { font-size: 1.35rem; margin-top: 2.3rem; }
+  .enterprise-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .enterprise-contexts { grid-template-columns: repeat(2, 1fr); }
+  .enterprise-contexts article:nth-child(2) { border-right: 0; }
+  .enterprise-contexts article:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); }
   .leadership-heading { grid-template-columns: 1fr; gap: .7rem; }
   .leadership-heading .eyebrow { margin-bottom: 1rem; }
   .needs-grid, .compact-proof-grid, .about-points, .engagement-grid { grid-template-columns: repeat(2, 1fr); }
@@ -324,6 +338,12 @@ footer a { color: var(--white); }
   .leadership-grid { grid-template-columns: repeat(2, 1fr); }
   .leadership-actions .button { width: 100%; }
   .leadership-portrait { width: min(100%, 370px); }
+  .leadership-page .experience-strip { padding-bottom: 5.5rem; }
+  .enterprise-intro { margin-top: 4rem; }
+  .enterprise-intro h2 { font-size: 3.25rem; }
+  .enterprise-contexts { grid-template-columns: 1fr; margin-top: 3rem; }
+  .enterprise-contexts article, .enterprise-contexts article:not(:first-child) { grid-column: auto; min-height: 210px; border-right: 0; border-top: 0; border-bottom: 1px solid var(--line); padding: 1.3rem 0 2rem; }
+  .enterprise-contexts h3 { margin-top: 3rem; }
   .needs-section, .services-section, .proof-section, .method-section, .about-section, .engagements-section { padding: 5.5rem 0; }
   .leadership-heading h2 { font-size: 3.25rem; }
   .leadership-heading .lead { font-size: 1.08rem; }
