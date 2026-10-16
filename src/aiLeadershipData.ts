@@ -19,11 +19,11 @@ export const aiLeadershipContent = {
     nav: { needs: 'Ausgangslage', proof: 'Ergebnisse', plan: '90 Tage', formats: 'Zusammenarbeit', about: 'Über mich', contact: 'Kontakt' },
     hero: {
       kicker: 'KI-Transformation für den Mittelstand · Berlin',
-      title: 'Die KI-Lizenzen sind da. Jetzt muss KI in die Arbeit.',
-      intro: 'Ich übernehme die KI-Verantwortung in Ihrem Unternehmen: Ich kläre mit der Geschäftsführung, wo sich KI lohnt, baue mit Ihren Teams den ersten Ablauf um und sorge dafür, dass er im Alltag genutzt wird.',
-      audience: 'Als Projekt, auf Zeit oder in Festanstellung. Betriebsrat und Datenschutz sind von Anfang an dabei.',
+      title: 'Die KI-Lizenzen sind bezahlt. Genutzt werden sie kaum.',
+      intro: 'Ich bringe KI in Ihre Prozesse – so, dass Ihre Leute sie wirklich nutzen. Mit der Geschäftsführung kläre ich, wo sich KI lohnt, mit Ihren Teams baue ich den ersten Prozess um, und nach 90 Tagen ist das Ergebnis messbar.',
+      audience: 'Als Projekt, Interimsmandat oder Festanstellung. Betriebsrat und Datenschutzbeauftragte binde ich von Anfang an ein.',
       proofLabel: 'Bei Bibel TV',
-      proof: 'Ein KI-Schreibassistent für den Zuschauerservice: komplexe Briefe in Minuten statt Stunden – ohne Pflicht eingeführt, und auch anfangs skeptische Kolleginnen und Kollegen nutzen ihn.',
+      proof: 'KI-Schreibassistent für Briefe, E-Mails und Social-Media-Anfragen. Komplexe Briefe in Minuten statt Stunden. Eingeführt ohne Pflicht – heute nutzen ihn auch anfangs skeptische Kolleginnen und Kollegen.',
       primary: 'Erstgespräch vereinbaren',
       secondary: 'So laufen die ersten 90 Tage',
       portraitAlt: 'Tobias Treppmann in Berlin',
@@ -33,7 +33,7 @@ export const aiLeadershipContent = {
       label: 'Erfahrung',
       items: [
         ['Ninox', 'Senior Leadership Team, Leitung Produktdesign'],
-        ['Datameer', 'Designleitung für eine Analytics-Plattform führender Banken und Versicherer'],
+        ['Datameer', 'Designleitung einer Analytics-Plattform für führende Banken und Versicherer'],
         ['Hypoport', 'Interne Services im börsennotierten Konzern mit dem Executive Team standardisiert'],
         ['Bibel TV · ChurchDesk', 'KI im Betrieb eingeführt, Prozesse zu Produkten gemacht'],
       ],
@@ -43,7 +43,7 @@ export const aiLeadershipContent = {
       title: 'Kommt Ihnen das bekannt vor?',
       body: 'Der Engpass liegt selten im Modell oder Tool. Meist fehlen eine klare Priorität, ein besserer Ablauf und jemand, der Geschäftsführung, Fachbereiche und IT zusammenbringt.',
       items: [
-        ['Lizenzen da, Nutzung kaum', 'Copilot oder ein eigenes Company-GPT sind ausgerollt, genutzt wird KI aber von einer Handvoll Begeisterter. Es fehlen konkrete Einsatzfälle im Arbeitsalltag, Begleitung und Führungskräfte, die vorangehen.'],
+        ['Lizenzen da, Nutzung kaum', 'Copilot oder ein eigenes Company-GPT ist ausgerollt, genutzt wird KI aber nur von einer Handvoll Begeisterter. Es fehlen konkrete Anwendungsfälle im Arbeitsalltag, Begleitung und Führungskräfte, die vorangehen.'],
         ['Viele Ideen, keine Priorität', 'Jede Abteilung probiert etwas anderes. Niemand entscheidet, welcher Ablauf zuerst verändert wird und woran sich der Nutzen zeigt.'],
         ['Ein Kernprozess hakt', 'Fachwissen, Ausnahmen und Übergaben passen nicht in Standardsoftware. Das Team braucht einen besseren Ablauf – und ein Werkzeug, das dazu passt.'],
       ],
@@ -56,7 +56,7 @@ export const aiLeadershipContent = {
         {
           context: 'Bibel TV · Zuschauerservice',
           title: 'Ein KI-Assistent, den das Team freiwillig nutzt.',
-          body: 'Der Zuschauerservice beantwortet viel Briefpost. Der Assistent entwirft Antworten im Ton des Service-Handbuchs; gelesen, geprüft und versendet wird jede Antwort von einem Menschen. Eingeführt habe ich ihn mit der Abteilungsleitung: eine Woche selbst testen, dann persönliche Einführung, keine Pflicht. Skeptische Kolleginnen und Kollegen überzeugte er bei ihrem schwierigsten Fall.',
+          body: 'Der Zuschauerservice beantwortet viel Briefpost. Der Assistent entwirft Antworten im Ton und mit den Formulierungen des Servicehandbuchs; gelesen, geprüft und versendet wird jede Antwort von einem Menschen. Eingeführt habe ich ihn mit der Abteilungsleitung: eine Woche selbst testen, dann persönliche Einführung, keine Pflicht. Skeptische Kolleginnen und Kollegen überzeugte er an ihrem schwierigsten Fall.',
           fact: 'Minuten statt Stunden',
           factLabel: 'für komplexe Briefe mit mehreren Anliegen. Aushilfen schreiben ab dem ersten Tag im Ton des Hauses.',
           href: 'https://treppmann.design/case-studies/bibeltv-support-agent/',
@@ -64,17 +64,17 @@ export const aiLeadershipContent = {
         },
         {
           context: 'ChurchDesk · Prozess wird Produkt',
-          title: 'Aus Telefonketten wurde eine Buchungsfunktion für alle Kunden.',
-          body: 'Ein Kunde brauchte Bestattungen, die über mehr als 20 Friedhöfe buchbar sind. Geplant war ein Zusatzmodul für diesen einen Fall. Ich habe die Buchung stattdessen als Funktion der Plattform angelegt – sie ging an den gesamten Kundenstamm und wird auch für Raumvermietung, Taufen und Hochzeiten genutzt.',
+          title: 'Aus tagelangen Telefonaten wurde eine Buchungsfunktion für alle Kunden.',
+          body: 'Ein Kunde brauchte Bestattungen, die für mehr als 20 Friedhöfe buchbar sein sollten. Geplant war ein Zusatzmodul für diesen einen Fall. Ich habe die Buchung stattdessen als Funktion der Plattform angelegt – sie ging an den gesamten Kundenstamm und wird auch für Raumvermietung, Taufen und Hochzeiten genutzt.',
           fact: '−70 %',
-          factLabel: 'Abstimmungsaufwand beim Einführungskunden, bei 90 % Akzeptanz',
+          factLabel: 'weniger Abstimmungsaufwand beim Pilotkunden; 90 % Akzeptanz',
           href: 'https://treppmann.design/case-studies/churchdesk-booking-system/',
           link: 'Fallstudie ansehen',
         },
         {
           context: 'Ninox · KI im Produkt',
           title: 'Aus Alltagssprache wird eine bearbeitbare Anwendung.',
-          body: 'Mit CEO und technischem Mitgründer habe ich ein KI-Onboarding entwickelt: Nutzer beschreiben ihren Ablauf, die KI erzeugt daraus das Datenmodell, und das Ergebnis lässt sich direkt im echten Builder verändern. KI beschleunigt den Start, die Kontrolle bleibt beim Menschen.',
+          body: 'Mit dem CEO und dem technischen Mitgründer habe ich ein KI-Onboarding entwickelt: Nutzer beschreiben ihren Ablauf, die KI erzeugt daraus das Datenmodell, und das Ergebnis lässt sich direkt im Editor von Ninox verändern. KI beschleunigt den Start, die Kontrolle bleibt beim Menschen.',
           fact: 'Direkt bearbeiten',
           factLabel: 'wurde zum Interaktionsprinzip der KI-Beta von Ninox',
           href: 'https://treppmann.design/case-studies/ninox-ai-onboarding/',
@@ -84,7 +84,7 @@ export const aiLeadershipContent = {
     },
     plan: {
       label: 'Die ersten 90 Tage',
-      title: 'Die ersten 90 Tage.',
+      title: 'Was in den ersten 90 Tagen passiert.',
       body: 'Ob Projekt, Interim oder Festanstellung: Nach 90 Tagen läuft etwas, das Menschen nutzen und dessen Nutzen sich zeigen lässt. IT-Sicherheit, Recht, Datenschutz und Architektur ziehe ich je nach Risiko hinzu – bei Bedarf mit spezialisierten Partnern.',
       steps: [
         ['Woche 1–2', 'Bestandsaufnahme', 'Gespräche mit Geschäftsführung und Fachbereichen, Blick auf die heutige Nutzung. Ergebnis: Ziele und Ausgangslage, schriftlich.'],
@@ -108,9 +108,9 @@ export const aiLeadershipContent = {
         },
         {
           title: 'Interim',
-          meta: '2–3 Tage pro Woche, ab drei Monaten',
-          body: 'Ich übernehme die KI-Verantwortung auf Zeit, nach dem 90-Tage-Plan. Danach übergeben Sie an eine Person aus Ihrem Haus, die ich einarbeite, verlängern – oder besetzen die Rolle fest.',
-          action: 'Interim-Einsatz besprechen',
+          meta: 'zwei bis drei Tage pro Woche, ab drei Monaten · Start meist in zwei bis vier Wochen',
+          body: 'Ich übernehme die KI-Verantwortung auf Zeit, nach dem 90-Tage-Plan. Danach übergebe ich an eine Person aus Ihrem Haus, die ich eingearbeitet habe – auf Wunsch helfe ich bei Stellenprofil und Auswahl. Oder wir verlängern. Oder Sie besetzen die Rolle fest, gern auch mit mir.',
+          action: 'Verfügbarkeit prüfen',
           subject: 'Interim KI-Verantwortung',
         },
         {
@@ -139,10 +139,10 @@ export const aiLeadershipContent = {
       label: 'Fragen',
       title: 'Häufige Fragen.',
       items: [
-        ['Warum jemand mit Produkt- und Design-Hintergrund?', 'Weil KI-Einführungen selten am Modell scheitern, sondern an der Nutzung. Abläufe so zu gestalten, dass Menschen sie gern verwenden, ist seit über 15 Jahren meine Arbeit. Viele KI-Verantwortliche kommen heute aus Produkt, Prozess und Fachbereich – nicht aus der Forschung.'],
+        ['Warum jemand mit Produkt- und Designhintergrund?', 'Weil KI-Einführungen selten am Modell scheitern, sondern an der Nutzung. Abläufe so zu gestalten, dass Menschen sie gern verwenden, ist seit über 15 Jahren meine Arbeit. Viele KI-Verantwortliche kommen heute aus Produkt, Prozess und Fachbereich – nicht aus der Forschung.'],
         ['Warum keine große Beratung?', 'Ich baue selbst, arbeite direkt mit Ihren Teams und übergebe an Ihre Leute. Für Spezialthemen wie Recht, IT-Sicherheit oder komplexe Datenarchitektur hole ich passende Partner dazu.'],
         ['Wie gehen Sie mit Betriebsrat und Datenschutz um?', 'Früh und offen. Betriebsrat, Datenschutz und IT-Sicherheit sind von Beginn an eingebunden; eine verständliche KI-Leitlinie und klare Regeln für Daten gehören zu den ersten Ergebnissen. Wo KI Texte oder Entscheidungen vorbereitet, bekommt sie eine klare menschliche Freigabe.'],
-        ['Kennen Sie unsere Branche?', 'Vielleicht nicht im Detail – das Muster aber schon: Zuschauerpost, Spendenbriefe und Bestattungsbuchungen funktionieren wie Angebote, Reklamationen oder Auftragsabwicklung. Das Fachwissen bleibt bei Ihren Leuten; ich sorge dafür, dass Ablauf und Werkzeuge dazu passen.'],
+        ['Kennen Sie unsere Branche?', 'Das Fachwissen bringen Ihre Leute mit, ich bringe das Muster mit: Ob Reklamation, Angebot oder Auftragsabwicklung – es sind Prozesse mit viel Fachwissen, vielen Ausnahmen und vielen Übergaben. Genau solche Prozesse habe ich in einem Medienhaus, auf Softwareplattformen und in einem börsennotierten Finanzkonzern neu gestaltet.'],
         ['Was kostet das?', 'Das hängt vom Format ab. Das Erstgespräch ist kostenlos. Danach erhalten Sie ein konkretes Angebot mit Rahmen, Ergebnis und Preis.'],
         ['Interim oder Festanstellung?', 'Beides ist möglich. Ein guter Weg ist oft, mit einem Interim-Einsatz zu beginnen und nach 90 Tagen zu entscheiden, ob und wie Sie die Rolle fest besetzen.'],
       ],
@@ -150,7 +150,7 @@ export const aiLeadershipContent = {
     contact: {
       label: 'Kontakt',
       title: 'Welcher Ablauf in Ihrem Unternehmen soll mit KI spürbar besser werden?',
-      body: 'Buchen Sie direkt ein Gespräch von 30 Minuten oder schreiben Sie mir. Ich antworte persönlich, innerhalb von zwei Werktagen.',
+      body: 'Buchen Sie direkt ein Gespräch von 30 Minuten oder schreiben Sie mir. Ich antworte persönlich innerhalb von zwei Werktagen.',
       book: 'Erstgespräch vereinbaren',
       bookUrl: bookingUrl,
       email,
