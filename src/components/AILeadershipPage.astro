@@ -7,27 +7,35 @@ interface Props { locale: Locale; site?: 'studio' | 'personal' }
 const { locale, site = 'studio' } = Astro.props;
 const c = aiLeadershipContent[locale];
 const isPersonal = site === 'personal';
+const personalDe = 'https://treppmann.de/';
+const personalEn = 'https://treppmann.de/en/';
 const canonical = isPersonal
-  ? `https://treppmann.de${locale === 'en' ? '/' : '/de/'}`
+  ? (locale === 'en' ? personalEn : personalDe)
   : `https://studio.treppmann.design${c.path}`;
-const alternateDe = isPersonal ? 'https://treppmann.de/de/' : 'https://studio.treppmann.design/ai-transformation/';
-const alternateEn = isPersonal ? 'https://treppmann.de/' : 'https://studio.treppmann.design/en/ai-transformation/';
-const homePath = isPersonal ? (locale === 'en' ? '/' : '/de/') : c.homePath;
-const switchPath = isPersonal ? (locale === 'en' ? '/de/' : '/') : c.switchPath;
-const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.subject)}`;
+const alternateDe = isPersonal ? personalDe : 'https://studio.treppmann.design/ai-transformation/';
+const alternateEn = isPersonal ? personalEn : 'https://studio.treppmann.design/en/ai-transformation/';
+const homePath = isPersonal ? (locale === 'en' ? '/en/' : '/') : c.homePath;
+const switchPath = isPersonal ? (locale === 'en' ? '/' : '/en/') : c.switchPath;
+const mail = (subject: string) => `mailto:${c.contact.email}?subject=${encodeURIComponent(subject)}`;
+const mailto = mail(c.contact.subject);
+const legalBase = isPersonal ? '' : 'https://treppmann.de';
+const impressumUrl = `${legalBase}/impressum/`;
+const privacyUrl = `${legalBase}/datenschutz/`;
 const portfolioUrl = 'https://treppmann.design';
 const studioUrl = locale === 'de' ? 'https://studio.treppmann.design/' : 'https://studio.treppmann.design/en/';
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Tobias Treppmann',
-  url: isPersonal ? 'https://treppmann.de/' : canonical,
+  url: isPersonal ? personalDe : canonical,
   image: 'https://treppmann.de/images/tobias-treppmann.jpg',
-  jobTitle: locale === 'de' ? 'KI Product & Transformation Leader' : 'AI Product & Transformation Leader',
+  jobTitle: c.jobTitle,
   address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' },
-  email: c.contact.cta,
+  email: c.contact.email,
   sameAs: [c.contact.linkedinUrl, portfolioUrl, studioUrl],
-  knowsAbout: ['AI transformation', 'Product leadership', 'Workflow design', 'Human-centered design', 'Agentic systems'],
+  knowsAbout: locale === 'de'
+    ? ['KI-Transformation', 'KI-Einführung', 'Prozessgestaltung', 'Produktführung', 'KI-Agenten']
+    : ['AI transformation', 'AI adoption', 'Workflow design', 'Product leadership', 'AI agents'],
 };
 ---
 
@@ -38,22 +46,24 @@ const structuredData = {
   canonical={canonical}
   alternateDe={alternateDe}
   alternateEn={alternateEn}
+  alternateDefault={isPersonal ? personalDe : alternateEn}
   image="https://treppmann.de/images/tobias-treppmann.jpg"
   structuredData={structuredData}
 >
-  <a class="skip-link" href="#main">{locale === 'de' ? 'Zum Inhalt' : 'Skip to content'}</a>
+  <a class="skip-link" href="#main">{c.skip}</a>
   <header class="topbar leadership-topbar">
-    <a class="brand" href={homePath} aria-label={isPersonal ? 'Tobias Treppmann home' : 'Treppmann Studio home'}>
-      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>AI Transformation</span>
+    <a class="brand" href={homePath} aria-label={c.homeLabel}>
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>{c.brandSuffix}</span>
     </a>
-    <nav aria-label="Primary navigation">
+    <nav aria-label={locale === 'de' ? 'Hauptnavigation' : 'Primary navigation'}>
       <a href="#needs">{c.nav.needs}</a>
-      <a href="#services">{c.nav.services}</a>
       <a href="#proof">{c.nav.proof}</a>
+      <a href="#plan">{c.nav.plan}</a>
+      <a href="#formats">{c.nav.formats}</a>
       <a href="#about">{c.nav.about}</a>
     </nav>
     <div class="topbar-actions">
-      <a class="topbar-contact" href="#contact">{locale === 'de' ? 'Kontakt' : 'Contact'}</a>
+      <a class="topbar-contact" href="#contact">{c.nav.contact}</a>
       <a class="language" href={switchPath} lang={locale === 'de' ? 'en' : 'de'}>{c.switchLabel}</a>
     </div>
   </header>
@@ -67,10 +77,10 @@ const structuredData = {
           <p class="hero-intro">{c.hero.intro}</p>
           <p class="hero-audience">{c.hero.audience}</p>
           <div class="hero-actions leadership-actions">
-            <a class="button button-primary" href={mailto}>{c.hero.primary}</a>
-            <a class="button button-ghost" href="#services">{c.hero.secondary}</a>
+            <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.hero.primary}</a>
+            <a class="button button-ghost" href="#plan">{c.hero.secondary}</a>
           </div>
-          <a class="cv-link" href={c.hero.cv} download>{c.hero.cvLabel}<span aria-hidden="true"> ↓</span></a>
+          <p class="hero-proof"><strong>{c.hero.proofLabel}:</strong> {c.hero.proof}</p>
         </div>
         <figure class="leadership-portrait">
           <img src="/images/tobias-treppmann.jpg" alt={c.hero.portraitAlt} width="600" height="750" />
@@ -82,22 +92,12 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="experience-strip section-paper" aria-labelledby="leadership-experience-title">
-      <div class="section-shell experience-heading">
-        <p class="experience-label" id="leadership-experience-title">{c.experience.label}</p>
-      </div>
-      <ul class="section-shell experience-brands" aria-label={c.experience.label}>
-        {c.experience.brands.map((brand) => <li>{brand}</li>)}
-      </ul>
-      <div class="section-shell enterprise-intro">
-        <h2>{c.experience.title}</h2>
-        <p>{c.experience.body}</p>
-      </div>
-      <div class="section-shell enterprise-contexts">
-        {c.experience.contexts.map(([name, body]) => (
-          <article><h3>{name}</h3><p>{body}</p></article>
+    <section class="credentials-strip section-paper" aria-label={c.credentials.label}>
+      <ul class="section-shell credentials-list">
+        {c.credentials.items.map(([name, body]) => (
+          <li><strong>{name}</strong><span>{body}</span></li>
         ))}
-      </div>
+      </ul>
     </section>
 
     <section class="needs-section section-light" id="needs">
@@ -110,30 +110,13 @@ const structuredData = {
           <article><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
+      <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p></div>
     </section>
 
-    <section class="services-section section-paper" id="services">
-      <div class="section-shell leadership-heading">
-        <p class="section-label">{c.services.label}</p>
-        <div><h2>{c.services.title}</h2><p class="lead">{c.services.intro}</p></div>
-      </div>
-      <div class="section-shell services-list">
-        {c.services.items.map((item) => (
-          <article>
-            <div class="service-copy"><h3>{item.title}</h3><p>{item.body}</p></div>
-            <ul>{item.outcomes.map((outcome) => <li>{outcome}</li>)}</ul>
-          </article>
-        ))}
-      </div>
-      <div class="section-shell section-cta">
-        <a class="button button-ink" href={mailto}>{c.services.cta}<span aria-hidden="true"> ↗</span></a>
-      </div>
-    </section>
-
-    <section class="proof-section section-light" id="proof">
+    <section class="proof-section section-paper" id="proof">
       <div class="section-shell leadership-heading">
         <p class="section-label">{c.proof.label}</p>
-        <div><h2>{c.proof.title}</h2><p class="role-note">{c.proof.note}</p></div>
+        <div><h2>{c.proof.title}</h2></div>
       </div>
       <div class="section-shell compact-proof-grid">
         {c.proof.cases.map((item) => (
@@ -148,19 +131,42 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="method-section section-dark" id="method">
-      <div class="section-shell method-lead">
-        <h2>{c.method.title}</h2>
-        <p>{c.method.body}</p>
+    <section class="method-section section-dark" id="plan">
+      <div class="section-shell leadership-heading leadership-heading-dark">
+        <p class="section-label">{c.plan.label}</p>
+        <div><h2>{c.plan.title}</h2><p class="lead">{c.plan.body}</p></div>
       </div>
-      <div class="section-shell method-path">
-        {c.method.steps.map(([number, title, body], index) => (
-          <article>
-            <div><span>{number}</span><h3>{title}</h3></div>
+      <ol class="section-shell method-path">
+        {c.plan.steps.map(([when, title, body]) => (
+          <li>
+            <span>{when}</span>
+            <h3>{title}</h3>
             <p>{body}</p>
-            {index < c.method.steps.length - 1 && <i aria-hidden="true">→</i>}
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="engagements-section section-light" id="formats">
+      <div class="section-shell leadership-heading">
+        <p class="section-label">{c.formats.label}</p>
+        <div><h2>{c.formats.title}</h2><p class="lead">{c.formats.intro}</p></div>
+      </div>
+      <div class="section-shell engagement-grid">
+        {c.formats.items.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p class="engagement-meta">{item.meta}</p>
+            <p>{item.body}</p>
+            <div class="engagement-links">
+              <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> ↗</span></a>
+              {'secondary' in item && <a href={item.secondaryHref} download>{item.secondary}<span aria-hidden="true"> ↓</span></a>}
+            </div>
           </article>
         ))}
+      </div>
+      <div class="section-shell section-cta">
+        <a class="button button-ink" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}<span aria-hidden="true"> ↗</span></a>
       </div>
     </section>
 
@@ -177,19 +183,20 @@ const structuredData = {
       <div class="section-shell about-link"><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗</span></a></div>
     </section>
 
-    <section class="engagements-section section-signal">
+    <section class="faq-section section-light" id="faq">
       <div class="section-shell leadership-heading">
-        <p class="section-label">{c.engagements.label}</p>
-        <div><h2>{c.engagements.title}</h2><p class="lead">{c.engagements.intro}</p></div>
-      </div>
-      <div class="section-shell engagement-grid">
-        {c.engagements.items.map(([title, body, action, subject]) => (
-          <article>
-            <h3>{title}</h3>
-            <p>{body}</p>
-            <a href={`mailto:${c.contact.cta}?subject=${encodeURIComponent(subject)}`}>{action}<span aria-hidden="true"> ↗</span></a>
-          </article>
-        ))}
+        <p class="section-label">{c.faq.label}</p>
+        <div>
+          <h2>{c.faq.title}</h2>
+          <div class="faq-list">
+            {c.faq.items.map(([question, answer]) => (
+              <details>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
 
@@ -197,17 +204,21 @@ const structuredData = {
       <div class="section-shell contact-inner">
         <h2>{c.contact.title}</h2>
         <p>{c.contact.body}</p>
-        <a class="contact-link" href={mailto}>{c.contact.cta}<span aria-hidden="true">↗</span></a>
+        <div class="contact-actions">
+          <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}</a>
+          <a class="contact-link" href={mailto}>{c.contact.email}<span aria-hidden="true">↗</span></a>
+        </div>
         <div class="contact-meta"><p class="location">{c.contact.location}</p><a href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗</span></a></div>
       </div>
     </section>
   </main>
 
   <footer class="leadership-footer">
-    <span>{c.footer}</span>
+    <span>{c.footer.name}</span>
     <div class="footer-links">
-      <a href={studioUrl}>Studio</a>
-      <a href={portfolioUrl}>Portfolio</a>
+      <a href={impressumUrl}>{c.footer.impressum}</a>
+      <a href={privacyUrl}>{c.footer.privacy}</a>
+      <a href={portfolioUrl}>{c.footer.portfolio}</a>
       <a href={switchPath}>{c.switchLabel}</a>
     </div>
   </footer>

@@ -9,6 +9,8 @@ await writeFile(new URL('robots.txt', out), 'User-agent: *\nAllow: /\n\nSitemap:
 await writeFile(new URL('sitemap.xml', out), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://treppmann.de/</loc></url>
-  <url><loc>https://treppmann.de/de/</loc></url>
+  <url><loc>https://treppmann.de/en/</loc></url>
+  <url><loc>https://treppmann.de/impressum/</loc></url>
+  <url><loc>https://treppmann.de/datenschutz/</loc></url>
 </urlset>
 `);

@@ -8,6 +8,8 @@ interface Props {
   canonical: string;
   alternateDe?: string;
   alternateEn?: string;
+  alternateDefault?: string;
+  noindex?: boolean;
   image?: string;
   structuredData?: Record<string, unknown>;
 }
@@ -19,6 +21,8 @@ const {
   canonical,
   alternateDe = 'https://studio.treppmann.design/',
   alternateEn = 'https://studio.treppmann.design/en/',
+  alternateDefault,
+  noindex = false,
   image = 'https://studio.treppmann.design/images/tobias-treppmann.jpg',
   structuredData,
 } = Astro.props;
@@ -35,7 +39,8 @@ const {
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="de" href={alternateDe} />
     <link rel="alternate" hreflang="en" href={alternateEn} />
-    <link rel="alternate" hreflang="x-default" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateDefault ?? alternateEn} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

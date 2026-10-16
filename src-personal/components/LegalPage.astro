@@ -1,0 +1,32 @@
+---
+import Layout from '../../src/layouts/Layout.astro';
+
+interface Props { title: string; description: string; path: string }
+const { title, description, path } = Astro.props;
+const url = `https://treppmann.de${path}`;
+---
+
+<Layout lang="de-DE" title={`${title} – Tobias Treppmann`} description={description} canonical={url} alternateDe={url} alternateEn={url} alternateDefault={url} image="https://treppmann.de/images/tobias-treppmann.jpg">
+  <header class="topbar leadership-topbar">
+    <a class="brand" href="/" aria-label="Tobias Treppmann – Startseite">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>KI-Transformation</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="/#contact">Kontakt</a>
+      <a class="language" href="/en/" lang="en">EN</a>
+    </div>
+  </header>
+  <main class="legal-page section-paper">
+    <article class="section-shell legal-article">
+      <slot />
+    </article>
+  </main>
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · KI-Transformation</span>
+    <div class="footer-links">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/">Startseite</a>
+    </div>
+  </footer>
+</Layout>
