@@ -5,7 +5,7 @@ Last reviewed: 2026-10-04
 ## Primary audience
 
 Treppmann Studio speaks to **operations, transformation and product teams in
-knowledge-intensive organisations and vertical SaaS companies whose important
+knowledge-intensive organizations and vertical SaaS companies whose important
 workflows are too specialised for standard software**.
 
 The practical buyer is usually a Head of Product, Operations lead, digital
@@ -42,7 +42,7 @@ avoid creating thin pages or repeating keyword variants without substance.
 
 This is deliberately narrower than “SMEs” and broader than “AI consulting”. The
 buyer has a specific recurring workflow, domain expertise that cannot simply be
-removed, and enough organisational urgency to fund a working tool.
+removed, and enough organizational urgency to fund a working tool.
 
 ## External market evidence
 
@@ -55,7 +55,7 @@ removed, and enough organisational urgency to fund a working tool.
   knowledge-intensive services.  
   https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf
 - McKinsey's 2025 global AI survey found broad experimentation but only around
-  one third of organisations beginning to scale AI. Frequently reported use
+  one third of organizations beginning to scale AI. Frequently reported use
   cases include information capture and delivery, marketing content,
   knowledge management and customer service — the gap between general AI use
   and an operational workflow is the studio's opportunity.  
@@ -77,7 +77,7 @@ prototypes.
   multi-party funeral workflow; 70% less coordination time and 90% acceptance.
 - **Ninox:** a natural-language business process becomes an editable schema in
   the real builder.
-- **Bibel TV:** fundraising, customer support, metadata, colour and design
+- **Bibel TV:** fundraising, customer support, metadata, color and design
   infrastructure workflows turned into controlled tools and systems.
 - **Datameer:** complex analyst workflows in regulated enterprise data
   products.
