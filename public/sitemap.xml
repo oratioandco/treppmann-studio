@@ -11,4 +11,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://studio.treppmann.design/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://studio.treppmann.design/en/" />
   </url>
+  <url>
+    <loc>https://studio.treppmann.design/ai-transformation/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://studio.treppmann.design/ai-transformation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio.treppmann.design/en/ai-transformation/" />
+  </url>
+  <url>
+    <loc>https://studio.treppmann.design/en/ai-transformation/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://studio.treppmann.design/ai-transformation/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio.treppmann.design/en/ai-transformation/" />
+  </url>
 </urlset>

@@ -6,9 +6,18 @@ interface Props {
   title: string;
   description: string;
   canonical: string;
+  alternateDe?: string;
+  alternateEn?: string;
 }
 
-const { lang, title, description, canonical } = Astro.props;
+const {
+  lang,
+  title,
+  description,
+  canonical,
+  alternateDe = 'https://studio.treppmann.design/',
+  alternateEn = 'https://studio.treppmann.design/en/',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -20,9 +29,9 @@ const { lang, title, description, canonical } = Astro.props;
     <meta name="theme-color" content="#11110f" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="de" href="https://studio.treppmann.design/" />
-    <link rel="alternate" hreflang="en" href="https://studio.treppmann.design/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://studio.treppmann.design/" />
+    <link rel="alternate" hreflang="de" href={alternateDe} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateEn} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

@@ -16,6 +16,7 @@ const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.s
       <span>Treppmann</span><span class="brand-mark">/</span><span>Studio</span>
     </a>
     <nav aria-label="Primary navigation">
+      <a href={locale === 'de' ? '/ai-transformation/' : '/en/ai-transformation/'}>{c.nav.ai}</a>
       <a href="#work">{c.nav.work}</a>
       <a href="#offer">{c.nav.offer}</a>
       <a href="#studio">{c.nav.studio}</a>

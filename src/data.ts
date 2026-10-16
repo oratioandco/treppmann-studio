@@ -8,7 +8,7 @@ export const content = {
     switchLabel: 'EN',
     metaTitle: 'Geschäftsprozesse digitalisieren | Treppmann Studio',
     metaDescription: 'Prozessoptimierung, Prozessautomatisierung und individuelle Software für komplexe Geschäftsabläufe. Interne Tools und KI-gestützte Workflows aus Berlin.',
-    nav: { work: 'Arbeit', offer: 'Angebot', studio: 'Studio', contact: 'Kontakt' },
+    nav: { ai: 'KI-Transformation', work: 'Arbeit', offer: 'Angebot', studio: 'Studio', contact: 'Kontakt' },
     hero: {
       kicker: 'Prozessoptimierung · Automatisierung · Individualsoftware',
       title: 'Komplexe Abläufe. Werkzeuge, die passen.',
@@ -134,7 +134,7 @@ export const content = {
     switchLabel: 'DE',
     metaTitle: 'Custom internal tools & workflow automation | Treppmann Studio',
     metaDescription: 'We design and build custom internal tools, workflow automation, and AI-assisted systems for complex operations that off-the-shelf software cannot handle.',
-    nav: { work: 'Work', offer: 'Services', studio: 'Studio', contact: 'Contact' },
+    nav: { ai: 'AI Transformation', work: 'Work', offer: 'Services', studio: 'Studio', contact: 'Contact' },
     hero: {
       kicker: 'Custom internal tools · workflow automation · applied AI',
       title: 'Turn complex operations into tools that work.',

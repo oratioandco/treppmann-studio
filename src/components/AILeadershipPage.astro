@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Locale } from '../data';
+import { aiLeadershipContent } from '../aiLeadershipData';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const c = aiLeadershipContent[locale];
+const canonical = `https://studio.treppmann.design${c.path}`;
+const mailto = `mailto:${c.contact.cta}?subject=${encodeURIComponent(c.contact.subject)}`;
+---
+
+<Layout
+  lang={c.locale}
+  title={c.metaTitle}
+  description={c.metaDescription}
+  canonical={canonical}
+  alternateDe="https://studio.treppmann.design/ai-transformation/"
+  alternateEn="https://studio.treppmann.design/en/ai-transformation/"
+>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href={c.homePath} aria-label="Treppmann Studio home">
+      <span>Tobias</span><span class="brand-mark">/</span><span>AI Transformation</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#span">{c.nav.span}</a>
+      <a href="#proof">{c.nav.proof}</a>
+      <a href="#method">{c.nav.method}</a>
+      <a href="#profile">{c.nav.profile}</a>
+    </nav>
+    <a class="language" href={c.switchPath} lang={locale === 'de' ? 'en' : 'de'}>{c.switchLabel}</a>
+  </header>
+
+  <main class="leadership-page">
+    <section class="leadership-hero section-dark">
+      <div class="leadership-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="section-shell leadership-hero-inner">
+        <p class="eyebrow light">{c.hero.kicker}</p>
+        <h1>{c.hero.title}</h1>
+        <div class="leadership-intro">
+          <p class="hero-intro">{c.hero.intro}</p>
+          <div>
+            <p class="hero-audience">{c.hero.audience}</p>
+            <div class="hero-actions leadership-actions">
+              <a class="button button-primary" href={mailto}>{c.hero.primary}</a>
+              <a class="button button-ghost" href={c.hero.cv} download>{c.hero.secondary}</a>
+            </div>
+          </div>
+        </div>
+        <div class="transformation-chain" aria-label="Outcome, workflow, product, system, adoption">
+          {c.span.steps.map(([number, title], index) => (
+            <div class="chain-node">
+              <span>{number}</span>
+              <strong>{title}</strong>
+              {index < c.span.steps.length - 1 && <i aria-hidden="true">→</i>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-strip section-paper" aria-labelledby="leadership-experience-title">
+      <div class="section-shell experience-heading">
+        <p class="eyebrow" id="leadership-experience-title">{c.experience.label}</p>
+      </div>
+      <ul class="section-shell experience-brands" aria-label={c.experience.label}>
+        {c.experience.brands.map((brand) => <li>{brand}</li>)}
+      </ul>
+    </section>
+
+    <section class="span-section section-light" id="span">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.span.label}</p>
+        <div><h2>{c.span.title}</h2><p class="lead">{c.span.body}</p></div>
+      </div>
+      <div class="section-shell span-grid">
+        {c.span.steps.map(([number, title, body]) => (
+          <article data-reveal>
+            <span>{number}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="proof-section section-paper" id="proof">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.proof.label}</p>
+        <div><h2>{c.proof.title}</h2><p class="role-note">{c.proof.note}</p></div>
+      </div>
+      <div class="section-shell proof-list">
+        {c.proof.cases.map((item) => (
+          <article class="proof-card" data-reveal>
+            <div class="proof-index"><span>{item.number}</span><p>{item.context}</p></div>
+            <div class="proof-story">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <ul>{item.tags.map((tag) => <li>{tag}</li>)}</ul>
+            </div>
+            <div class="proof-fact">
+              <strong>{item.fact}</strong>
+              <span>{item.factLabel}</span>
+              <a href={item.href}>{item.link}<span aria-hidden="true"> ↗</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="method-section section-dark" id="method">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow light">{c.method.label}</p>
+        <div><h2>{c.method.title}</h2><p class="lead">{c.method.body}</p></div>
+      </div>
+      <div class="section-shell method-grid">
+        {c.method.principles.map(([title, body], index) => (
+          <article data-reveal><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="mandates section-signal">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.roles.label}</p>
+        <div><h2>{c.roles.title}</h2><p class="lead">{c.roles.intro}</p></div>
+      </div>
+      <div class="section-shell mandate-list">
+        {c.roles.items.map(([title, body]) => (
+          <article data-reveal><h3>{title}</h3><p>{body}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="profile-section section-light" id="profile">
+      <div class="section-shell split-heading" data-reveal>
+        <p class="eyebrow">{c.profile.label}</p>
+        <div><h2>{c.profile.title}</h2><p class="lead">{c.profile.body}</p></div>
+      </div>
+      <div class="section-shell profile-grid">
+        {c.profile.points.map(([title, body]) => (
+          <article data-reveal><h3>{title}</h3><p>{body}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="contact section-paper" id="contact">
+      <div class="section-shell contact-inner" data-reveal>
+        <p class="eyebrow">{c.contact.label}</p>
+        <h2>{c.contact.title}</h2>
+        <p>{c.contact.body}</p>
+        <a class="contact-link" href={mailto}>{c.contact.cta}<span aria-hidden="true">↗</span></a>
+        <p class="location">{c.contact.location}</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>{c.footer}</span>
+    <div class="footer-links"><a href={c.homePath}>Studio</a><a href={c.switchPath}>{c.switchLabel}</a></div>
+  </footer>
+</Layout>
