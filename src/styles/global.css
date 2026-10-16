@@ -205,7 +205,7 @@ footer a { color: var(--white); }
 .cv-link { display: inline-block; margin-top: 1.6rem; color: rgba(255,253,247,.72); font-size: .78rem; font-weight: 600; border-bottom: 1px solid rgba(255,253,247,.42); }
 .cv-link:hover { color: var(--white); border-color: var(--white); }
 .leadership-portrait { margin: 0; align-self: start; border: 1px solid var(--line-dark); background: #d9d1c4; }
-.leadership-portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; }
+.leadership-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; }
 .leadership-portrait figcaption { padding: 1rem; display: grid; gap: .25rem; border-top: 1px solid var(--line-dark); background: var(--ink); }
 .leadership-portrait figcaption strong { font-size: .92rem; font-weight: 600; }
 .leadership-portrait figcaption span { font-size: .64rem; line-height: 1.5; color: rgba(255,253,247,.58); }
