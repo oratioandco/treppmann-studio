@@ -549,3 +549,12 @@ footer a { color: var(--white); }
 .report-practice .report-voice { margin: 0 0 .6rem !important; color: var(--signal); }
 .report-practice p:last-child { margin-bottom: 0; }
 .report-article .report-closing { font-size: 1.25rem; color: var(--ink); font-weight: 500; margin-top: 1.4rem; }
+
+/* Report: about section and source lists */
+.report-about { margin-top: 3.2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.report-about > p { font-size: .95rem; color: var(--muted); }
+.report-about h3 { font-size: .78rem; font-family: var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 2rem 0 .8rem; }
+.report-about .report-sources li { line-height: 1.5; }
+.report-sources-plain { list-style: none; padding-left: 0; }
+.report-sources-plain li { padding-left: 1.3rem; text-indent: -1.3rem; }
+.report-sources-plain li::before { content: '–'; display: inline-block; width: 1.3rem; text-indent: 0; color: var(--muted); }

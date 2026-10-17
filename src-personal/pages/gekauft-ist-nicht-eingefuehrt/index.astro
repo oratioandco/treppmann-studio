@@ -5,7 +5,7 @@ import BarChart from '../../components/BarChart.astro';
 
 const url = 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/';
 const title = 'Gekauft ist nicht eingeführt';
-const description = 'Was Studien und 187 ausgewertete Podcastgespräche über KI in deutschen Unternehmen zeigen: fünf Muster zwischen gekaufter Lizenz und genutzter KI.';
+const description = 'Mehr als die Hälfte der deutschen Unternehmen nutzt KI, kaum eines schöpft sie aus. Was aktuelle Studien und 187 Podcastgespräche darüber zeigen, warum das selten an der Technik liegt.';
 const bookUrl = 'https://fantastical.app/tobiastreppmann';
 const structuredData = {
   '@context': 'https://schema.org',
@@ -35,11 +35,11 @@ const structuredData = {
     <article class="section-shell legal-article report-article">
       <p class="section-label">Report · Oktober 2026</p>
       <h1>Gekauft ist nicht eingeführt</h1>
-      <p class="report-subtitle">Was Studien und 187 ausgewertete Podcastgespräche über KI in deutschen Unternehmen zeigen</p>
-      <p class="report-byline">Tobias Treppmann · 17. Oktober 2026 · 6 Minuten Lesezeit</p>
+      <p class="report-subtitle">Mehr als die Hälfte der deutschen Unternehmen nutzt KI. Kaum eines holt etwas daraus. Warum das selten an der Technik liegt, und was die anders machen, bei denen es funktioniert.</p>
+      <p class="report-byline">Tobias Treppmann · 17. Oktober 2026 · 8 Minuten Lesezeit</p>
 
-      <h2>Das Wichtigste vorweg</h2>
-      <p class="report-lead">Mehr als die Hälfte der deutschen Unternehmen ab 20 Beschäftigten setzt inzwischen KI ein. Doch von diesen KI-Anwendern sagt kein einziges, es schöpfe das Potenzial voll aus. Fast drei von zehn nutzen es nach eigener Einschätzung wenig, sechs von zehn überhaupt nicht.<sup><a href="#q1">1</a></sup></p>
+      <p class="report-lead">Im September hat der Bitkom 603 Unternehmen gefragt, wie sie mit KI arbeiten. Die Schlagzeile war eine gute Nachricht: Erstmals setzt mehr als die Hälfte der Unternehmen KI ein.<sup><a href="#q1">1</a></sup></p>
+      <p>Die interessantere Zahl stand ein paar Zeilen tiefer. Von den Unternehmen, die KI nutzen, sagt kein einziges, es schöpfe das Potenzial voll aus. Sechs von zehn sagen, sie schöpfen es überhaupt nicht aus.</p>
       <BarChart
         title="Wie stark nutzen Unternehmen, die KI einsetzen, ihr Potenzial?"
         rows={[
@@ -52,24 +52,26 @@ const structuredData = {
         source="Bitkom, September 2026"
         sourceHref="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI"
       />
-      <blockquote><p>„Wer nur eine Lizenz kauft, hat KI eingekauft, aber noch nichts verändert.“<sup><a href="#q1">1</a></sup></p><cite>Ralf Wintergerst, Präsident des Bitkom</cite></blockquote>
-      <p>Diese Lücke zwischen <em>gekauft</em> und <em>eingeführt</em> ist das Thema dieses Reports. Grundlage sind drei repräsentative Unternehmensbefragungen von Bitkom und TÜV-Verband und 187 ausgewertete Folgen aus drei deutschsprachigen Podcasts. Darin sprechen KI-Verantwortliche, Geschäftsführer und Berater über ihre Arbeit. Die Studien zeigen, <em>wie verbreitet</em> ein Problem ist. Die Gespräche zeigen, <em>wie es in der Praxis aussieht</em>.</p>
+      <p>Bitkom-Präsident Ralf Wintergerst hat dafür einen Satz gefunden, der hängen bleibt:</p>
+      <blockquote><p>„Wer nur eine Lizenz kauft, hat KI eingekauft, aber noch nichts verändert.“</p><cite>Ralf Wintergerst, Präsident des Bitkom</cite></blockquote>
+      <p>Diese Lücke kenne ich aus meiner eigenen Arbeit. Ich wollte wissen, ob andere sie genauso erleben und was die tun, bei denen es klappt. Dafür habe ich die aktuellen Unternehmensbefragungen von Bitkom und TÜV-Verband gelesen und 187 Folgen aus drei deutschsprachigen Podcasts ausgewertet, in denen KI-Verantwortliche, Geschäftsführer und Berater aus ihrer Praxis erzählen. Die Studien zeigen, wie verbreitet das Problem ist. Die Gespräche zeigen, wie es im Alltag aussieht.</p>
+      <p>Fünf Beobachtungen ziehen sich durch.</p>
 
       <aside class="report-takeaways" aria-labelledby="takeaways-title">
-        <h2 id="takeaways-title">Auf einen Blick</h2>
+        <h2 id="takeaways-title">Die fünf Beobachtungen</h2>
         <ol>
           <li><strong>Gekauft ist nicht eingeführt.</strong> Die Mehrheit nutzt KI, aber fast niemand schöpft sie aus.</li>
           <li><strong>Das Geld steckt nicht in der Lizenz,</strong> sondern in Daten, Integration und Infrastruktur.</li>
-          <li><strong>Ohne verantwortliche Person bleibt KI ein Experiment.</strong> Im Mittelstand braucht es dafür keine Abteilung.</li>
-          <li><strong>Menschen mitnehmen heißt: am eigenen Arbeitsfall befähigen,</strong> nicht nur ankündigen und schulen.</li>
-          <li><strong>Wer den Nutzen nicht vorher festlegt, kann ihn später nicht zeigen.</strong></li>
+          <li><strong>Ohne verantwortliche Person bleibt KI ein Experiment.</strong> Eine eigene Abteilung braucht es dafür nicht.</li>
+          <li><strong>Menschen lernen KI an ihrer eigenen Arbeit,</strong> nicht in der Ankündigung und selten im Schulungsraum.</li>
+          <li><strong>Wer den Nutzen nicht vorher festlegt,</strong> kann ihn später nicht zeigen.</li>
         </ol>
       </aside>
 
-      <h2>1. Eine Lizenz ist noch keine Einführung</h2>
-      <p>Die Zahlen passen zusammen, obwohl sie aus verschiedenen Erhebungen stammen. 56&#8239;Prozent der Unternehmen nutzen generative KI im Arbeitsalltag, aber nur 27&#8239;Prozent haben ihre Leute dazu geschult.<sup><a href="#q2">2</a></sup></p>
+      <h2>Eine Lizenz ist noch keine Einführung</h2>
+      <p>Andere Erhebungen zeigen dasselbe Bild aus einem anderen Winkel. Laut TÜV-Verband nutzen 56&#8239;Prozent der Unternehmen generative KI im Arbeitsalltag. Ihre Beschäftigten darin geschult haben 27&#8239;Prozent.<sup><a href="#q2">2</a></sup></p>
       <BarChart
-        title="Nutzung läuft der Befähigung davon"
+        title="Die Nutzung läuft der Befähigung davon"
         rows={[
           { label: 'Nutzen generative KI im Arbeitsalltag', value: 56 },
           { label: 'Haben Beschäftigte zu KI geschult', value: 27, highlight: true },
@@ -78,14 +80,13 @@ const structuredData = {
         source="TÜV-Weiterbildungsstudie 2026 (Forsa)"
         sourceHref="https://www.tuev-verband.de/studien/tuev-weiterbildungsstudie-2026"
       />
-      <p>In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Werkzeuge, oder die Geschäftsführung geht davon aus – aber nur knapp ein Viertel hat Regeln dafür.<sup><a href="#q3">3</a></sup></p>
-      <p>In den Podcasts klingt das drastischer. In einer Folge des Venture AI Podcasts mit den Gründern von Ideastream.io fällt über Unternehmen, die KI „eingeführt“ haben, der Satz:</p>
-      <p class="report-voice">Stimme aus der Praxis</p>
-      <blockquote><p>„Gar nichts haben die eingeführt. Die haben Lizenzen gekauft.“</p><cite>Venture AI Podcast, Folge 1259, mit den Gründern von Ideastream.io</cite></blockquote>
-      <p>Das Muster dahinter: Eine Lizenz löst kein Problem, sie schafft eine Möglichkeit. Ob daraus Nutzen wird, entscheidet sich in den Prozessen, in denen sie landet.</p>
+      <p>Wo das Unternehmen keinen Weg anbietet, suchen sich die Leute ihren eigenen. In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Zugänge, oder die Geschäftsführung geht davon aus. Regeln dafür hat nur knapp ein Viertel.<sup><a href="#q3">3</a></sup></p>
+      <p>In den Podcasts klingt das weniger diplomatisch. In einer Folge des Venture AI Podcasts mit den beiden Gründern von Ideastream.io fällt über Unternehmen, die KI angeblich eingeführt haben, dieser Satz:</p>
+      <blockquote><p>„Gar nichts haben die eingeführt. Die haben Lizenzen gekauft.“</p><cite>Venture AI Podcast, #1259</cite></blockquote>
+      <p>Eine Lizenz löst kein Problem. Sie eröffnet eine Möglichkeit. Ob daraus Nutzen wird, entscheidet sich in der Arbeit, in der sie landet.</p>
 
-      <h2>2. Erst der Prozess, dann das Werkzeug</h2>
-      <p>Wo das Geld bei KI wirklich hingeht, zeigt die Bitkom-Studie. Als großen Kostenpunkt nennen KI-Anwender die Infrastruktur (51&#8239;Prozent), die Aufbereitung von Daten (50&#8239;Prozent) und die Integration in bestehende Systeme (41&#8239;Prozent). Lizenzen nennen nur 21&#8239;Prozent.<sup><a href="#q1">1</a></sup> Der teure Teil ist nicht das Werkzeug, sondern alles drumherum.</p>
+      <h2>Erst der Prozess, dann das Werkzeug</h2>
+      <p>Wie groß der Abstand zwischen Werkzeug und Wirkung ist, zeigt ein Blick darauf, wofür KI-Anwender tatsächlich Geld ausgeben. Die großen Posten sind Infrastruktur, die Aufbereitung von Daten und die Anbindung an bestehende Systeme. Lizenzen nennt nur jedes fünfte Unternehmen.<sup><a href="#q1">1</a></sup> Das Werkzeug ist der günstige Teil.</p>
       <BarChart
         title="Was KI-Anwender als großen Kostenpunkt nennen"
         rows={[
@@ -100,44 +101,45 @@ const structuredData = {
         source="Bitkom, September 2026"
         sourceHref="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI"
       />
-      <p>Die Hosts von KI &amp; Tonic beschreiben die Reihenfolge als Pyramide:</p>
-      <p class="report-voice">Stimme aus der Praxis</p>
-      <blockquote><p>„Ganz unten haben wir die Standardisierung, eins oben drüber haben wir die Prozessgestaltung, dann kommt die Digitalisierung und erst dann reden wir über KI.“</p><cite>KI &amp; Tonic, Folge 29</cite></blockquote>
-      <p>Aber Vorsicht vor dem Umkehrschluss, man müsse erst alles aufräumen. Dieselben Hosts sagen einige Folgen später: „Traut euch in den KI-Markt rein.“ Die erfolgreichen Beispiele im Material beginnen nicht mit einem großen Aufräumprojekt, sondern mit <strong>einem</strong> Prozess, der klar genug ist, um ihn umzubauen. Lauda, ein Mittelständler mit rund 630 Beschäftigten, erwartet aus seinen KI-Projekten nach eigener Rechnung „1,62 Millionen Euro jährlich nach Abzug der Kosten“ (AI FIRST, Folge 20).</p>
+      <p>Die Hosts von KI &amp; Tonic, einem Podcast mit Praxistipps für den Mittelstand, beschreiben die richtige Reihenfolge als Pyramide:</p>
+      <blockquote><p>„Ganz unten haben wir die Standardisierung, eins oben drüber haben wir die Prozessgestaltung, dann kommt die Digitalisierung und erst dann reden wir über KI.“</p><cite>KI &amp; Tonic, #29</cite></blockquote>
+      <p>Man könnte daraus schließen, dass erst alles aufgeräumt sein muss, bevor KI ein Thema wird. So meinen es dieselben Hosts aber nicht. Ein halbes Jahr später sagen sie: „Traut euch in den KI-Markt rein.“</p>
+      <p>Die Beispiele, die in den Gesprächen funktionieren, beginnen nicht mit einem großen Aufräumprojekt. Sie beginnen mit einem einzigen Prozess, der klar genug ist, um ihn umzubauen. Florian Grunwald, IT-Direktor beim Mittelständler Lauda mit 630 Beschäftigten, rechnet im AI FIRST Podcast aus den KI-Projekten seines Hauses mit einer Einsparung von „1,62 Millionen Euro jährlich nach Abzug der Kosten“.</p>
 
-      <h2>3. Irgendjemand muss es verantworten</h2>
-      <p>„KI scheitert selten am Modell, fast immer an der Organisation“, heißt eine Folge des Venture AI Podcasts. Fast jede Folge landet früher oder später bei derselben Frage: Wer ist eigentlich zuständig?</p>
-      <p>Die Antwort fällt für den Mittelstand nüchterner aus als für Konzerne. Tobias Zwingmann rät im AI FIRST Podcast:</p>
-      <p class="report-voice">Stimme aus der Praxis</p>
-      <blockquote><p>„Unternehmen, die … im Mittelstandsumfeld sind, würde ich immer empfehlen, dass man zumindest irgendwie eine Koordinationsstelle hat, die so ein bisschen Überblick behält … Aber man muss jetzt nicht irgendwie drei Data Scientists einstellen.“</p><cite>Tobias Zwingmann, Rapid AI, im AI FIRST Podcast, Folge 28</cite></blockquote>
-      <p>Gemeint ist keine neue Abteilung, sondern eine Person mit Mandat: jemand, der Prioritäten setzt, den ersten Prozess durchzieht und berichtet, was er gebracht hat. Ob diese Person aus dem eigenen Haus kommt, auf Zeit dazukommt oder fest eingestellt wird, ist zweitrangig. Entscheidend ist, dass es sie gibt.</p>
+      <h2>Irgendjemand muss es verantworten</h2>
+      <p>Eine Folge des Venture AI Podcasts heißt „KI scheitert selten am Modell, fast immer an der Organisation“. Der Titel könnte über vielen Gesprächen stehen. Früher oder später landen sie bei derselben Frage: Wer ist eigentlich zuständig?</p>
+      <p>Für den Mittelstand fällt die Antwort nüchterner aus, als man erwarten würde. Tobias Zwingmann, Managing Partner von RAPYD AI, rät im AI FIRST Podcast:</p>
+      <blockquote><p>„Unternehmen, die … im Mittelstandsumfeld sind, würde ich immer empfehlen, dass man zumindest irgendwie eine Koordinationsstelle hat, die so ein bisschen Überblick behält … Aber man muss jetzt nicht irgendwie drei Data Scientists einstellen.“</p><cite>Tobias Zwingmann im AI FIRST Podcast</cite></blockquote>
+      <p>Gemeint ist keine neue Abteilung, sondern eine Person mit Mandat. Jemand, der Prioritäten setzt, den ersten Prozess durchzieht und berichtet, was er gebracht hat. Ob diese Person aus dem eigenen Haus kommt, auf Zeit dazukommt oder neu eingestellt wird, ist zweitrangig. Wichtig ist, dass es sie gibt.</p>
 
-      <h2>4. Menschen mitnehmen: Akzeptanz entsteht am eigenen Arbeitsfall</h2>
-      <p>42&#8239;Prozent der KI-Anwender nennen fehlende Akzeptanz der Beschäftigten als Hemmnis. 66&#8239;Prozent schätzen die KI-Kompetenz ihrer Leute als gering ein.<sup><a href="#q1">1</a></sup> Gleichzeitig ist die Lösung, die Unternehmen am häufigsten wählen, die Schulung: 70&#8239;Prozent bieten inzwischen eine an.<sup><a href="#q1">1</a></sup></p>
-      <p>In den Gesprächen zeigt sich ein Unterschied, den Schulungszahlen nicht abbilden. Wo Einführungen funktionieren, haben Menschen KI an <strong>ihrer eigenen</strong> Aufgabe erlebt, mit jemandem an ihrer Seite. In den Mittelstandsfolgen ist immer wieder von internen Botschaftern die Rede und von kleinen Pilotgruppen, die ein Werkzeug zuerst an echter Arbeit ausprobieren. IKA Hofmann hat dafür bewusst eine kleine Testgruppe ausgewählt, „vielleicht so 20 Leute“ (AI FIRST, Folge 16).</p>
-      <aside class="report-practice" aria-label="Aus meiner Praxis">
-        <p class="report-voice">Aus meiner Praxis</p>
-        <p>Bei Bibel TV habe ich für den Zuschauerservice einen KI-Assistenten eingeführt, der Antworten auf Briefe, E-Mails und Nachrichten im Ton des Hauses vorformuliert. Jede Antwort prüft und verschickt weiterhin ein Mensch. Die Nutzung war freiwillig, mit Rückendeckung der Abteilungsleitung: erst eine Woche zum Selbstausprobieren, dann Einzelgespräche am eigenen Fall.</p>
-        <p>Komplexe Briefe mit mehreren Anliegen entstehen seitdem in Minuten statt Stunden, und Aushilfen schreiben vom ersten Tag an im Ton des Hauses. Kolleginnen und Kollegen, die anfangs skeptisch waren, kamen von sich aus zurück, nachdem sie den Assistenten an ihrem schwierigsten Fall ausprobiert hatten.</p>
+      <h2>Menschen mitnehmen</h2>
+      <p>Die größte Hürde benennen die Unternehmen selbst. 42&#8239;Prozent der KI-Anwender sagen, ihren Beschäftigten fehle die Akzeptanz. Zwei Drittel halten die KI-Kompetenz ihrer Leute für gering. Die naheliegende Antwort ist eine Schulung, und 70&#8239;Prozent bieten inzwischen eine an.<sup><a href="#q1">1</a></sup></p>
+      <p>In den Gesprächen zeigt sich etwas, das diese Zahlen nicht abbilden. Wo Einführungen gelingen, haben die Leute KI an ihrer eigenen Aufgabe erlebt, mit jemandem an ihrer Seite. Immer wieder ist von internen Botschaftern die Rede und von kleinen Pilotgruppen, die ein Werkzeug zuerst an echter Arbeit ausprobieren. Aram Azimi, Innovation Manager beim Personaldienstleister IKA Hofmann, empfiehlt im AI FIRST Podcast, eine solche Gruppe bewusst gemischt zusammenzustellen, aus der Zentrale und aus den Niederlassungen, und sie klein zu halten: „vielleicht so 20 Leute“.</p>
+      <aside class="report-practice" aria-label="Aus meiner Praxis: Bibel TV">
+        <p class="report-voice">Aus meiner Praxis: Bibel TV</p>
+        <p>Bibel TV ist ein christlicher Fernsehsender, der sich gerade vom klassischen Fernsehen zu Apps und Streaming weiterentwickelt. Dort habe ich als Head of Product Design auch eine Aufgabe übernommen, die mit Design zunächst wenig zu tun hat: dem Zuschauerservice die Arbeit zu erleichtern.</p>
+        <p>Der Zuschauerservice beantwortet Briefe, E-Mails und Nachrichten, ein großer Teil davon kommt noch mit der Post. Manche Briefe enthalten mehrere Anliegen auf einmal, und jede Antwort soll im Ton des Hauses geschrieben sein. Ich habe dafür einen KI-Assistenten eingeführt, der Antworten nach den Formulierungen des Service-Handbuchs vorformuliert. Er ist bewusst an nichts angebunden. Ein Mensch liest den Brief, entscheidet, ob er den Assistenten nutzt, und prüft und verschickt jede Antwort selbst.</p>
+        <p>Entscheidend war die Einführung. Zuerst habe ich mich mit der Abteilungsleitung abgestimmt. Die Nutzung war freiwillig: eine Woche zum Ausprobieren, danach Einzelgespräche am eigenen Fall.</p>
+        <p>Antworten auf komplexe Briefe entstehen seitdem in Minuten statt Stunden. Aushilfen schreiben vom ersten Tag an im Ton des Hauses. Und Kolleginnen und Kollegen, die anfangs skeptisch waren, kamen von sich aus zurück, nachdem sie den Assistenten an ihrem schwierigsten Fall ausprobiert hatten.</p>
       </aside>
 
-      <h2>5. Gemessen wird zu spät – oder gar nicht</h2>
-      <p>In einer groben Auszählung der Podcastfolgen spricht etwa die Hälfte der Konzernfolgen darüber, wie der Nutzen von KI gemessen wird. Bei Mittelständlern und kleineren Unternehmen ist es ungefähr ein Drittel.<sup><a href="#q4">4</a></sup> Wo gemessen wird, wird es konkret: Zeit pro Vorgang, Anteil der täglichen Nutzer, eingesparte Kosten.</p>
-      <p>Das passt zur Selbsteinschätzung in der Bitkom-Studie: 45&#8239;Prozent der KI-Anwender sehen einen messbaren Beitrag zum Unternehmenserfolg.<sup><a href="#q1">1</a></sup> Das heißt umgekehrt: Mehr als die Hälfte sieht ihn nicht – oder misst ihn nicht.</p>
+      <h2>Gemessen wird zu spät oder gar nicht</h2>
+      <p>Bleibt die Frage, ob sich das alles lohnt. 45&#8239;Prozent der KI-Anwender sehen einen messbaren Beitrag zum Unternehmenserfolg.<sup><a href="#q1">1</a></sup> Mehr als die Hälfte sieht ihn also nicht, oder misst ihn nicht.</p>
+      <p>In den Podcasts fällt auf, wie unterschiedlich darüber gesprochen wird. In den Folgen mit Konzernen geht es ungefähr in jeder zweiten darum, wie man den Nutzen misst. In den Folgen mit Mittelständlern und kleineren Unternehmen ist es etwa jede dritte. Das ist eine grobe Auszählung und keine Statistik, aber die Richtung ist deutlich. Und wo gemessen wird, wird es sofort konkret: Zeit pro Vorgang, Anteil der Leute, die KI täglich nutzen, eingesparte Kosten.</p>
 
       <h2>Was daraus folgt</h2>
-      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Studien und Podcastgespräche legen eine einfache Reihenfolge nahe:</p>
+      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Aus den Zahlen und den Gesprächen ergibt sich eine einfache Reihenfolge:</p>
       <ol class="report-steps-diagram" aria-label="Vier Schritte zur genutzten KI">
-        <li><strong>Einen Prozess wählen</strong><span>Nicht eine Strategie, sondern einen Ablauf, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen.</span></li>
+        <li><strong>Einen Prozess wählen</strong><span>Keine Strategie, sondern einen Ablauf, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen.</span></li>
         <li><strong>Eine Person verantwortlich machen</strong><span>Mit Mandat und Zeit. Intern, auf Zeit oder fest eingestellt.</span></li>
         <li><strong>Am eigenen Fall befähigen</strong><span>Die Leute probieren KI an ihrer Arbeit aus, mit Begleitung statt nur im Schulungsraum.</span></li>
         <li><strong>Vorher festlegen, was zählt</strong><span>Zeit pro Vorgang, Nutzung, Kosten. Gemessen vor dem Start und danach.</span></li>
         <li class="report-step-end">Nach 90 Tagen: Ergebnis prüfen, dann den nächsten Prozess angehen.</li>
       </ol>
-      <p class="report-closing">Kurz gesagt: KI-Einführung ist Arbeit mit Menschen, nicht mit Lizenzen.</p>
+      <p class="report-closing">KI einzuführen ist Arbeit mit Menschen, nicht mit Lizenzen.</p>
       <div class="report-cta">
-        <p>Genau so arbeite ich. Wenn Sie wissen wollen, wo das bei Ihnen ansetzen könnte:</p>
-        <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">30 Minuten Erstgespräch buchen<span aria-hidden="true"> ↗</span></a>
+        <p>So arbeite ich. Wenn Sie wissen möchten, wo das bei Ihnen ansetzen könnte, sprechen wir 30 Minuten darüber.</p>
+        <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">Erstgespräch buchen<span aria-hidden="true"> ↗</span></a>
         <p class="report-cta-alt">Oder schreiben Sie mir: <a href="mailto:tobias@treppmann.de?subject=Report%20KI-Einf%C3%BChrung">tobias@treppmann.de</a> · <a href="/">Wie ich arbeite</a></p>
       </div>
 
@@ -145,24 +147,33 @@ const structuredData = {
 
       <div class="report-author">
         <img src="/images/tobias-treppmann.jpg" alt="Tobias Treppmann" width="84" height="84" loading="lazy" />
-        <p><strong>Tobias Treppmann</strong> bringt KI in die Prozesse mittelständischer Unternehmen – so, dass die Leute sie nutzen. Erfahrung aus Produkt- und Designführung bei Bibel TV, ChurchDesk und Ninox. <a href="/">Mehr über meine Arbeit</a></p>
+        <p><strong>Tobias Treppmann</strong> bringt KI in die Arbeit von Unternehmen, und zwar so, dass die Leute sie auch nutzen. Er kommt aus der Produkt- und Designführung, unter anderem bei Bibel TV, ChurchDesk und Ninox, und baut die Systeme, die er einführt, selbst mit. <a href="/">Mehr über seine Arbeit</a></p>
       </div>
 
-      <h2>Methode und Grenzen</h2>
-      <ul class="report-notes">
-        <li><strong>Podcasts:</strong> 106 Folgen AI FIRST (Interviews vor allem mit KI-Verantwortlichen größerer Unternehmen), 37 Folgen Venture AI Podcast seit Oktober 2025 (Mittelstand, Geschäftsführer, Berater; Essay- und Themenfolgen ohne Bezug zur Unternehmenspraxis ausgeschlossen) und alle 44 Folgen KI &amp; Tonic (Praxistipps für den Mittelstand, meist von den Hosts selbst). Transkribiert mit Whisper, strukturiert ausgewertet mit einem Sprachmodell, alle Zitate von Hand gegen das Transkript geprüft. Zitate sind Transkripte gesprochener Sprache und leicht geglättet; Auslassungen sind markiert.</li>
-        <li><strong>Grenzen:</strong> Podcastgäste sind keine Stichprobe. Wer dort spricht, ist meist stolz auf ein Projekt oder verkauft eine Leistung. Die Zählungen in Abschnitt 5 sind grobe Stichwortauswertungen und als Tendenz zu lesen, nicht als Statistik.</li>
-        <li><strong>Studien:</strong> Bitkom (603 und 604 Unternehmen) und TÜV-Verband (500 Unternehmen), jeweils repräsentativ für Unternehmen ab 20 Beschäftigten. Die Anteile unterscheiden sich je nach Grundgesamtheit und Fragestellung. Sie sind deshalb jeweils mit Quelle angegeben und nicht miteinander verrechnet.</li>
-      </ul>
+      <section class="report-about" aria-labelledby="about-title">
+        <h2 id="about-title">Über diesen Report</h2>
+        <p>Die Zahlen stammen aus drei repräsentativen Befragungen von Unternehmen ab 20 Beschäftigten, zwei vom Bitkom und einer vom TÜV-Verband. Weil Fragen und Grundgesamtheiten sich unterscheiden, stehen die Ergebnisse jeweils für sich und sind nicht miteinander verrechnet.</p>
+        <p>Die Stimmen aus der Praxis stammen aus 187 Podcastfolgen: allen 106 Folgen von AI FIRST, in denen vor allem KI-Verantwortliche größerer Unternehmen zu Gast sind, allen 44 Folgen von KI &amp; Tonic und 37 Folgen des Venture AI Podcasts seit Oktober 2025, ohne die Essay- und Themenfolgen. Die Folgen wurden automatisch verschriftlicht und nach wiederkehrenden Themen ausgewertet. Jedes Zitat habe ich im Original nachgeprüft. Es ist gesprochene Sprache, leicht geglättet; Auslassungen sind markiert.</p>
+        <p>Podcastgäste sind keine repräsentative Auswahl. Wer dort spricht, ist meist stolz auf ein Projekt oder bietet eine Leistung an. Die Gespräche zeigen deshalb, wie Einführungen aussehen können, nicht, wie verbreitet etwas ist. Das leisten die Studien.</p>
 
-      <h2>Quellen</h2>
-      <ol class="report-sources">
-        <li id="q1">Bitkom: <a href="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI" target="_blank" rel="noopener">Erstmals nutzt die Mehrheit der Unternehmen KI</a>, 14. September 2026. 603 Unternehmen ab 20 Beschäftigten, repräsentativ.</li>
-        <li id="q2">TÜV-Verband: <a href="https://www.tuev-verband.de/studien/tuev-weiterbildungsstudie-2026" target="_blank" rel="noopener">TÜV-Weiterbildungsstudie 2026</a>, 28. April 2026. Forsa, 500 Unternehmen ab 20 Beschäftigten.</li>
-        <li id="q3">Bitkom: <a href="https://www.bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-Schatten-KI" target="_blank" rel="noopener">Beschäftigte nutzen vermehrt Schatten-KI</a>, 21. Oktober 2025. 604 Unternehmen ab 20 Beschäftigten.</li>
-        <li id="q4">Eigene Auswertung von 187 Podcastfolgen: AI FIRST, Venture AI Podcast, KI &amp; Tonic. Oktober 2026.</li>
-        <li>Ergänzend: KfW Research, Fokus Nr. 533, Februar 2026; IAB-Kurzbericht 08/2026.</li>
-      </ol>
+        <h3>Studien</h3>
+        <ol class="report-sources">
+          <li id="q1">Bitkom (2026): <a href="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI" target="_blank" rel="noopener">Erstmals nutzt die Mehrheit der Unternehmen KI</a>. Presseinformation vom 14. September 2026. Befragung von 603 Unternehmen ab 20 Beschäftigten.</li>
+          <li id="q2">TÜV-Verband (2026): <a href="https://www.tuev-verband.de/studien/tuev-weiterbildungsstudie-2026" target="_blank" rel="noopener">TÜV-Weiterbildungsstudie 2026</a>. Veröffentlicht am 28. April 2026. Forsa-Befragung von 500 Unternehmen ab 20 Beschäftigten.</li>
+          <li id="q3">Bitkom (2025): <a href="https://www.bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-Schatten-KI" target="_blank" rel="noopener">Beschäftigte nutzen vermehrt Schatten-KI</a>. Presseinformation vom 21. Oktober 2025. Befragung von 604 Unternehmen ab 20 Beschäftigten.</li>
+        </ol>
+
+        <h3>Zitierte Podcastfolgen</h3>
+        <ul class="report-sources report-sources-plain">
+          <li>AI FIRST Podcast (Felix Schlenther): <a href="https://podcasters.spotify.com/pod/show/felix-schlenther/episodes/Make-AI-Fun-Again-6-Learnings-fr-produktive-KI-Nutzung-im-Unternehmen-e2tssee" target="_blank" rel="noopener">Make AI Fun Again: 6 Learnings für produktive KI-Nutzung im Unternehmen</a>, mit Aram Azimi, IKA Hofmann. 24. Januar 2025.</li>
+          <li>AI FIRST Podcast: <a href="https://podcasters.spotify.com/pod/show/felix-schlenther/episodes/Wie-bringe-ich-76-meiner-Mitarbeiter-dazu--KI-produktiv-zu-nutzen--Florian-Grunwald--Director-IT--LAUDA-e2v52ih" target="_blank" rel="noopener">Wie bringe ich 76&#8239;% meiner Mitarbeiter dazu, KI produktiv zu nutzen?</a>, mit Florian Grunwald, Lauda. 21. Februar 2025.</li>
+          <li>AI FIRST Podcast: <a href="https://podcasters.spotify.com/pod/show/felix-schlenther/episodes/Wie-findet-man-profitable-KI-Use-Cases-und-setzt-sie-erfolgreich-um--Tobias-Zwingmann--Managing-Partner--RAPYD-AI-e31lphg" target="_blank" rel="noopener">Wie findet man profitable KI Use Cases und setzt sie erfolgreich um?</a>, mit Tobias Zwingmann, RAPYD AI. 18. April 2025.</li>
+          <li>Venture AI Podcast (Norman Müller): <a href="https://www.ventureaistack.com/p/warum-ki-ohne-methode-innovation" target="_blank" rel="noopener">Warum KI ohne Methode Innovation lähmt</a> (#1259), mit den Gründern von Ideastream.io. 12. Februar 2026.</li>
+          <li>Venture AI Podcast: <a href="https://www.ventureaistack.com/p/ki-scheitert-selten-am-modell-fast" target="_blank" rel="noopener">KI scheitert selten am Modell, fast immer an der Organisation</a> (#1266). 2. April 2026.</li>
+          <li>KI &amp; Tonic: <a href="https://podcasters.spotify.com/pod/show/onestoptransformation-ag8/episodes/29-5-Hypothesen-fr-2026-So-verndert-KI-dein-Business-im-neuen-Jahr-e3cij9h" target="_blank" rel="noopener">#29 5 Hypothesen für 2026</a>. 19. Dezember 2025.</li>
+          <li>KI &amp; Tonic: <a href="https://podcasters.spotify.com/pod/show/onestoptransformation-ag8/episodes/40-KI-im-Unternehmen-einfhren--der-komplette-Fahrplan-von-Schritt-0-bis-zum-Rollout-e3m6hjh" target="_blank" rel="noopener">#40 KI im Unternehmen einführen – der komplette Fahrplan von Schritt 0 bis zum Rollout</a>. 17. Juli 2026.</li>
+        </ul>
+      </section>
     </article>
   </main>
 
