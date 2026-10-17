@@ -545,3 +545,7 @@ footer a { color: var(--white); }
   .report-steps-diagram li + li { border-left: 1px solid var(--line); border-top: 0; }
   .report-chart, .report-takeaways { padding: 1.2rem; }
 }
+.report-practice { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: rgba(255,97,56,.08); border-left: 3px solid var(--signal); }
+.report-practice .report-voice { margin: 0 0 .6rem !important; color: var(--signal); }
+.report-practice p:last-child { margin-bottom: 0; }
+.report-article .report-closing { font-size: 1.25rem; color: var(--ink); font-weight: 500; margin-top: 1.4rem; }

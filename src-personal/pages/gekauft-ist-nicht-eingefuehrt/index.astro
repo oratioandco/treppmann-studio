@@ -5,7 +5,7 @@ import BarChart from '../../components/BarChart.astro';
 
 const url = 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/';
 const title = 'Gekauft ist nicht eingeführt';
-const description = 'Was Studien und 187 Praxisgespräche über KI im Mittelstand zeigen: fünf Muster zwischen gekaufter Lizenz und genutzter KI.';
+const description = 'Was Studien und 187 ausgewertete Podcastgespräche über KI im Mittelstand zeigen: fünf Muster zwischen gekaufter Lizenz und genutzter KI.';
 const bookUrl = 'https://fantastical.app/tobiastreppmann';
 const structuredData = {
   '@context': 'https://schema.org',
@@ -35,7 +35,7 @@ const structuredData = {
     <article class="section-shell legal-article report-article">
       <p class="section-label">Report · Oktober 2026</p>
       <h1>Gekauft ist nicht eingeführt</h1>
-      <p class="report-subtitle">Was Studien und 187 Praxisgespräche über KI im Mittelstand zeigen</p>
+      <p class="report-subtitle">Was Studien und 187 ausgewertete Podcastgespräche über KI im Mittelstand zeigen</p>
       <p class="report-byline">Tobias Treppmann · 17. Oktober 2026 · 6 Minuten Lesezeit</p>
 
       <h2>Das Wichtigste vorweg</h2>
@@ -53,7 +53,7 @@ const structuredData = {
         sourceHref="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI"
       />
       <blockquote><p>„Wer nur eine Lizenz kauft, hat KI eingekauft, aber noch nichts verändert.“<sup><a href="#q1">1</a></sup></p><cite>Ralf Wintergerst, Präsident des Bitkom</cite></blockquote>
-      <p>Diese Lücke zwischen <em>gekauft</em> und <em>eingeführt</em> ist das Thema dieses Reports. Grundlage sind drei repräsentative Unternehmensbefragungen von Bitkom und TÜV-Verband und 187 Praxisgespräche aus drei deutschsprachigen Podcasts, in denen KI-Verantwortliche, Geschäftsführer und Berater über ihre Arbeit sprechen. Die Studien zeigen, <em>wie verbreitet</em> ein Problem ist. Die Gespräche zeigen, <em>wie es in der Praxis aussieht</em>.</p>
+      <p>Diese Lücke zwischen <em>gekauft</em> und <em>eingeführt</em> ist das Thema dieses Reports. Grundlage sind drei repräsentative Unternehmensbefragungen von Bitkom und TÜV-Verband und 187 Gespräche aus drei deutschsprachigen Podcasts, die ich transkribiert und ausgewertet habe. Darin sprechen KI-Verantwortliche, Geschäftsführer und Berater über ihre Arbeit. Die Studien zeigen, <em>wie verbreitet</em> ein Problem ist. Die Gespräche zeigen, <em>wie es in der Praxis aussieht</em>.</p>
 
       <aside class="report-takeaways" aria-labelledby="takeaways-title">
         <h2 id="takeaways-title">Auf einen Blick</h2>
@@ -61,7 +61,7 @@ const structuredData = {
           <li><strong>Gekauft ist nicht eingeführt.</strong> Die Mehrheit nutzt KI, aber fast niemand schöpft sie aus.</li>
           <li><strong>Das Geld steckt nicht in der Lizenz,</strong> sondern in Daten, Integration und Infrastruktur.</li>
           <li><strong>Ohne verantwortliche Person bleibt KI ein Experiment.</strong> Im Mittelstand braucht es dafür keine Abteilung.</li>
-          <li><strong>Akzeptanz entsteht am eigenen Arbeitsfall,</strong> nicht durch Ankündigung allein.</li>
+          <li><strong>Menschen mitnehmen heißt: am eigenen Arbeitsfall befähigen,</strong> nicht nur ankündigen und schulen.</li>
           <li><strong>Wer den Nutzen nicht vorher festlegt, kann ihn später nicht zeigen.</strong></li>
         </ol>
       </aside>
@@ -112,16 +112,21 @@ const structuredData = {
       <blockquote><p>„Unternehmen, die … im Mittelstandsumfeld sind, würde ich immer empfehlen, dass man zumindest irgendwie eine Koordinationsstelle hat, die so ein bisschen Überblick behält … Aber man muss jetzt nicht irgendwie drei Data Scientists einstellen.“</p><cite>Tobias Zwingmann, Rapid AI, im AI FIRST Podcast, Folge 28</cite></blockquote>
       <p>Gemeint ist keine neue Abteilung, sondern eine Person mit Mandat: jemand, der Prioritäten setzt, den ersten Prozess durchzieht und berichtet, was er gebracht hat. Ob diese Person aus dem eigenen Haus kommt, auf Zeit dazukommt oder fest eingestellt wird, ist zweitrangig. Entscheidend ist, dass es sie gibt.</p>
 
-      <h2>4. Akzeptanz entsteht durch Erfahrung, nicht durch Ankündigung</h2>
+      <h2>4. Menschen mitnehmen: Akzeptanz entsteht am eigenen Arbeitsfall</h2>
       <p>42&#8239;Prozent der KI-Anwender nennen fehlende Akzeptanz der Beschäftigten als Hemmnis. 66&#8239;Prozent schätzen die KI-Kompetenz ihrer Leute als gering ein.<sup><a href="#q1">1</a></sup> Gleichzeitig ist die Lösung, die Unternehmen am häufigsten wählen, die Schulung: 70&#8239;Prozent bieten inzwischen eine an.<sup><a href="#q1">1</a></sup></p>
       <p>In den Gesprächen zeigt sich ein Unterschied, den Schulungszahlen nicht abbilden. Wo Einführungen funktionieren, haben Menschen KI an <strong>ihrer eigenen</strong> Aufgabe erlebt, mit jemandem an ihrer Seite. In den Mittelstandsfolgen ist immer wieder von internen Botschaftern die Rede und von kleinen Pilotgruppen, die ein Werkzeug zuerst an echter Arbeit ausprobieren. IKA Hofmann hat dafür bewusst eine kleine Testgruppe ausgewählt, „vielleicht so 20 Leute“ (AI FIRST, Folge 16).</p>
+      <aside class="report-practice" aria-label="Aus meiner Praxis">
+        <p class="report-voice">Aus meiner Praxis</p>
+        <p>Bei Bibel TV habe ich für den Zuschauerservice einen KI-Assistenten eingeführt, der Antworten auf Briefe, E-Mails und Nachrichten im Ton des Hauses vorformuliert. Jede Antwort prüft und verschickt weiterhin ein Mensch. Die Nutzung war freiwillig, mit Rückendeckung der Abteilungsleitung: erst eine Woche zum Selbstausprobieren, dann Einzelgespräche am eigenen Fall.</p>
+        <p>Komplexe Briefe mit mehreren Anliegen entstehen seitdem in Minuten statt Stunden, und Aushilfen schreiben vom ersten Tag an im Ton des Hauses. Kolleginnen und Kollegen, die anfangs skeptisch waren, kamen von sich aus zurück, nachdem sie den Assistenten an ihrem schwierigsten Fall ausprobiert hatten.</p>
+      </aside>
 
       <h2>5. Gemessen wird zu spät – oder gar nicht</h2>
       <p>In einer groben Auszählung der Podcastfolgen spricht etwa die Hälfte der Konzernfolgen darüber, wie der Nutzen von KI gemessen wird. Bei Mittelständlern und kleineren Unternehmen ist es ungefähr ein Drittel.<sup><a href="#q4">4</a></sup> Wo gemessen wird, wird es konkret: Zeit pro Vorgang, Anteil der täglichen Nutzer, eingesparte Kosten.</p>
       <p>Das passt zur Selbsteinschätzung in der Bitkom-Studie: 45&#8239;Prozent der KI-Anwender sehen einen messbaren Beitrag zum Unternehmenserfolg.<sup><a href="#q1">1</a></sup> Das heißt umgekehrt: Mehr als die Hälfte sieht ihn nicht – oder misst ihn nicht.</p>
 
       <h2>Was daraus folgt</h2>
-      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Studien und Praxisgespräche legen eine einfache Reihenfolge nahe:</p>
+      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Studien und Podcastgespräche legen eine einfache Reihenfolge nahe:</p>
       <ol class="report-steps-diagram" aria-label="Vier Schritte zur genutzten KI">
         <li><strong>Einen Prozess wählen</strong><span>Nicht eine Strategie, sondern einen Ablauf, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen.</span></li>
         <li><strong>Eine Person verantwortlich machen</strong><span>Mit Mandat und Zeit. Intern, auf Zeit oder fest eingestellt.</span></li>
@@ -129,6 +134,7 @@ const structuredData = {
         <li><strong>Vorher festlegen, was zählt</strong><span>Zeit pro Vorgang, Nutzung, Kosten. Gemessen vor dem Start und danach.</span></li>
         <li class="report-step-end">Nach 90 Tagen: Ergebnis prüfen, dann den nächsten Prozess angehen.</li>
       </ol>
+      <p class="report-closing">Kurz gesagt: KI-Einführung ist Arbeit mit Menschen, nicht mit Lizenzen.</p>
       <div class="report-cta">
         <p>Genau so arbeite ich. Wenn Sie wissen wollen, wo das bei Ihnen ansetzen könnte:</p>
         <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">30 Minuten Erstgespräch buchen<span aria-hidden="true"> ↗</span></a>
@@ -139,7 +145,7 @@ const structuredData = {
 
       <div class="report-author">
         <img src="/images/tobias-treppmann.jpg" alt="Tobias Treppmann" width="84" height="84" loading="lazy" />
-        <p><strong>Tobias Treppmann</strong> bringt KI in die Prozesse mittelständischer Unternehmen – so, dass die Leute sie nutzen. Head of Product Design bei Bibel TV, davor Head of Platform and Design bei ChurchDesk und Head of Product Design bei Ninox. <a href="/">Mehr über meine Arbeit</a></p>
+        <p><strong>Tobias Treppmann</strong> bringt KI in die Prozesse mittelständischer Unternehmen – so, dass die Leute sie nutzen. Erfahrung aus Produkt- und Designführung bei Bibel TV, ChurchDesk und Ninox. <a href="/">Mehr über meine Arbeit</a></p>
       </div>
 
       <h2>Methode und Grenzen</h2>
