@@ -113,6 +113,22 @@ const structuredData = {
       <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p></div>
     </section>
 
+    <section class="why-section section-dark" aria-labelledby="why-title">
+      <div class="section-shell leadership-heading leadership-heading-dark">
+        <p class="section-label">{c.why.label}</p>
+        <div><h2 id="why-title">{c.why.title}</h2></div>
+      </div>
+      <div class="section-shell why-grid">
+        {c.why.items.map(([figure, text, source, url]) => (
+          <article>
+            <strong>{figure}</strong>
+            <p>{text}</p>
+            <a href={url} target="_blank" rel="noopener">{source}<span aria-hidden="true"> ↗</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+
     <section class="proof-section section-paper" id="proof">
       <div class="section-shell leadership-heading">
         <p class="section-label">{c.proof.label}</p>
@@ -159,11 +175,15 @@ const structuredData = {
             <p class="engagement-meta">{item.meta}</p>
             <p>{item.body}</p>
             <div class="engagement-links">
-              <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> ↗</span></a>
+              <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> →</span></a>
               {'secondary' in item && <a href={item.secondaryHref} download>{item.secondary}<span aria-hidden="true"> ↓</span></a>}
             </div>
           </article>
         ))}
+      </div>
+      <div class="section-shell requirements">
+        <h3>{c.formats.requirements.title}</h3>
+        <ul>{c.formats.requirements.items.map((item) => <li>{item}</li>)}</ul>
       </div>
       <div class="section-shell section-cta">
         <a class="button button-ink" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}<span aria-hidden="true"> ↗</span></a>
