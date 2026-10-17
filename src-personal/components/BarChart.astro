@@ -1,0 +1,20 @@
+---
+// Horizontal percentage bars. Values are shown as printed in the source; never summed.
+interface Row { label: string; value: number; highlight?: boolean }
+interface Props { title: string; rows: Row[]; source: string; sourceHref: string; note?: string }
+const { title, rows, source, sourceHref, note } = Astro.props;
+const nb = ' ';
+---
+<figure class="report-chart">
+  <figcaption class="report-chart-title">{title}</figcaption>
+  <ul class="report-bars">
+    {rows.map((r) => (
+      <li class={r.highlight ? 'is-highlight' : ''}>
+        <span class="report-bar-label">{r.label}</span>
+        <span class="report-bar-track" aria-hidden="true"><span class="report-bar-fill" style={`width:${Math.max(r.value, 0.6)}%`}></span></span>
+        <span class="report-bar-value">{r.value}{nb}%</span>
+      </li>
+    ))}
+  </ul>
+  <p class="report-chart-source">{note && <>{note} </>}Quelle: <a href={sourceHref} target="_blank" rel="noopener">{source}</a></p>
+</figure>

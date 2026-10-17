@@ -1,10 +1,11 @@
 ---
 import Layout from '../../../src/layouts/Layout.astro';
 import ReportGate from '../../components/ReportGate.astro';
+import BarChart from '../../components/BarChart.astro';
 
 const url = 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/';
 const title = 'Gekauft ist nicht eingeführt';
-const description = 'Was 187 Podcastfolgen und fünf Studien über KI im Mittelstand zeigen: fünf Muster zwischen gekaufter Lizenz und genutzter KI.';
+const description = 'Was Studien und 187 Praxisgespräche über KI im Mittelstand zeigen: fünf Muster zwischen gekaufter Lizenz und genutzter KI.';
 const bookUrl = 'https://fantastical.app/tobiastreppmann';
 const structuredData = {
   '@context': 'https://schema.org',
@@ -34,31 +35,81 @@ const structuredData = {
     <article class="section-shell legal-article report-article">
       <p class="section-label">Report · Oktober 2026</p>
       <h1>Gekauft ist nicht eingeführt</h1>
-      <p class="report-subtitle">Was 187 Podcastfolgen und fünf Studien über KI im Mittelstand zeigen</p>
+      <p class="report-subtitle">Was Studien und 187 Praxisgespräche über KI im Mittelstand zeigen</p>
       <p class="report-byline">Tobias Treppmann · 17. Oktober 2026 · 6 Minuten Lesezeit</p>
 
       <h2>Das Wichtigste vorweg</h2>
       <p class="report-lead">57&#8239;Prozent der deutschen Unternehmen ab 20 Beschäftigten setzen inzwischen KI ein. Doch von denen, die KI nutzen, sagt kein einziges, es schöpfe das Potenzial voll aus. 28&#8239;Prozent nutzen es nach eigener Einschätzung wenig, 59&#8239;Prozent überhaupt nicht.<sup><a href="#q1">1</a></sup></p>
-      <p>Bitkom-Präsident Ralf Wintergerst hat es so zusammengefasst:</p>
-      <blockquote><p>„Wer nur eine Lizenz kauft, hat KI eingekauft, aber noch nichts verändert.“<sup><a href="#q1">1</a></sup></p></blockquote>
-      <p>Diese Lücke zwischen <em>gekauft</em> und <em>eingeführt</em> ist das Thema dieses Reports. Ich habe dafür 187 Folgen aus drei deutschsprachigen Podcasts ausgewertet, in denen KI-Verantwortliche, Geschäftsführer und Berater über ihre Praxis sprechen, und sie mit fünf aktuellen Studien abgeglichen. Fünf Muster tauchen immer wieder auf.</p>
+      <BarChart
+        title="Wie stark nutzen Unternehmen, die KI einsetzen, ihr Potenzial?"
+        rows={[
+          { label: 'Vollständig', value: 0 },
+          { label: 'Eher stark', value: 3 },
+          { label: 'Wenig', value: 28 },
+          { label: 'Überhaupt nicht', value: 59, highlight: true },
+        ]}
+        note="Selbsteinschätzung der KI-Anwender unter 603 Unternehmen ab 20 Beschäftigten."
+        source="Bitkom, September 2026"
+        sourceHref="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI"
+      />
+      <blockquote><p>„Wer nur eine Lizenz kauft, hat KI eingekauft, aber noch nichts verändert.“<sup><a href="#q1">1</a></sup></p><cite>Ralf Wintergerst, Präsident des Bitkom</cite></blockquote>
+      <p>Diese Lücke zwischen <em>gekauft</em> und <em>eingeführt</em> ist das Thema dieses Reports. Grundlage sind drei repräsentative Unternehmensbefragungen von Bitkom und TÜV-Verband und 187 Praxisgespräche aus drei deutschsprachigen Podcasts, in denen KI-Verantwortliche, Geschäftsführer und Berater über ihre Arbeit sprechen. Die Studien zeigen, <em>wie verbreitet</em> ein Problem ist. Die Gespräche zeigen, <em>wie es in der Praxis aussieht</em>.</p>
+
+      <aside class="report-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">Auf einen Blick</h2>
+        <ol>
+          <li><strong>Gekauft ist nicht eingeführt.</strong> Die Mehrheit nutzt KI, aber fast niemand schöpft sie aus.</li>
+          <li><strong>Das Geld steckt nicht in der Lizenz,</strong> sondern in Daten, Integration und Infrastruktur.</li>
+          <li><strong>Ohne verantwortliche Person bleibt KI ein Experiment.</strong> Im Mittelstand braucht es dafür keine Abteilung.</li>
+          <li><strong>Akzeptanz entsteht am eigenen Arbeitsfall,</strong> nicht durch Ankündigung allein.</li>
+          <li><strong>Wer den Nutzen nicht vorher festlegt, kann ihn später nicht zeigen.</strong></li>
+        </ol>
+      </aside>
 
       <h2>1. Eine Lizenz ist noch keine Einführung</h2>
-      <p>Die Zahlen passen zusammen, obwohl sie aus verschiedenen Erhebungen stammen. 56&#8239;Prozent der Unternehmen nutzen generative KI im Arbeitsalltag, aber nur 27&#8239;Prozent haben ihre Leute dazu geschult.<sup><a href="#q2">2</a></sup> In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Werkzeuge, oder die Geschäftsführung geht davon aus – aber nur knapp ein Viertel hat Regeln dafür.<sup><a href="#q3">3</a></sup></p>
+      <p>Die Zahlen passen zusammen, obwohl sie aus verschiedenen Erhebungen stammen. 56&#8239;Prozent der Unternehmen nutzen generative KI im Arbeitsalltag, aber nur 27&#8239;Prozent haben ihre Leute dazu geschult.<sup><a href="#q2">2</a></sup></p>
+      <BarChart
+        title="Nutzung läuft der Befähigung davon"
+        rows={[
+          { label: 'Nutzen generative KI im Arbeitsalltag', value: 56 },
+          { label: 'Haben Beschäftigte zu KI geschult', value: 27, highlight: true },
+        ]}
+        note="500 Unternehmen ab 20 Beschäftigten."
+        source="TÜV-Weiterbildungsstudie 2026 (Forsa)"
+        sourceHref="https://www.tuev-verband.de/studien/tuev-weiterbildungsstudie-2026"
+      />
+      <p>In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Werkzeuge, oder die Geschäftsführung geht davon aus – aber nur knapp ein Viertel hat Regeln dafür.<sup><a href="#q3">3</a></sup></p>
       <p>In den Podcasts klingt das drastischer. In einer Folge des Venture AI Podcasts mit den Gründern von Ideastream.io fällt über Unternehmen, die KI „eingeführt“ haben, der Satz:</p>
-      <blockquote><p>„Gar nichts haben die eingeführt. Die haben Lizenzen gekauft.“</p></blockquote>
+      <p class="report-voice">Stimme aus der Praxis</p>
+      <blockquote><p>„Gar nichts haben die eingeführt. Die haben Lizenzen gekauft.“</p><cite>Venture AI Podcast, Folge 1259, mit den Gründern von Ideastream.io</cite></blockquote>
       <p>Das Muster dahinter: Eine Lizenz löst kein Problem, sie schafft eine Möglichkeit. Ob daraus Nutzen wird, entscheidet sich in den Prozessen, in denen sie landet.</p>
 
       <h2>2. Erst der Prozess, dann das Werkzeug</h2>
       <p>Wo das Geld bei KI wirklich hingeht, zeigt die Bitkom-Studie. Als großen Kostenpunkt nennen KI-Anwender die Infrastruktur (51&#8239;Prozent), die Aufbereitung von Daten (50&#8239;Prozent) und die Integration in bestehende Systeme (41&#8239;Prozent). Lizenzen nennen nur 21&#8239;Prozent.<sup><a href="#q1">1</a></sup> Der teure Teil ist nicht das Werkzeug, sondern alles drumherum.</p>
+      <BarChart
+        title="Was KI-Anwender als großen Kostenpunkt nennen"
+        rows={[
+          { label: 'Infrastruktur (Cloud, Rechenleistung)', value: 51 },
+          { label: 'Aufbereitung von Daten', value: 50 },
+          { label: 'Integration in bestehende Systeme', value: 41 },
+          { label: 'Abos und Lizenzen', value: 21, highlight: true },
+          { label: 'Externe Beratung', value: 21 },
+          { label: 'Schulung der Beschäftigten', value: 19 },
+        ]}
+        note="Mehrfachnennungen, Unternehmen mit KI-Einsatz."
+        source="Bitkom, September 2026"
+        sourceHref="https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI"
+      />
       <p>Die Hosts von KI &amp; Tonic beschreiben die Reihenfolge als Pyramide:</p>
-      <blockquote><p>„Ganz unten haben wir die Standardisierung, eins oben drüber haben wir die Prozessgestaltung, dann kommt die Digitalisierung und erst dann reden wir über KI.“</p></blockquote>
+      <p class="report-voice">Stimme aus der Praxis</p>
+      <blockquote><p>„Ganz unten haben wir die Standardisierung, eins oben drüber haben wir die Prozessgestaltung, dann kommt die Digitalisierung und erst dann reden wir über KI.“</p><cite>KI &amp; Tonic, Folge 29</cite></blockquote>
       <p>Aber Vorsicht vor dem Umkehrschluss, man müsse erst alles aufräumen. Dieselben Hosts sagen einige Folgen später: „Traut euch in den KI-Markt rein.“ Die erfolgreichen Beispiele im Material beginnen nicht mit einem großen Aufräumprojekt, sondern mit <strong>einem</strong> Prozess, der klar genug ist, um ihn umzubauen. Lauda, ein Mittelständler mit rund 630 Beschäftigten, erwartet aus seinen KI-Projekten nach eigener Rechnung „1,62 Millionen Euro jährlich nach Abzug der Kosten“ (AI FIRST, Folge 20).</p>
 
       <h2>3. Irgendjemand muss es verantworten</h2>
       <p>„KI scheitert selten am Modell, fast immer an der Organisation“, heißt eine Folge des Venture AI Podcasts. Fast jede Folge landet früher oder später bei derselben Frage: Wer ist eigentlich zuständig?</p>
       <p>Die Antwort fällt für den Mittelstand nüchterner aus als für Konzerne. Tobias Zwingmann rät im AI FIRST Podcast:</p>
-      <blockquote><p>„Unternehmen, die … im Mittelstandsumfeld sind, würde ich immer empfehlen, dass man zumindest irgendwie eine Koordinationsstelle hat, die so ein bisschen Überblick behält … Aber man muss jetzt nicht irgendwie drei Data Scientists einstellen.“</p></blockquote>
+      <p class="report-voice">Stimme aus der Praxis</p>
+      <blockquote><p>„Unternehmen, die … im Mittelstandsumfeld sind, würde ich immer empfehlen, dass man zumindest irgendwie eine Koordinationsstelle hat, die so ein bisschen Überblick behält … Aber man muss jetzt nicht irgendwie drei Data Scientists einstellen.“</p><cite>Tobias Zwingmann, Rapid AI, im AI FIRST Podcast, Folge 28</cite></blockquote>
       <p>Gemeint ist keine neue Abteilung, sondern eine Person mit Mandat: jemand, der Prioritäten setzt, den ersten Prozess durchzieht und berichtet, was er gebracht hat. Ob diese Person aus dem eigenen Haus kommt, auf Zeit dazukommt oder fest eingestellt wird, ist zweitrangig. Entscheidend ist, dass es sie gibt.</p>
 
       <h2>4. Akzeptanz entsteht durch Erfahrung, nicht durch Ankündigung</h2>
@@ -70,12 +121,13 @@ const structuredData = {
       <p>Das passt zur Selbsteinschätzung in der Bitkom-Studie: 45&#8239;Prozent der KI-Anwender sehen einen messbaren Beitrag zum Unternehmenserfolg.<sup><a href="#q1">1</a></sup> Das heißt umgekehrt: Mehr als die Hälfte sieht ihn nicht – oder misst ihn nicht.</p>
 
       <h2>Was daraus folgt</h2>
-      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Die Muster aus 187 Gesprächen legen eine einfache Reihenfolge nahe:</p>
-      <ol class="report-steps">
-        <li><strong>Einen Prozess wählen</strong>, nicht eine Strategie. Einen, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen.</li>
-        <li><strong>Eine verantwortliche Person benennen</strong>, mit Mandat und Zeit.</li>
-        <li><strong>Die Leute am eigenen Fall befähigen</strong>, nicht nur schulen.</li>
-        <li><strong>Vorher festlegen, was gemessen wird</strong>, und nach 90 Tagen nachsehen.</li>
+      <p>Wenn Sie KI-Lizenzen bezahlt haben und wenig passiert, liegt das selten an der Technik. Studien und Praxisgespräche legen eine einfache Reihenfolge nahe:</p>
+      <ol class="report-steps-diagram" aria-label="Vier Schritte zur genutzten KI">
+        <li><strong>Einen Prozess wählen</strong><span>Nicht eine Strategie, sondern einen Ablauf, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen.</span></li>
+        <li><strong>Eine Person verantwortlich machen</strong><span>Mit Mandat und Zeit. Intern, auf Zeit oder fest eingestellt.</span></li>
+        <li><strong>Am eigenen Fall befähigen</strong><span>Die Leute probieren KI an ihrer Arbeit aus, mit Begleitung statt nur im Schulungsraum.</span></li>
+        <li><strong>Vorher festlegen, was zählt</strong><span>Zeit pro Vorgang, Nutzung, Kosten. Gemessen vor dem Start und danach.</span></li>
+        <li class="report-step-end">Nach 90 Tagen: Ergebnis prüfen, dann den nächsten Prozess angehen.</li>
       </ol>
       <div class="report-cta">
         <p>Genau so arbeite ich. Wenn Sie wissen wollen, wo das bei Ihnen ansetzen könnte:</p>
@@ -85,11 +137,16 @@ const structuredData = {
 
       <ReportGate title="Den Report als PDF erhalten" body="Ich schicke Ihnen den Report als PDF und gelegentlich neue Auswertungen zur KI-Einführung im Mittelstand. Kein Spam, jederzeit abbestellbar." />
 
+      <div class="report-author">
+        <img src="/images/tobias-treppmann.jpg" alt="Tobias Treppmann" width="84" height="84" loading="lazy" />
+        <p><strong>Tobias Treppmann</strong> bringt KI in die Prozesse mittelständischer Unternehmen – so, dass die Leute sie nutzen. Head of Product Design bei Bibel TV, davor Head of Platform and Design bei ChurchDesk und Head of Product Design bei Ninox. <a href="/">Mehr über meine Arbeit</a></p>
+      </div>
+
       <h2>Methode und Grenzen</h2>
       <ul class="report-notes">
         <li><strong>Podcasts:</strong> 106 Folgen AI FIRST (Interviews vor allem mit KI-Verantwortlichen größerer Unternehmen), 37 Folgen Venture AI Podcast seit Oktober 2025 (Mittelstand, Geschäftsführer, Berater; Essay- und Themenfolgen ohne Bezug zur Unternehmenspraxis ausgeschlossen) und alle 44 Folgen KI &amp; Tonic (Praxistipps für den Mittelstand, meist von den Hosts selbst). Transkribiert mit Whisper, strukturiert ausgewertet mit einem Sprachmodell, alle Zitate von Hand gegen das Transkript geprüft. Zitate sind Transkripte gesprochener Sprache und leicht geglättet; Auslassungen sind markiert.</li>
         <li><strong>Grenzen:</strong> Podcastgäste sind keine Stichprobe. Wer dort spricht, ist meist stolz auf ein Projekt oder verkauft eine Leistung. Die Zählungen in Abschnitt 5 sind grobe Stichwortauswertungen und als Tendenz zu lesen, nicht als Statistik.</li>
-        <li><strong>Studien:</strong> Die Anteile unterscheiden sich je nach Grundgesamtheit und Fragestellung. Sie sind deshalb jeweils mit Quelle angegeben und nicht miteinander verrechnet.</li>
+        <li><strong>Studien:</strong> Bitkom (603 und 604 Unternehmen) und TÜV-Verband (500 Unternehmen), jeweils repräsentativ für Unternehmen ab 20 Beschäftigten. Die Anteile unterscheiden sich je nach Grundgesamtheit und Fragestellung. Sie sind deshalb jeweils mit Quelle angegeben und nicht miteinander verrechnet.</li>
       </ul>
 
       <h2>Quellen</h2>
