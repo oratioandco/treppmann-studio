@@ -53,10 +53,10 @@ export const aiLeadershipContent = {
     },
     why: {
       label: 'Warum jetzt',
-      title: 'Ihr Wettbewerb fängt gerade an.',
+      title: 'Ihr Wettbewerb hat KI gekauft. Genutzt wird sie kaum.',
       items: [
-        [`24${nb}%`, 'der Betriebe in Deutschland nutzen generative KI – 2023 waren es 5 %.', 'IAB-Kurzbericht 08/2026', 'https://iab.de/en/publications/publication/?id=15662318'],
-        [`36${nb}%`, 'der Mittelständler mit 50 oder mehr Beschäftigten setzen KI ein. Größte Hürden: fehlende Kompetenzen, wenig Zeit, unzureichende Daten.', 'KfW Research, Fokus Nr. 533, Februar 2026', 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf'],
+        [`57${nb}%`, 'der Unternehmen ab 20 Beschäftigten setzen KI ein. Erstmals ist es mehr als die Hälfte.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
+        [`0${nb}%`, 'der KI-Anwender sagen, sie schöpfen das Potenzial voll aus. Sechs von zehn schöpfen es überhaupt nicht aus.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
         ['Seit Februar 2025', 'verpflichtet Art. 4 der KI-Verordnung Unternehmen, die KI einsetzen, für ausreichende KI-Kompetenz ihrer Beschäftigten zu sorgen.', 'Verordnung (EU) 2024/1689', 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj'],
       ],
     },
@@ -178,6 +178,13 @@ export const aiLeadershipContent = {
       linkedinUrl: 'https://www.linkedin.com/in/tobiastreppmann',
       location: 'Berlin · vor Ort in ganz Deutschland und per Video · Deutsch und Englisch',
     },
+    report: {
+      href: 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/',
+      needsText: 'Warum das so vielen Unternehmen passiert, zeigt mein Report',
+      whyText: 'Was diese Zahlen für die Praxis bedeuten:',
+      title: 'Gekauft ist nicht eingeführt',
+      footer: 'Report',
+    },
     footer: { name: 'Tobias Treppmann · KI-Transformation', impressum: 'Impressum', privacy: 'Datenschutz', portfolio: 'Portfolio' },
   },
   en: {
@@ -227,10 +234,10 @@ export const aiLeadershipContent = {
     },
     why: {
       label: 'Why now',
-      title: 'Your competitors are getting started.',
+      title: 'Your competitors have bought AI. Few are using it.',
       items: [
-        ['24%', 'of establishments in Germany use generative AI—up from 5% in 2023.', 'IAB-Kurzbericht 08/2026', 'https://iab.de/en/publications/publication/?id=15662318'],
-        ['36%', 'of German mid-sized firms with 50+ employees use AI. Biggest barriers: missing skills, limited time, poor data.', 'KfW Research, Fokus No. 533, February 2026', 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf'],
+        ['57%', 'of German companies with 20+ employees use AI. For the first time, that is more than half.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
+        ['0%', 'of those AI users say they use its potential fully. Six in ten say they do not use it at all.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
         ['Since Feb 2025', 'Article 4 of the EU AI Act requires companies that use AI to ensure sufficient AI literacy among their staff.', 'Regulation (EU) 2024/1689', 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj'],
       ],
     },
