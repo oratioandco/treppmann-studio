@@ -488,3 +488,23 @@ footer a { color: var(--white); }
 .report-gate-consent input { margin-top: .25rem; }
 .report-gate-note { font-size: .85rem; opacity: .8; margin-top: .75rem; }
 .report-gate-hp { position: absolute; left: -9999px; }
+
+/* Report article (/gekauft-ist-nicht-eingefuehrt/) */
+.report-article { max-width: 720px; }
+.report-article h1 { margin-bottom: .6rem; }
+.report-subtitle { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.35; color: var(--ink); margin: 0 0 1rem; }
+.report-byline { font-size: .9rem; color: var(--muted); margin-bottom: 2.5rem; }
+.report-article p, .report-article li { font-size: 1.05rem; line-height: 1.65; color: #3c3b35; }
+.report-article p { margin: 0 0 1.1em; }
+.report-article .report-lead { font-size: 1.2rem; color: var(--ink); }
+.report-article blockquote { margin: 1.6rem 0; padding: .2rem 0 .2rem 1.4rem; border-left: 3px solid var(--ink); }
+.report-article blockquote p { font-size: 1.2rem; line-height: 1.5; color: var(--ink); margin: 0; }
+.report-article sup a { border: 0; font-size: .75em; padding-left: .1em; }
+.report-steps, .report-notes, .report-sources { padding-left: 1.3rem; }
+.report-steps li { margin-bottom: .6rem; }
+.report-notes li, .report-sources li { font-size: .92rem; margin-bottom: .5rem; }
+.report-cta { margin: 2.4rem 0; padding: 1.8rem; background: var(--ink); color: var(--paper); border-radius: 4px; }
+.report-cta p { color: inherit; margin-top: 0; }
+.report-cta .button { background: var(--paper); color: var(--ink); border: 0; }
+.report-cta .report-cta-alt { margin: 1rem 0 0; font-size: .9rem; }
+.report-cta a:not(.button) { color: inherit; }
