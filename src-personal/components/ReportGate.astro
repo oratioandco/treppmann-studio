@@ -1,0 +1,26 @@
+---
+import { reportGate } from '../reportGate';
+
+interface Props { title: string; body: string }
+const { title, body } = Astro.props;
+---
+
+{reportGate.enabled && (
+  <aside class="report-gate" aria-labelledby="report-gate-title">
+    <h2 id="report-gate-title">{title}</h2>
+    <p>{body}</p>
+    <form action={reportGate.action} method="post" target="_blank">
+      <label for="report-gate-email">E-Mail-Adresse</label>
+      <div class="report-gate-row">
+        <input id="report-gate-email" type="email" name={reportGate.emailField} autocomplete="email" required />
+        <button class="button button-ink" type="submit">Report anfordern</button>
+      </div>
+      <label class="report-gate-consent">
+        <input type="checkbox" name="OPT_IN" value="1" required />
+        <span>Ich möchte den Report und gelegentlich weitere Analysen per E-Mail erhalten. Die Einwilligung kann ich jederzeit über den Abmeldelink widerrufen. Details in der <a href="/datenschutz/#report">Datenschutzerklärung</a>.</span>
+      </label>
+      <input class="report-gate-hp" type="text" name="email_address_check" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <p class="report-gate-note">Sie erhalten zuerst eine E-Mail zur Bestätigung Ihrer Adresse.</p>
+    </form>
+  </aside>
+)}

@@ -477,3 +477,14 @@ footer a { color: var(--white); }
   .has-motion [data-reveal] { opacity: 1; transform: none; }
   .leadership-hero-copy > *, .leadership-portrait { animation: none; }
 }
+
+/* Report email gate (src-personal/components/ReportGate.astro) */
+.report-gate { margin: 3rem 0; padding: 2rem; border: 1px solid currentColor; border-radius: 4px; }
+.report-gate h2 { font-family: var(--sans, inherit); font-size: 1.4rem; margin: 0 0 .5rem; }
+.report-gate label[for] { display: block; font-weight: 600; margin: 1rem 0 .4rem; }
+.report-gate-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+.report-gate-row input { flex: 1 1 16rem; min-width: 0; padding: .75rem; font: inherit; border: 1px solid currentColor; border-radius: 4px; background: transparent; color: inherit; }
+.report-gate-consent { display: flex; gap: .6rem; align-items: flex-start; margin-top: 1rem; font-size: .9rem; }
+.report-gate-consent input { margin-top: .25rem; }
+.report-gate-note { font-size: .85rem; opacity: .8; margin-top: .75rem; }
+.report-gate-hp { position: absolute; left: -9999px; }
