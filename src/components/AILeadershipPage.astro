@@ -144,7 +144,7 @@ const structuredData = {
             <h3>{item.title}</h3>
             <p class="proof-body">{item.body}</p>
             <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
-            <a href={item.href}>{item.link}<span aria-hidden="true"> ↗</span></a>
+            {'href' in item && <a href={item.href}>{item.link}<span aria-hidden="true"> ↗</span></a>}
           </article>
         ))}
       </div>
