@@ -184,6 +184,10 @@ const structuredData = {
           </article>
         ))}
       </div>
+      <div class="section-shell engagement-extra">
+        <div><h3>{c.formats.extra.title}</h3><p class="engagement-meta">{c.formats.extra.meta}</p></div>
+        <div><p>{c.formats.extra.body}</p><a href={mail(c.formats.extra.subject)}>{c.formats.extra.action}<span aria-hidden="true"> →</span></a></div>
+      </div>
       <div class="section-shell requirements">
         <h3>{c.formats.requirements.title}</h3>
         <ul>{c.formats.requirements.items.map((item) => <li>{item}</li>)}</ul>

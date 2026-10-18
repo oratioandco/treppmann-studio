@@ -564,3 +564,11 @@ footer a { color: var(--white); }
 .report-teaser a { color: var(--ink); font-weight: 560; border-bottom: 1px solid var(--signal); }
 .report-teaser-dark { margin-top: 2.4rem; color: rgba(255,253,247,.78); }
 .report-teaser-dark a { color: var(--white); }
+
+/* Engagements: guidance and sparring row */
+.engagement-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0 2.4rem; border-top: 1px solid rgba(17,17,15,.3); border-bottom: 1px solid rgba(17,17,15,.3); }
+.engagement-extra h3 { font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
+.engagement-extra .engagement-meta { margin-top: .8rem; color: var(--ink); font-size: .9rem; font-weight: 600; }
+.engagement-extra p:not(.engagement-meta) { max-width: 560px; font-size: .92rem; }
+.engagement-extra a { display: inline-block; margin-top: 1.2rem; font-weight: 650; font-size: .8rem; border-bottom: 1px solid; }
+@media (max-width: 760px) { .engagement-extra { grid-template-columns: 1fr; gap: .6rem; } }

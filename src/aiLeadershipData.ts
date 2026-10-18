@@ -134,6 +134,13 @@ export const aiLeadershipContent = {
           secondaryHref: '/downloads/Tobias-Treppmann-KI-Product-Transformation-CV.pdf',
         },
       ],
+      extra: {
+        title: 'Begleitung und Sparring',
+        meta: 'einzeln oder ergänzend zu einem Projekt · z. B. monatlich mit festen Sprechstunden',
+        body: 'Für Geschäftsführung und KI-Verantwortliche, die selbst umsetzen und dabei einen erfahrenen Sparringspartner wollen. Einzelcoaching, feste Sprechstunden für Ihr Team und Trainings am eigenen Arbeitsfall statt im Schulungsraum.',
+        action: 'Begleitung besprechen',
+        subject: 'Begleitung und Sparring',
+      },
       requirements: {
         title: 'Was ich von Ihnen brauche',
         items: [
@@ -146,11 +153,11 @@ export const aiLeadershipContent = {
     about: {
       label: 'Über mich',
       title: 'Ich führe – und ich setze selbst um.',
-      body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV setzt die externe Entwicklungsagentur direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System.',
+      body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV setzt die externe Entwicklungsagentur direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System. Aus dem Produktdesign bringe ich mit, Menschen ernst zu nehmen: ihren Kontext, ihre Ziele und das, was sie im Alltag bremst. Genau das braucht eine KI-Einführung nach innen.',
       points: [
         ['Führung', 'Produkt- und Designleitung, Senior Leadership Team, verteilte Teams in Deutschland und New York, Mentoring.'],
         ['Produkt und Prozesse', 'Produktstrategie, Prozessgestaltung, Prototypen in echtem Code, Automatisierung mit Schnittstellen und n8n.'],
-        ['Veränderung begleiten', 'Workshops mit der Geschäftsführung, Abstimmung mit Fachbereichen, Einzelbegleitung und Schulung im Arbeitsalltag.'],
+        ['Menschen befähigen', 'Workshops mit der Geschäftsführung, Einzelbegleitung im Arbeitsalltag. Zehn Jahre Mentoring für Quereinsteiger bei CareerFoundry, Gastdozent an der Spiced Academy, Design-Thinking-Trainings bei Hypoport. Heute mein eigenes Programm AI Design Mentor.'],
       ],
       portfolio: 'Designportfolio ansehen',
     },
@@ -315,6 +322,13 @@ export const aiLeadershipContent = {
           secondaryHref: '/downloads/Tobias-Treppmann-AI-Product-Transformation-CV.pdf',
         },
       ],
+      extra: {
+        title: 'Guidance and sparring',
+        meta: 'on its own or alongside a project · e.g. monthly, with fixed office hours',
+        body: 'For leaders and AI owners who do the work themselves and want an experienced sparring partner. One-to-one coaching, fixed office hours for your team, and training on real work instead of in a classroom.',
+        action: 'Discuss guidance',
+        subject: 'Guidance and sparring',
+      },
       requirements: {
         title: 'What I need from you',
         items: [
@@ -327,11 +341,11 @@ export const aiLeadershipContent = {
     about: {
       label: 'About',
       title: 'I lead—and I build myself.',
-      body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, the external engineering agency builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT.',
+      body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, the external engineering agency builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
       points: [
         ['Leadership', 'Product and design leadership, Senior Leadership Team, distributed teams in Germany and New York, mentoring.'],
         ['Product and process', 'Product strategy, process design, prototypes in real code, automation with APIs and n8n.'],
-        ['Leading change', 'Leadership workshops, alignment with business teams, one-to-one coaching, and training inside daily work.'],
+        ['Enabling people', 'Leadership workshops and one-to-one guidance inside daily work. Ten years mentoring career changers at CareerFoundry, guest lecturer at Spiced Academy, design-thinking training at Hypoport. Today, my own programme, AI Design Mentor.'],
       ],
       portfolio: 'View design portfolio',
     },
