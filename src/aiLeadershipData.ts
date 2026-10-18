@@ -95,14 +95,14 @@ export const aiLeadershipContent = {
     },
     plan: {
       label: 'Die ersten 90 Tage',
-      title: 'Was in den ersten 90 Tagen passiert.',
-      body: 'Ob Interimsmandat oder Festanstellung: Nach 90 Tagen soll mindestens ein KI-gestützter Prozess laufen, den Ihre Leute tatsächlich verwenden – mit gemessenem Ergebnis. IT-Sicherheit, Recht, Datenschutz und Architektur ziehe ich je nach Risiko hinzu, bei Bedarf mit spezialisierten Partnern.',
+      title: 'Vom Menschen aus: fünf Schritte in 90 Tagen.',
+      body: 'Viele KI-Projekte beginnen mit einer Liste von Use Cases. Ich beginne damit, wie die Arbeit heute wirklich läuft. Nach 90 Tagen soll mindestens ein KI-gestützter Prozess laufen, den Ihre Leute tatsächlich verwenden, mit gemessenem Ergebnis. IT-Sicherheit, Recht, Datenschutz und Architektur ziehe ich je nach Risiko hinzu, bei Bedarf mit spezialisierten Partnern.',
       steps: [
-        ['1.–2. Woche', 'Bestandsaufnahme', 'Gespräche mit Geschäftsführung und Fachbereichen, Analyse der heutigen Nutzung. Ergebnis: Ziele und Ausgangslage, schriftlich festgehalten.'],
-        ['3.–4. Woche', 'Prioritäten', 'Bewertung der Prozesse nach Nutzen, Machbarkeit und Risiko. Ergebnis: drei Vorhaben – und eine Liste dessen, was wir bewusst nicht tun.'],
-        ['5.–8. Woche', 'Erste Erfolge', 'Zwei sichtbare Verbesserungen, die Vertrauen schaffen und zeigen, wie KI im Alltag hilft.'],
-        ['9.–12. Woche', 'Ein Prozess, neu gebaut', 'Neugestaltung eines wichtigen Prozesses mit den Menschen, die darin arbeiten – bis zur funktionierenden Lösung.'],
-        ['Tag 90', 'Verankern', 'KI-Botschafterinnen und -Botschafter mit festem Zeitbudget, eine KI-Leitlinie, KI-Kompetenz nach Art. 4 der KI-Verordnung, ein gemessenes Ergebnis – und das nächste Vorhaben.'],
+        ['1.–2. Woche', 'Ziel klären', 'Gespräche mit der Geschäftsführung: Was soll besser werden, und wie sieht es heute aus? Ergebnis: Ziele, Ausgangslage und Messgrößen, schriftlich festgehalten.'],
+        ['2.–4. Woche', 'Arbeit verstehen', 'Mit den Menschen, die die Arbeit machen: Abläufe, Übergaben und Ausnahmen, Blocker und Reibungen, gute und schlechte Momente. Ergebnis: ein klares Bild davon, wo es wirklich hakt.'],
+        ['4.–5. Woche', 'Ansatzpunkt wählen', 'Bewertung nach Nutzen, Machbarkeit und Risiko. Ergebnis: drei Vorhaben in fester Reihenfolge und eine Liste dessen, was wir bewusst nicht tun.'],
+        ['5.–10. Woche', 'Gestalten und bauen', 'Ein wichtiger Prozess wird mit den Beteiligten neu gestaltet und als funktionierende Lösung gebaut. Dazu zwei schnelle Verbesserungen, die im Alltag sofort spürbar sind.'],
+        ['bis Tag 90', 'Befähigen und messen', 'Begleitung am eigenen Arbeitsfall, KI-Botschafterinnen und -Botschafter mit festem Zeitbudget, eine KI-Leitlinie, KI-Kompetenz nach Art. 4 der KI-Verordnung. Am Ende: ein gemessenes Ergebnis und das nächste Vorhaben.'],
       ],
     },
     formats: {
@@ -283,14 +283,14 @@ export const aiLeadershipContent = {
     },
     plan: {
       label: 'The first 90 days',
-      title: 'What happens in the first 90 days.',
-      body: 'Interim or permanent: after 90 days, at least one AI-supported process should be running that your people actually use—with a measured result. IT security, legal, data protection, and architecture join as the risk requires, with specialist partners where needed.',
+      title: 'People first: five steps in 90 days.',
+      body: 'Many AI projects start with a list of use cases. I start with how the work really runs today. After 90 days, at least one AI-supported process should be running that your people actually use, with a measured result. IT security, legal, data protection, and architecture join as the risk requires, with specialist partners where needed.',
       steps: [
-        ['Weeks 1–2', 'Baseline', 'Conversations with leadership and business teams, analysis of current usage. Outcome: goals and baseline, in writing.'],
-        ['Weeks 3–4', 'Priorities', 'Rating processes by value, feasibility, and risk. Outcome: three initiatives—and a list of what we deliberately will not do.'],
-        ['Weeks 5–8', 'Early wins', 'Two visible improvements that build trust and show how AI helps in daily work.'],
-        ['Weeks 9–12', 'One process, rebuilt', 'Redesigning one important process with the people who run it—through to a working solution.'],
-        ['Day 90', 'Anchor', 'AI champions with real time allocated, an AI guideline, AI literacy under Article 4 of the EU AI Act, a measured result—and the next initiative.'],
+        ['Weeks 1–2', 'Set the goal', 'Conversations with leadership: what should get better, and where are we today? Outcome: goals, baseline, and measures, in writing.'],
+        ['Weeks 2–4', 'Understand the work', 'With the people who do the work: workflows, handoffs and exceptions, blockers and friction, good and bad moments. Outcome: a clear picture of where it really gets stuck.'],
+        ['Weeks 4–5', 'Choose where to start', 'Rating by value, feasibility, and risk. Outcome: three initiatives in a fixed order, and a list of what we deliberately will not do.'],
+        ['Weeks 5–10', 'Design and build', 'One important process is redesigned with the people involved and built as a working solution. Plus two quick improvements people notice in daily work right away.'],
+        ['By day 90', 'Enable and measure', 'Guidance on real work, AI champions with real time allocated, an AI guideline, AI literacy under Article 4 of the EU AI Act. At the end: a measured result and the next initiative.'],
       ],
     },
     formats: {
