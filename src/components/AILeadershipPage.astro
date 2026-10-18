@@ -63,6 +63,7 @@ const structuredData = {
       <a href="#proof">{c.nav.proof}</a>
       <a href="#plan">{c.nav.plan}</a>
       <a href="#formats">{c.nav.formats}</a>
+      {report && <a href="#check">{report.nav}</a>}
       <a href="#about">{c.nav.about}</a>
     </nav>
     <div class="topbar-actions">
@@ -113,7 +114,7 @@ const structuredData = {
           <article style={`--i:${i}`}><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
-      <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p>{report && <p class="report-teaser">{report.needsText} <a href={reportHref}>„{report.title}“<span aria-hidden="true"> →</span></a></p>}{report && <p class="report-teaser">{report.checkText} <a href={checkHref}>{report.checkLink}<span aria-hidden="true"> →</span></a></p>}</div>
+      <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p></div>
     </section>
 
     <section class="why-section section-dark" aria-labelledby="why-title">
@@ -126,12 +127,40 @@ const structuredData = {
           <article style={`--i:${i}`}>
             <strong data-count={figure}>{figure}</strong>
             <p>{text}</p>
-            <a href={url} target="_blank" rel="noopener">{source}<span aria-hidden="true"> ↗</span></a>
+            <a href={url} target="_blank" rel="noopener">{source}<span aria-hidden="true"> ↗︎</span></a>
           </article>
         ))}
       </div>
-      {report && <div class="section-shell"><p class="report-teaser report-teaser-dark">{report.whyText} <a href={reportHref}>Report „{report.title}“ lesen<span aria-hidden="true"> →</span></a></p></div>}
     </section>
+
+    {report && (
+      <section class="tools-section section-light" id="check">
+        <div class="section-shell leadership-heading" data-reveal>
+          <p class="section-label">{report.toolsLabel}</p>
+          <div><h2>{report.toolsTitle}</h2></div>
+        </div>
+        <div class="section-shell tools-grid" data-reveal data-stagger>
+          <a class="tool-card tool-card-dark" href={checkHref} style="--i:0">
+            <div class="tool-visual tool-ladder" aria-hidden="true">
+              {[1, 2, 3, 4, 5].map((n) => <span style={`--n:${n}`}><b>{n}</b></span>)}
+            </div>
+            <p class="tool-meta">{report.checkMeta}</p>
+            <h3>{report.checkTitle}</h3>
+            <p>{report.checkBody}</p>
+            <span class="tool-action">{report.checkAction}<span aria-hidden="true"> →</span></span>
+          </a>
+          <a class="tool-card" href={reportHref} style="--i:1">
+            <div class="tool-visual tool-bars" aria-hidden="true">
+              {[[0, 'Vollständig'], [3, 'Eher stark'], [28, 'Wenig'], [59, 'Gar nicht']].map(([v, l]) => <span style={`--v:${v}`}><i></i><em>{l}</em><b>{v}&#8239;%</b></span>)}
+            </div>
+            <p class="tool-meta">{report.reportMeta}</p>
+            <h3>„{report.title}“</h3>
+            <p>{report.reportBody}</p>
+            <span class="tool-action">{report.reportAction}<span aria-hidden="true"> →</span></span>
+          </a>
+        </div>
+      </section>
+    )}
 
     <section class="proof-section section-paper" id="proof">
       <div class="section-shell leadership-heading" data-reveal>
@@ -145,7 +174,7 @@ const structuredData = {
             <h3>{item.title}</h3>
             <p class="proof-body">{item.body}</p>
             <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
-            {'href' in item && <a href={item.href}>{item.link}<span aria-hidden="true"> ↗</span></a>}
+            {'href' in item && <a href={item.href}>{item.link}<span aria-hidden="true"> ↗︎</span></a>}
           </article>
         ))}
       </div>
@@ -194,7 +223,7 @@ const structuredData = {
         <ul>{c.formats.requirements.items.map((item) => <li>{item}</li>)}</ul>
       </div>
       <div class="section-shell section-cta">
-        <a class="button button-ink" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}<span aria-hidden="true"> ↗</span></a>
+        <a class="button button-ink" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}<span aria-hidden="true"> ↗︎</span></a>
       </div>
     </section>
 
@@ -208,7 +237,7 @@ const structuredData = {
           <article style={`--i:${i}`}><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
-      <div class="section-shell about-link"><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗</span></a></div>
+      <div class="section-shell about-link"><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗︎</span></a></div>
     </section>
 
     <section class="faq-section section-light" id="faq">
@@ -234,9 +263,9 @@ const structuredData = {
         <p>{c.contact.body}</p>
         <div class="contact-actions">
           <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.contact.book}</a>
-          <a class="contact-link" href={mailto}>{c.contact.email}<span aria-hidden="true">↗</span></a>
+          <a class="contact-link" href={mailto}>{c.contact.email}<span aria-hidden="true">↗︎</span></a>
         </div>
-        <div class="contact-meta"><p class="location">{c.contact.location}</p><a href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗</span></a></div>
+        <div class="contact-meta"><p class="location">{c.contact.location}</p><a href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗︎</span></a></div>
       </div>
     </section>
   </main>
