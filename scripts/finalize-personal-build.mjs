@@ -13,5 +13,6 @@ await writeFile(new URL('sitemap.xml', out), `<?xml version="1.0" encoding="UTF-
   <url><loc>https://treppmann.de/impressum/</loc></url>
   <url><loc>https://treppmann.de/datenschutz/</loc></url>
   <url><loc>https://treppmann.de/gekauft-ist-nicht-eingefuehrt/</loc></url>
+  <url><loc>https://treppmann.de/ki-check/</loc></url>
 </urlset>
 `);

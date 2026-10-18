@@ -9,6 +9,7 @@ const c = aiLeadershipContent[locale];
 const isPersonal = site === 'personal';
 const report = 'report' in c ? c.report : undefined;
 const reportHref = report ? (isPersonal ? new URL(report.href).pathname : report.href) : '';
+const checkHref = report ? (isPersonal ? new URL(report.checkHref).pathname : report.checkHref) : '';
 const personalDe = 'https://treppmann.de/';
 const personalEn = 'https://treppmann.de/en/';
 const canonical = isPersonal
@@ -112,7 +113,7 @@ const structuredData = {
           <article><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
-      <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p>{report && <p class="report-teaser">{report.needsText} <a href={reportHref}>„{report.title}“<span aria-hidden="true"> →</span></a></p>}</div>
+      <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p>{report && <p class="report-teaser">{report.needsText} <a href={reportHref}>„{report.title}“<span aria-hidden="true"> →</span></a></p>}{report && <p class="report-teaser">{report.checkText} <a href={checkHref}>{report.checkLink}<span aria-hidden="true"> →</span></a></p>}</div>
     </section>
 
     <section class="why-section section-dark" aria-labelledby="why-title">
@@ -245,7 +246,7 @@ const structuredData = {
     <div class="footer-links">
       <a href={impressumUrl}>{c.footer.impressum}</a>
       <a href={privacyUrl}>{c.footer.privacy}</a>
-      {report && <a href={reportHref}>{report.footer}</a>}
+      {report && <a href={reportHref}>{report.footer}</a>}{report && <a href={checkHref}>{report.checkFooter}</a>}
       <a href={portfolioUrl}>{c.footer.portfolio}</a>
       <a href={switchPath}>{c.switchLabel}</a>
     </div>

@@ -1,0 +1,244 @@
+---
+import Layout from '../../../src/layouts/Layout.astro';
+
+const url = 'https://treppmann.de/ki-check/';
+const title = 'KI-Check: Wo steht Ihr Unternehmen?';
+const description = 'Zehn Fragen, drei Minuten: Auf welcher Stufe der KI-Einführung steht Ihr Unternehmen, und was wäre der nächste sinnvolle Schritt?';
+const bookUrl = 'https://fantastical.app/tobiastreppmann';
+
+// Each dimension is one observation from the report "Gekauft ist nicht eingeführt".
+const dimensions = [
+  { id: 'use', name: 'Nutzung', advice: 'Zugang ist noch keine Nutzung. Suchen Sie einen Ablauf, in dem viele Leute täglich dieselbe mühsame Arbeit machen, und bringen Sie KI genau dort hinein, statt sie allen für alles anzubieten.' },
+  { id: 'process', name: 'Prozess', advice: 'Beginnen Sie mit einem Prozess, nicht mit einer Liste von Use Cases: einem, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen. Schauen Sie zuerst, wie die Arbeit heute wirklich läuft.' },
+  { id: 'owner', name: 'Verantwortung', advice: 'Benennen Sie eine Person mit Mandat und Zeit. Sie setzt Prioritäten, zieht den ersten Prozess durch und berichtet, was er gebracht hat. Eine neue Abteilung braucht es dafür nicht.' },
+  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Champions festes Zeitbudget. Seit Februar 2025 verlangt Art. 4 der KI-Verordnung ohnehin ausreichende KI-Kompetenz.' },
+  { id: 'measure', name: 'Messen', advice: 'Legen Sie vor dem nächsten Vorhaben fest, woran Sie den Erfolg messen, etwa Zeit pro Vorgang oder Anteil der regelmäßigen Nutzer, und halten Sie den Ausgangswert fest. Nach rund 90 Tagen nachsehen.' },
+];
+
+const questions = [
+  { dim: 'use', q: 'Wie viele Ihrer Beschäftigten nutzen KI mindestens einmal pro Woche für ihre Arbeit?', a: ['Kaum jemand, oder ich weiß es nicht', 'Eine Handvoll Begeisterter', 'Ganze Teams in einzelnen Bereichen', 'Die meisten, in vielen Bereichen'] },
+  { dim: 'use', q: 'Wie ist KI bei Ihnen im Einsatz?', a: ['Gar nicht, oder privat und ohne Absprache', 'Als allgemeiner Chat, etwa Copilot oder ChatGPT', 'Eingebaut in einzelne Arbeitsabläufe', 'Eingebaut in Kernprozesse, mit Ihren eigenen Daten'] },
+  { dim: 'process', q: 'Gibt es einen Arbeitsablauf, der mit KI neu gestaltet wurde, nicht nur ergänzt?', a: ['Nein', 'Wir planen das', 'Ja, einen', 'Ja, mehrere'] },
+  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Jemand stößt zufällig auf ein Werkzeug', 'Aus einer Ideensammlung oder Liste von Use Cases', 'Ausgewählt nach Nutzen und Aufwand', 'Aus beobachteten Abläufen und Engpässen, dann nach Nutzen bewertet'] },
+  { dim: 'owner', q: 'Wer ist bei Ihnen für KI verantwortlich?', a: ['Niemand ausdrücklich', 'Die IT oder Begeisterte, nebenbei', 'Eine benannte Person, ohne festes Zeitbudget', 'Eine Person mit Mandat und Zeit dafür'] },
+  { dim: 'owner', q: 'Gibt es Regeln, wie KI bei Ihnen genutzt werden darf?', a: ['Nein', 'Informell, man weiß es ungefähr', 'Eine schriftliche KI-Leitlinie', 'Eine Leitlinie, die gelebt wird und in den Werkzeugen verankert ist'] },
+  { dim: 'enable', q: 'Wie lernen Ihre Leute, mit KI zu arbeiten?', a: ['Bisher gar nicht', 'Jeder für sich', 'In allgemeinen Schulungen', 'Begleitet an ihren eigenen Aufgaben'] },
+  { dim: 'enable', q: 'Gibt es Menschen im Team, die andere bei KI mitnehmen?', a: ['Nein', 'Ein paar Begeisterte, inoffiziell', 'Benannte Ansprechpartner', 'Champions mit festem Zeitbudget'] },
+  { dim: 'measure', q: 'Wissen Sie, was KI Ihnen bisher bringt?', a: ['Nein', 'Gefühlt einiges', 'An einzelnen Beispielen', 'Ja, gemessen gegen einen Ausgangswert'] },
+  { dim: 'measure', q: 'Legen Sie vor einem KI-Vorhaben fest, woran der Erfolg gemessen wird?', a: ['Nie', 'Manchmal', 'Meistens', 'Immer'] },
+];
+
+const stages = [
+  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie in guter Gesellschaft: Laut Bitkom schöpft kein einziges KI-nutzendes Unternehmen das Potenzial voll aus.' },
+  { max: 12, name: 'Ausprobiert', text: 'Einzelne nutzen KI, oft mit Begeisterung, aber zufällig verteilt. Was fehlt, ist der Schritt von „man kann“ zu „wir machen es so“.' },
+  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Pilotsammlung.' },
+  { max: 24, name: 'Ein Prozess läuft anders', text: 'Mindestens ein Ablauf ist mit KI neu gestaltet und wird genutzt. Die Aufgabe ist jetzt, das Gelernte auf den nächsten Prozess zu übertragen und den Nutzen sichtbar zu machen.' },
+  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Damit gehören Sie zu einer kleinen Minderheit. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  inLanguage: 'de-DE',
+  author: { '@type': 'Person', name: 'Tobias Treppmann', url: 'https://treppmann.de/' },
+  url,
+};
+---
+
+<Layout lang="de-DE" title={`${title} – Tobias Treppmann`} description={description} canonical={url} alternateDe={url} alternateEn={url} alternateDefault={url} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href="/" aria-label="Tobias Treppmann – Startseite">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>KI-Transformation</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="/#contact">Kontakt</a>
+    </div>
+  </header>
+
+  <main class="check-page section-paper" id="main">
+    <div class="section-shell check-shell">
+      <section class="check-intro" id="check-intro">
+        <p class="section-label">KI-Check · 3 Minuten</p>
+        <h1>Wo steht Ihr Unternehmen mit KI?</h1>
+        <p class="check-lead">Zehn Fragen zu Nutzung, Prozessen, Verantwortung, Befähigung und Messen. Am Ende sehen Sie, auf welcher von fünf Stufen Sie stehen und was der nächste sinnvolle Schritt wäre.</p>
+        <ol class="check-stage-preview" aria-label="Die fünf Stufen">
+          {stages.map((s, i) => <li><span>{i + 1}</span>{s.name}</li>)}
+        </ol>
+        <button class="button button-primary check-start" type="button" data-start>Check starten <span aria-hidden="true">→</span></button>
+        <p class="check-privacy">Ihre Antworten bleiben in Ihrem Browser. Gespeichert oder übertragen wird nichts.</p>
+        <noscript><p class="check-privacy">Der Check braucht JavaScript. Die Fragen und Stufen beruhen auf meinem Report <a href="/gekauft-ist-nicht-eingefuehrt/">„Gekauft ist nicht eingeführt“</a>.</p></noscript>
+      </section>
+
+      <form class="check-quiz" id="check-quiz" hidden>
+        <div class="check-progress" aria-hidden="true"><span data-bar></span></div>
+        <p class="check-count" aria-live="polite"><span data-count>1</span> von {questions.length}</p>
+        {questions.map((item, qi) => (
+          <fieldset class="check-question" data-q={qi} data-dim={item.dim} hidden>
+            <legend><span class="check-dim">{dimensions.find((d) => d.id === item.dim)!.name}</span>{item.q}</legend>
+            <div class="check-options">
+              {item.a.map((label, ai) => (
+                <label class="check-option">
+                  <input type="radio" name={`q${qi}`} value={ai} />
+                  <span class="check-option-mark" aria-hidden="true"></span>
+                  <span>{label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+        <div class="check-nav">
+          <button class="check-back" type="button" data-back>← Zurück</button>
+          <button class="button button-ink check-next" type="button" data-next disabled>Weiter <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+
+      <section class="check-result" id="check-result" hidden tabindex="-1" aria-labelledby="result-title">
+        <p class="section-label">Ihr Ergebnis</p>
+        <ol class="check-ladder" aria-hidden="true">
+          {stages.map((s, i) => <li data-stage={i}><span>{i + 1}</span>{s.name}</li>)}
+        </ol>
+        <h2 id="result-title">Stufe <span data-stage-num></span>: <span data-stage-name></span></h2>
+        <p class="check-lead" data-stage-text></p>
+
+        <h3>Ihr Profil</h3>
+        <ul class="check-profile">
+          {dimensions.map((d) => (
+            <li data-dim-row={d.id}>
+              <span class="check-profile-name">{d.name}</span>
+              <span class="check-profile-track"><span class="check-profile-fill"></span></span>
+              <span class="check-profile-value" data-dim-value></span>
+            </li>
+          ))}
+        </ul>
+
+        <h3>Wo ich ansetzen würde</h3>
+        <div class="check-advice" data-advice></div>
+
+        <div class="report-cta">
+          <p><strong>Sie wollen wissen, wie das bei Ihnen konkret aussehen könnte?</strong> In 30 Minuten schauen wir gemeinsam auf Ihre Situation und den ersten Ansatzpunkt.</p>
+          <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">Erstgespräch buchen<span aria-hidden="true"> ↗</span></a>
+          <p class="report-cta-alt">Hintergrund: <a href="/gekauft-ist-nicht-eingefuehrt/">Report „Gekauft ist nicht eingeführt“</a> · <a href="/">Wie ich arbeite</a></p>
+        </div>
+
+        <p class="check-actions">
+          <button class="check-back" type="button" data-restart>Check neu starten</button>
+          <a class="check-share" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener">Check auf LinkedIn teilen ↗</a>
+        </p>
+        <p class="check-privacy">Eine Orientierung, kein Gutachten. Die Fragen beruhen auf den fünf Beobachtungen aus meinem Report.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · KI-Transformation</span>
+    <div class="footer-links">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/">Startseite</a>
+    </div>
+  </footer>
+
+  <script is:inline define:vars={{ dimensions, stages, total: questions.length }}>
+    const intro = document.getElementById('check-intro');
+    const quiz = document.getElementById('check-quiz');
+    const result = document.getElementById('check-result');
+    const qs = [...quiz.querySelectorAll('.check-question')];
+    const bar = quiz.querySelector('[data-bar]');
+    const count = quiz.querySelector('[data-count]');
+    const back = quiz.querySelector('[data-back]');
+    const nextBtn = quiz.querySelector('[data-next]');
+    let pointer = false;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+
+    function show(i) {
+      qs.forEach((q, n) => { q.hidden = n !== i; q.classList.remove('is-entering'); });
+      current = i;
+      const q = qs[i];
+      if (!reduce) { void q.offsetWidth; q.classList.add('is-entering'); }
+      count.textContent = String(i + 1);
+      bar.style.width = `${(i / total) * 100}%`;
+      back.style.visibility = i === 0 ? 'hidden' : 'visible';
+      nextBtn.disabled = !q.querySelector('input:checked');
+      const checked = q.querySelector('input:checked') || q.querySelector('input');
+      checked.focus({ preventScroll: true });
+    }
+
+    function finish() {
+      bar.style.width = '100%';
+      const per = {};
+      dimensions.forEach((d) => { per[d.id] = 0; });
+      let sum = 0;
+      qs.forEach((q) => {
+        const v = Number(q.querySelector('input:checked')?.value || 0);
+        per[q.dataset.dim] += v;
+        sum += v;
+      });
+      const idx = stages.findIndex((s) => sum <= s.max);
+      const stage = stages[idx];
+      result.querySelector('[data-stage-num]').textContent = String(idx + 1);
+      result.querySelector('[data-stage-name]').textContent = stage.name;
+      result.querySelector('[data-stage-text]').textContent = stage.text;
+      result.querySelectorAll('[data-stage]').forEach((li) => {
+        const n = Number(li.dataset.stage);
+        li.classList.toggle('is-reached', n <= idx);
+        li.classList.toggle('is-current', n === idx);
+      });
+      dimensions.forEach((d) => {
+        const row = result.querySelector(`[data-dim-row="${d.id}"]`);
+        const pct = Math.round((per[d.id] / 6) * 100);
+        row.querySelector('[data-dim-value]').textContent = `${per[d.id]} / 6`;
+        row.querySelector('.check-profile-fill').style.setProperty('--w', `${pct}%`);
+      });
+      const weakest = [...dimensions].sort((a, b) => per[a.id] - per[b.id]).filter((d) => per[d.id] < 6).slice(0, 2);
+      const advice = result.querySelector('[data-advice]');
+      advice.innerHTML = '';
+      if (!weakest.length) {
+        const p = document.createElement('p');
+        p.textContent = 'In allen fünf Bereichen sind Sie weit. Spannend wird jetzt, wo sich KI noch tiefer in Ihre Prozesse und Produkte einbauen lässt.';
+        advice.append(p);
+      }
+      weakest.forEach((d) => {
+        const div = document.createElement('div');
+        div.className = 'check-advice-item';
+        const h = document.createElement('h4'); h.textContent = d.name;
+        const p = document.createElement('p'); p.textContent = d.advice;
+        div.append(h, p); advice.append(div);
+      });
+      quiz.hidden = true;
+      result.hidden = false;
+      result.classList.remove('is-revealed');
+      void result.offsetWidth;
+      result.classList.add('is-revealed');
+      result.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      result.focus({ preventScroll: true });
+    }
+
+    document.querySelector('[data-start]').addEventListener('click', () => {
+      intro.hidden = true; quiz.hidden = false; show(0);
+      quiz.scrollIntoView({ block: 'start' });
+    });
+    const advance = () => { const next = current + 1; next < total ? show(next) : finish(); };
+    quiz.addEventListener('pointerdown', () => { pointer = true; });
+    quiz.addEventListener('keydown', (e) => {
+      pointer = false;
+      if (e.key === 'Enter' && qs[current].querySelector('input:checked')) { e.preventDefault(); advance(); }
+    });
+    // Mouse and touch answers advance on their own; keyboard users move on with Enter or the button.
+    quiz.addEventListener('change', (e) => {
+      if (!(e.target instanceof HTMLInputElement)) return;
+      nextBtn.disabled = false;
+      if (pointer) setTimeout(advance, reduce ? 0 : 260);
+    });
+    nextBtn.addEventListener('click', advance);
+    quiz.addEventListener('submit', (e) => e.preventDefault());
+    back.addEventListener('click', () => { if (current > 0) show(current - 1); });
+    result.querySelector('[data-restart]').addEventListener('click', () => {
+      quiz.reset(); result.hidden = true; quiz.hidden = false; show(0);
+      quiz.scrollIntoView({ block: 'start' });
+    });
+  </script>
+</Layout>

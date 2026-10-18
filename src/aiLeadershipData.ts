@@ -188,7 +188,7 @@ export const aiLeadershipContent = {
       needsText: 'Warum das so vielen Unternehmen passiert, zeigt mein Report',
       whyText: 'Was diese Zahlen für die Praxis bedeuten:',
       title: 'Gekauft ist nicht eingeführt',
-      footer: 'Report',
+      footer: 'Report', checkHref: 'https://treppmann.de/ki-check/', checkText: 'Wo stehen Sie selbst?', checkLink: 'KI-Check in drei Minuten', checkFooter: 'KI-Check',
     },
     footer: { name: 'Tobias Treppmann · KI-Transformation', impressum: 'Impressum', privacy: 'Datenschutz', portfolio: 'Portfolio' },
   },
