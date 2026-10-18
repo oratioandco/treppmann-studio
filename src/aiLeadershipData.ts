@@ -78,7 +78,7 @@ export const aiLeadershipContent = {
           title: 'Von der Agentur abhängig zu: Wir bauen selbst.',
           body: 'Früher hing fast jede Änderung an einer externen Agentur. Eigene Entwickler gibt es im Haus nicht. Ich habe an meiner eigenen Arbeit gezeigt, was möglich ist, und Product Manager und Product Owner in Einzelsessions begleitet. Gemeinsam haben wir Claude Code, GitHub mit Spec Kit und die angebundene interne Dokumentation eingeführt, dazu feste Regeln für Formate, Freigaben und Referenzen. Heute entsteht ein großer Teil intern, und interne Champions führen das weiter.',
           fact: 'Ohne Agentur',
-          factLabel: 'hat die Geschäftsführung die Neuentwicklung der App intern vergeben.',
+          factLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Gebaut habe ich sie selbst, mit KI.',
         },
         {
           context: 'Ninox · KI im Produkt',
@@ -264,7 +264,7 @@ export const aiLeadershipContent = {
           title: 'From depending on an agency to building in-house.',
           body: 'Almost every change used to depend on an external agency, and there are no in-house developers. I showed what is possible in my own work and coached product managers and product owners one to one. Together we introduced Claude Code, GitHub with Spec Kit, and connected internal documentation, plus clear rules for formats, approvals, and references. Today a large part is built in-house, and internal champions carry it forward.',
           fact: 'No agency',
-          factLabel: 'Leadership gave the rebuild of the app to the in-house team.',
+          factLabel: 'Leadership gave me the rebuild of the app, and I built it myself, with AI.',
         },
         {
           context: 'Ninox · AI in the product',
