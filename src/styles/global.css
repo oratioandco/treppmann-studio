@@ -594,11 +594,13 @@ footer a { color: var(--white); }
 .check-progress span { display: block; height: 100%; width: 0; background: var(--signal); transition: width 420ms cubic-bezier(.2,.7,.2,1); }
 .check-count { margin: 0 0 1.6rem; font-family: var(--mono); font-size: .78rem; color: var(--muted); }
 .check-question { border: 0; margin: 0; padding: 0; min-width: 0; }
-.check-question.is-entering { animation: check-slide 360ms cubic-bezier(.2,.7,.2,1) both; }
+.check-stack { display: grid; }
+.check-question { grid-area: 1 / 1; visibility: hidden; }
+.check-question.is-current { visibility: visible; }
 .check-question legend { padding: 0; margin-bottom: 1.6rem; font-family: var(--serif); font-size: clamp(1.7rem, 3.6vw, 2.4rem); line-height: 1.12; }
 .check-dim { display: block; margin-bottom: .8rem; font-family: var(--mono); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--signal); }
 .check-options { display: grid; gap: 8px; }
-.check-option { position: relative; display: flex; align-items: center; gap: 1rem; min-height: 60px; padding: .9rem 1.1rem; background: var(--white); border: 1px solid var(--line); cursor: pointer; font-size: 1rem; line-height: 1.35; transition: border-color 160ms ease, transform 160ms ease, background 160ms ease; }
+.check-option { position: relative; -webkit-tap-highlight-color: transparent; display: flex; align-items: center; gap: 1rem; min-height: 60px; padding: .9rem 1.1rem; background: var(--white); border: 1px solid var(--line); cursor: pointer; font-size: 1rem; line-height: 1.35; transition: border-color 160ms ease, transform 160ms ease, background 160ms ease; }
 .check-option:hover { border-color: var(--ink); transform: translateX(3px); }
 .check-option input { position: absolute; opacity: 0; pointer-events: none; }
 .check-option-mark { flex: none; width: 18px; height: 18px; border: 1.5px solid var(--ink); border-radius: 50%; position: relative; transition: border-color 160ms ease; }
@@ -647,4 +649,61 @@ footer a { color: var(--white); }
 }
 @media (prefers-reduced-motion: reduce) {
   .check-page *, .check-page *::after { animation: none !important; transition: none !important; }
+}
+
+/* Homepage motion and detail */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.has-motion [data-stagger] { opacity: 1; transform: none; }
+.has-motion [data-stagger] > * { opacity: 0; transform: translateY(26px); transition: opacity 700ms ease, transform 900ms cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 110ms); }
+.has-motion [data-stagger].is-visible > * { opacity: 1; transform: none; }
+
+/* Hero: the vertical rule draws in, the portrait settles, the proof line grows */
+.leadership-hero::before { transform-origin: top; animation: rule-draw 1400ms cubic-bezier(.6,0,.2,1) 300ms both; }
+.leadership-portrait { overflow: hidden; }
+.leadership-portrait img { animation: portrait-settle 1600ms cubic-bezier(.2,.7,.2,1) 200ms both; }
+.hero-proof { position: relative; border-left-color: transparent; }
+.hero-proof::before { content: ''; position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: var(--signal); transform-origin: top; animation: rule-draw 900ms cubic-bezier(.6,0,.2,1) 700ms both; }
+@keyframes rule-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes portrait-settle { from { transform: scale(1.08); filter: grayscale(.6); } to { transform: none; filter: none; } }
+
+/* Why now: a meter under each figure */
+.why-meter { display: block; height: 3px; margin-top: 1rem; background: var(--line-dark); overflow: hidden; }
+.why-meter span { display: block; height: 100%; background: var(--signal); transform-origin: left; transform: scaleX(0); }
+
+/* Five steps: each fills its top rule in turn */
+.method-path li { position: relative; }
+.method-path li::before { content: ''; position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: var(--signal); transform-origin: left; transform: scaleX(var(--fill, 1)); }
+.method-path li span { transition: color 300ms ease; }
+.method-path li h3, .method-path li p { transition: color 400ms ease, opacity 400ms ease; }
+.has-motion .method-path li:not(.is-on) h3 { color: rgba(255,253,247,.55); }
+.has-motion .method-path li:not(.is-on) span { color: rgba(255,97,56,.55); }
+.method-path li.is-on span { color: var(--acid); }
+
+/* Cards: a signal rule grows on hover */
+.needs-grid article, .compact-proof-card, .engagement-grid article, .about-points article { position: relative; }
+.needs-grid article::after, .compact-proof-card::after, .engagement-grid article::after, .about-points article::after { content: ''; position: absolute; top: -1px; left: 0; right: 2rem; height: 2px; background: var(--signal); transform: scaleX(0); transform-origin: left; transition: transform 500ms cubic-bezier(.2,.7,.2,1); }
+.needs-grid article:not(:first-child)::after, .compact-proof-card:not(:first-child)::after, .engagement-grid article:not(:first-child)::after, .about-points article:not(:first-child)::after { left: 2rem; }
+.needs-grid article:hover::after, .compact-proof-card:hover::after, .engagement-grid article:hover::after, .about-points article:hover::after { transform: scaleX(1); }
+
+/* Arrows nudge in the direction they point */
+main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { display: inline-block; transition: transform 220ms cubic-bezier(.2,.7,.2,1); }
+main a:hover > span[aria-hidden="true"] { transform: translateX(4px); }
+main a[target="_blank"]:hover > span[aria-hidden="true"] { transform: translate(3px, -3px); }
+main a[download]:hover > span[aria-hidden="true"] { transform: translateY(3px); }
+.button { transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.button:active { transform: translateY(1px); }
+
+/* FAQ opens smoothly where the browser supports it */
+.faq-list { interpolate-size: allow-keywords; }
+.faq-list details::details-content { block-size: 0; overflow: hidden; transition: block-size 380ms cubic-bezier(.2,.7,.2,1), content-visibility 380ms allow-discrete; }
+.faq-list details[open]::details-content { block-size: auto; }
+.faq-list summary::after { transition: transform 300ms ease; }
+.faq-list details[open] summary::after { content: '+'; transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .has-motion [data-stagger] > * { opacity: 1; transform: none; }
+  .leadership-hero::before, .leadership-portrait img, .hero-proof::before { animation: none; }
+  .method-path li::before { transform: none; }
+  .has-motion .method-path li:not(.is-on) h3 { color: var(--white); }
+  .has-motion .method-path li:not(.is-on) span { color: var(--signal); }
 }

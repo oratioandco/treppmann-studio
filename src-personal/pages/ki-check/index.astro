@@ -11,29 +11,33 @@ const dimensions = [
   { id: 'use', name: 'Nutzung', advice: 'Zugang ist noch keine Nutzung. Suchen Sie einen Ablauf, in dem viele Leute täglich dieselbe mühsame Arbeit machen, und bringen Sie KI genau dort hinein, statt sie allen für alles anzubieten.' },
   { id: 'process', name: 'Prozess', advice: 'Beginnen Sie mit einem Prozess, nicht mit einer Liste von Use Cases: einem, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen. Schauen Sie zuerst, wie die Arbeit heute wirklich läuft.' },
   { id: 'owner', name: 'Verantwortung', advice: 'Benennen Sie eine Person mit Mandat und Zeit. Sie setzt Prioritäten, zieht den ersten Prozess durch und berichtet, was er gebracht hat. Eine neue Abteilung braucht es dafür nicht.' },
-  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Champions festes Zeitbudget. Seit Februar 2025 verlangt Art. 4 der KI-Verordnung ohnehin ausreichende KI-Kompetenz.' },
+  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Botschaftern festes Zeitbudget. Seit Februar 2025 verpflichtet Art. 4 der KI-Verordnung Unternehmen, die KI einsetzen, ohnehin, für ausreichende KI-Kompetenz zu sorgen.' },
   { id: 'measure', name: 'Messen', advice: 'Legen Sie vor dem nächsten Vorhaben fest, woran Sie den Erfolg messen, etwa Zeit pro Vorgang oder Anteil der regelmäßigen Nutzer, und halten Sie den Ausgangswert fest. Nach rund 90 Tagen nachsehen.' },
 ];
 
+// Options run from 0 to 3 points. Wording stays neutral so the "right" answer is not obvious.
 const questions = [
-  { dim: 'use', q: 'Wie viele Ihrer Beschäftigten nutzen KI mindestens einmal pro Woche für ihre Arbeit?', a: ['Kaum jemand, oder ich weiß es nicht', 'Eine Handvoll Begeisterter', 'Ganze Teams in einzelnen Bereichen', 'Die meisten, in vielen Bereichen'] },
-  { dim: 'use', q: 'Wie ist KI bei Ihnen im Einsatz?', a: ['Gar nicht, oder privat und ohne Absprache', 'Als allgemeiner Chat, etwa Copilot oder ChatGPT', 'Eingebaut in einzelne Arbeitsabläufe', 'Eingebaut in Kernprozesse, mit Ihren eigenen Daten'] },
+  { dim: 'use', q: 'Wie viele Ihrer Beschäftigten nutzen KI mindestens einmal pro Woche für ihre Arbeit?', a: ['Kaum jemand, oder wir wissen es nicht', 'Einzelne Interessierte', 'Ganze Teams in einzelnen Bereichen', 'Die meisten, in vielen Bereichen'] },
+  { dim: 'use', q: 'Welche KI-Werkzeuge stellt Ihr Unternehmen bereit?', a: ['Keine; wer KI nutzt, nutzt private Konten', 'Ein Chat-Werkzeug wie ChatGPT oder Copilot für einzelne', 'Ein Chat-Werkzeug für alle, mit Firmenkonto', 'Dazu Werkzeuge, die auf bestimmte Aufgaben zugeschnitten sind'] },
   { dim: 'process', q: 'Gibt es einen Arbeitsablauf, der mit KI neu gestaltet wurde, nicht nur ergänzt?', a: ['Nein', 'Wir planen das', 'Ja, einen', 'Ja, mehrere'] },
-  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Jemand stößt zufällig auf ein Werkzeug', 'Aus einer Ideensammlung oder Liste von Use Cases', 'Ausgewählt nach Nutzen und Aufwand', 'Aus beobachteten Abläufen und Engpässen, dann nach Nutzen bewertet'] },
-  { dim: 'owner', q: 'Wer ist bei Ihnen für KI verantwortlich?', a: ['Niemand ausdrücklich', 'Die IT oder Begeisterte, nebenbei', 'Eine benannte Person, ohne festes Zeitbudget', 'Eine Person mit Mandat und Zeit dafür'] },
-  { dim: 'owner', q: 'Gibt es Regeln, wie KI bei Ihnen genutzt werden darf?', a: ['Nein', 'Informell, man weiß es ungefähr', 'Eine schriftliche KI-Leitlinie', 'Eine Leitlinie, die gelebt wird und in den Werkzeugen verankert ist'] },
-  { dim: 'enable', q: 'Wie lernen Ihre Leute, mit KI zu arbeiten?', a: ['Bisher gar nicht', 'Jeder für sich', 'In allgemeinen Schulungen', 'Begleitet an ihren eigenen Aufgaben'] },
-  { dim: 'enable', q: 'Gibt es Menschen im Team, die andere bei KI mitnehmen?', a: ['Nein', 'Ein paar Begeisterte, inoffiziell', 'Benannte Ansprechpartner', 'Champions mit festem Zeitbudget'] },
-  { dim: 'measure', q: 'Wissen Sie, was KI Ihnen bisher bringt?', a: ['Nein', 'Gefühlt einiges', 'An einzelnen Beispielen', 'Ja, gemessen gegen einen Ausgangswert'] },
-  { dim: 'measure', q: 'Legen Sie vor einem KI-Vorhaben fest, woran der Erfolg gemessen wird?', a: ['Nie', 'Manchmal', 'Meistens', 'Immer'] },
+  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Bisher gar nicht, oder jeder probiert für sich', 'Aus einer Sammlung von Ideen und Use Cases', 'Ausgewählt nach Nutzen und Aufwand', 'Ausgehend von konkreten Engpässen in Abläufen'] },
+  { dim: 'owner', q: 'Wer ist bei Ihnen für KI verantwortlich?', a: ['Niemand ausdrücklich', 'Die IT oder Interessierte, nebenbei', 'Eine benannte Person, ohne festes Zeitbudget', 'Eine Person mit Mandat und Zeit dafür'] },
+  { dim: 'owner', q: 'Gibt es Regeln, wie KI bei Ihnen genutzt werden darf?', a: ['Nein', 'Ungeschrieben, man weiß es ungefähr', 'Eine schriftliche KI-Leitlinie', 'Eine Leitlinie, die bekannt ist und im Alltag angewendet wird'] },
+  { dim: 'enable', q: 'Wie lernen Ihre Leute, mit KI zu arbeiten?', a: ['Bisher gar nicht', 'Jeder für sich', 'In Schulungen', 'Begleitet an ihren eigenen Aufgaben'] },
+  { dim: 'enable', q: 'Gibt es Menschen im Team, die andere bei KI mitnehmen?', a: ['Nein', 'Ein paar Interessierte, inoffiziell', 'Benannte Ansprechpartner', 'KI-Botschafter mit festem Zeitbudget'] },
+  { dim: 'measure', q: 'Wissen Sie, was KI Ihnen bisher bringt?', a: ['Nein', 'Wir haben einen Eindruck', 'An einzelnen Beispielen', 'Ja, gemessen gegen einen Ausgangswert'] },
+  { dim: 'measure', q: 'Legen Sie vor einem KI-Vorhaben fest, woran der Erfolg gemessen wird?', a: ['Nie, oder es gab noch keine Vorhaben', 'Manchmal', 'Meistens', 'Immer'] },
 ];
 
+// Points decide the stage, but a stage name is a claim about the company, so some stages need
+// specific answers: "Ausprobiert" needs some use, "Ein Prozess läuft anders" needs a redesigned
+// process, "Teil der Arbeitsweise" needs several processes and real measurement.
 const stages = [
-  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie in guter Gesellschaft: Laut Bitkom schöpft kein einziges KI-nutzendes Unternehmen das Potenzial voll aus.' },
+  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie in großer Gesellschaft: In der Bitkom-Befragung vom September 2026 sagte kein einziges KI-nutzendes Unternehmen, es schöpfe das Potenzial voll aus.', textNone: 'KI spielt bei Ihnen noch keine Rolle. Das ist ein guter Ausgangspunkt: Sie können mit einem Prozess anfangen statt mit einer Lizenz, und die typischen Fehler der anderen überspringen.' },
   { max: 12, name: 'Ausprobiert', text: 'Einzelne nutzen KI, oft mit Begeisterung, aber zufällig verteilt. Was fehlt, ist der Schritt von „man kann“ zu „wir machen es so“.' },
-  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Pilotsammlung.' },
-  { max: 24, name: 'Ein Prozess läuft anders', text: 'Mindestens ein Ablauf ist mit KI neu gestaltet und wird genutzt. Die Aufgabe ist jetzt, das Gelernte auf den nächsten Prozess zu übertragen und den Nutzen sichtbar zu machen.' },
-  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Damit gehören Sie zu einer kleinen Minderheit. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
+  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Sammlung von Piloten.' },
+  { max: 24, name: 'Ein Prozess läuft anders', text: 'Mindestens ein Ablauf ist mit KI neu gestaltet. Die Aufgabe ist jetzt, das Gelernte auf den nächsten Prozess zu übertragen und den Nutzen sichtbar zu machen.' },
+  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Das ist selten: In der Bitkom-Befragung sagten nur 3 Prozent der KI-Anwender, sie schöpften das Potenzial eher stark aus. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
 ];
 
 const structuredData = {
@@ -75,20 +79,22 @@ const structuredData = {
       <form class="check-quiz" id="check-quiz" hidden>
         <div class="check-progress" aria-hidden="true"><span data-bar></span></div>
         <p class="check-count" aria-live="polite"><span data-count>1</span> von {questions.length}</p>
-        {questions.map((item, qi) => (
-          <fieldset class="check-question" data-q={qi} data-dim={item.dim} hidden>
-            <legend><span class="check-dim">{dimensions.find((d) => d.id === item.dim)!.name}</span>{item.q}</legend>
-            <div class="check-options">
-              {item.a.map((label, ai) => (
-                <label class="check-option">
-                  <input type="radio" name={`q${qi}`} value={ai} />
-                  <span class="check-option-mark" aria-hidden="true"></span>
-                  <span>{label}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
-        ))}
+        <div class="check-stack">
+          {questions.map((item, qi) => (
+            <fieldset class="check-question" data-q={qi} data-dim={item.dim} inert>
+              <legend><span class="check-dim">{dimensions.find((d) => d.id === item.dim)!.name}</span>{item.q}</legend>
+              <div class="check-options">
+                {item.a.map((label, ai) => (
+                  <label class="check-option">
+                    <input type="radio" name={`q${qi}`} value={ai} />
+                    <span class="check-option-mark" aria-hidden="true"></span>
+                    <span>{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          ))}
+        </div>
         <div class="check-nav">
           <button class="check-back" type="button" data-back>← Zurück</button>
           <button class="button button-ink check-next" type="button" data-next disabled>Weiter <span aria-hidden="true">→</span></button>
@@ -150,38 +156,71 @@ const structuredData = {
     const count = quiz.querySelector('[data-count]');
     const back = quiz.querySelector('[data-back]');
     const nextBtn = quiz.querySelector('[data-next]');
-    let pointer = false;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let current = 0;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    let current = -1;
+    let busy = false;
+    let pointer = false;
 
-    function show(i) {
-      qs.forEach((q, n) => { q.hidden = n !== i; q.classList.remove('is-entering'); });
-      current = i;
-      const q = qs[i];
-      if (!reduce) { void q.offsetWidth; q.classList.add('is-entering'); }
+    const fade = (el, frames, duration) => reduce
+      ? Promise.resolve()
+      : el.animate(frames, { duration, easing: ease, fill: 'both' }).finished;
+    const out = (el, dx = 0) => fade(el, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translate(${-dx}px, ${dx ? 0 : -8}px)` }], 200);
+    const into = (el, dx = 0) => fade(el, [{ opacity: 0, transform: `translate(${dx}px, ${dx ? 0 : 12}px)` }, { opacity: 1, transform: 'none' }], 380);
+    const toTop = () => {
+      const top = document.getElementById('main').getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > top + 4) window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+    };
+
+    function activate(q, on) {
+      q.inert = !on;
+      q.classList.toggle('is-current', on);
+    }
+
+    async function go(i, dir = 1) {
+      if (busy || i === current) return;
+      busy = true;
+      const from = qs[current];
+      const to = qs[i];
       count.textContent = String(i + 1);
       bar.style.width = `${(i / total) * 100}%`;
       back.style.visibility = i === 0 ? 'hidden' : 'visible';
-      nextBtn.disabled = !q.querySelector('input:checked');
-      const checked = q.querySelector('input:checked') || q.querySelector('input');
-      checked.focus({ preventScroll: true });
+      nextBtn.disabled = !to.querySelector('input:checked');
+      if (from) { await out(from, 28 * dir); activate(from, false); from.getAnimations().forEach((a) => a.cancel()); }
+      activate(to, true);
+      current = i;
+      const focusTarget = to.querySelector('input:checked') || to.querySelector('input');
+      focusTarget.focus({ preventScroll: true });
+      await into(to, 28 * dir);
+      to.getAnimations().forEach((a) => a.cancel());
+      busy = false;
     }
 
-    function finish() {
-      bar.style.width = '100%';
+    function score() {
       const per = {};
       dimensions.forEach((d) => { per[d.id] = 0; });
       let sum = 0;
-      qs.forEach((q) => {
-        const v = Number(q.querySelector('input:checked')?.value || 0);
-        per[q.dataset.dim] += v;
-        sum += v;
-      });
-      const idx = stages.findIndex((s) => sum <= s.max);
+      const answers = qs.map((q) => Number(q.querySelector('input:checked')?.value || 0));
+      qs.forEach((q, n) => { per[q.dataset.dim] += answers[n]; sum += answers[n]; });
+      let idx = stages.findIndex((s) => sum <= s.max);
+      // A stage name must not contradict the answers.
+      const redesigned = answers[2];
+      if (answers[0] === 0) idx = Math.min(idx, 0);
+      if (redesigned < 2) idx = Math.min(idx, 2);
+      if (redesigned < 3 || per.measure < 4) idx = Math.min(idx, 3);
+      const none = answers[0] === 0 && answers[1] === 0;
+      return { per, idx, none };
+    }
+
+    async function finish() {
+      if (busy) return;
+      busy = true;
+      bar.style.width = '100%';
+      const { per, idx, none } = score();
       const stage = stages[idx];
       result.querySelector('[data-stage-num]').textContent = String(idx + 1);
-      result.querySelector('[data-stage-name]').textContent = stage.name;
-      result.querySelector('[data-stage-text]').textContent = stage.text;
+      result.querySelector('[data-stage-name]').textContent = idx === 0 && none ? 'Noch am Anfang' : stage.name;
+      result.querySelector('[data-stage-text]').textContent = idx === 0 && none ? stage.textNone : stage.text;
       result.querySelectorAll('[data-stage]').forEach((li) => {
         const n = Number(li.dataset.stage);
         li.classList.toggle('is-reached', n <= idx);
@@ -189,9 +228,8 @@ const structuredData = {
       });
       dimensions.forEach((d) => {
         const row = result.querySelector(`[data-dim-row="${d.id}"]`);
-        const pct = Math.round((per[d.id] / 6) * 100);
         row.querySelector('[data-dim-value]').textContent = `${per[d.id]} / 6`;
-        row.querySelector('.check-profile-fill').style.setProperty('--w', `${pct}%`);
+        row.querySelector('.check-profile-fill').style.setProperty('--w', `${Math.round((per[d.id] / 6) * 100)}%`);
       });
       const weakest = [...dimensions].sort((a, b) => per[a.id] - per[b.id]).filter((d) => per[d.id] < 6).slice(0, 2);
       const advice = result.querySelector('[data-advice]');
@@ -208,37 +246,55 @@ const structuredData = {
         const p = document.createElement('p'); p.textContent = d.advice;
         div.append(h, p); advice.append(div);
       });
+      await out(quiz);
       quiz.hidden = true;
-      result.hidden = false;
+      quiz.getAnimations().forEach((a) => a.cancel());
       result.classList.remove('is-revealed');
-      void result.offsetWidth;
-      result.classList.add('is-revealed');
-      result.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      result.hidden = false;
+      toTop();
       result.focus({ preventScroll: true });
+      requestAnimationFrame(() => result.classList.add('is-revealed'));
+      await into(result);
+      busy = false;
     }
 
-    document.querySelector('[data-start]').addEventListener('click', () => {
-      intro.hidden = true; quiz.hidden = false; show(0);
-      quiz.scrollIntoView({ block: 'start' });
-    });
-    const advance = () => { const next = current + 1; next < total ? show(next) : finish(); };
+    async function start() {
+      await out(intro);
+      intro.hidden = true;
+      quiz.hidden = false;
+      qs.forEach((q) => activate(q, false));
+      current = -1;
+      toTop();
+      await into(quiz.querySelector('.check-progress'));
+      go(0);
+    }
+
+    const advance = () => (current + 1 < total ? go(current + 1) : finish());
+    document.querySelector('[data-start]').addEventListener('click', start);
     quiz.addEventListener('pointerdown', () => { pointer = true; });
     quiz.addEventListener('keydown', (e) => {
       pointer = false;
-      if (e.key === 'Enter' && qs[current].querySelector('input:checked')) { e.preventDefault(); advance(); }
+      if (e.key === 'Enter' && qs[current]?.querySelector('input:checked')) { e.preventDefault(); advance(); }
     });
-    // Mouse and touch answers advance on their own; keyboard users move on with Enter or the button.
+    // Mouse and touch answers move on by themselves; keyboard users continue with Enter or the button.
     quiz.addEventListener('change', (e) => {
       if (!(e.target instanceof HTMLInputElement)) return;
       nextBtn.disabled = false;
-      if (pointer) setTimeout(advance, reduce ? 0 : 260);
+      if (pointer) setTimeout(advance, reduce ? 0 : 380);
     });
-    nextBtn.addEventListener('click', advance);
     quiz.addEventListener('submit', (e) => e.preventDefault());
-    back.addEventListener('click', () => { if (current > 0) show(current - 1); });
-    result.querySelector('[data-restart]').addEventListener('click', () => {
-      quiz.reset(); result.hidden = true; quiz.hidden = false; show(0);
-      quiz.scrollIntoView({ block: 'start' });
+    nextBtn.addEventListener('click', advance);
+    back.addEventListener('click', () => { if (current > 0) go(current - 1, -1); });
+    result.querySelector('[data-restart]').addEventListener('click', async () => {
+      await out(result);
+      result.hidden = true;
+      result.getAnimations().forEach((a) => a.cancel());
+      quiz.reset();
+      quiz.hidden = false;
+      qs.forEach((q) => activate(q, false));
+      current = -1;
+      toTop();
+      go(0);
     });
   </script>
 </Layout>
