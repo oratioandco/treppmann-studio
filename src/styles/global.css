@@ -590,8 +590,6 @@ footer a { color: var(--white); }
 .check-start:hover span { transform: translateX(4px); }
 .check-privacy { margin-top: 1rem; font-size: .85rem; color: var(--muted); }
 
-.check-progress { height: 3px; background: var(--line); margin-bottom: 1.2rem; overflow: hidden; }
-.check-progress span { display: block; height: 100%; width: 0; background: var(--signal); transition: width 420ms cubic-bezier(.2,.7,.2,1); }
 .check-count { margin: 0 0 1.6rem; font-family: var(--mono); font-size: .78rem; color: var(--muted); }
 .check-question { border: 0; margin: 0; padding: 0; min-width: 0; }
 .check-stack { display: grid; }
@@ -706,4 +704,61 @@ main a[download]:hover > span[aria-hidden="true"] { transform: translateY(3px); 
   .method-path li::before { transform: none; }
   .has-motion .method-path li:not(.is-on) h3 { color: var(--white); }
   .has-motion .method-path li:not(.is-on) span { color: var(--signal); }
+}
+
+/* KI-Check: segmented progress, insights, processing, result climb */
+.check-segments { list-style: none; margin: 0 0 1.1rem; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.check-segments li { display: grid; gap: .45rem; }
+.check-seg-track { position: relative; height: 4px; background: var(--line); overflow: hidden; }
+.check-seg-fill { position: absolute; inset: 0; background: var(--signal); transform-origin: left; transform: scaleX(var(--seg, 0)); transition: transform 520ms cubic-bezier(.2,.7,.2,1), background 300ms ease; }
+.check-segments li.is-done .check-seg-fill { background: var(--ink); }
+.check-seg-name { font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); transition: color 300ms ease; }
+.check-segments li.is-current .check-seg-name { color: var(--ink); }
+.check-segments li.is-done .check-seg-name::after { content: ' ✓'; color: var(--signal); }
+.check-segments li.is-ticking .check-seg-track { animation: seg-pop 520ms cubic-bezier(.3,1.6,.5,1); }
+@keyframes seg-pop { 40% { transform: scaleY(2.2); } to { transform: none; } }
+.check-count-note { color: var(--signal); }
+.check-insight { margin: 1.8rem 0 0; padding: 1rem 1.2rem; background: var(--white); border-left: 3px solid var(--signal); font-size: .95rem; line-height: 1.5; opacity: 0; transform: translateY(8px); visibility: hidden; transition: opacity 500ms ease, transform 600ms cubic-bezier(.2,.7,.2,1), visibility 0s 500ms; }
+.check-insight.is-shown { opacity: 1; transform: none; visibility: visible; transition-delay: 450ms, 450ms, 0s; }
+.check-insight strong { font-weight: 650; }
+.check-insight cite { font-style: normal; font-size: .8rem; color: var(--muted); white-space: nowrap; }
+
+.check-processing { padding: 2rem 0 4rem; }
+.check-steps { list-style: none; margin: 1.6rem 0 2rem; padding: 0; display: grid; gap: .9rem; font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+.check-steps li { position: relative; padding-left: 2.2rem; color: var(--muted); opacity: .35; }
+.check-steps li::before { content: ''; position: absolute; left: 0; top: .2em; width: 1.1rem; height: 1.1rem; border: 1.5px solid currentColor; border-radius: 50%; }
+.check-processing.is-running .check-steps li { animation: step-on 400ms ease forwards; }
+.check-processing.is-running .check-steps li::before { animation: step-tick 300ms ease forwards; }
+.check-processing.is-running .check-steps li:nth-child(1), .check-processing.is-running .check-steps li:nth-child(1)::before { animation-delay: 150ms; }
+.check-processing.is-running .check-steps li:nth-child(2), .check-processing.is-running .check-steps li:nth-child(2)::before { animation-delay: 800ms; }
+.check-processing.is-running .check-steps li:nth-child(3), .check-processing.is-running .check-steps li:nth-child(3)::before { animation-delay: 1450ms; }
+@keyframes step-on { to { opacity: 1; color: var(--ink); } }
+@keyframes step-tick { to { background: var(--signal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%2311110f' stroke-width='2'/%3E%3C/svg%3E") center / 80% no-repeat; border-color: var(--signal); } }
+.check-processing-bar { height: 3px; background: var(--line); overflow: hidden; }
+.check-processing-bar span { display: block; height: 100%; background: var(--signal); transform-origin: left; transform: scaleX(0); }
+.check-processing.is-running .check-processing-bar span { animation: processing-fill 2000ms cubic-bezier(.4,0,.2,1) forwards; }
+@keyframes processing-fill { to { transform: scaleX(1); } }
+
+/* The ladder climbs to the reached stage, then the rest of the result follows */
+.check-result.is-revealed .check-ladder li { animation: none; }
+.check-ladder li.is-reached { transition-delay: calc(var(--n, 0) * 160ms); }
+.check-result:not(.is-revealed) .check-ladder li.is-reached { background: var(--white); color: var(--ink); border-color: var(--line); transition: none; }
+.check-ladder li.is-current { animation: none; }
+.check-result.is-revealed .check-ladder li.is-current { animation: stage-pulse 700ms cubic-bezier(.3,1.5,.5,1) calc(var(--n, 0) * 160ms + 200ms) both; }
+@keyframes stage-pulse { from { transform: scale(.94); } 50% { transform: scale(1.04); } to { transform: none; } }
+.check-result > h2, .check-result > .check-lead, .check-result > h3, .check-result .check-profile, .check-result .check-advice, .check-result .report-cta, .check-result .check-actions { transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
+.check-result:not(.is-revealed) > h2, .check-result:not(.is-revealed) > .check-lead, .check-result:not(.is-revealed) > h3, .check-result:not(.is-revealed) .check-profile, .check-result:not(.is-revealed) .check-advice, .check-result:not(.is-revealed) .report-cta, .check-result:not(.is-revealed) .check-actions { opacity: 0; transform: translateY(14px); }
+.check-result.is-revealed > h2 { transition-delay: calc(var(--climb, 0) * 160ms + 450ms); }
+.check-result.is-revealed > .check-lead { transition-delay: calc(var(--climb, 0) * 160ms + 600ms); }
+.check-result.is-revealed > h3, .check-result.is-revealed .check-profile { transition-delay: calc(var(--climb, 0) * 160ms + 800ms); }
+.check-result.is-revealed .check-advice { transition-delay: calc(var(--climb, 0) * 160ms + 1000ms); }
+.check-result.is-revealed .report-cta, .check-result.is-revealed .check-actions { transition-delay: calc(var(--climb, 0) * 160ms + 1150ms); }
+.check-result.is-revealed .check-profile-fill { transition-delay: calc(var(--climb, 0) * 160ms + 950ms); }
+
+@media (max-width: 760px) {
+  .check-seg-name { font-size: .56rem; letter-spacing: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .check-insight, .check-insight.is-shown { transition: none; }
+  .check-result:not(.is-revealed) > * { opacity: 1 !important; transform: none !important; }
 }
