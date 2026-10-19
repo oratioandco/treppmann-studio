@@ -54,6 +54,7 @@ export const aiLeadershipContent = {
         ['Viele Ideen, keine Priorität', 'Jede Abteilung probiert etwas anderes. Niemand entscheidet, welcher Prozess sich zuerst ändert und woran man den Nutzen misst.'],
         ['Ein Kernprozess hakt', 'Fachwissen, Ausnahmen und Übergaben lassen sich in Standardsoftware nicht abbilden. Das Team braucht einen besseren Prozess – und ein Werkzeug, das dazu passt.'],
       ],
+      frameTags: ['Heute', 'Danach'],
       closing: 'Erkennen Sie sich wieder? Dann fehlt Ihnen keine Technologie, sondern jemand, der die Verantwortung dafür übernimmt.',
     },
     why: {
@@ -156,6 +157,9 @@ export const aiLeadershipContent = {
     about: {
       label: 'Über mich',
       title: 'Ich führe – und ich setze selbst um.',
+      stageAlt: 'Tobias Treppmann bei einem Vortrag über Startup-Methoden im Betahaus Berlin',
+      stageSlip: 'Fall in love with the problem, not the solution.',
+      stageCaption: 'Vortrag bei Startup.Life, Betahaus Berlin, 2020',
       body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV baut die Entwicklung direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System. Aus dem Produktdesign bringe ich mit, Menschen ernst zu nehmen: ihren Kontext, ihre Ziele und das, was sie im Alltag bremst. Genau das braucht eine KI-Einführung nach innen.',
       points: [
         ['Führung', 'Produkt- und Designleitung, Senior Leadership Team, verteilte Teams in Deutschland und New York, Mentoring.'],
@@ -245,6 +249,7 @@ export const aiLeadershipContent = {
         ['Many ideas, no priority', 'Every department tries something different. Nobody decides which process changes first or how its value is measured.'],
         ['A core process is stuck', 'Domain knowledge, exceptions, and handoffs cannot be mapped in off-the-shelf software. The team needs a better process—and a tool that fits it.'],
       ],
+      frameTags: ['Today', 'After'],
       closing: 'Recognize yourself? Then you are not missing technology—you are missing someone who takes ownership of it.',
     },
     why: {
@@ -347,6 +352,9 @@ export const aiLeadershipContent = {
     about: {
       label: 'About',
       title: 'I lead—and I build myself.',
+      stageAlt: 'Tobias Treppmann giving a talk on startup methods at Betahaus Berlin',
+      stageSlip: 'Fall in love with the problem, not the solution.',
+      stageCaption: 'Talk at Startup.Life, Betahaus Berlin, 2020',
       body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, development builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
       points: [
         ['Leadership', 'Product and design leadership, Senior Leadership Team, distributed teams in Germany and New York, mentoring.'],

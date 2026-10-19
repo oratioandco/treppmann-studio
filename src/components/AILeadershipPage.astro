@@ -128,7 +128,10 @@ const structuredData = {
       <div class="section-shell needs-grid" data-reveal data-stagger>
         {c.needs.items.map(([title, body], i) => (
           <article style={`--i:${i}`}>
-            <figure class={`collage-object shape-${['circle', 'square', 'arch'][i]}`} aria-hidden="true"><img src={`/images/collage/${['keycard', 'notes', 'cord'][i]}.webp`} alt="" loading="lazy" /></figure>
+            <figure class={`collage-object collage-sequence shape-${['circle', 'square', 'arch'][i]}`} aria-hidden="true" data-frame="0">
+              {['', '-2', '-3'].map((suffix, f) => <img class={`frame-${f}`} src={`/images/collage/${['keycard', 'notes', 'cord'][i]}${suffix}.webp`} alt="" decoding="async" />)}
+              <figcaption><span class="tag-before">{c.needs.frameTags[0]}</span><span class="tag-after">{c.needs.frameTags[1]}</span></figcaption>
+            </figure>
             <h3>{title}</h3><p>{body}</p>
           </article>
         ))}
@@ -252,7 +255,15 @@ const structuredData = {
 
     <section class="about-section section-paper" id="about">
       <div class="section-shell leadership-heading" data-reveal>
-        <p class="section-label">{c.about.label}</p>
+        <div class="about-side">
+          <p class="section-label">{c.about.label}</p>
+          <figure class="about-stage">
+            <div class="about-stage-arch" aria-hidden="true"></div>
+            <img src="/images/collage/tobias-stage.webp" alt={c.about.stageAlt} width="500" height="900" loading="lazy" />
+            <p class="about-stage-slip" aria-hidden="true">{c.about.stageSlip}</p>
+            <figcaption>{c.about.stageCaption}</figcaption>
+          </figure>
+        </div>
         <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p></div>
       </div>
       <div class="section-shell about-points" data-reveal data-stagger>
@@ -384,5 +395,25 @@ const structuredData = {
       window.addEventListener('resize', onScroll);
       update();
     })();
-  </script>
+  
+  // Stop-motion: each blocker image steps from problem to solution as its card scrolls through
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const seqs = [...document.querySelectorAll('.collage-sequence')];
+    const step = () => {
+      const vh = innerHeight;
+      seqs.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const p = (vh * 0.9 - r.top) / (vh * 0.55);
+        const f = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+        if (el.dataset.frame !== String(f)) {
+          el.dataset.frame = String(f);
+          el.style.setProperty('--jit', `${(Math.random() * 4 - 2).toFixed(2)}deg`);
+        }
+      });
+    };
+    let raf = 0;
+    addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(step); }, { passive: true });
+    step();
+  }
+</script>
 </Layout>
