@@ -22,7 +22,7 @@ export const aiLeadershipContent = {
     hero: {
       kicker: 'KI-Verantwortung für Mittelstand und Scale-ups – als Projekt, auf Zeit oder fest',
       title: 'Die KI-Lizenzen sind bezahlt. Genutzt werden sie kaum.',
-      intro: 'Ich bringe KI in Ihre Prozesse – so, dass Ihre Leute sie wirklich nutzen. Mit der Geschäftsführung kläre ich, wo sich KI lohnt, mit Ihren Teams baue ich den ersten Prozess um, und nach 90 Tagen ist das Ergebnis messbar.',
+      intro: 'Ich bringe KI in Ihre Prozesse – so, dass Ihre Leute sie wirklich nutzen. Mit der Geschäftsführung kläre ich, wo sich KI lohnt, mit Ihren Teams baue ich den ersten Prozess um, und nach rund 90 Tagen ist ein erstes Ergebnis messbar.',
       audience: 'Betriebsrat und Datenschutzbeauftragte binde ich von Anfang an ein.',
       proofLabel: 'Bei Bibel TV',
       proof: 'KI-Schreibassistent für Briefe, E-Mails und Social-Media-Anfragen. Komplexe Briefe in Minuten statt Stunden. Eingeführt ohne Pflicht – heute nutzen ihn auch anfangs skeptische Kolleginnen und Kollegen.',
@@ -30,6 +30,7 @@ export const aiLeadershipContent = {
       secondary: 'So sehen die ersten 90 Tage aus',
       portraitAlt: 'Tobias Treppmann in Berlin',
       portraitMeta: 'Produktleitung · Prozessgestaltung · KI-Einführung',
+      ticket: ['KI-Lizenz', 'bezahlt', 'genutzt?'],
     },
     credentials: {
       label: 'Erfahrung',
@@ -37,7 +38,7 @@ export const aiLeadershipContent = {
         ['Ninox', 'Leitung Produktdesign, zeitweise auch Produktmanagement; Mitglied des Senior Leadership Teams'],
         ['Datameer', 'Designleitung einer Analytics-Plattform für führende Banken und Versicherer'],
         ['Hypoport', 'Mit der Geschäftsleitung interne Dienstleistungen in standardisierte Angebote überführt'],
-        ['Bibel TV · ChurchDesk', 'KI im Service und in der Entwicklung eingeführt, Prozesse zu Produkten gemacht'],
+        ['Bibel TV', 'KI im Zuschauerservice und in der Produktentwicklung eingeführt'],
       ],
     },
     needs: {
@@ -53,7 +54,7 @@ export const aiLeadershipContent = {
     },
     why: {
       label: 'Warum jetzt',
-      title: 'Ihr Wettbewerb hat KI gekauft. Genutzt wird sie kaum.',
+      title: 'KI ist im Mittelstand angekommen. Der Nutzen noch nicht.',
       items: [
         [`57${nb}%`, 'der Unternehmen ab 20 Beschäftigten setzen KI ein. Erstmals ist es mehr als die Hälfte.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
         [`0${nb}%`, 'der KI-Anwender sagen, sie schöpfen das Potenzial voll aus. Sechs von zehn schöpfen es überhaupt nicht aus.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
@@ -151,7 +152,7 @@ export const aiLeadershipContent = {
     about: {
       label: 'Über mich',
       title: 'Ich führe – und ich setze selbst um.',
-      body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV setzt die externe Entwicklungsagentur direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System. Aus dem Produktdesign bringe ich mit, Menschen ernst zu nehmen: ihren Kontext, ihre Ziele und das, was sie im Alltag bremst. Genau das braucht eine KI-Einführung nach innen.',
+      body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV baut die Entwicklung direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System. Aus dem Produktdesign bringe ich mit, Menschen ernst zu nehmen: ihren Kontext, ihre Ziele und das, was sie im Alltag bremst. Genau das braucht eine KI-Einführung nach innen.',
       points: [
         ['Führung', 'Produkt- und Designleitung, Senior Leadership Team, verteilte Teams in Deutschland und New York, Mentoring.'],
         ['Produkt und Prozesse', 'Produktstrategie, Prozessgestaltung, Prototypen in echtem Code, Automatisierung mit Schnittstellen und n8n.'],
@@ -188,7 +189,7 @@ export const aiLeadershipContent = {
       needsText: 'Warum das so vielen Unternehmen passiert, zeigt mein Report',
       whyText: 'Was diese Zahlen für die Praxis bedeuten:',
       title: 'Gekauft ist nicht eingeführt',
-      footer: 'Report', checkHref: 'https://treppmann.de/ki-check/', checkText: 'Wo stehen Sie selbst?', checkLink: 'KI-Check in drei Minuten', checkFooter: 'KI-Check', nav: 'KI-Check', toolsLabel: 'Selbst einschätzen', toolsTitle: 'Wo stehen Sie? Zwei Wege, das herauszufinden.', checkMeta: 'KI-Check · 3 Minuten', checkTitle: 'Zehn Fragen, fünf Stufen, Ihr nächster Schritt.', checkBody: 'Nutzung, Prozesse, Verantwortung, Befähigung und Messen: Sie sehen, wo Sie stehen und wo ich zuerst ansetzen würde. Ohne Anmeldung, nichts wird gespeichert.', checkAction: 'Check starten', reportMeta: 'Report · 8 Minuten Lesezeit', reportBody: 'Warum mehr als die Hälfte der Unternehmen KI nutzt, aber kaum eines etwas daraus holt. Aus aktuellen Studien und 187 Gesprächen mit Praktikern.', reportAction: 'Report lesen',
+      footer: 'Report', checkHref: 'https://treppmann.de/ki-check/', checkText: 'Wo stehen Sie selbst?', checkLink: 'KI-Check in drei Minuten', checkFooter: 'KI-Check', nav: 'KI-Check', toolsLabel: 'Selbst einschätzen', toolsTitle: 'Wo stehen Sie? Zwei Wege, das herauszufinden.', checkMeta: 'KI-Check · 3 Minuten', checkTitle: 'Zehn Fragen, fünf Stufen, Ihr nächster Schritt.', checkBody: 'Nutzung, Prozesse, Verantwortung, Befähigung und Messen: Sie sehen, wo Sie stehen und wo ich zuerst ansetzen würde. Ohne Anmeldung, nichts wird gespeichert.', checkAction: 'Check starten', reportMeta: 'Report · 8 Minuten Lesezeit', reportBody: 'Warum mehr als die Hälfte der Unternehmen KI nutzt, aber kaum eines etwas daraus holt. Aus aktuellen Studien und 187 Podcastfolgen mit Praktikern.', reportAction: 'Report lesen',
     },
     footer: { name: 'Tobias Treppmann · KI-Transformation', impressum: 'Impressum', privacy: 'Datenschutz', portfolio: 'Portfolio' },
   },
@@ -208,7 +209,7 @@ export const aiLeadershipContent = {
     hero: {
       kicker: 'AI ownership for mid-sized companies and scale-ups—as a project, interim, or permanent',
       title: 'The AI licenses are paid for. Hardly anyone uses them.',
-      intro: 'I bring AI into your processes so your people actually use it. With leadership I decide where AI pays off, with your teams I rebuild the first process, and after 90 days the result is measurable.',
+      intro: 'I bring AI into your processes so your people actually use it. With leadership I decide where AI pays off, with your teams I rebuild the first process, and after about 90 days a first result is measurable.',
       audience: 'Works council and data protection officers are involved from day one.',
       proofLabel: 'At Bibel TV',
       proof: 'An AI writing assistant for letters, emails, and social media requests. Complex letters in minutes instead of hours. Introduced without a mandate—now used by initially skeptical colleagues too.',
@@ -216,6 +217,7 @@ export const aiLeadershipContent = {
       secondary: 'What the first 90 days look like',
       portraitAlt: 'Tobias Treppmann in Berlin',
       portraitMeta: 'Product leadership · Process design · AI adoption',
+      ticket: ['AI licence', 'paid', 'used?'],
     },
     credentials: {
       label: 'Experience',
@@ -223,7 +225,7 @@ export const aiLeadershipContent = {
         ['Ninox', 'Head of Product Design, for a time also product management; member of the Senior Leadership Team'],
         ['Datameer', 'Design lead for an analytics platform used by leading banks and insurers'],
         ['Hypoport', 'Turned internal services into standardized offerings with the executive team'],
-        ['Bibel TV · ChurchDesk', 'AI introduced in service and development, processes turned into products'],
+        ['Bibel TV', 'AI introduced in viewer services and product development'],
       ],
     },
     needs: {
@@ -239,7 +241,7 @@ export const aiLeadershipContent = {
     },
     why: {
       label: 'Why now',
-      title: 'Your competitors have bought AI. Few are using it.',
+      title: 'AI has arrived. The benefit has not.',
       items: [
         ['57%', 'of German companies with 20+ employees use AI. For the first time, that is more than half.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
         ['0%', 'of those AI users say they use its potential fully. Six in ten say they do not use it at all.', 'Bitkom, September 2026', 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI'],
@@ -337,7 +339,7 @@ export const aiLeadershipContent = {
     about: {
       label: 'About',
       title: 'I lead—and I build myself.',
-      body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, the external engineering agency builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
+      body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, development builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
       points: [
         ['Leadership', 'Product and design leadership, Senior Leadership Team, distributed teams in Germany and New York, mentoring.'],
         ['Product and process', 'Product strategy, process design, prototypes in real code, automation with APIs and n8n.'],

@@ -86,8 +86,17 @@ const structuredData = {
           </div>
           <p class="hero-proof"><strong>{c.hero.proofLabel}:</strong> {c.hero.proof}</p>
         </div>
-        <figure class="leadership-portrait">
-          <img src="/images/tobias-treppmann.jpg" alt={c.hero.portraitAlt} width="600" height="750" />
+        <figure class="hero-collage">
+          <div class="collage-sun" aria-hidden="true"></div>
+          <ol class="collage-steps" aria-hidden="true">
+            {[1, 2, 3, 4, 5].map((n) => <li style={`--n:${n}`}>{n}</li>)}
+          </ol>
+          <img class="collage-portrait" src="/images/tobias-treppmann-halftone.webp" alt={c.hero.portraitAlt} width="800" height="830" />
+          <p class="collage-ticket" aria-hidden="true">
+            <span>{c.hero.ticket[0]}</span>
+            <strong>{c.hero.ticket[1]}</strong>
+            <em>{c.hero.ticket[2]}</em>
+          </p>
           <figcaption>
             <strong>Tobias Treppmann</strong>
             <span>{c.hero.portraitMeta}</span>
@@ -111,7 +120,10 @@ const structuredData = {
       </div>
       <div class="section-shell needs-grid" data-reveal data-stagger>
         {c.needs.items.map(([title, body], i) => (
-          <article style={`--i:${i}`}><h3>{title}</h3><p>{body}</p></article>
+          <article style={`--i:${i}`}>
+            <figure class={`collage-object shape-${['circle', 'square', 'arch'][i]}`} aria-hidden="true"><img src={`/images/collage/${['keycard', 'notes', 'cord'][i]}.webp`} alt="" loading="lazy" /></figure>
+            <h3>{title}</h3><p>{body}</p>
+          </article>
         ))}
       </div>
       <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p></div>
@@ -171,6 +183,7 @@ const structuredData = {
         {c.proof.cases.map((item, i) => (
           <article class="compact-proof-card" style={`--i:${i}`}>
             <div class="proof-context"><p>{item.context}</p></div>
+            <figure class={`collage-object shape-${['arch', 'circle', 'square'][i]}`} aria-hidden="true"><img src={`/images/collage/${['letters', 'hands', 'blocks'][i]}.webp`} alt="" loading="lazy" /></figure>
             <h3>{item.title}</h3>
             <p class="proof-body">{item.body}</p>
             <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
@@ -219,7 +232,10 @@ const structuredData = {
         <div><p>{c.formats.extra.body}</p><a href={mail(c.formats.extra.subject)}>{c.formats.extra.action}<span aria-hidden="true"> →</span></a></div>
       </div>
       <div class="section-shell requirements">
-        <h3>{c.formats.requirements.title}</h3>
+        <div>
+          <h3>{c.formats.requirements.title}</h3>
+          <figure class="collage-object collage-object-small shape-circle" aria-hidden="true"><img src="/images/collage/stamp.webp" alt="" loading="lazy" /></figure>
+        </div>
         <ul>{c.formats.requirements.items.map((item) => <li>{item}</li>)}</ul>
       </div>
       <div class="section-shell section-cta">
