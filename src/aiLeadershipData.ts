@@ -31,6 +31,10 @@ export const aiLeadershipContent = {
       portraitAlt: 'Tobias Treppmann in Berlin',
       portraitMeta: 'Produktleitung · Prozessgestaltung · KI-Einführung',
       ticket: ['KI-Lizenz', 'bezahlt', 'genutzt?'],
+      stepsLabel: 'Fünf Stufen. Wo stehen Sie?',
+      stepsAction: 'Zum KI-Check',
+      stepsHref: 'https://treppmann.de/ki-check/',
+      stages: ['Gekauft', 'Ausprobiert', 'Erste Vorhaben', 'Ein Prozess läuft anders', 'Teil der Arbeitsweise'],
     },
     credentials: {
       label: 'Erfahrung',
@@ -218,6 +222,10 @@ export const aiLeadershipContent = {
       portraitAlt: 'Tobias Treppmann in Berlin',
       portraitMeta: 'Product leadership · Process design · AI adoption',
       ticket: ['AI licence', 'paid', 'used?'],
+      stepsLabel: 'Five stages. Where are you?',
+      stepsAction: 'See the plan',
+      stepsHref: '#plan',
+      stages: ['Bought', 'Tried out', 'First projects', 'One process works differently', 'Part of how we work'],
     },
     credentials: {
       label: 'Experience',

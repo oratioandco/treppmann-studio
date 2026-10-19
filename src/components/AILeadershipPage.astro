@@ -88,9 +88,16 @@ const structuredData = {
         </div>
         <figure class="hero-collage">
           <div class="collage-sun" aria-hidden="true"></div>
-          <ol class="collage-steps" aria-hidden="true">
-            {[1, 2, 3, 4, 5].map((n) => <li style={`--n:${n}`}>{n}</li>)}
-          </ol>
+          <nav class="collage-steps" aria-label={c.hero.stepsLabel}>
+            <p class="collage-steps-label"><span>{c.hero.stepsLabel}</span> <a href={c.hero.stepsHref}>{c.hero.stepsAction}<span aria-hidden="true"> →</span></a></p>
+            <ol>
+              {c.hero.stages.map((name, i) => (
+                <li style={`--n:${i + 1}`}>
+                  <a href={c.hero.stepsHref}><b>{i + 1}</b><span class="collage-step-name">{name}</span></a>
+                </li>
+              ))}
+            </ol>
+          </nav>
           <img class="collage-portrait" src="/images/tobias-treppmann-halftone.webp" alt={c.hero.portraitAlt} width="800" height="830" />
           <p class="collage-ticket" aria-hidden="true">
             <span>{c.hero.ticket[0]}</span>
