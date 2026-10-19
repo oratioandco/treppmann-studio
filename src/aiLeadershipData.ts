@@ -103,14 +103,6 @@ export const aiLeadershipContent = {
       label: 'Die ersten 90 Tage',
       title: 'Vom Menschen aus: fünf Schritte.',
       body: 'Viele KI-Projekte beginnen mit einer Liste von Use Cases. Ich beginne damit, wie die Arbeit heute wirklich läuft. Der erste Durchlauf dauert meist rund 90 Tage, je nach Freigaben im Haus. Danach läuft mindestens ein KI-gestützter Prozess, den Ihre Leute tatsächlich verwenden, mit gemessenem Ergebnis – und der nächste folgt, mit dem, was das Team gelernt hat. IT-Sicherheit, Recht, Datenschutz und Architektur ziehe ich je nach Risiko hinzu, bei Bedarf mit spezialisierten Partnern.',
-      photos: [
-        ['/images/collage/step-1.webp', 'Workshop am Whiteboard, 2018', 'Mit KI bearbeitet'],
-        ['/images/collage/step-2.webp', 'Klebezettelwand im Team, Datameer, 2017', 'Mit KI bearbeitet'],
-        ['/images/collage/step-3.webp', 'Entwurf am Whiteboard, Datameer, 2017', 'Mit KI bearbeitet'],
-        ['/images/collage/step-4.webp', 'Design-Thinking-Workshop, 2018', 'Mit KI nachgestellt'],
-        ['/images/collage/step-5.webp', 'Vortrag bei Startup.Life, Betahaus Berlin, 2020', ''],
-      ],
-      photoNote: 'Bei bearbeiteten Fotos hat KI die Gesichter, Haare und Kleidung anderer Personen ersetzt. Nachgestellte Bilder zeigen eine Szene, die so stattgefunden hat, sind aber vollständig erzeugt.',
       steps: [
         ['Schritt 1', 'Ziel klären', 'Gespräche mit der Geschäftsführung: Was soll besser werden, und wie sieht es heute aus? Ergebnis: Ziele, Ausgangslage und Messgrößen, schriftlich festgehalten.'],
         ['Schritt 2', 'Prozesse verstehen', 'Mit den Menschen, die sie täglich machen: Abläufe, Übergaben und Ausnahmen, Blocker und Reibungen, gute und schlechte Momente. Ergebnis: ein klares Bild davon, wo es wirklich hakt.'],
@@ -268,8 +260,8 @@ export const aiLeadershipContent = {
       label: 'Why now',
       title: 'AI has arrived. The benefit has not.',
       items: [
-        ['57%', 'of German companies with 20+ employees use AI. For the first time, that is more than half.', 'Bitkom, September 2026 · in my report (German)', 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/#bitkom-potenzial'],
-        ['0%', 'of those AI users say they use its potential fully. Six in ten say they do not use it at all.', 'Bitkom, September 2026 · in my report (German)', 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/#bitkom-potenzial'],
+        ['57%', 'of German companies with 20+ employees use AI. For the first time, that is more than half.', 'Bitkom, September 2026 · in my report', 'https://treppmann.de/en/report/#bitkom-potenzial'],
+        ['0%', 'of those AI users say they use its potential fully. Six in ten say they do not use it at all.', 'Bitkom, September 2026 · in my report', 'https://treppmann.de/en/report/#bitkom-potenzial'],
         ['Since Feb 2025', 'Article 4 of the EU AI Act requires companies that use AI to ensure sufficient AI literacy among their staff.', 'Regulation (EU) 2024/1689', 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj'],
       ],
     },
@@ -310,14 +302,6 @@ export const aiLeadershipContent = {
       label: 'The first 90 days',
       title: 'People first: five steps.',
       body: 'Many AI projects start with a list of use cases. I start with how the work really runs today. The first cycle usually takes about 90 days, depending on approvals in your organisation. Then at least one AI-supported process is running that your people actually use, with a measured result—and the next one follows, with what the team has learned. IT security, legal, data protection, and architecture join as the risk requires, with specialist partners where needed.',
-      photos: [
-        ['/images/collage/step-1.webp', 'Whiteboard workshop, 2018', 'Edited with AI'],
-        ['/images/collage/step-2.webp', 'Sticky-note wall with the team, Datameer, 2017', 'Edited with AI'],
-        ['/images/collage/step-3.webp', 'Sketching at the whiteboard, Datameer, 2017', 'Edited with AI'],
-        ['/images/collage/step-4.webp', 'Design-thinking workshop, 2018', 'Recreated with AI'],
-        ['/images/collage/step-5.webp', 'Talk at Startup.Life, Betahaus Berlin, 2020', ''],
-      ],
-      photoNote: 'In edited photos, AI replaced the faces, hair and clothing of other people. Recreated images show a scene that took place but are fully generated.',
       steps: [
         ['Step 1', 'Set the goal', 'Conversations with leadership: what should get better, and where are we today? Outcome: goals, baseline, and measures, in writing.'],
         ['Step 2', 'Understand the processes', 'With the people who run them every day: workflows, handoffs and exceptions, blockers and friction, good and bad moments. Outcome: a clear picture of where it really gets stuck.'],

@@ -1,8 +1,8 @@
 ---
 // Horizontal percentage bars. Values are shown as printed in the source; never summed.
 interface Row { label: string; value: number; highlight?: boolean }
-interface Props { title: string; rows: Row[]; source: string; sourceHref: string; note?: string }
-const { title, rows, source, sourceHref, note } = Astro.props;
+interface Props { title: string; rows: Row[]; source: string; sourceHref: string; note?: string; sourceLabel?: string }
+const { title, rows, source, sourceHref, note, sourceLabel = 'Quelle' } = Astro.props;
 const nb = ' ';
 ---
 <figure class="report-chart">
@@ -16,5 +16,5 @@ const nb = ' ';
       </li>
     ))}
   </ul>
-  <p class="report-chart-source">{note && <>{note} </>}Quelle: <a href={sourceHref} target="_blank" rel="noopener">{source}</a></p>
+  <p class="report-chart-source">{note && <>{note} </>}{sourceLabel}: <a href={sourceHref} target="_blank" rel="noopener">{source}</a></p>
 </figure>

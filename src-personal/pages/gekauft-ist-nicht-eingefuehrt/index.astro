@@ -5,7 +5,7 @@ import BarChart from '../../components/BarChart.astro';
 
 const url = 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/';
 const title = 'Gekauft ist nicht eingeführt';
-const description = 'Mehr als die Hälfte der deutschen Unternehmen nutzt KI, kaum eines schöpft sie aus. Was aktuelle Studien und 187 Podcastgespräche darüber zeigen, warum das selten an der Technik liegt.';
+const description = 'Mehr als die Hälfte der deutschen Unternehmen nutzt KI, kaum eines schöpft sie aus. Was aktuelle Studien und 187 Podcastfolgen darüber zeigen, warum das selten an der Technik liegt.';
 const bookUrl = 'https://fantastical.app/tobiastreppmann';
 const structuredData = {
   '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ const structuredData = {
 };
 ---
 
-<Layout lang="de-DE" title={`${title} – Tobias Treppmann`} description={description} canonical={url} alternateDe={url} alternateEn={url} alternateDefault={url} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+<Layout lang="de-DE" title={`${title} – Tobias Treppmann`} description={description} canonical={url} alternateDe={url} alternateEn="https://treppmann.de/en/report/" alternateDefault={url} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="topbar leadership-topbar">
     <a class="brand" href="/" aria-label="Tobias Treppmann – Startseite">
@@ -27,7 +27,7 @@ const structuredData = {
     </a>
     <div class="topbar-actions">
       <a class="topbar-contact" href="/#contact">Kontakt</a>
-      <a class="language" href="/en/" lang="en">EN</a>
+      <a class="language" href="/en/report/" lang="en">EN</a>
     </div>
   </header>
 

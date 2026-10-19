@@ -1,0 +1,120 @@
+---
+import Layout from '../../../../src/layouts/Layout.astro';
+import BarChart from '../../../components/BarChart.astro';
+
+const url = 'https://treppmann.de/en/report/';
+const deUrl = 'https://treppmann.de/gekauft-ist-nicht-eingefuehrt/';
+const title = 'Bought is not adopted';
+const description = 'More than half of German companies use AI, hardly any get much out of it. An English summary of my report: what current studies and 187 podcast episodes show about why this is rarely about the technology.';
+const bookUrl = 'https://fantastical.app/tobiastreppmann';
+const bitkom = 'https://www.bitkom.org/Presse/Presseinformation/Erstmals-nutzt-Mehrheit-Unternehmen-KI';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${title} (summary)`,
+  description,
+  inLanguage: 'en',
+  datePublished: '2026-10-19',
+  author: { '@type': 'Person', name: 'Tobias Treppmann', url: 'https://treppmann.de/en/' },
+  mainEntityOfPage: url,
+};
+---
+
+<Layout lang="en" title={`${title} – Tobias Treppmann`} description={description} canonical={url} alternateDe={deUrl} alternateEn={url} alternateDefault={deUrl} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href="/en/" aria-label="Tobias Treppmann – home">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>AI Transformation</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="/en/#contact">Contact</a>
+      <a class="language" href="/gekauft-ist-nicht-eingefuehrt/" lang="de">DE</a>
+    </div>
+  </header>
+
+  <main class="legal-page report-page section-paper" id="main">
+    <article class="section-shell legal-article report-article">
+      <p class="section-label">Report · October 2026 · English summary</p>
+      <h1>Bought is not adopted</h1>
+      <p class="report-subtitle">More than half of German companies use AI. Hardly any get much out of it. Why that is rarely about the technology, and what the companies that make it work do differently.</p>
+      <p class="report-byline">Tobias Treppmann · summary of the German report of 17 October 2026 · 4 minutes · <a href="/gekauft-ist-nicht-eingefuehrt/" lang="de">Full report in German</a></p>
+
+      <p class="report-lead" id="bitkom-potenzial">In September, the German digital association Bitkom asked 603 companies with 20 or more employees how they work with AI. The headline was good news: for the first time, more than half of them use it.</p>
+      <p>The more interesting figure came a few lines further down. Of the companies that use AI, not a single one says it uses the potential fully. Six in ten say they do not use it at all.</p>
+      <BarChart
+        title="How much of AI’s potential do companies that use it actually use?"
+        rows={[
+          { label: 'Fully', value: 0 },
+          { label: 'Rather strongly', value: 3 },
+          { label: 'A little', value: 28 },
+          { label: 'Not at all', value: 59, highlight: true },
+        ]}
+        note="Self-assessment of AI users among 603 German companies with 20+ employees."
+        source="Bitkom, September 2026"
+        sourceHref={bitkom}
+        sourceLabel="Source"
+      />
+      <p>I know this gap from my own work. To see whether others experience it the same way, I read the current company surveys by Bitkom and the TÜV association and analysed 187 episodes of three German-language podcasts in which AI leads, managing directors and consultants talk about their practice. The studies show how widespread the problem is. The episodes show what it looks like day to day.</p>
+
+      <aside class="report-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">Five observations</h2>
+        <ol>
+          <li><strong>Bought is not adopted.</strong> The majority uses AI, but almost nobody gets the most out of it.</li>
+          <li><strong>The money is not in the licence,</strong> but in data, integration and infrastructure.</li>
+          <li><strong>Without an accountable person, AI stays an experiment.</strong> It does not take a new department.</li>
+          <li><strong>People learn AI in their own work,</strong> not from an announcement and rarely in a classroom.</li>
+          <li><strong>If you do not define the benefit up front,</strong> you cannot show it later.</li>
+        </ol>
+      </aside>
+
+      <h2>A licence is not an adoption</h2>
+      <p>According to the TÜV association, 56&#8239;% of companies use generative AI in daily work; 27&#8239;% have trained their employees in it. Where the company offers no path, people find their own: in just over four in ten companies, employees use private AI accounts, or management assumes they do. Only just under a quarter have rules for it.</p>
+
+      <h2>Process first, then the tool</h2>
+      <p>Look at what AI users actually spend money on. The big items are infrastructure (51&#8239;%), preparing data (50&#8239;%) and integration into existing systems (41&#8239;%). Only one company in five names licences (21&#8239;%). The tool is the cheap part. The examples that work in the podcasts do not start with a big clean-up project. They start with one process that is clear enough to rebuild.</p>
+
+      <h2>Someone has to own it</h2>
+      <p>For mid-sized companies the answer is more sober than expected: not a new department, but one person with a mandate. Someone who sets priorities, sees the first process through and reports what it delivered. Whether that person comes from inside, joins for a while or is hired is secondary.</p>
+
+      <h2>Bring people along</h2>
+      <p>42&#8239;% of AI users say their employees lack acceptance; two thirds rate their people’s AI skills as low; 70&#8239;% now offer training. In the episodes, something else stands out: where adoption works, people experienced AI on their own task, with someone at their side, often in small pilot groups.</p>
+      <aside class="report-practice" aria-label="From my practice: Bibel TV">
+        <p class="report-voice">From my practice: Bibel TV</p>
+        <p>At Bibel TV I introduced an AI assistant that drafts replies to viewer letters, emails and messages in the house voice. A person checks and sends every reply. Use was voluntary: a week to try it, then one-to-one sessions on people’s own cases. Replies to complex letters now take minutes instead of hours, and sceptics came back on their own after trying it on their hardest letter. <a href="/en/case-studies/ai-assistant-viewer-services/">The full example</a></p>
+      </aside>
+
+      <h2>Measured too late, or not at all</h2>
+      <p>45&#8239;% of AI users see a measurable contribution to business success. So more than half do not see it, or do not measure it. Where it is measured, it gets concrete straight away: time per case, share of people using AI daily, costs saved.</p>
+
+      <h2>What follows</h2>
+      <ol class="report-steps-diagram" aria-label="Four steps to AI that gets used">
+        <li><strong>Choose one process</strong><span>Not a strategy: a workflow that happens often, costs time and is clear enough to rebuild.</span></li>
+        <li><strong>Make one person accountable</strong><span>With a mandate and time. Internal, interim or hired.</span></li>
+        <li><strong>Enable people on their own work</strong><span>People try AI on their tasks, with guidance, not only in a classroom.</span></li>
+        <li><strong>Decide up front what counts</strong><span>Time per case, usage, cost. Measured before the start and after.</span></li>
+        <li class="report-step-end">After 90 days: review the result, then take on the next process.</li>
+      </ol>
+      <p class="report-closing">Adopting AI is work with people, not with licences.</p>
+
+      <div class="report-cta">
+        <p>This is how I work. If you would like to know where this could start in your company, let’s talk for 30 minutes.</p>
+        <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">Book an intro call<span aria-hidden="true"> ↗︎</span></a>
+        <p class="report-cta-alt">Or write to me: <a href="mailto:tobias@treppmann.de?subject=Report%20AI%20adoption">tobias@treppmann.de</a> · <a href="/en/">How I work</a></p>
+      </div>
+
+      <section class="report-about" aria-labelledby="about-title">
+        <h2 id="about-title">About this summary</h2>
+        <p>This is a shortened English version of the German report <a href="/gekauft-ist-nicht-eingefuehrt/" lang="de">„Gekauft ist nicht eingeführt“</a>, where you will find all sources, the cited podcast episodes and the method. Figures come from three representative surveys of German companies with 20+ employees: Bitkom (September 2026, 603 companies; October 2025, 604 companies) and the TÜV association (April 2026, Forsa, 500 companies). They are reported separately and not combined. The podcast material covers 187 episodes: all 106 of AI FIRST, all 44 of KI &amp; Tonic and 37 of the Venture AI Podcast since October 2025. Podcast guests are not a representative sample; the episodes show what adoption can look like, not how common it is.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · AI Transformation</span>
+    <div class="footer-links">
+      <a href="/impressum/">Legal notice</a>
+      <a href="/datenschutz/">Privacy</a>
+      <a href="/en/">Home</a>
+    </div>
+  </footer>
+</Layout>

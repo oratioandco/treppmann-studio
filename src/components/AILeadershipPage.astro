@@ -211,9 +211,8 @@ const structuredData = {
       <ol class="section-shell method-path" data-reveal data-stagger data-steps>
         {c.plan.steps.map(([when, title, body], i) => (
           <li style={`--i:${i}`}>
-            <figure class="method-photo" style={`--tilt:${[-2, 1.5, -1, 2, -1.5][i]}deg`}>
-              <img src={c.plan.photos[i][0]} alt={c.plan.photos[i][1]} width="900" height="675" loading="lazy" />
-              <figcaption>{c.plan.photos[i][1]}{c.plan.photos[i][2] && <em>{c.plan.photos[i][2]}</em>}</figcaption>
+            <figure class={`collage-object method-object shape-${['circle', 'arch', 'square', 'circle', 'arch'][i]}`} aria-hidden="true">
+              <img src={`/images/collage/plan-${['goal', 'process', 'choice', 'build', 'measure'][i]}.webp`} alt="" loading="lazy" />
             </figure>
             <span>{when}</span>
             <h3>{title}</h3>
@@ -221,7 +220,6 @@ const structuredData = {
           </li>
         ))}
       </ol>
-      <p class="section-shell method-photo-note">{c.plan.photoNote}</p>
     </section>
 
     <section class="engagements-section section-light" id="formats">

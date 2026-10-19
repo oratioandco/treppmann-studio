@@ -1021,3 +1021,15 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 .about-keynote figcaption { margin-top: .45rem; font-family: var(--mono); font-size: .58rem; line-height: 1.45; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
 .about-keynote em { font-style: normal; color: var(--signal); }
 @media (max-width: 900px) { .about-keynote { width: min(85%, 320px); margin-left: 0; } }
+
+/* Plan: one result object per step */
+.method-object { height: 170px; margin: 0 0 1.2rem; justify-content: flex-start; }
+.method-object::before { left: 12px; margin-left: 0; width: 120px; height: 120px; bottom: 6%; }
+.method-object.shape-arch::before { border-radius: 60px 60px 0 0; height: 136px; }
+.method-object img { max-width: 150px; max-height: 92%; margin-left: 4px; transition: transform 500ms cubic-bezier(.2,.75,.2,1); }
+.method-path li:hover .method-object img { transform: rotate(-4deg) translateY(-4px); }
+.has-motion .method-path li:not(.is-on) .method-object::before { background: rgba(255,97,56,.35); }
+.has-motion .method-path li:not(.is-on) .method-object img { opacity: .55; }
+.method-object::before, .method-object img { transition: background 500ms ease, opacity 500ms ease, transform 500ms cubic-bezier(.2,.75,.2,1); }
+
+@media (max-width: 900px) { .collage-object-small::before, .method-object::before, .case-hero-object::before { margin-left: 0; } .collage-object-small::before { width: 110px; height: 110px; } }

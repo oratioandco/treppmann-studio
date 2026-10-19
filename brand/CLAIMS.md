@@ -21,14 +21,15 @@ not in this table does not go into a post, deck, video, print-out or page.** The
 | 13 | Guest lecturer, Spiced Academy (2024–2025) | CT teaching record | yes | Tobias | yes |
 | 14 | AI Design Mentor, his own programme | CT teaching record | yes (beta) | Tobias | yes |
 | 15 | More than 15 years designing processes people like to use | CT §2 timeline (US work from 2009) | yes | Tobias | yes |
-| 16 | Talk at Startup.Life, Betahaus Berlin, 24 Feb 2020 ("Missional Design – startup tools for churches") | CT photos/talk entry 2026-10-19 | yes | Tobias | yes — organiser role **not** confirmed |
+| 16 | Talk at Startup.Life, Betahaus Berlin, 24 Feb 2020 ("Missional Design – startup tools for churches") | CT photos/talk entry 2026-10-19 | yes | Tobias | yes — he was the **organiser** of Startup.Life (confirmed 2026-10-19) |
 | 17 | 57 % of German companies with 20+ employees use AI | Bitkom, 14 Sep 2026 | yes | Bitkom | yes, with source |
 | 18 | 0 % of AI users say they exhaust the potential fully; 3 % "rather strongly"; 28 % little; 59 % not at all | Bitkom, 14 Sep 2026 | yes | Bitkom | yes, with source |
 | 19 | Art. 4 EU AI Act: since Feb 2025 companies using AI must ensure sufficient AI literacy | Regulation (EU) 2024/1689 | yes | law | yes |
 | 20 | Report draws on 187 podcast episodes (AI FIRST 106, Venture AI 37, KI & Tonic 44) and five studies | report method section | yes | Tobias | yes — "episodes", never "conversations he held" |
 | 21 | Lauda expects €1.62 m a year net of costs from its AI projects | AI FIRST ep. 20 (Lauda's own figure) | as stated by Lauda | Lauda | yes, attributed |
 | 22 | First cycle usually about 90 days, depending on approvals | method, his framing | promise style | Tobias | yes — "meist", "rund"; never a guarantee |
-| 23 | Formats: project, interim mandate (2–3 days/week, from 3 months), permanent role, guidance and sparring | site | yes | Tobias | yes — check secondary-employment clause before advertising while employed |
+| 23 | Formats: project, interim mandate (2–3 days/week, from 3 months), permanent role, guidance and sparring | site | yes | Tobias | yes — secondary-employment clause cleared (2026-10-19) |
+| 24 | Keynote "Missional by Design – Startup & Innovation for the Church", ICCM Europe, Brussels, 2023 | CT keynote entry | yes | Tobias | yes |
 
 ## Never
 
