@@ -149,7 +149,7 @@ const structuredData = {
           <article style={`--i:${i}`}>
             <strong data-count={figure}>{figure}</strong>
             <p>{text}</p>
-            <a href={url} target="_blank" rel="noopener">{source}<span aria-hidden="true"> ↗︎</span></a>
+            {url.startsWith('https://treppmann.de/') ? <a href={isPersonal ? url.replace('https://treppmann.de', '') : url}>{source}<span aria-hidden="true"> →</span></a> : <a href={url} target="_blank" rel="noopener">{source}<span aria-hidden="true"> ↗︎</span></a>}
           </article>
         ))}
       </div>
@@ -197,7 +197,7 @@ const structuredData = {
             <h3>{item.title}</h3>
             <p class="proof-body">{item.body}</p>
             <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
-            {'href' in item && <a href={item.href}>{item.link}<span aria-hidden="true"> ↗︎</span></a>}
+            {'href' in item && <a class="proof-link" href={isPersonal ? new URL(item.href).pathname : item.href}>{item.link}<span aria-hidden="true"> →</span></a>}
           </article>
         ))}
       </div>
@@ -211,12 +211,17 @@ const structuredData = {
       <ol class="section-shell method-path" data-reveal data-stagger data-steps>
         {c.plan.steps.map(([when, title, body], i) => (
           <li style={`--i:${i}`}>
+            <figure class="method-photo" style={`--tilt:${[-2, 1.5, -1, 2, -1.5][i]}deg`}>
+              <img src={c.plan.photos[i][0]} alt={c.plan.photos[i][1]} width="900" height="675" loading="lazy" />
+              <figcaption>{c.plan.photos[i][1]}{c.plan.photos[i][2] && <em>{c.plan.photos[i][2]}</em>}</figcaption>
+            </figure>
             <span>{when}</span>
             <h3>{title}</h3>
             <p>{body}</p>
           </li>
         ))}
       </ol>
+      <p class="section-shell method-photo-note">{c.plan.photoNote}</p>
     </section>
 
     <section class="engagements-section section-light" id="formats">

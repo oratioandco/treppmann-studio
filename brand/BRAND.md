@@ -29,10 +29,16 @@ brand/tools/check-brand.mjs` fails if the files disagree.
   - Stage photos: Startup.Life_Think, Betahaus Berlin, 24 Feb 2020 (Dropbox `Startup Life/Events/Meetup/20200224/photos`). Tobias may be shown; other people in them only cropped out or with consent.
   - Datameer photos: Tobias may show them (his statement, 2026-10-19).
   - Datameer work photos 2017–2018 (Apple Photos; whiteboard, sticky-note wall): may be shown;
-    colleagues anonymised with AI, label "Mit KI bearbeitet".
+    colleagues anonymised with AI — face, hair **and** clothing replaced (Tobias's wish, 2026-10-19;
+    faces alone left people recognisable) — label "Mit KI bearbeitet". Tool: person masks via
+    Vision, per-person `bl image edit`, pasted back without touching Tobias. Used as the five
+    plan photos (`public/images/collage/step-1…5.webp`). The 2018-05-03 session shows a
+    faith/business whiteboard, so its caption says "Workshop, 2018", not Datameer.
   - DCI design-thinking workshop, 19 Mar 2018 (Dropbox): reference only, shown as an AI
     re-creation labelled "Mit KI nachgestellt".
-  - Other Apple Photos work shots (2020, 2023): candidates until Tobias says what each shows.
+  - ICCM 2023 (lectern photos, Apple Photos): Tobias gave a keynote. Public wording "Keynote, ICCM 2023".
+  - Other Apple Photos work shots (2020): candidates until Tobias says what each shows.
+- Case-study screenshots on treppmann.de/beispiele/ come from the public treppmann.design case studies.
 - Clients and employers that may be named: Bibel TV, Ninox, ChurchDesk, Hypoport, Datameer, as on
   treppmann.de. Never name Bibel TV's development agency.
 - Screens that may be shown: the case-study images already public on treppmann.design. Nothing from
