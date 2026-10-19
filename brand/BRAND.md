@@ -28,7 +28,11 @@ brand/tools/check-brand.mjs` fails if the files disagree.
   - Portrait `public/images/tobias-treppmann.jpg` — his own.
   - Stage photos: Startup.Life_Think, Betahaus Berlin, 24 Feb 2020 (Dropbox `Startup Life/Events/Meetup/20200224/photos`). Tobias may be shown; other people in them only cropped out or with consent.
   - Datameer photos: Tobias may show them (his statement, 2026-10-19).
-  - Apple Photos work shots 2017–2023: candidates only until Tobias confirms what each shows.
+  - Datameer work photos 2017–2018 (Apple Photos; whiteboard, sticky-note wall): may be shown;
+    colleagues anonymised with AI, label "Mit KI bearbeitet".
+  - DCI design-thinking workshop, 19 Mar 2018 (Dropbox): reference only, shown as an AI
+    re-creation labelled "Mit KI nachgestellt".
+  - Other Apple Photos work shots (2020, 2023): candidates until Tobias says what each shows.
 - Clients and employers that may be named: Bibel TV, Ninox, ChurchDesk, Hypoport, Datameer, as on
   treppmann.de. Never name Bibel TV's development agency.
 - Screens that may be shown: the case-study images already public on treppmann.design. Nothing from

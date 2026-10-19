@@ -889,16 +889,15 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 /* Stop-motion blockers: three frames, problem → solution, stepped by scroll */
 .collage-sequence { display: grid; place-items: end center; }
 .collage-sequence img { grid-area: 1 / 1; max-height: 100%; }
-.collage-sequence img:not(.frame-0) { visibility: hidden; }
-.collage-sequence[data-frame="1"] img.frame-0, .collage-sequence[data-frame="2"] img.frame-0 { visibility: hidden; }
-.collage-sequence[data-frame="1"] img.frame-1, .collage-sequence[data-frame="2"] img.frame-2 { visibility: visible; }
+.collage-sequence img { visibility: hidden; }
+.collage-sequence img.is-on { visibility: visible; }
 .collage-sequence[data-frame] img { rotate: var(--jit, 0deg); }
 .collage-sequence figcaption { position: absolute; left: 50%; bottom: -.4rem; transform: translateX(-50%); font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; background: var(--ink); color: var(--white); padding: .2rem .5rem; z-index: 2; }
 .collage-sequence .tag-after { display: none; color: var(--signal); }
-.collage-sequence[data-frame="2"] .tag-before { display: none; }
-.collage-sequence[data-frame="2"] .tag-after { display: inline; }
+.collage-sequence[data-done="true"] .tag-before { display: none; }
+.collage-sequence[data-done="true"] .tag-after { display: inline; }
 .collage-sequence::before { transition: transform 900ms cubic-bezier(.2,.75,.2,1), opacity 500ms ease, border-radius 300ms steps(2); }
-.collage-sequence[data-frame="2"]::before { border-radius: 50%; }
+.collage-sequence[data-done="true"]::before { border-radius: 50%; }
 
 /* About: on stage */
 .about-side { display: grid; align-content: start; gap: 2.5rem; }

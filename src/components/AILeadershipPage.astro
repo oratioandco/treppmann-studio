@@ -128,8 +128,8 @@ const structuredData = {
       <div class="section-shell needs-grid" data-reveal data-stagger>
         {c.needs.items.map(([title, body], i) => (
           <article style={`--i:${i}`}>
-            <figure class={`collage-object collage-sequence shape-${['circle', 'square', 'arch'][i]}`} aria-hidden="true" data-frame="0">
-              {['', '-2', '-3'].map((suffix, f) => <img class={`frame-${f}`} src={`/images/collage/${['keycard', 'notes', 'cord'][i]}${suffix}.webp`} alt="" decoding="async" />)}
+            <figure class={`collage-object collage-sequence shape-${['circle', 'square', 'arch'][i]}`} aria-hidden="true" data-frame="0" style="--frames:6">
+              {[1, 2, 3, 4, 5, 6].map((n) => <img class={n === 1 ? 'is-on' : undefined} src={`/images/collage/${['keycard', 'notes', 'cord'][i]}-f${n}.webp`} alt="" decoding="async" />)}
               <figcaption><span class="tag-before">{c.needs.frameTags[0]}</span><span class="tag-after">{c.needs.frameTags[1]}</span></figcaption>
             </figure>
             <h3>{title}</h3><p>{body}</p>
@@ -403,10 +403,14 @@ const structuredData = {
       const vh = innerHeight;
       seqs.forEach((el) => {
         const r = el.getBoundingClientRect();
-        const p = (vh * 0.9 - r.top) / (vh * 0.55);
-        const f = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
+        const imgs = el.querySelectorAll('img');
+        const last = imgs.length - 1;
+        const p = Math.min(1, Math.max(0, (vh * 0.92 - r.top) / (vh * 0.62)));
+        const f = Math.min(last, Math.floor(p * imgs.length));
         if (el.dataset.frame !== String(f)) {
+          imgs.forEach((img, n) => img.classList.toggle('is-on', n === f));
           el.dataset.frame = String(f);
+          el.dataset.done = f === last ? 'true' : 'false';
           el.style.setProperty('--jit', `${(Math.random() * 4 - 2).toFixed(2)}deg`);
         }
       });

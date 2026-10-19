@@ -126,7 +126,12 @@ other "AI wave" looks — interchangeable.
 4. **Stop-motion, not video, on web pages:** a problem image steps to its solution in 2–3 frames as
    the reader scrolls (labelled "Heute → Danach").
 5. Generated images are never presented as documentation of real work, real people or real
-   screens. Third parties in photos need consent or are cropped out.
+   screens. Third parties in photos need consent, are cropped out, or are anonymised:
+   - **Anonymised real photo:** colleagues' faces replaced with AI, Tobias's face restored
+     pixel-for-pixel from the original. Caption ends with "Mit KI bearbeitet" / "Edited with AI".
+   - **Re-created scene:** a real event re-generated with the original photo as reference (e.g. the
+     DCI workshop 2018). Caption ends with "Mit KI nachgestellt" / "Recreated with AI".
+   - Captions state what really happened (who, where, when); the AI label says what was changed.
 
 Tools and exact steps: `brand/tools/README.md`.
 
