@@ -17,5 +17,8 @@ await writeFile(new URL('sitemap.xml', out), `<?xml version="1.0" encoding="UTF-
   <url><loc>https://treppmann.de/beispiele/ki-assistent-zuschauerservice/</loc></url>
   <url><loc>https://treppmann.de/beispiele/produktentwicklung-mit-ki/</loc></url>
   <url><loc>https://treppmann.de/beispiele/ki-onboarding-ninox/</loc></url>
+  <url><loc>https://treppmann.de/en/case-studies/ai-assistant-viewer-services/</loc></url>
+  <url><loc>https://treppmann.de/en/case-studies/building-in-house-with-ai/</loc></url>
+  <url><loc>https://treppmann.de/en/case-studies/ninox-ai-onboarding/</loc></url>
 </urlset>
 `);

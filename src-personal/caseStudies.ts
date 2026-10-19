@@ -180,3 +180,173 @@ export const caseStudies: CaseStudy[] = [
     },
   },
 ];
+
+// English versions: same facts, same order. `pair` is the slug of the other language.
+export const caseStudiesEn: CaseStudy[] = [
+  {
+    slug: 'ai-assistant-viewer-services',
+    label: 'Bibel TV · Viewer services',
+    title: 'An AI assistant the team uses by choice.',
+    lead: 'Bibel TV’s viewer services team answers letters, emails and messages, many of them deeply personal. I introduced an AI assistant that drafts replies in the house voice. A person checks and sends every single one.',
+    description: 'How Bibel TV introduced an AI assistant in viewer services: voluntary, with a trial week and one-to-one sessions. Complex letters in minutes instead of hours.',
+    object: 'letters',
+    shape: 'arch',
+    facts: [
+      ['Process', 'Replies to viewer mail'],
+      ['Rollout', 'Voluntary: a trial week, then one-to-one sessions'],
+      ['Result', 'Complex letters in minutes instead of hours'],
+    ],
+    situation: {
+      title: 'The starting point',
+      paras: [
+        'Bibel TV is a Christian broadcaster moving from linear television to apps and streaming. Its viewer services team answers what viewers write. A large share still arrives by post.',
+        'Some letters raise several concerns at once. Every reply should sound like the house and follow the wording of the service handbook. Starting from a blank page takes time. And the tone depends on who is writing: temporary staff take a long time to find it.',
+      ],
+    },
+    steps: {
+      title: 'What I did',
+      items: [
+        ['Agreed the goal with the head of the department', 'Writing should get easier, not deciding. What a reply says remains a person’s responsibility.'],
+        ['Looked at the process as it really runs', 'Most mail arrives on paper. So the assistant is deliberately connected to nothing: a person reads the letter, decides whether to use the assistant and enters the content themselves.'],
+        ['Made the handbook the standard', 'The assistant works with the wording, formatting and standard phrases of the service handbook. When the handbook changes, the drafts change. No training and no custom development were needed.'],
+        ['Built in clear limits', 'No medical, legal or financial advice, no political or denominational judgements. If the input is not a viewer enquiry at all, the assistant writes no reply and asks instead.'],
+        ['Introduced it on a voluntary basis', 'The team lead encouraged, never mandated. One week to try it, then one-to-one sessions on people’s own cases.'],
+      ],
+    },
+    result: {
+      title: 'What changed',
+      big: 'Minutes, not hours',
+      bigLabel: 'for replies to complex letters covering several topics',
+      items: [
+        'Temporary staff write in the house voice from their first day.',
+        'Colleagues who were sceptical at first came back on their own after trying the assistant on their hardest letter.',
+        'Every reply is still read, adapted and sent by a person.',
+      ],
+      note: 'These are observations from the team, not a per-letter time measurement.',
+    },
+    transfer: {
+      title: 'What this means for your company',
+      body: 'Wherever your team writes many similar but never identical texts, you can hand the draft to AI without handing over the decision. What makes it work is not the tool but the rollout: a clear standard, clear limits and time to try it on real work.',
+      examples: ['Replies to complaints', 'Questions about orders and deliveries', 'Cover letters for quotes', 'Customer service replies'],
+    },
+    limits: {
+      title: 'What it is not',
+      items: ['Not a custom AI model, but an existing platform with good context.', 'Not an autopilot: nothing is sent without a person.', 'No connection to the inbox, no automatic reading.'],
+    },
+  },
+  {
+    slug: 'building-in-house-with-ai',
+    label: 'Bibel TV · Product development',
+    title: 'From depending on an agency to: we build it ourselves.',
+    lead: 'At Bibel TV, almost every change to apps and systems depended on an external agency. There are no in-house developers. Today a large part of the backend and the first parts of the user interfaces are built in-house, by product managers and product owners working with AI.',
+    description: 'How Bibel TV became less dependent on an external agency with AI: product managers and product owners now build themselves, with Claude Code, clear rules and guidance.',
+    object: 'hands',
+    shape: 'circle',
+    facts: [
+      ['Before', 'Almost every change went through an external agency'],
+      ['Today', 'Much of the backend and first interfaces built in-house'],
+      ['Trust', 'Leadership gave me the rebuild of the app'],
+    ],
+    situation: {
+      title: 'The starting point',
+      paras: [
+        'Bibel TV builds apps for iOS, Android, web and TV, but has no development department of its own. Almost everything ran through an external agency. Every change meant: describe it, commission it, wait.',
+        'The people who know what is needed work in-house: product managers and product owners. Until then, they could not build anything themselves.',
+      ],
+    },
+    steps: {
+      title: 'How it happened',
+      items: [
+        ['2025: AI as better research', 'The team used Gemini and Copilot because they were already available, mostly for research.'],
+        ['Showing, not ordering', 'I built prototypes in real code, against real data. Development builds directly on that code. It showed what is possible better than any presentation.'],
+        ['Spring 2026: Claude introduced', 'With the team I introduced Claude Code, GitHub with Spec Kit and MCP servers for the internal documentation. The team then extended and prepared that documentation itself.'],
+        ['Rules, not sprawl', 'The company Claude account carries fixed rules, for example on formats, approvals and the use of sources. Everyone works to the same standards.'],
+        ['Guided one by one', 'Exchange with the product managers and product owners, and one-to-one sessions on their own tasks.'],
+        ['Since summer 2026: building in-house', 'The team builds individual applications and internal tools itself. I built the tools for automated testing and many of the internal tools myself.'],
+      ],
+    },
+    images: [
+      { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Two screens of an Android prototype for Bibel TV with real programmes', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1200, height: 1227 },
+    ],
+    result: {
+      title: 'Where it stands',
+      big: 'No agency',
+      bigLabel: 'Leadership gave me the rebuild of the app. The trust came from the work before it. I built it myself, with AI.',
+      items: [
+        'A large part of the backend and the first parts of the interfaces are now built in-house.',
+        'The team has one or two internal champions who carry it forward.',
+        'The new app has not been released yet.',
+      ],
+      note: 'The change is not finished. The team keeps working on it, step by step.',
+    },
+    transfer: {
+      title: 'What this means for your company',
+      body: 'If you wait for a supplier for every change to your software, people in your company can build part of it themselves with AI. It works when three things come together: someone who shows how, fixed rules, and guidance on their own tasks.',
+      examples: ['Internal tools and reports', 'Interfaces between existing systems', 'Prototypes before you commission development', 'Automated tests'],
+    },
+    limits: {
+      title: 'What it is not',
+      items: ['No replacement for architecture, IT security and review.', 'No end to external partners: they are needed for what they really do better.', 'Not self-running: without rules you get software nobody can maintain.'],
+    },
+  },
+  {
+    slug: 'ninox-ai-onboarding',
+    label: 'Ninox · AI in the product',
+    title: 'Plain language becomes an application users can change themselves.',
+    lead: 'Ninox is a no-code platform small and mid-sized companies use to build their own business applications. The hurdle was the data model. With the CEO and the technical co-founder I designed how AI removes that hurdle without users losing control.',
+    description: 'How Ninox uses AI to turn a plain-language description into a data model users can edit directly. The basis of the public AI beta.',
+    object: 'blocks',
+    shape: 'square',
+    facts: [
+      ['Engagement', 'Freelance, summer 2025, with the CEO and technical co-founder'],
+      ['Principle', 'Edit directly instead of only chatting'],
+      ['Result', 'Interaction model of Ninox’s public AI beta'],
+    ],
+    situation: {
+      title: 'The starting point',
+      paras: [
+        'Law firms, construction companies, contractors and inspectors use Ninox to build their own applications: order management, project lists, case files. Once a data model exists, Ninox generates the interfaces almost by itself.',
+        'That data model was the hurdle. People without database knowledge got stuck or hired a consultant. The idea: users describe their work in plain language, and AI generates the data model.',
+      ],
+    },
+    steps: {
+      title: 'What I did',
+      items: [
+        ['Asked the real question', 'That AI could generate a data model was a given. My question was: what happens next, when someone without database knowledge sits in front of the result?'],
+        ['Ruled out chat alone', 'A realistic data model has eight to twelve tables. As text in a chat it is unreadable, and changing it by chat feels like programming in prose. And nobody writes a complete description in their first sentence: the first result is always somewhat off.'],
+        ['Result in the real editor', 'The AI generates the data model directly in the editor users already work in. Tables appear as cards, fields are clickable.'],
+        ['Two paths, one result', 'Users change things by clicking directly in the card or by chat, whichever is easier. Suggestions for obvious additions help them along.'],
+        ['No separate AI mode', 'Once the data model is done, it is simply a Ninox application. Users keep working in the same tool.'],
+      ],
+    },
+    images: [
+      { src: '/images/beispiele/ninox-zwei-wege.webp', alt: 'Ninox AI onboarding: the chat on the left, the generated data model with editable table cards on the right', caption: 'Two paths side by side: changes by chat on the left, directly in the table cards on the right.', width: 1600, height: 997 },
+      { src: '/images/beispiele/ninox-im-editor.webp', alt: 'The AI-generated data model as a normal Ninox application in the editor', caption: 'Afterwards it is a normal Ninox application, in the same editor.', width: 1600, height: 1002 },
+    ],
+    result: {
+      title: 'What came of it',
+      big: 'Edit directly',
+      bigLabel: 'became the interaction model of Ninox’s public AI beta.',
+      items: [
+        'Users do not have to learn how to talk to an AI first. They change what they see.',
+        'The first, incomplete result is not an error but the normal start.',
+      ],
+    },
+    transfer: {
+      title: 'What this means for your company',
+      body: 'When you bring AI into your own product or internal software, the question is not whether the AI can produce something. The question is whether your people can take ownership of the result. AI removes the blank page. Control has to stay with people.',
+      examples: ['AI features in your own software product', 'Configurators and quoting tools', 'Internal forms and data entry', 'Reports that specialists adjust'],
+    },
+    limits: {
+      title: 'What it is not',
+      items: ['The AI generation itself was developed separately. My work was how people deal with it.', 'I was not responsible for the whole beta.'],
+    },
+  },
+];
+
+// Language pairs, by position in the two arrays.
+export const pairSlug = (slug: string) => {
+  const i = caseStudies.findIndex((s) => s.slug === slug);
+  if (i >= 0) return caseStudiesEn[i].slug;
+  return caseStudies[caseStudiesEn.findIndex((s) => s.slug === slug)].slug;
+};
