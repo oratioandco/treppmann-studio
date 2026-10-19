@@ -36,7 +36,7 @@ brand/tools/check-brand.mjs` fails if the files disagree.
     faith/business whiteboard, so its caption says "Workshop, 2018", not Datameer.
   - DCI design-thinking workshop, 19 Mar 2018 (Dropbox): reference only, shown as an AI
     re-creation labelled "Mit KI nachgestellt".
-  - ICCM 2023 (lectern photos, Apple Photos): Tobias gave a keynote. Public wording "Keynote, ICCM 2023".
+  - ICCM Europe 2023, Brussels (Apple Photos lectern shot, 15 Feb 2023): keynote. Lighting retouched with AI at his request, label "Licht mit KI bearbeitet"; his own face may be retouched for light and colour only, never reshaped.
   - Other Apple Photos work shots (2020): candidates until Tobias says what each shows.
 - Case-study screenshots on treppmann.de/beispiele/ come from the public treppmann.design case studies.
 - Clients and employers that may be named: Bibel TV, Ninox, ChurchDesk, Hypoport, Datameer, as on

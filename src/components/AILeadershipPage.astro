@@ -269,7 +269,12 @@ const structuredData = {
             <figcaption>{c.about.stageCaption}</figcaption>
           </figure>
         </div>
-        <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p></div>
+        <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p>
+          <figure class="about-keynote">
+            <img src="/images/collage/tobias-iccm.webp" alt={c.about.keynoteAlt} width="900" height="600" loading="lazy" />
+            <figcaption>{c.about.keynoteCaption} <em>{c.about.keynoteLabel}</em></figcaption>
+          </figure>
+        </div>
       </div>
       <div class="section-shell about-points" data-reveal data-stagger>
         {c.about.points.map(([title, body], i) => (

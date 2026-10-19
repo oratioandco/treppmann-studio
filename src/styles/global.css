@@ -1013,3 +1013,11 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
   .case-images figure:only-child { justify-self: stretch; }
 }
 @media (prefers-reduced-motion: reduce) { .case-hero-object img { max-height: 78%; max-width: 70%; animation: none; } }
+
+/* About: keynote photo pinned under the stage collage */
+.about-keynote { margin: 3rem 0 0 auto; width: min(100%, 380px); padding: .45rem .45rem .6rem; background: var(--white); transform: rotate(-2.5deg); box-shadow: 0 14px 28px rgba(17,17,15,.18); transition: transform 400ms cubic-bezier(.2,.75,.2,1); }
+.about-keynote:hover { transform: rotate(0deg) scale(1.03); }
+.about-keynote img { display: block; width: 100%; height: auto; }
+.about-keynote figcaption { margin-top: .45rem; font-family: var(--mono); font-size: .58rem; line-height: 1.45; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
+.about-keynote em { font-style: normal; color: var(--signal); }
+@media (max-width: 900px) { .about-keynote { width: min(85%, 320px); margin-left: 0; } }
