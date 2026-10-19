@@ -1,0 +1,87 @@
+/* @theme treppmann */
+/* Marp theme for Tobias Treppmann — KI-Transformation. Tokens: brand/tokens.css.
+   Classes per slide: dark (default cover/chapter/end), paper, statement, number, ladder, collage. */
+
+/* Tokens inlined from brand/tokens.css (Marp does not resolve local @import). Font URLs are relative to brand/slides.md. */
+@font-face { font-family: 'Switzer'; src: url('../public/fonts/Switzer-Variable.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url('../public/fonts/Switzer-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Gambarino'; src: url('../public/fonts/Gambarino-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Departure Mono'; src: url('../public/fonts/DepartureMono-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+section {
+  --ink: #11110f;
+  --paper: #f3f0e8;
+  --white: #fffdf7;
+  --signal: #ff6138;
+  --muted: #68675f;
+  --line: rgba(17, 17, 15, 0.22);
+  --line-dark: rgba(255, 253, 247, 0.22);
+  --check: #2f7d4f;
+  --ramp-1: #fad6c7;
+  --ramp-2: #ffbba5;
+  --ramp-3: #ffa083;
+  --ramp-4: #ff8260;
+  --ramp-5: #ff6138;
+  --sans: 'Switzer', Arial, sans-serif;
+  --serif: 'Gambarino', Georgia, serif;
+  --mono: 'Departure Mono', ui-monospace, monospace;
+}
+
+section {
+  width: 1920px; height: 1080px; padding: 96px 112px;
+  font-family: var(--sans); font-size: 34px; line-height: 1.45; letter-spacing: -0.01em;
+  background: var(--paper); color: var(--ink);
+  display: flex; flex-direction: column; justify-content: flex-start;
+}
+section h1 { font-size: 128px; font-weight: 500; line-height: .96; letter-spacing: -0.05em; margin: 0 0 40px; max-width: 1500px; }
+section h2 { font-size: 84px; font-weight: 500; line-height: .98; letter-spacing: -0.045em; margin: 0 0 36px; max-width: 1500px; }
+section h3 { font-size: 44px; font-weight: 500; letter-spacing: -0.035em; margin: 0 0 16px; }
+section p, section li { max-width: 1240px; }
+section ul { padding-left: 1.1em; }
+section li::marker { color: var(--signal); content: '→  '; }
+section strong { font-weight: 600; }
+section em { font-style: normal; color: var(--signal); }
+section blockquote { margin: 0; font-family: var(--serif); font-size: 92px; line-height: 1.04; letter-spacing: -0.02em; max-width: 1500px; border: 0; }
+section .kicker, section header { font-family: var(--mono); font-size: 22px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+section header { position: absolute; top: 48px; left: 112px; right: 112px; }
+section footer { position: absolute; bottom: 44px; left: 112px; right: 112px; font-family: var(--mono); font-size: 18px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+section::after { /* page number */ font-family: var(--mono); font-size: 18px; color: var(--muted); right: 112px; bottom: 44px; }
+section .source { font-family: var(--mono); font-size: 18px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-top: auto; }
+
+section.dark { background: var(--ink); color: var(--white); }
+section.dark header, section.dark footer, section.dark .source, section.dark::after { color: rgba(255,253,247,.6); }
+section.dark .kicker { color: var(--signal); }
+section.statement { justify-content: center; }
+section.statement h1, section.statement h2 { max-width: 1600px; }
+section.number { justify-content: center; }
+section.number .stat { font-size: 300px; font-weight: 500; line-height: .85; letter-spacing: -0.06em; color: var(--signal); }
+section.collage { justify-content: center; }
+section.collage img[alt~="cutout"] { position: absolute; right: 120px; bottom: 0; height: 88%; }
+section .wordmark { font-weight: 650; letter-spacing: -0.02em; font-size: 30px; }
+section .wordmark b { color: var(--signal); font-weight: inherit; }
+
+/* The ladder: <div class="ladder"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i></div> */
+section .ladder { display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; gap: 10px; height: 360px; margin-top: auto; }
+section .ladder i { font-style: normal; font-family: var(--mono); font-size: 22px; padding: 12px 16px; color: var(--ink); }
+section .ladder i:nth-child(1) { height: 20%; background: var(--ramp-1); }
+section .ladder i:nth-child(2) { height: 40%; background: var(--ramp-2); }
+section .ladder i:nth-child(3) { height: 60%; background: var(--ramp-3); }
+section .ladder i:nth-child(4) { height: 80%; background: var(--ramp-4); }
+section .ladder i:nth-child(5) { height: 100%; background: var(--ramp-5); }
+
+/* Bars: <div class="bars"><b style="--v:3%">3 %</b><b class="key" style="--v:59%">59 %</b></div> */
+section .bars { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; align-items: end; gap: 16px; height: 460px; border-bottom: 2px solid currentColor; margin-top: 24px; }
+section .bars b { position: relative; height: var(--v); min-height: 4px; background: currentColor; font-weight: 400; }
+section .bars b.key { background: var(--signal); }
+section .bars b::after { content: attr(data-label); position: absolute; top: calc(100% + 14px); left: 0; font-size: 22px; color: var(--muted); }
+section .bars b > span { position: absolute; bottom: calc(100% + 10px); left: 0; font-family: var(--mono); font-size: 26px; }
+
+/* Layout guards */
+section { padding-bottom: 150px; }
+section a { color: inherit; text-decoration: underline; text-decoration-color: var(--signal); text-underline-offset: .2em; }
+section ol { padding-left: 0; list-style: none; counter-reset: step; }
+section ol li { counter-increment: step; }
+section ol li::before { content: counter(step); font-family: var(--mono); color: var(--signal); display: inline-block; width: 1.6em; }
+section ol li::marker { content: ''; }
+section.collage h2, section.collage p { max-width: 1020px; }
+section.collage::before { content: ''; position: absolute; right: 150px; bottom: 140px; width: 560px; height: 560px; border-radius: 50%; background: var(--signal); }
+section.collage img[alt~="cutout"] { bottom: 110px; height: auto; max-height: 76%; max-width: 640px; filter: drop-shadow(0 18px 30px rgba(17,17,15,.25)); }

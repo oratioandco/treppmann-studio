@@ -1,0 +1,65 @@
+{
+  "$comment": "Aroma Brand record (aperto-studio packages/core/src/domain/brand.ts). Values must match brand/DESIGN.md; run node brand/tools/check-brand.mjs after any change.",
+  "id": "treppmann-ki",
+  "organizationId": "treppmann",
+  "version": 1,
+  "name": "Tobias Treppmann — KI-Transformation",
+  "colors": {
+    "text": "#11110f",
+    "dark": "#11110f",
+    "light": "#f3f0e8",
+    "surface": "#fffdf7",
+    "accent": "#ff6138",
+    "muted": "#68675f",
+    "check": "#2f7d4f",
+    "ramp-1": "#fad6c7",
+    "ramp-2": "#ffbba5",
+    "ramp-3": "#ffa083",
+    "ramp-4": "#ff8260",
+    "ramp-5": "#ff6138"
+  },
+  "fonts": {
+    "brand": {
+      "family": "Switzer",
+      "fallback": "Arial, sans-serif",
+      "files": [
+        { "file": "public/fonts/Switzer-Variable.woff", "weight": 500, "style": "normal", "format": "woff" },
+        { "file": "public/fonts/Switzer-VariableItalic.woff2", "weight": 500, "style": "italic", "format": "woff2" }
+      ],
+      "license": "Fontshare free licence (Indian Type Foundry); commercial use allowed"
+    },
+    "label": {
+      "family": "Departure Mono",
+      "fallback": "ui-monospace, monospace",
+      "files": [{ "file": "public/fonts/DepartureMono-Regular.woff2", "weight": 400, "style": "normal", "format": "woff2" }],
+      "license": "SIL Open Font License 1.1"
+    },
+    "quote": {
+      "family": "Gambarino",
+      "fallback": "Georgia, serif",
+      "files": [{ "file": "public/fonts/Gambarino-Regular.woff2", "weight": 400, "style": "normal", "format": "woff2" }],
+      "license": "Fontshare free licence"
+    }
+  },
+  "fixedTexts": {
+    "wordmark": "Tobias Treppmann / KI-Transformation",
+    "url": "treppmann.de",
+    "email": "tobias@treppmann.de",
+    "booking": "https://fantastical.app/tobiastreppmann",
+    "claim-de": "KI-Einführung, die genutzt wird",
+    "claim-en": "AI adoption that sticks",
+    "method-de": "Prozesse verstehen, Systeme bauen, Menschen mitnehmen",
+    "method-en": "Understand the processes, build the system, bring people along",
+    "location-de": "Berlin · vor Ort in ganz Deutschland und per Video · Deutsch und Englisch"
+  },
+  "rules": [
+    "One accent: signal orange. No second accent colour; acid green is not part of this brand.",
+    "The ramp orders stages; it never grades the reader. No red/amber/green for maturity.",
+    "Square corners and hairlines; collage shapes (circle, arch, tilted square) are the only curves.",
+    "People: only real, consenting people, grayscale with a light dot screen. Objects: halftone cut-outs.",
+    "Generated images never pose as real work, real clients, real screens or real people.",
+    "Every claim, number and name comes from brand/CLAIMS.md, which follows my-cv-tailor/CAREER-TRUTH.md.",
+    "No logo exists: use the text wordmark with the orange slash, never a drawn mark.",
+    "No emoji as icons; append U+FE0E to ↗ so Apple renders text."
+  ]
+}

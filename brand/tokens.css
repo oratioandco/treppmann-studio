@@ -1,0 +1,46 @@
+/* Tobias Treppmann — KI-Transformation · brand tokens.
+   Same values as brand/DESIGN.md, brand/frame.md and brand/brand.json (checked by
+   brand/tools/check-brand.mjs). Import into any HTML page, print stylesheet or slide theme.
+   Font URLs are relative to the treppmann-studio repo root; adjust when copying. */
+
+@font-face { font-family: 'Switzer'; src: url('../public/fonts/Switzer-Variable.woff') format('woff'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Switzer'; src: url('../public/fonts/Switzer-VariableItalic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Gambarino'; src: url('../public/fonts/Gambarino-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Departure Mono'; src: url('../public/fonts/DepartureMono-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+
+:root {
+  --ink: #11110f;
+  --paper: #f3f0e8;
+  --white: #fffdf7;
+  --signal: #ff6138;
+  --muted: #68675f;
+  --line: rgba(17, 17, 15, 0.22);
+  --line-dark: rgba(255, 253, 247, 0.22);
+  --check: #2f7d4f;
+  --ramp-1: #fad6c7;
+  --ramp-2: #ffbba5;
+  --ramp-3: #ffa083;
+  --ramp-4: #ff8260;
+  --ramp-5: #ff6138;
+  --sans: 'Switzer', Arial, sans-serif;
+  --serif: 'Gambarino', Georgia, serif;
+  --mono: 'Departure Mono', ui-monospace, monospace;
+}
+
+/* Wordmark: <span class="tt-wordmark">Tobias Treppmann <b>/</b> KI-Transformation</span> */
+.tt-wordmark { font-family: var(--sans); font-weight: 650; letter-spacing: -0.02em; }
+.tt-wordmark b { color: var(--signal); font-weight: inherit; }
+.tt-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.tt-source { font-family: var(--mono); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+
+/* Chart atoms: ink bars, one signal bar, mono values, a baseline, a source line. */
+.tt-bars { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; align-items: end; gap: 8px; height: 220px; border-bottom: 1px solid var(--ink); }
+.tt-bars > div { position: relative; height: var(--v); background: var(--ink); }
+.tt-bars > div.is-key { background: var(--signal); }
+.tt-bars > div > span { position: absolute; bottom: calc(100% + .3rem); left: 0; font-family: var(--mono); font-size: .7rem; }
+
+@media print {
+  @page { size: A4; margin: 18mm; }
+  body { font-family: var(--sans); font-size: 10.5pt; line-height: 1.45; color: var(--ink); background: #fff; }
+  h1 { font-size: 30pt; font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
+}

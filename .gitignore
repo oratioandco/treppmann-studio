@@ -3,3 +3,4 @@ dist/
 personal-dist/
 .astro/
 .DS_Store
+brand/.slides-preview.html
