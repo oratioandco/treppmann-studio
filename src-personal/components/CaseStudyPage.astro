@@ -1,6 +1,6 @@
 ---
 import Layout from '../../src/layouts/Layout.astro';
-import { caseStudies, caseStudiesEn, pairSlug, type CaseStudy } from '../caseStudies';
+import { caseStudies, caseStudiesEn, caseVisuals, pairSlug, type CaseStudy } from '../caseStudies';
 
 interface Props { study: CaseStudy; locale: 'de' | 'en' }
 const { study, locale } = Astro.props;
@@ -11,17 +11,18 @@ const url = `https://treppmann.de${base}${study.slug}/`;
 const pairUrl = `https://treppmann.de${otherBase}${pairSlug(study.slug)}/`;
 const home = de ? '/' : '/en/';
 const bookUrl = 'https://fantastical.app/tobiastreppmann';
+const v = caseVisuals[study.slug];
 const others = (de ? caseStudies : caseStudiesEn).filter((s) => s.slug !== study.slug);
 const t = de ? {
   skip: 'Zum Inhalt springen', homeLabel: 'Tobias Treppmann – Startseite', suffix: 'KI-Transformation', contact: 'Kontakt',
   back: 'Alle Beispiele', kicker: 'Beispiel', facts: 'Auf einen Blick',
   ctaTitle: 'Welcher Prozess soll bei Ihnen als Erstes besser werden?', ctaBody: 'In 30 Minuten sprechen wir darüber, wo KI bei Ihnen ansetzen könnte. Kostenlos und ohne Verpflichtung.', book: 'Erstgespräch vereinbaren', subject: 'Beispiel: ',
-  more: 'Weitere Beispiele', read: 'Beispiel lesen', impressum: 'Impressum', privacy: 'Datenschutz', homeLink: 'Startseite', lang: 'de-DE', switchLabel: 'EN',
+  more: 'Weitere Beispiele', read: 'Beispiel lesen', jump: 'Inhalt', secs: ['Ausgangslage', 'Vorgehen', 'Ergebnis', 'Für Ihr Unternehmen'], human: 'Mensch', ai: 'KI', impressum: 'Impressum', privacy: 'Datenschutz', homeLink: 'Startseite', lang: 'de-DE', switchLabel: 'EN',
 } : {
   skip: 'Skip to content', homeLabel: 'Tobias Treppmann – home', suffix: 'AI Transformation', contact: 'Contact',
   back: 'All examples', kicker: 'Example', facts: 'At a glance',
   ctaTitle: 'Which process should improve first in your company?', ctaBody: 'In 30 minutes we talk about where AI could start for you. Free and without obligation.', book: 'Book an intro call', subject: 'Example: ',
-  more: 'More examples', read: 'Read example', impressum: 'Legal notice', privacy: 'Privacy', homeLink: 'Home', lang: 'en', switchLabel: 'DE',
+  more: 'More examples', read: 'Read example', jump: 'Contents', secs: ['Starting point', 'Approach', 'Result', 'For your company'], human: 'Person', ai: 'AI', impressum: 'Legal notice', privacy: 'Privacy', homeLink: 'Home', lang: 'en', switchLabel: 'DE',
 };
 const structuredData = {
   '@context': 'https://schema.org',
@@ -72,14 +73,35 @@ const enUrl = de ? pairUrl : url;
       </dl>
     </section>
 
+    <nav class="case-jump section-paper" aria-label={t.jump}>
+      <ol class="section-shell">
+        {t.secs.map((label, i) => <li><a href={`#teil-${i + 1}`}><b>{String(i + 1).padStart(2, '0')}</b>{label}</a></li>)}
+      </ol>
+    </nav>
+
     <section class="case-body section-paper">
-      <div class="section-shell case-grid" data-reveal>
-        <h2>{study.situation.title}</h2>
+      <div class="section-shell case-grid" id="teil-1" data-reveal>
+        <h2><span class="case-num">01</span>{study.situation.title}</h2>
         <div class="case-prose">{study.situation.paras.map((p) => <p>{p}</p>)}</div>
       </div>
 
-      <div class="section-shell case-grid" data-reveal>
-        <h2>{study.steps.title}</h2>
+      <figure class={`section-shell case-flow is-${v.flow.kind}`} data-reveal data-stagger>
+        <figcaption>
+          <span>{v.flow.title}</span>
+          {v.flow.kind === 'flow' && <span class="case-flow-legend"><i class="is-human"></i>{t.human}<i class="is-ai"></i>{t.ai}</span>}
+        </figcaption>
+        <ol>
+          {v.flow.nodes.map(([title, sub, who], i) => (
+            <li class={`is-${who}`} style={`--i:${i}; --n:${v.flow.kind === 'timeline' ? Math.round((i + 1) * 5 / v.flow.nodes.length) : 5}`}>
+              {v.flow.kind === 'flow' && who !== 'neutral' && <em>{who === 'ai' ? t.ai : t.human}</em>}
+              <strong>{title}</strong><span>{sub}</span>
+            </li>
+          ))}
+        </ol>
+      </figure>
+
+      <div class="section-shell case-grid" id="teil-2" data-reveal>
+        <h2><span class="case-num">02</span>{study.steps.title}</h2>
         <ol class="case-steps" data-reveal data-stagger>
           {study.steps.items.map(([title, body], i) => (
             <li style={`--i:${i}; --n:${Math.min(i + 1, 5)}`}><b aria-hidden="true">{i + 1}</b><div><h3>{title}</h3><p>{body}</p></div></li>
@@ -97,12 +119,17 @@ const enUrl = de ? pairUrl : url;
           ))}
         </div>
       )}
+
+      <blockquote class="section-shell case-quote" data-reveal>
+        <p>{v.quote.text}</p>
+        <cite>{v.quote.by}</cite>
+      </blockquote>
     </section>
 
-    <section class="case-result section-dark">
+    <section class="case-result section-dark" id="teil-3">
       <div class="section-shell case-grid" data-reveal>
         <div>
-          <p class="section-label">{study.result.title}</p>
+          <p class="section-label"><span class="case-num">03</span> {study.result.title}</p>
           <p class="case-big">{study.result.big}</p>
           <p class="case-big-label">{study.result.bigLabel}</p>
         </div>
@@ -113,9 +140,20 @@ const enUrl = de ? pairUrl : url;
       </div>
     </section>
 
-    <section class="case-transfer section-light">
+    <section class="case-compare section-paper">
+      <div class="section-shell" data-reveal>
+        <p class="section-label">{v.compare.title}</p>
+        <div class="case-compare-grid">
+          <div class="is-before"><h3>{v.compare.beforeTitle}</h3><ul>{v.compare.before.map((x) => <li>{x}</li>)}</ul></div>
+          <div class="case-compare-arrow" aria-hidden="true">→</div>
+          <div class="is-after"><h3>{v.compare.afterTitle}</h3><ul>{v.compare.after.map((x) => <li>{x}</li>)}</ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-transfer section-light" id="teil-4">
       <div class="section-shell case-grid" data-reveal>
-        <h2>{study.transfer.title}</h2>
+        <h2><span class="case-num">04</span>{study.transfer.title}</h2>
         <div>
           <p class="lead">{study.transfer.body}</p>
           <ul class="case-chips">{study.transfer.examples.map((e) => <li>{e}</li>)}</ul>

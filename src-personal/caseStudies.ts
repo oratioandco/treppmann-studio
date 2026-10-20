@@ -350,3 +350,86 @@ export const pairSlug = (slug: string) => {
   if (i >= 0) return caseStudiesEn[i].slug;
   return caseStudies[caseStudiesEn.findIndex((s) => s.slug === slug)].slug;
 };
+
+// Visual extras per case study: a flow or timeline, a before/after comparison and one pull quote.
+// `who` marks who does a step: a person, the AI, or neither (an input or an outcome).
+export interface CaseVisuals {
+  quote: { text: string; by: string };
+  flow: { title: string; kind: 'flow' | 'timeline'; nodes: [string, string, 'human' | 'ai' | 'neutral'][] };
+  compare: { title: string; beforeTitle: string; afterTitle: string; before: string[]; after: string[] };
+}
+
+export const caseVisuals: Record<string, CaseVisuals> = {
+  'ki-assistent-zuschauerservice': {
+    quote: { text: 'Das leere Blatt abgeben. Nicht die Entscheidung.', by: 'Der Grundsatz hinter dem Assistenten' },
+    flow: { title: 'So entsteht eine Antwort heute', kind: 'flow', nodes: [
+      ['Brief kommt an', 'per Post, E-Mail oder Nachricht', 'neutral'],
+      ['Ein Mensch liest', 'und entscheidet, ob der Assistent hilft', 'human'],
+      ['Der Assistent entwirft', 'nach dem Service-Handbuch, im Ton des Hauses', 'ai'],
+      ['Ein Mensch prüft', 'und passt den Entwurf an', 'human'],
+      ['Ein Mensch verschickt', 'jede einzelne Antwort', 'human'],
+    ] },
+    compare: { title: 'Vorher und nachher', beforeTitle: 'Vorher', afterTitle: 'Heute',
+      before: ['Jede Antwort vom leeren Blatt', 'Der Ton hängt davon ab, wer schreibt', 'Aushilfen brauchen lange, bis sie ihn treffen', 'Komplexe Briefe: Stunden'],
+      after: ['Entwurf nach den Formulierungen des Handbuchs', 'Aushilfen schreiben ab dem ersten Tag im Ton des Hauses', 'Komplexe Briefe: Minuten', 'Jede Antwort weiter von einem Menschen geprüft'] },
+  },
+  'produktentwicklung-mit-ki': {
+    quote: { text: 'Vorgemacht statt verordnet.', by: 'Wie die Einführung funktioniert hat' },
+    flow: { title: 'Wie das Team Schritt für Schritt weiterkam', kind: 'timeline', nodes: [
+      ['2025', 'KI als bessere Recherche, mit Gemini und Copilot', 'neutral'],
+      ['Frühjahr 2026', 'Claude eingeführt, erste Prototypen im Team', 'ai'],
+      ['Sommer 2026', 'Einzelne Anwendungen und interne Werkzeuge selbst entwickelt', 'human'],
+    ] },
+    compare: { title: 'Vorher und heute', beforeTitle: 'Vorher', afterTitle: 'Heute',
+      before: ['Fast jede Änderung über eine externe Agentur', 'Beschreiben, beauftragen, warten', 'Product Manager und Product Owner können nicht selbst bauen'],
+      after: ['Großer Teil des Backends im Haus', 'Erste Oberflächen im Haus', 'Feste Regeln für Formate, Freigaben und Quellen', 'Ein bis zwei interne Ansprechpersonen'] },
+  },
+  'ki-onboarding-ninox': {
+    quote: { text: 'Erst das Ergebnis zeigen. Dann bearbeiten lassen.', by: 'Das Gestaltungsprinzip des Onboardings' },
+    flow: { title: 'Vom Satz zur Anwendung', kind: 'flow', nodes: [
+      ['Beschreiben', 'ein Satz in Alltagssprache', 'human'],
+      ['KI erzeugt', 'das Datenmodell direkt im Editor', 'ai'],
+      ['Nutzer ändert', 'per Klick oder per Chat', 'human'],
+      ['Anwendung läuft', 'eine normale Ninox-Anwendung', 'neutral'],
+    ] },
+    compare: { title: 'Warum nicht nur Chat', beforeTitle: 'Nur im Chat', afterTitle: 'Im echten Editor',
+      before: ['Datenmodell als lange Textausgabe', 'Änderungen in Prosa beschreiben', 'Erstes Ergebnis daneben: nächste Chat-Runde'],
+      after: ['Tabellen als Karten, Felder anklickbar', 'Ändern per Klick oder per Chat', 'Das erste Ergebnis ist der normale Start'] },
+  },
+  'ai-assistant-viewer-services': {
+    quote: { text: 'Hand over the blank page. Not the decision.', by: 'The principle behind the assistant' },
+    flow: { title: 'How a reply is written today', kind: 'flow', nodes: [
+      ['A letter arrives', 'by post, email or message', 'neutral'],
+      ['A person reads it', 'and decides whether the assistant helps', 'human'],
+      ['The assistant drafts', 'following the service handbook, in the house voice', 'ai'],
+      ['A person checks', 'and adapts the draft', 'human'],
+      ['A person sends', 'every single reply', 'human'],
+    ] },
+    compare: { title: 'Before and after', beforeTitle: 'Before', afterTitle: 'Today',
+      before: ['Every reply from a blank page', 'The tone depends on who writes', 'Temporary staff take long to find it', 'Complex letters: hours'],
+      after: ['Drafts follow the handbook’s wording', 'Temporary staff write in the house voice from day one', 'Complex letters: minutes', 'Every reply still checked by a person'] },
+  },
+  'building-in-house-with-ai': {
+    quote: { text: 'Showing, not ordering.', by: 'What made the rollout work' },
+    flow: { title: 'How the team moved forward, step by step', kind: 'timeline', nodes: [
+      ['2025', 'AI as better research, with Gemini and Copilot', 'neutral'],
+      ['Spring 2026', 'Claude introduced, first prototypes in the team', 'ai'],
+      ['Summer 2026', 'Individual applications and internal tools built in-house', 'human'],
+    ] },
+    compare: { title: 'Before and today', beforeTitle: 'Before', afterTitle: 'Today',
+      before: ['Almost every change through an external agency', 'Describe, commission, wait', 'Product managers and owners cannot build themselves'],
+      after: ['Much of the backend in-house', 'First interfaces in-house', 'Fixed rules for formats, approvals and sources', 'One or two internal champions'] },
+  },
+  'ninox-ai-onboarding': {
+    quote: { text: 'Show the result first. Then let people edit it.', by: 'The design principle of the onboarding' },
+    flow: { title: 'From a sentence to an application', kind: 'flow', nodes: [
+      ['Describe', 'one sentence in plain language', 'human'],
+      ['AI generates', 'the data model directly in the editor', 'ai'],
+      ['User changes it', 'by clicking or by chat', 'human'],
+      ['Application runs', 'a normal Ninox application', 'neutral'],
+    ] },
+    compare: { title: 'Why not chat alone', beforeTitle: 'Chat only', afterTitle: 'In the real editor',
+      before: ['Data model as a long text output', 'Describing changes in prose', 'First result off: another chat round'],
+      after: ['Tables as cards, fields clickable', 'Change by click or by chat', 'The first result is the normal start'] },
+  },
+};

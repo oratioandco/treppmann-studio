@@ -85,6 +85,12 @@ const structuredData = {
             <a class="button button-ghost" href="#plan">{c.hero.secondary}</a>
           </div>
           <p class="hero-proof"><strong>{c.hero.proofLabel}:</strong> {c.hero.proof}</p>
+          {report && (
+            <p class="hero-tools">
+              <a href={checkHref}><span class="hero-tools-mark" aria-hidden="true"><i></i><i></i><i></i></span>{report.heroCheck}<span aria-hidden="true"> →</span></a>
+              <a href={reportHref}><span class="hero-tools-mark is-report" aria-hidden="true"><i></i><i></i><i></i></span>{report.heroReport}<span aria-hidden="true"> →</span></a>
+            </p>
+          )}
         </div>
         <figure class="hero-collage">
           <div class="collage-sun" aria-hidden="true"></div>
@@ -173,10 +179,10 @@ const structuredData = {
           </a>
           <a class="tool-card" href={reportHref} style="--i:1">
             <div class="tool-visual tool-bars" aria-hidden="true">
-              {[[0, 'Vollständig'], [3, 'Eher stark'], [28, 'Wenig'], [59, 'Gar nicht']].map(([v, l]) => <span style={`--v:${v}`}><i></i><em>{l}</em><b>{v}&#8239;%</b></span>)}
+              {[0, 3, 28, 59].map((v, k) => [v, report.bars[k]]).map(([v, l]) => <span style={`--v:${v}`}><i></i><em>{l}</em><b>{v}&#8239;%</b></span>)}
             </div>
             <p class="tool-meta">{report.reportMeta}</p>
-            <h3>„{report.title}“</h3>
+            <h3>{report.quoteOpen}{report.title}{report.quoteClose}</h3>
             <p>{report.reportBody}</p>
             <span class="tool-action">{report.reportAction}<span aria-hidden="true"> →</span></span>
           </a>
