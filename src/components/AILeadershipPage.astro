@@ -275,8 +275,9 @@ const structuredData = {
         </div>
         <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p>
           <figure class="about-keynote">
-            <img src="/images/collage/tobias-iccm.webp" alt={c.about.keynoteAlt} width="900" height="600" loading="lazy" />
-            <figcaption>{c.about.keynoteCaption} <em>{c.about.keynoteLabel}</em></figcaption>
+            <img src="/images/collage/tobias-talk-2020.webp" alt={c.about.keynoteAlt} width="960" height="640" loading="lazy" />
+            {c.about.keynoteLabel && <span class="about-keynote-pill">{c.about.keynoteLabel}</span>}
+            <figcaption>{c.about.keynoteCaption}</figcaption>
           </figure>
         </div>
       </div>

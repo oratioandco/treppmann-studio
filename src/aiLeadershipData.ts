@@ -162,8 +162,8 @@ export const aiLeadershipContent = {
       stageAlt: 'Tobias Treppmann bei einem Vortrag über Startup-Methoden im Betahaus Berlin',
       stageSlip: 'Fall in love with the problem, not the solution.',
       stageCaption: 'Vortrag bei Startup.Life, Betahaus Berlin, 2020',
-      keynoteAlt: 'Tobias Treppmann am Rednerpult vor dem Banner der International Conference Computing and Mission',
-      keynoteCaption: 'Keynote, ICCM Europe, Brüssel, 2023', keynoteLabel: 'Licht mit KI bearbeitet',
+      keynoteAlt: 'Tobias Treppmann spricht mit Mikrofon vor einer Folie mit dem Satz „think big, start small, scale fast“',
+      keynoteCaption: 'Think big, start small, scale fast. Startup.Life, Berlin, 2020',
       body: 'Ich habe Produkt- und Designteams geleitet, im Senior Leadership Team gearbeitet und Software für Banken und Versicherer, Medienhäuser und Plattformen gestaltet. Heute entwickle ich KI-gestützte Prozesse selbst: Bei Bibel TV baut die Entwicklung direkt auf dem Code meiner Prototypen auf. So kann ich mit der Geschäftsführung über Prioritäten sprechen, mit Fachbereichen über ihre Arbeit und mit der IT über das konkrete System. Aus dem Produktdesign bringe ich mit, Menschen ernst zu nehmen: ihren Kontext, ihre Ziele und das, was sie im Alltag bremst. Genau das braucht eine KI-Einführung nach innen.',
       points: [
         ['Führung', 'Produkt- und Designleitung, Senior Leadership Team, verteilte Teams in Deutschland und New York, Mentoring.'],
@@ -361,8 +361,8 @@ export const aiLeadershipContent = {
       stageAlt: 'Tobias Treppmann giving a talk on startup methods at Betahaus Berlin',
       stageSlip: 'Fall in love with the problem, not the solution.',
       stageCaption: 'Talk at Startup.Life, Betahaus Berlin, 2020',
-      keynoteAlt: 'Tobias Treppmann at the lectern in front of the International Conference Computing and Mission banner',
-      keynoteCaption: 'Keynote, ICCM Europe, Brussels, 2023', keynoteLabel: 'Lighting edited with AI',
+      keynoteAlt: 'Tobias Treppmann speaking with a microphone in front of a slide reading “think big, start small, scale fast”',
+      keynoteCaption: 'Think big, start small, scale fast. Startup.Life, Berlin, 2020',
       body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, development builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
       points: [
         ['Leadership', 'Product and design leadership, Senior Leadership Team, distributed teams in Germany and New York, mentoring.'],

@@ -997,7 +997,8 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 .about-keynote:hover { transform: rotate(0deg) scale(1.03); }
 .about-keynote img { display: block; width: 100%; height: auto; }
 .about-keynote figcaption { margin-top: .45rem; font-family: var(--mono); font-size: .58rem; line-height: 1.45; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); }
-.about-keynote em { font-style: normal; color: var(--signal); }
+.about-keynote { position: relative; }
+.about-keynote-pill { position: absolute; top: .9rem; right: .9rem; padding: .15rem .45rem; border-radius: 999px; background: rgba(17,17,15,.62); color: rgba(255,253,247,.85); font-family: var(--mono); font-size: .52rem; letter-spacing: .03em; }
 @media (max-width: 900px) { .about-keynote { width: min(85%, 320px); margin-left: 0; } }
 
 /* Plan: one result object per step */
