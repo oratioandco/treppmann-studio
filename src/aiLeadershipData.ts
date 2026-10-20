@@ -231,8 +231,8 @@ export const aiLeadershipContent = {
       portraitMeta: 'Product leadership · Process design · AI adoption',
       ticket: ['AI transformation', 'AI people actually use.', 'People first'],
       stepsLabel: 'Five stages. Where are you?',
-      stepsAction: 'See the plan',
-      stepsHref: '#plan',
+      stepsAction: 'Take the AI check',
+      stepsHref: 'https://treppmann.de/en/ai-check/',
       stages: ['Bought', 'Tried out', 'First projects', 'One process works differently', 'Part of how we work'],
     },
     credentials: {
@@ -398,7 +398,7 @@ export const aiLeadershipContent = {
     report: {
       href: 'https://treppmann.de/en/report/',
       title: 'Bought is not adopted',
-      footer: 'Report', checkHref: 'https://treppmann.de/ki-check/', checkFooter: 'AI check (German)', nav: 'Check & report', heroCheck: 'AI check: where do you stand? (German)', heroReport: 'Report: Bought is not adopted', bars: ['Fully', 'Rather strongly', 'A little', 'Not at all'], quoteOpen: '“', quoteClose: '”', toolsLabel: 'Assess yourself', toolsTitle: 'Where do you stand? Two ways to find out.', checkMeta: 'AI check · 3 minutes · in German', checkTitle: 'Ten questions, five stages, your next step.', checkBody: 'Usage, processes, ownership, enablement and measurement: you see where you stand and where I would start. No sign-up, nothing is stored. Currently available in German only.', checkAction: 'Start the check', reportMeta: 'Report · English summary · 4 minutes', reportBody: 'Why more than half of companies use AI and hardly any get much out of it. From current studies and 187 podcast episodes with practitioners.', reportAction: 'Read the summary',
+      footer: 'Report', checkHref: 'https://treppmann.de/en/ai-check/', checkFooter: 'AI check', nav: 'Check & report', heroCheck: 'AI check: where do you stand?', heroReport: 'Report: Bought is not adopted', bars: ['Fully', 'Rather strongly', 'A little', 'Not at all'], quoteOpen: '“', quoteClose: '”', toolsLabel: 'Assess yourself', toolsTitle: 'Where do you stand? Two ways to find out.', checkMeta: 'AI check · 3 minutes', checkTitle: 'Ten questions, five stages, your next step.', checkBody: 'Usage, processes, ownership, enablement and measurement: you see where you stand and where I would start. No sign-up, nothing is stored.', checkAction: 'Start the check', reportMeta: 'Report · English summary · 4 minutes', reportBody: 'Why more than half of companies use AI and hardly any get much out of it. From current studies and 187 podcast episodes with practitioners.', reportAction: 'Read the summary',
     },
     footer: { name: 'Tobias Treppmann · AI Transformation', impressum: 'Legal notice', privacy: 'Privacy', portfolio: 'Portfolio' },
   },

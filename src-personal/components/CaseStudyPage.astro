@@ -196,8 +196,8 @@ const enUrl = de ? pairUrl : url;
     <div class="footer-links">
       <a href="/impressum/">{t.impressum}</a>
       <a href="/datenschutz/">{t.privacy}</a>
-      <a href="/gekauft-ist-nicht-eingefuehrt/">Report</a>
-      <a href="/ki-check/">KI-Check</a>
+      <a href={de ? '/gekauft-ist-nicht-eingefuehrt/' : '/en/report/'}>Report</a>
+      <a href={de ? '/ki-check/' : '/en/ai-check/'}>{de ? 'KI-Check' : 'AI check'}</a>
       <a href={home}>{t.homeLink}</a>
     </div>
   </footer>

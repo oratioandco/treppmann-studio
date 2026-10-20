@@ -1,0 +1,436 @@
+---
+import Layout from '../../src/layouts/Layout.astro';
+
+interface Props { locale: 'de' | 'en' }
+const { locale } = Astro.props;
+const de = locale === 'de';
+const deUrl = 'https://treppmann.de/ki-check/';
+const enUrl = 'https://treppmann.de/en/ai-check/';
+const url = de ? deUrl : enUrl;
+const home = de ? '/' : '/en/';
+const reportHref = de ? '/gekauft-ist-nicht-eingefuehrt/' : '/en/report/';
+const bookUrl = 'https://fantastical.app/tobiastreppmann';
+
+// Each dimension is one observation from the report "Gekauft ist nicht eingeführt".
+const dimensions = de ? [
+  { id: 'use', name: 'Nutzung', advice: 'Zugang ist noch keine Nutzung. Suchen Sie einen Ablauf, in dem viele Leute täglich dieselbe mühsame Arbeit machen, und bringen Sie KI genau dort hinein, statt sie allen für alles anzubieten.' },
+  { id: 'process', name: 'Prozess', advice: 'Beginnen Sie mit einem Prozess, nicht mit einer Liste von Use Cases: einem, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen. Schauen Sie zuerst, wie die Arbeit heute wirklich läuft.' },
+  { id: 'owner', name: 'Verantwortung', advice: 'Benennen Sie eine Person mit Mandat und Zeit. Sie setzt Prioritäten, zieht den ersten Prozess durch und berichtet, was er gebracht hat. Eine neue Abteilung braucht es dafür nicht.' },
+  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Botschaftern festes Zeitbudget. Seit Februar 2025 verpflichtet Art. 4 der KI-Verordnung Unternehmen, die KI einsetzen, ohnehin, für ausreichende KI-Kompetenz zu sorgen.' },
+  { id: 'measure', name: 'Messen', advice: 'Legen Sie vor dem nächsten Vorhaben fest, woran Sie den Erfolg messen, etwa Zeit pro Vorgang oder Anteil der regelmäßigen Nutzer, und halten Sie den Ausgangswert fest. Nach rund 90 Tagen nachsehen.' },
+] : [
+  { id: 'use', name: 'Usage', advice: 'Access is not use. Find a workflow where many people do the same tedious work every day, and bring AI into exactly that one, instead of offering it to everyone for everything.' },
+  { id: 'process', name: 'Process', advice: 'Start with one process, not a list of use cases: one that happens often, costs time and is clear enough to redesign. First look at how the work really runs today.' },
+  { id: 'owner', name: 'Ownership', advice: 'Name one person with a mandate and time. They set priorities, take the first process all the way through and report what it delivered. You do not need a new department for that.' },
+  { id: 'enable', name: 'Enablement', advice: 'Training alone rarely does it. Let people experience AI on their own task, with someone at their side, and give one or two ambassadors a fixed time budget. Since February 2025, Article 4 of the EU AI Act requires companies that use AI to ensure sufficient AI literacy anyway.' },
+  { id: 'measure', name: 'Measurement', advice: 'Before the next project, decide how you will measure success, for example time per case or the share of regular users, and record the starting value. Look again after about 90 days.' },
+];
+
+// Shown once a dimension is complete. Every figure is also in the report, with its source.
+const insights = de ? {
+  use: { text: 'Zum Vergleich: 57 % der Unternehmen ab 20 Beschäftigten setzen KI ein.', src: 'Bitkom, 2026' },
+  process: { text: 'Lizenzen nennt nur jedes fünfte KI-nutzende Unternehmen als großen Kostenpunkt. Teuer sind Daten, Anbindung und Infrastruktur.', src: 'Bitkom, 2026' },
+  owner: { text: 'In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Zugänge. Regeln dafür hat nur knapp ein Viertel.', src: 'Bitkom, 2025' },
+  enable: { text: '70 % der KI-Anwender bieten Schulungen an. Trotzdem nennen 42 % fehlende Akzeptanz als Hemmnis.', src: 'Bitkom, 2026' },
+} : {
+  use: { text: 'For comparison: 57% of German companies with 20 or more employees use AI.', src: 'Bitkom, 2026' },
+  process: { text: 'Only one in five AI-using companies names licences as a major cost. The expensive parts are data, integration and infrastructure.', src: 'Bitkom, 2026' },
+  owner: { text: 'In just over four in ten companies, employees use private AI accounts. Only just under a quarter have rules for it.', src: 'Bitkom, 2025' },
+  enable: { text: '70% of AI users offer training. Even so, 42% name a lack of acceptance as an obstacle.', src: 'Bitkom, 2026' },
+};
+
+// Options run from 0 to 3 points. Wording stays neutral so the "right" answer is not obvious.
+const questions = de ? [
+  { dim: 'use', q: 'Wie viele Ihrer Beschäftigten nutzen KI mindestens einmal pro Woche für ihre Arbeit?', a: ['Kaum jemand, oder wir wissen es nicht', 'Einzelne Interessierte', 'Ganze Teams in einzelnen Bereichen', 'Die meisten, in vielen Bereichen'] },
+  { dim: 'use', q: 'Welche KI-Werkzeuge stellt Ihr Unternehmen bereit?', a: ['Keine; wer KI nutzt, nutzt private Konten', 'Ein Chat-Werkzeug wie ChatGPT oder Copilot für einzelne', 'Ein Chat-Werkzeug für alle, mit Firmenkonto', 'Dazu Werkzeuge, die auf bestimmte Aufgaben zugeschnitten sind'] },
+  { dim: 'process', q: 'Gibt es einen Arbeitsablauf, der mit KI neu gestaltet wurde, nicht nur ergänzt?', a: ['Nein', 'Wir planen das', 'Ja, einen', 'Ja, mehrere'] },
+  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Bisher gar nicht, oder jeder probiert für sich', 'Aus einer Sammlung von Ideen und Use Cases', 'Ausgewählt nach Nutzen und Aufwand', 'Ausgehend von konkreten Engpässen in Abläufen'] },
+  { dim: 'owner', q: 'Wer ist bei Ihnen für KI verantwortlich?', a: ['Niemand ausdrücklich', 'Die IT oder Interessierte, nebenbei', 'Eine benannte Person, ohne festes Zeitbudget', 'Eine Person mit Mandat und Zeit dafür'] },
+  { dim: 'owner', q: 'Gibt es Regeln, wie KI bei Ihnen genutzt werden darf?', a: ['Nein', 'Ungeschrieben, man weiß es ungefähr', 'Eine schriftliche KI-Leitlinie', 'Eine Leitlinie, die bekannt ist und im Alltag angewendet wird'] },
+  { dim: 'enable', q: 'Wie lernen Ihre Leute, mit KI zu arbeiten?', a: ['Bisher gar nicht', 'Jeder für sich', 'In Schulungen', 'Begleitet an ihren eigenen Aufgaben'] },
+  { dim: 'enable', q: 'Gibt es Menschen im Team, die andere bei KI mitnehmen?', a: ['Nein', 'Ein paar Interessierte, inoffiziell', 'Benannte Ansprechpartner', 'KI-Botschafter mit festem Zeitbudget'] },
+  { dim: 'measure', q: 'Wissen Sie, was KI Ihnen bisher bringt?', a: ['Nein', 'Wir haben einen Eindruck', 'An einzelnen Beispielen', 'Ja, gemessen gegen einen Ausgangswert'] },
+  { dim: 'measure', q: 'Legen Sie vor einem KI-Vorhaben fest, woran der Erfolg gemessen wird?', a: ['Nie, oder es gab noch keine Vorhaben', 'Manchmal', 'Meistens', 'Immer'] },
+] : [
+  { dim: 'use', q: 'How many of your employees use AI for their work at least once a week?', a: ['Hardly anyone, or we do not know', 'A few enthusiasts', 'Whole teams in some areas', 'Most people, in many areas'] },
+  { dim: 'use', q: 'Which AI tools does your company provide?', a: ['None; whoever uses AI uses private accounts', 'A chat tool like ChatGPT or Copilot for some people', 'A chat tool for everyone, with a company account', 'Plus tools tailored to specific tasks'] },
+  { dim: 'process', q: 'Is there a workflow that has been redesigned with AI, not just supplemented?', a: ['No', 'We are planning it', 'Yes, one', 'Yes, several'] },
+  { dim: 'process', q: 'How do AI projects come about at your company?', a: ['Not at all so far, or everyone experiments on their own', 'From a collection of ideas and use cases', 'Selected by benefit and effort', 'Starting from concrete bottlenecks in workflows'] },
+  { dim: 'owner', q: 'Who is responsible for AI at your company?', a: ['Nobody explicitly', 'IT or enthusiasts, on the side', 'A named person, without dedicated time', 'A person with a mandate and time for it'] },
+  { dim: 'owner', q: 'Are there rules for how AI may be used at your company?', a: ['No', 'Unwritten, people roughly know', 'A written AI policy', 'A policy that people know and apply day to day'] },
+  { dim: 'enable', q: 'How do your people learn to work with AI?', a: ['Not at all so far', 'Everyone on their own', 'In training sessions', 'Accompanied on their own tasks'] },
+  { dim: 'enable', q: 'Are there people in the team who bring others along with AI?', a: ['No', 'A few enthusiasts, unofficially', 'Named contact people', 'AI ambassadors with a fixed time budget'] },
+  { dim: 'measure', q: 'Do you know what AI has delivered for you so far?', a: ['No', 'We have an impression', 'From individual examples', 'Yes, measured against a baseline'] },
+  { dim: 'measure', q: 'Before an AI project, do you decide how its success will be measured?', a: ['Never, or there have been no projects yet', 'Sometimes', 'Mostly', 'Always'] },
+];
+
+// Points decide the stage, but a stage name is a claim about the company, so some stages need
+// specific answers: "Ausprobiert" needs some use, "Ein Prozess läuft anders" needs a redesigned
+// process, "Teil der Arbeitsweise" needs several processes and real measurement.
+const stages = de ? [
+  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie in großer Gesellschaft: In der Bitkom-Befragung vom September 2026 sagte kein einziges KI-nutzendes Unternehmen, es schöpfe das Potenzial voll aus.', textNone: 'KI spielt bei Ihnen noch keine Rolle. Das ist ein guter Ausgangspunkt: Sie können mit einem Prozess anfangen statt mit einer Lizenz, und die typischen Fehler der anderen überspringen.' },
+  { max: 12, name: 'Ausprobiert', text: 'Einzelne nutzen KI, oft mit Begeisterung, aber zufällig verteilt. Was fehlt, ist der Schritt von „man kann“ zu „wir machen es so“.' },
+  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Sammlung von Piloten.' },
+  { max: 24, name: 'Ein Prozess läuft anders', text: 'Mindestens ein Ablauf ist mit KI neu gestaltet. Die Aufgabe ist jetzt, das Gelernte auf den nächsten Prozess zu übertragen und den Nutzen sichtbar zu machen.' },
+  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Das ist selten: In der Bitkom-Befragung sagten nur 3 Prozent der KI-Anwender, sie schöpften das Potenzial eher stark aus. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
+] : [
+  { max: 6, name: 'Bought', text: 'AI is there, as a licence or as a private tool, but it does not change the work yet. You are in good company: in Bitkom’s survey of German companies from September 2026, not a single AI-using company said it fully exploits the potential.', textNone: 'AI does not play a role for you yet. That is a good starting point: you can start with a process instead of a licence and skip the typical mistakes others made.' },
+  { max: 12, name: 'Tried out', text: 'Some people use AI, often with enthusiasm, but scattered at random. What is missing is the step from “we could” to “this is how we do it”.' },
+  { max: 18, name: 'First projects', text: 'There are projects and the beginnings of structure. Now it is decided whether they turn into a process that really works differently, or into one more collection of pilots.' },
+  { max: 24, name: 'One process works differently', text: 'At least one workflow has been redesigned with AI. The task now is to carry what you learned over to the next process and make the benefit visible.' },
+  { max: 30, name: 'Part of how we work', text: 'AI is embedded in several processes, with clear ownership and measurement. That is rare: in the Bitkom survey, only 3 percent of AI users said they exploit the potential rather strongly. This is about depth: your own data, your own tools, more people who build things themselves.' },
+];
+
+const t = de ? {
+  lang: 'de-DE', title: 'KI-Check: Wo steht Ihr Unternehmen?', description: 'Zehn Fragen, drei Minuten: Auf welcher Stufe der KI-Einführung steht Ihr Unternehmen, und was wäre der nächste sinnvolle Schritt?',
+  skip: 'Zum Inhalt springen', homeLabel: 'Tobias Treppmann – Startseite', suffix: 'KI-Transformation', contact: 'Kontakt', switchLabel: 'EN',
+  meta: 'KI-Check · 3 Minuten', h1: 'Wo steht Ihr Unternehmen mit KI?',
+  lead: 'Zehn Fragen zu Nutzung, Prozessen, Verantwortung, Befähigung und Messen. Am Ende sehen Sie, auf welcher von fünf Stufen Sie stehen und was der nächste sinnvolle Schritt wäre.',
+  stagesLabel: 'Die fünf Stufen', start: 'Check starten', privacy: 'Ihre Antworten bleiben in Ihrem Browser. Gespeichert oder übertragen wird nichts.',
+  noscript: 'Der Check braucht JavaScript. Die Fragen und Stufen beruhen auf meinem Report', reportName: '„Gekauft ist nicht eingeführt“',
+  question: 'Frage', of: 'von', back: '← Zurück', next: 'Weiter',
+  evaluation: 'Auswertung', steps: ['Antworten auswerten', 'Mit den fünf Beobachtungen abgleichen', 'Nächste Schritte zusammenstellen'],
+  result: 'Ihr Ergebnis', here: 'Sie sind hier', stage: 'Stufe', profile: 'Ihr Profil', adviceTitle: 'Wo ich ansetzen würde',
+  ctaStrong: 'Sie wollen wissen, wie das bei Ihnen konkret aussehen könnte?', ctaBody: 'In 30 Minuten schauen wir gemeinsam auf Ihre Situation und den ersten Ansatzpunkt.', book: 'Erstgespräch buchen',
+  background: 'Hintergrund:', reportLink: 'Report „Gekauft ist nicht eingeführt“', howIWork: 'Wie ich arbeite',
+  restart: 'Check neu starten', share: 'Check auf LinkedIn teilen ↗︎', disclaimer: 'Eine Orientierung, kein Gutachten. Die Fragen beruhen auf den fünf Beobachtungen aus meinem Report.',
+  impressum: 'Impressum', privacyLink: 'Datenschutz', homeLink: 'Startseite',
+} : {
+  lang: 'en', title: 'AI check: where does your company stand?', description: 'Ten questions, three minutes: which stage of AI adoption is your company at, and what would be the sensible next step?',
+  skip: 'Skip to content', homeLabel: 'Tobias Treppmann – home', suffix: 'AI Transformation', contact: 'Contact', switchLabel: 'DE',
+  meta: 'AI check · 3 minutes', h1: 'Where does your company stand with AI?',
+  lead: 'Ten questions on usage, processes, ownership, enablement and measurement. At the end you see which of five stages you are at and what the sensible next step would be.',
+  stagesLabel: 'The five stages', start: 'Start the check', privacy: 'Your answers stay in your browser. Nothing is stored or sent anywhere.',
+  noscript: 'The check needs JavaScript. The questions and stages are based on my report', reportName: '“Bought is not adopted”',
+  question: 'Question', of: 'of', back: '← Back', next: 'Next',
+  evaluation: 'Evaluation', steps: ['Evaluating your answers', 'Matching them with the five observations', 'Putting together next steps'],
+  result: 'Your result', here: 'You are here', stage: 'Stage', profile: 'Your profile', adviceTitle: 'Where I would start',
+  ctaStrong: 'Want to know what this could look like for you?', ctaBody: 'In 30 minutes we look at your situation and the first starting point together.', book: 'Book an intro call',
+  background: 'Background:', reportLink: 'Report “Bought is not adopted”', howIWork: 'How I work',
+  restart: 'Restart the check', share: 'Share the check on LinkedIn ↗︎', disclaimer: 'A guide, not an expert assessment. The questions are based on the five observations from my report.',
+  impressum: 'Legal notice', privacyLink: 'Privacy', homeLink: 'Home',
+};
+
+// Strings the script needs at runtime.
+const ui = de ? {
+  last: ' · letzte Frage', half: ' · Halbzeit', remaining: ' · noch etwa {s} Sekunden', captured: '{name} erfasst. ',
+  noneName: 'Noch am Anfang', allStrong: 'In allen fünf Bereichen sind Sie weit. Spannend wird jetzt, wo sich KI noch tiefer in Ihre Prozesse und Produkte einbauen lässt.',
+} : {
+  last: ' · last question', half: ' · halfway', remaining: ' · about {s} seconds to go', captured: '{name} done. ',
+  noneName: 'Just starting out', allStrong: 'You are far along in all five areas. The interesting question now is where AI can be built even deeper into your processes and products.',
+};
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: t.title,
+  description: t.description,
+  inLanguage: t.lang,
+  author: { '@type': 'Person', name: 'Tobias Treppmann', url: `https://treppmann.de${home}` },
+  url,
+};
+---
+
+<Layout lang={t.lang} title={`${t.title} – Tobias Treppmann`} description={t.description} canonical={url} alternateDe={deUrl} alternateEn={enUrl} alternateDefault={deUrl} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+  <a class="skip-link" href="#main">{t.skip}</a>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href={home} aria-label={t.homeLabel}>
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>{t.suffix}</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href={`${home}#contact`}>{t.contact}</a>
+      <a class="language" href={new URL(de ? enUrl : deUrl).pathname} lang={de ? 'en' : 'de'}>{t.switchLabel}</a>
+    </div>
+  </header>
+
+  <main class="check-page section-paper" id="main">
+    <div class="section-shell check-shell">
+      <section class="check-intro" id="check-intro">
+        <p class="section-label">{t.meta}</p>
+        <h1>{t.h1}</h1>
+        <p class="check-lead">{t.lead}</p>
+        <ol class="check-stairs check-stage-preview" aria-label={t.stagesLabel}>
+          {stages.map((s, i) => <li style={`--n:${i + 1}`}><span class="check-stair-bar" aria-hidden="true">{i + 1}</span><span class="check-stair-name">{s.name}</span></li>)}
+        </ol>
+        <button class="button button-primary check-start" type="button" data-start>{t.start} <span aria-hidden="true">→</span></button>
+        <p class="check-privacy">{t.privacy}</p>
+        <noscript><p class="check-privacy">{t.noscript} <a href={reportHref}>{t.reportName}</a>.</p></noscript>
+      </section>
+
+      <form class="check-quiz" id="check-quiz" hidden>
+        <ol class="check-segments" aria-hidden="true">
+          {dimensions.map((d) => (
+            <li data-seg={d.id}><span class="check-seg-track"><span class="check-seg-fill"></span></span><span class="check-seg-name">{d.name}</span></li>
+          ))}
+        </ol>
+        <p class="check-count" aria-live="polite">{t.question} <span data-count>1</span> {t.of} {questions.length}<span class="check-count-note" data-note></span></p>
+        <div class="check-stack">
+          {questions.map((item, qi) => (
+            <fieldset class="check-question" data-q={qi} data-dim={item.dim} inert>
+              <legend><span class="check-dim">{dimensions.find((d) => d.id === item.dim)!.name}</span>{item.q}</legend>
+              <div class="check-options">
+                {item.a.map((label, ai) => (
+                  <label class="check-option">
+                    <input type="radio" name={`q${qi}`} value={ai} />
+                    <span class="check-option-mark" aria-hidden="true"></span>
+                    <span>{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+          ))}
+        </div>
+        <div class="check-nav">
+          <button class="check-back" type="button" data-back>{t.back}</button>
+          <button class="button button-primary check-next" type="button" data-next disabled>{t.next} <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="check-insight" data-insight aria-live="polite"></p>
+      </form>
+
+      <section class="check-processing" id="check-processing" hidden aria-live="polite">
+        <p class="section-label">{t.evaluation}</p>
+        <ol class="check-steps">
+          {t.steps.map((s) => <li>{s}</li>)}
+        </ol>
+        <div class="check-processing-bar" aria-hidden="true"><span></span></div>
+      </section>
+
+      <section class="check-result" id="check-result" hidden tabindex="-1" aria-labelledby="result-title">
+        <p class="section-label">{t.result}</p>
+        <ol class="check-stairs check-ladder" aria-hidden="true">
+          {stages.map((s, i) => <li data-stage={i} style={`--n:${i + 1}`}><span class="check-stair-bar">{i + 1}<em class="check-stair-here">{t.here}</em></span><span class="check-stair-name">{s.name}</span></li>)}
+        </ol>
+        <h2 id="result-title">{t.stage} <span data-stage-num></span>: <span data-stage-name></span></h2>
+        <p class="check-lead" data-stage-text></p>
+
+        <h3>{t.profile}</h3>
+        <ul class="check-profile">
+          {dimensions.map((d) => (
+            <li data-dim-row={d.id}>
+              <span class="check-profile-name">{d.name}</span>
+              <span class="check-profile-track"><span class="check-profile-fill"></span></span>
+              <span class="check-profile-value" data-dim-value></span>
+            </li>
+          ))}
+        </ul>
+
+        <h3>{t.adviceTitle}</h3>
+        <div class="check-advice" data-advice></div>
+
+        <div class="report-cta">
+          <p><strong>{t.ctaStrong}</strong> {t.ctaBody}</p>
+          <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">{t.book}<span aria-hidden="true"> ↗︎</span></a>
+          <p class="report-cta-alt">{t.background} <a href={reportHref}>{t.reportLink}</a> · <a href={home}>{t.howIWork}</a></p>
+        </div>
+
+        <p class="check-actions">
+          <button class="check-back" type="button" data-restart>{t.restart}</button>
+          <a class="check-share" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener">{t.share}</a>
+        </p>
+        <p class="check-privacy">{t.disclaimer}</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · {t.suffix}</span>
+    <div class="footer-links">
+      <a href="/impressum/">{t.impressum}</a>
+      <a href="/datenschutz/">{t.privacyLink}</a>
+      <a href={home}>{t.homeLink}</a>
+    </div>
+  </footer>
+
+  <script is:inline define:vars={{ dimensions, stages, insights, ui, total: questions.length }}>
+    const intro = document.getElementById('check-intro');
+    const quiz = document.getElementById('check-quiz');
+    const result = document.getElementById('check-result');
+    const qs = [...quiz.querySelectorAll('.check-question')];
+    const processing = document.getElementById('check-processing');
+    const segs = [...quiz.querySelectorAll('[data-seg]')];
+    const insight = quiz.querySelector('[data-insight]');
+    const note = quiz.querySelector('[data-note]');
+    const count = quiz.querySelector('[data-count]');
+    const back = quiz.querySelector('[data-back]');
+    const nextBtn = quiz.querySelector('[data-next]');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    let current = -1;
+    let busy = false;
+    let pointer = false;
+
+    const fade = (el, frames, duration) => reduce
+      ? Promise.resolve()
+      : el.animate(frames, { duration, easing: ease, fill: 'both' }).finished;
+    const out = (el, dx = 0) => fade(el, [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translate(${-dx}px, ${dx ? 0 : -8}px)` }], 200);
+    const into = (el, dx = 0) => fade(el, [{ opacity: 0, transform: `translate(${dx}px, ${dx ? 0 : 12}px)` }, { opacity: 1, transform: 'none' }], 380);
+    const toTop = () => {
+      const top = document.getElementById('main').getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > top + 4) window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+    };
+
+    // Each dimension is one segment of two questions. A finished segment ticks and its insight appears.
+    function progress(i) {
+      segs.forEach((seg, n) => {
+        const fill = Math.min(2, Math.max(0, i - n * 2)) / 2;
+        const done = fill === 1;
+        seg.style.setProperty('--seg', String(fill));
+        if (done && !seg.classList.contains('is-done')) seg.classList.add('is-done', 'is-ticking');
+        if (!done) seg.classList.remove('is-done', 'is-ticking');
+        seg.classList.toggle('is-current', !done && i >= n * 2);
+      });
+      const remaining = total - i;
+      note.textContent = i === total - 1 ? ui.last : i === 5 ? ui.half : remaining <= 4 ? ui.remaining.replace('{s}', String(remaining * 15)) : '';
+      const prev = i > 0 && i % 2 === 0 ? dimensions[i / 2 - 1] : null;
+      if (prev && insights[prev.id]) {
+        insight.innerHTML = '';
+        const b = document.createElement('strong'); b.textContent = ui.captured.replace('{name}', prev.name);
+        const c = document.createElement('cite'); c.textContent = insights[prev.id].src;
+        insight.append(b, document.createTextNode(`${insights[prev.id].text} `), c);
+        insight.classList.remove('is-shown'); void insight.offsetWidth; insight.classList.add('is-shown');
+      } else if (i === 0) {
+        insight.classList.remove('is-shown');
+      }
+    }
+
+    function activate(q, on) {
+      q.inert = !on;
+      q.classList.toggle('is-current', on);
+    }
+
+    async function go(i, dir = 1) {
+      if (busy || i === current) return;
+      busy = true;
+      const from = qs[current];
+      const to = qs[i];
+      count.textContent = String(i + 1);
+      progress(i);
+      back.style.visibility = i === 0 ? 'hidden' : 'visible';
+      nextBtn.disabled = !to.querySelector('input:checked');
+      if (from) { await out(from, 28 * dir); activate(from, false); from.getAnimations().forEach((a) => a.cancel()); }
+      activate(to, true);
+      current = i;
+      const focusTarget = to.querySelector('input:checked') || to.querySelector('input');
+      focusTarget.focus({ preventScroll: true });
+      await into(to, 28 * dir);
+      to.getAnimations().forEach((a) => a.cancel());
+      busy = false;
+    }
+
+    function score() {
+      const per = {};
+      dimensions.forEach((d) => { per[d.id] = 0; });
+      let sum = 0;
+      const answers = qs.map((q) => Number(q.querySelector('input:checked')?.value || 0));
+      qs.forEach((q, n) => { per[q.dataset.dim] += answers[n]; sum += answers[n]; });
+      let idx = stages.findIndex((s) => sum <= s.max);
+      // A stage name must not contradict the answers.
+      const redesigned = answers[2];
+      if (answers[0] === 0) idx = Math.min(idx, 0);
+      if (redesigned < 2) idx = Math.min(idx, 2);
+      if (redesigned < 3 || per.measure < 4) idx = Math.min(idx, 3);
+      const none = answers[0] === 0 && answers[1] === 0;
+      return { per, idx, none };
+    }
+
+    async function finish() {
+      if (busy) return;
+      busy = true;
+      segs.forEach((seg) => { seg.style.setProperty('--seg', '1'); seg.classList.add('is-done'); });
+      const { per, idx, none } = score();
+      const stage = stages[idx];
+      result.querySelector('[data-stage-num]').textContent = String(idx + 1);
+      result.querySelector('[data-stage-name]').textContent = idx === 0 && none ? ui.noneName : stage.name;
+      result.querySelector('[data-stage-text]').textContent = idx === 0 && none ? stage.textNone : stage.text;
+      result.querySelectorAll('[data-stage]').forEach((li) => {
+        const n = Number(li.dataset.stage);
+        li.classList.toggle('is-reached', n <= idx);
+        li.classList.toggle('is-current', n === idx);
+      });
+      dimensions.forEach((d) => {
+        const row = result.querySelector(`[data-dim-row="${d.id}"]`);
+        row.querySelector('[data-dim-value]').textContent = `${per[d.id]} / 6`;
+        row.querySelector('.check-profile-fill').style.setProperty('--w', `${Math.round((per[d.id] / 6) * 100)}%`);
+      });
+      const weakest = [...dimensions].sort((a, b) => per[a.id] - per[b.id]).filter((d) => per[d.id] < 6).slice(0, 2);
+      const advice = result.querySelector('[data-advice]');
+      advice.innerHTML = '';
+      if (!weakest.length) {
+        const p = document.createElement('p');
+        p.textContent = ui.allStrong;
+        advice.append(p);
+      }
+      weakest.forEach((d) => {
+        const div = document.createElement('div');
+        div.className = 'check-advice-item';
+        const h = document.createElement('h4'); h.textContent = d.name;
+        const p = document.createElement('p'); p.textContent = d.advice;
+        div.append(h, p); advice.append(div);
+      });
+      await out(quiz);
+      quiz.hidden = true;
+      quiz.getAnimations().forEach((a) => a.cancel());
+      toTop();
+      if (!reduce) {
+        // A short, honest pause: three steps, about two seconds, then the result.
+        processing.hidden = false;
+        processing.classList.remove('is-running');
+        void processing.offsetWidth;
+        processing.classList.add('is-running');
+        await into(processing);
+        await new Promise((r) => setTimeout(r, 1900));
+        await out(processing);
+        processing.hidden = true;
+        processing.getAnimations().forEach((a) => a.cancel());
+      }
+      result.style.setProperty('--climb', String(idx));
+      result.classList.remove('is-revealed');
+      result.hidden = false;
+      result.focus({ preventScroll: true });
+      requestAnimationFrame(() => result.classList.add('is-revealed'));
+      await into(result);
+      busy = false;
+    }
+
+    async function start() {
+      await out(intro);
+      intro.hidden = true;
+      quiz.hidden = false;
+      qs.forEach((q) => activate(q, false));
+      current = -1;
+      toTop();
+      await into(quiz.querySelector('.check-segments'));
+      go(0);
+    }
+
+    const advance = () => (current + 1 < total ? go(current + 1) : finish());
+    document.querySelector('[data-start]').addEventListener('click', start);
+    quiz.addEventListener('pointerdown', () => { pointer = true; });
+    quiz.addEventListener('keydown', (e) => {
+      pointer = false;
+      if (e.key === 'Enter' && qs[current]?.querySelector('input:checked')) { e.preventDefault(); advance(); }
+    });
+    // Mouse and touch answers move on by themselves; keyboard users continue with Enter or the button.
+    quiz.addEventListener('change', (e) => {
+      if (!(e.target instanceof HTMLInputElement)) return;
+      nextBtn.disabled = false;
+      if (pointer) setTimeout(advance, reduce ? 0 : 380);
+    });
+    quiz.addEventListener('submit', (e) => e.preventDefault());
+    nextBtn.addEventListener('click', advance);
+    back.addEventListener('click', () => { if (current > 0) go(current - 1, -1); });
+    result.querySelector('[data-restart]').addEventListener('click', async () => {
+      await out(result);
+      result.hidden = true;
+      result.getAnimations().forEach((a) => a.cancel());
+      quiz.reset();
+      segs.forEach((seg) => { seg.classList.remove('is-done', 'is-ticking', 'is-current'); seg.style.removeProperty('--seg'); });
+      insight.classList.remove('is-shown');
+      quiz.hidden = false;
+      qs.forEach((q) => activate(q, false));
+      current = -1;
+      toTop();
+      go(0);
+    });
+  </script>
+</Layout>

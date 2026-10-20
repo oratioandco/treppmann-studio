@@ -579,12 +579,6 @@ footer a { color: var(--white); }
 .check-shell { max-width: 760px; }
 .check-page h1 { margin: 1.2rem 0 1.2rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1; letter-spacing: -.02em; }
 .check-lead { font-size: 1.15rem; color: var(--ink); max-width: 38em; }
-.check-stage-preview, .check-ladder { list-style: none; margin: 2rem 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-.check-stage-preview li, .check-ladder li { position: relative; padding: .7rem .7rem .8rem; min-height: 5.2rem; border: 1px solid var(--line); background: var(--white); font-size: .82rem; line-height: 1.25; font-weight: 600; }
-.check-stage-preview li span, .check-ladder li span { display: block; margin-bottom: .45rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); }
-.check-stage-preview li { animation: check-rise 520ms cubic-bezier(.2,.7,.2,1) both; }
-.check-stage-preview li:nth-child(2) { animation-delay: 70ms; } .check-stage-preview li:nth-child(3) { animation-delay: 140ms; }
-.check-stage-preview li:nth-child(4) { animation-delay: 210ms; } .check-stage-preview li:nth-child(5) { animation-delay: 280ms; }
 .check-start { margin-top: .4rem; }
 .check-start span { display: inline-block; margin-left: .4rem; transition: transform 180ms ease; }
 .check-start:hover span { transform: translateX(4px); }
@@ -609,20 +603,12 @@ footer a { color: var(--white); }
 .check-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.6rem; }
 .check-back { background: none; border: 0; padding: .6rem 0; font: inherit; font-size: .9rem; color: var(--muted); cursor: pointer; }
 .check-back:hover { color: var(--ink); }
-.check-next:disabled { opacity: .35; cursor: default; }
-.check-next:disabled:hover { background: transparent; color: inherit; }
+.check-next:disabled { opacity: .4; cursor: default; }
+.check-next:disabled:hover { background: var(--signal); border-color: var(--signal); }
 
 .check-result h2 { margin: .6rem 0 1rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; }
 .check-result h3 { margin: 2.6rem 0 1rem; font-size: .78rem; font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
 .check-result:focus { outline: none; }
-.check-ladder li { transition: background 300ms ease, color 300ms ease, border-color 300ms ease; }
-.check-ladder li.is-reached { background: var(--ink); color: var(--white); border-color: var(--ink); }
-.check-ladder li.is-reached span { color: rgba(255,253,247,.6); }
-.check-ladder li.is-current { background: var(--signal); color: var(--ink); border-color: var(--signal); }
-.check-ladder li.is-current span { color: var(--ink); }
-.check-result.is-revealed .check-ladder li { animation: check-rise 480ms cubic-bezier(.2,.7,.2,1) both; }
-.check-result.is-revealed .check-ladder li:nth-child(2) { animation-delay: 90ms; } .check-result.is-revealed .check-ladder li:nth-child(3) { animation-delay: 180ms; }
-.check-result.is-revealed .check-ladder li:nth-child(4) { animation-delay: 270ms; } .check-result.is-revealed .check-ladder li:nth-child(5) { animation-delay: 360ms; }
 .check-profile { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .check-profile li { display: grid; grid-template-columns: 8.5rem 1fr 3rem; align-items: center; gap: 1rem; font-size: .95rem; }
 .check-profile-track { height: 10px; background: var(--line); position: relative; overflow: hidden; }
@@ -640,9 +626,6 @@ footer a { color: var(--white); }
 @keyframes check-slide { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 760px) {
-  .check-stage-preview, .check-ladder { grid-template-columns: 1fr; gap: 4px; }
-  .check-stage-preview li, .check-ladder li { min-height: 0; display: flex; gap: .8rem; align-items: baseline; padding: .6rem .8rem; }
-  .check-stage-preview li span, .check-ladder li span { margin: 0; }
   .check-profile li { grid-template-columns: 6.5rem 1fr 2.6rem; gap: .6rem; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -740,11 +723,6 @@ main a[download]:hover > span[aria-hidden="true"] { transform: translateY(3px); 
 @keyframes processing-fill { to { transform: scaleX(1); } }
 
 /* The ladder climbs to the reached stage, then the rest of the result follows */
-.check-result.is-revealed .check-ladder li { animation: none; }
-.check-ladder li.is-reached { transition-delay: calc(var(--n, 0) * 160ms); }
-.check-result:not(.is-revealed) .check-ladder li.is-reached { background: var(--white); color: var(--ink); border-color: var(--line); transition: none; }
-.check-ladder li.is-current { animation: none; }
-.check-result.is-revealed .check-ladder li.is-current { animation: stage-pulse 700ms cubic-bezier(.3,1.5,.5,1) calc(var(--n, 0) * 160ms + 200ms) both; }
 @keyframes stage-pulse { from { transform: scale(.94); } 50% { transform: scale(1.04); } to { transform: none; } }
 .check-result > h2, .check-result > .check-lead, .check-result > h3, .check-result .check-profile, .check-result .check-advice, .check-result .report-cta, .check-result .check-actions { transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
 .check-result:not(.is-revealed) > h2, .check-result:not(.is-revealed) > .check-lead, .check-result:not(.is-revealed) > h3, .check-result:not(.is-revealed) .check-profile, .check-result:not(.is-revealed) .check-advice, .check-result:not(.is-revealed) .report-cta, .check-result:not(.is-revealed) .check-actions { opacity: 0; transform: translateY(14px); }
@@ -1104,3 +1082,33 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 .case-flow.is-timeline li.is-ai { background: transparent; box-shadow: none; border-radius: 0; }
 @media (max-width: 860px) { .case-more-card .collage-object-small { height: 110px; width: 110px; overflow: hidden; } .case-more-card .collage-object-small::before { width: 78px; height: 78px; left: 16px; } .case-more-card .collage-object-small img { max-width: 92px; max-height: 100px; } }
 .needs-grid article.is-scrub { cursor: ew-resize; }
+
+/* KI-Check stages as a staircase, the same motif as the hero, so they never read as answer buttons */
+.check-stairs { --step: 1.5rem; list-style: none; margin: 2.4rem 0 2.2rem; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+.check-stairs li { position: relative; display: flex; flex-direction: column; font-size: .84rem; line-height: 1.2; font-weight: 600; }
+.check-stairs li::before { content: ''; flex: none; height: calc((5 - var(--n)) * var(--step)); }
+.check-stair-bar { position: relative; flex: none; height: calc(var(--n) * var(--step)); padding: .35rem .45rem; background: color-mix(in oklab, var(--signal) calc(var(--n) * 20%), var(--paper)); border-top: 2px solid color-mix(in oklab, var(--signal) calc(var(--n) * 20% + 10%), var(--paper)); font-family: var(--mono); font-size: .68rem; font-weight: 400; transform-origin: bottom; }
+.check-stair-name { margin-top: .6rem; padding-right: .3rem; overflow-wrap: break-word; }
+.check-stage-preview .check-stair-bar { animation: collage-step 700ms cubic-bezier(.2,.75,.2,1) both; animation-delay: calc(200ms + var(--n) * 90ms); }
+/* "You are here" sits above the whole staircase, with a line down to the reached step */
+.check-ladder { margin-top: 4.2rem; }
+.check-stair-here { position: absolute; left: 0; bottom: calc(100% + (5 - var(--n)) * var(--step) + 1.1rem); display: none; width: max-content; padding: .2rem .45rem; background: var(--ink); color: var(--white); font-family: var(--mono); font-size: .62rem; font-style: normal; letter-spacing: .04em; text-transform: uppercase; }
+.check-stair-here::after { content: ''; position: absolute; top: 100%; left: .6rem; height: calc((5 - var(--n)) * var(--step) + 1.1rem); border-left: 1.5px solid var(--ink); }
+.check-stairs li:nth-child(n+4) .check-stair-here { left: auto; right: 0; }
+.check-stairs li:nth-child(n+4) .check-stair-here::after { left: auto; right: .6rem; }
+.check-ladder li:not(.is-reached) .check-stair-bar { background: transparent; border: 1px dashed color-mix(in oklab, var(--ink) 30%, transparent); }
+.check-ladder li:not(.is-reached) .check-stair-name { color: var(--muted); font-weight: 400; }
+.check-ladder li.is-current .check-stair-bar { background: var(--signal); border-top-color: var(--ink); }
+.check-ladder li.is-current .check-stair-here { display: block; }
+.check-result .check-stair-here { transition: opacity 400ms ease calc(var(--n) * 160ms + 300ms); }
+.check-result:not(.is-revealed) .check-stair-here { opacity: 0; transition: none; }
+.check-result.is-revealed .check-ladder li.is-reached .check-stair-bar { animation: collage-step 600ms cubic-bezier(.2,.75,.2,1) both; animation-delay: calc(var(--n) * 160ms); }
+@media (max-width: 760px) {
+  .check-stairs { --step: 1.1rem; gap: 3px; }
+  .check-stairs li { font-size: .68rem; }
+  .check-stair-bar { padding: .2rem .3rem; font-size: .6rem; }
+  .check-stair-name { margin-top: .45rem; padding-right: 0; }
+}
+/* Pages without a nav keep their actions on the right */
+.topbar > .topbar-actions:nth-child(2) { grid-column: -2; }
+.check-next span { display: inline-block; margin-left: .4rem; }
