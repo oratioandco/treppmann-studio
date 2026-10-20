@@ -1103,3 +1103,4 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 }
 .case-flow.is-timeline li.is-ai { background: transparent; box-shadow: none; border-radius: 0; }
 @media (max-width: 860px) { .case-more-card .collage-object-small { height: 110px; width: 110px; overflow: hidden; } .case-more-card .collage-object-small::before { width: 78px; height: 78px; left: 16px; } .case-more-card .collage-object-small img { max-width: 92px; max-height: 100px; } }
+.needs-grid article.is-scrub { cursor: ew-resize; }
