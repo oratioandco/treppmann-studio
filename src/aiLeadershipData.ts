@@ -117,11 +117,18 @@ export const aiLeadershipContent = {
       intro: 'Am Anfang steht immer ein kostenloses Gespräch (30 Minuten). Danach entscheiden Sie, welche Form der Zusammenarbeit passt.',
       items: [
         {
-          title: 'Projekt',
-          meta: `z.${nb}B. zwei Wochen Standortbestimmung`,
-          body: 'Eine KI-Standortbestimmung mit klaren Prioritäten oder ein abgegrenzter Prozess, der umgebaut werden soll. Fester Rahmen, festes Ergebnis.',
-          action: 'Projekt besprechen',
-          subject: 'KI-Projekt',
+          title: 'KI-Standortbestimmung',
+          meta: 'Projekt · zwei Wochen · Festpreis',
+          body: 'In zwei Wochen wissen Sie, wo KI bei Ihnen zuerst ansetzt und wo nicht. Ich spreche mit der Geschäftsführung und mit den Menschen, die die Arbeit machen. Danach entscheiden Sie, ob und wie es weitergeht.',
+          includes: [
+            'Ziele, Ausgangslage und Messgrößen, schriftlich',
+            'Ein klares Bild, wo Ihre Prozesse wirklich haken',
+            'Drei Vorhaben in fester Reihenfolge',
+            'Was Sie bewusst nicht tun',
+          ],
+          note: 'Auch möglich: ein abgegrenzter Prozess, den wir gemeinsam umbauen.',
+          action: 'Standortbestimmung anfragen',
+          subject: 'KI-Standortbestimmung',
         },
         {
           title: 'Interimsmandat',
@@ -316,11 +323,18 @@ export const aiLeadershipContent = {
       intro: 'It always starts with a free conversation (30 minutes). Then you decide which form of collaboration fits.',
       items: [
         {
-          title: 'Project',
-          meta: 'e.g. a two-week AI assessment',
-          body: 'An AI assessment with clear priorities, or one bounded process to rebuild. Fixed scope, fixed outcome.',
-          action: 'Discuss a project',
-          subject: 'AI project',
+          title: 'AI assessment',
+          meta: 'Project · two weeks · fixed price',
+          body: 'In two weeks you know where AI should start in your company, and where it should not. I talk to leadership and to the people who do the work. Then you decide whether and how to continue.',
+          includes: [
+            'Goals, baseline, and measures, in writing',
+            'A clear picture of where your processes really get stuck',
+            'Three initiatives in a fixed order',
+            'What you deliberately will not do',
+          ],
+          note: 'Also possible: one bounded process we rebuild together.',
+          action: 'Request an assessment',
+          subject: 'AI assessment',
         },
         {
           title: 'Interim mandate',

@@ -239,6 +239,8 @@ const structuredData = {
             <h3>{item.title}</h3>
             <p class="engagement-meta">{item.meta}</p>
             <p>{item.body}</p>
+            {'includes' in item && <ul class="engagement-includes">{item.includes.map((x) => <li>{x}</li>)}</ul>}
+            {'note' in item && <p class="engagement-note">{item.note}</p>}
             <div class="engagement-links">
               <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> →</span></a>
               {'secondary' in item && <a href={item.secondaryHref} download>{item.secondary}<span aria-hidden="true"> ↓</span></a>}

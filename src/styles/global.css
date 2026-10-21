@@ -397,6 +397,10 @@ footer a { color: var(--white); }
 .engagement-grid .engagement-meta { margin-top: .6rem; color: var(--ink); font-size: .9rem; font-weight: 600; }
 .engagement-links { margin-top: auto; padding-top: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; }
 .engagement-grid .engagement-links a { margin-top: 0; font-size: .9rem; }
+.engagement-includes { margin: 1.2rem 0 0; padding: 0; list-style: none; max-width: 410px; border-top: 1px solid var(--line); }
+.engagement-includes li { position: relative; padding: .55rem 0 .55rem 1.4rem; border-bottom: 1px solid var(--line); font-size: .92rem; line-height: 1.35; }
+.engagement-includes li::before { content: ''; position: absolute; left: 0; top: .85rem; width: .55rem; height: .55rem; background: var(--signal); }
+.engagement-grid .engagement-note { margin-top: 1rem; font-size: .88rem; color: var(--muted); }
 .engagements-section .leadership-heading .lead { color: var(--muted); }
 .about-points { margin-top: 4rem; }
 .about-points article { min-height: 0; }
