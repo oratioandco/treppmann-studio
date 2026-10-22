@@ -30,7 +30,7 @@ export const aiLeadershipContent = {
       secondary: 'So sehen die ersten 90 Tage aus',
       portraitAlt: 'Tobias Treppmann in Berlin',
       portraitMeta: 'Produktleitung · Prozessgestaltung · KI-Einführung',
-      ticket: ['KI-Transformation', 'KI, die genutzt wird.', 'Vom Menschen aus'],
+      ticket: ['KI-Transformation', 'KI, die genutzt wird.', 'Erst verstehen, dann bauen'],
       stepsLabel: 'Fünf Stufen. Wo stehen Sie?',
       stepsAction: 'Zum KI-Check',
       stepsHref: 'https://treppmann.de/ki-check/',
@@ -101,7 +101,7 @@ export const aiLeadershipContent = {
     },
     plan: {
       label: 'Die ersten 90 Tage',
-      title: 'Vom Menschen aus: fünf Schritte.',
+      title: 'Erst verstehen, dann bauen: fünf Schritte.',
       body: 'Viele KI-Projekte beginnen mit einer Liste von Use Cases. Ich beginne damit, wie die Arbeit heute wirklich läuft. Der erste Durchlauf dauert meist rund 90 Tage, je nach Freigaben im Haus. Danach läuft mindestens ein KI-gestützter Prozess, den Ihre Leute tatsächlich verwenden, mit gemessenem Ergebnis – und der nächste folgt, mit dem, was das Team gelernt hat. IT-Sicherheit, Recht, Datenschutz und Architektur ziehe ich je nach Risiko hinzu, bei Bedarf mit spezialisierten Partnern.',
       steps: [
         ['Schritt 1', 'Ziel klären', 'Gespräche mit der Geschäftsführung: Was soll besser werden, und wie sieht es heute aus? Ergebnis: Ziele, Ausgangslage und Messgrößen, schriftlich festgehalten.'],

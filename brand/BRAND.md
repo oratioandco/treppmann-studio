@@ -72,6 +72,8 @@ brand/tools/check-brand.mjs` fails if the files disagree.
 - Promise style: "meist", "rund", "je nach" where the outcome depends on the client. Never
   guarantees.
 - Voice-over: Tobias's own voice or none.
+- German writing guide (persona, tone, calques, headlines, page and case-study structure):
+  `brand/VOICE-DE.md`.
 - Required lines: sources under figures; "Ohne Anmeldung, nichts wird gespeichert" for the
   KI-Check; generated images are illustrations, not documentation.
 

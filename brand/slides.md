@@ -67,7 +67,7 @@ der Unternehmen ab 20 Beschäftigten setzen KI ein.
 
 ---
 
-<p class="kicker">Vom Menschen aus</p>
+<p class="kicker">Erst verstehen, dann bauen</p>
 
 ## Fünf Schritte.
 
