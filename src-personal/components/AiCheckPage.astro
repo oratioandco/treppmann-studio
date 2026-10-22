@@ -13,11 +13,11 @@ const bookUrl = 'https://fantastical.app/tobiastreppmann';
 
 // Each dimension is one observation from the report "Gekauft ist nicht eingeführt".
 const dimensions = de ? [
-  { id: 'use', name: 'Nutzung', advice: 'Zugang ist noch keine Nutzung. Suchen Sie einen Ablauf, in dem viele Leute täglich dieselbe mühsame Arbeit machen, und bringen Sie KI genau dort hinein, statt sie allen für alles anzubieten.' },
-  { id: 'process', name: 'Prozess', advice: 'Beginnen Sie mit einem Prozess, nicht mit einer Liste von Use Cases: einem, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen. Schauen Sie zuerst, wie die Arbeit heute wirklich läuft.' },
+  { id: 'use', name: 'Nutzung', advice: 'Zugang ist noch keine Nutzung. Suchen Sie einen Ablauf, in dem viele Leute täglich dieselbe mühsame Arbeit machen. Setzen Sie KI genau dort ein, statt sie allen für alles anzubieten.' },
+  { id: 'process', name: 'Prozess', advice: 'Beginnen Sie mit einem Prozess, nicht mit einer Liste von Anwendungsfällen: einem, der häufig vorkommt, Zeit kostet und klar genug ist, um ihn umzubauen. Schauen Sie zuerst, wie die Arbeit heute wirklich läuft.' },
   { id: 'owner', name: 'Verantwortung', advice: 'Benennen Sie eine Person mit Mandat und Zeit. Sie setzt Prioritäten, zieht den ersten Prozess durch und berichtet, was er gebracht hat. Eine neue Abteilung braucht es dafür nicht.' },
-  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Botschaftern festes Zeitbudget. Seit Februar 2025 verpflichtet Art. 4 der KI-Verordnung Unternehmen, die KI einsetzen, ohnehin, für ausreichende KI-Kompetenz zu sorgen.' },
-  { id: 'measure', name: 'Messen', advice: 'Legen Sie vor dem nächsten Vorhaben fest, woran Sie den Erfolg messen, etwa Zeit pro Vorgang oder Anteil der regelmäßigen Nutzer, und halten Sie den Ausgangswert fest. Nach rund 90 Tagen nachsehen.' },
+  { id: 'enable', name: 'Befähigung', advice: 'Schulungen allein reichen selten. Lassen Sie Menschen KI an ihrer eigenen Aufgabe erleben, mit jemandem an ihrer Seite, und geben Sie ein, zwei Botschafterinnen oder Botschaftern ein festes Zeitbudget. Für ausreichende KI-Kompetenz zu sorgen, ist seit Februar 2025 ohnehin Pflicht: Art. 4 der KI-Verordnung verlangt es von Unternehmen, die KI einsetzen.' },
+  { id: 'measure', name: 'Messen', advice: 'Legen Sie vor dem nächsten Vorhaben fest, woran Sie den Erfolg messen, etwa Zeit pro Vorgang oder den Anteil der Beschäftigten, die KI regelmäßig nutzen, und halten Sie den Ausgangswert fest. Sehen Sie nach rund 90 Tagen wieder nach.' },
 ] : [
   { id: 'use', name: 'Usage', advice: 'Access is not use. Find a workflow where many people do the same tedious work every day, and bring AI into exactly that one, instead of offering it to everyone for everything.' },
   { id: 'process', name: 'Process', advice: 'Start with one process, not a list of use cases: one that happens often, costs time and is clear enough to redesign. First look at how the work really runs today.' },
@@ -31,7 +31,7 @@ const insights = de ? {
   use: { text: 'Zum Vergleich: 57 % der Unternehmen ab 20 Beschäftigten setzen KI ein.', src: 'Bitkom, 2026' },
   process: { text: 'Lizenzen nennt nur jedes fünfte KI-nutzende Unternehmen als großen Kostenpunkt. Teuer sind Daten, Anbindung und Infrastruktur.', src: 'Bitkom, 2026' },
   owner: { text: 'In gut vier von zehn Unternehmen nutzen Beschäftigte private KI-Zugänge. Regeln dafür hat nur knapp ein Viertel.', src: 'Bitkom, 2025' },
-  enable: { text: '70 % der KI-Anwender bieten Schulungen an. Trotzdem nennen 42 % fehlende Akzeptanz als Hemmnis.', src: 'Bitkom, 2026' },
+  enable: { text: '70 % der Unternehmen, die KI nutzen, bieten Schulungen an. Trotzdem nennen 42 % fehlende Akzeptanz als Hemmnis.', src: 'Bitkom, 2026' },
 } : {
   use: { text: 'For comparison: 57% of German companies with 20 or more employees use AI.', src: 'Bitkom, 2026' },
   process: { text: 'Only one in five AI-using companies names licences as a major cost. The expensive parts are data, integration and infrastructure.', src: 'Bitkom, 2026' },
@@ -42,13 +42,13 @@ const insights = de ? {
 // Options run from 0 to 3 points. Wording stays neutral so the "right" answer is not obvious.
 const questions = de ? [
   { dim: 'use', q: 'Wie viele Ihrer Beschäftigten nutzen KI mindestens einmal pro Woche für ihre Arbeit?', a: ['Kaum jemand, oder wir wissen es nicht', 'Einzelne Interessierte', 'Ganze Teams in einzelnen Bereichen', 'Die meisten, in vielen Bereichen'] },
-  { dim: 'use', q: 'Welche KI-Werkzeuge stellt Ihr Unternehmen bereit?', a: ['Keine; wer KI nutzt, nutzt private Konten', 'Ein Chat-Werkzeug wie ChatGPT oder Copilot für einzelne', 'Ein Chat-Werkzeug für alle, mit Firmenkonto', 'Dazu Werkzeuge, die auf bestimmte Aufgaben zugeschnitten sind'] },
+  { dim: 'use', q: 'Welche KI-Werkzeuge stellt Ihr Unternehmen bereit?', a: ['Keine; wer KI nutzt, nutzt private Konten', 'Ein Chat-Werkzeug wie ChatGPT oder Copilot für Einzelne', 'Ein Chat-Werkzeug für alle, mit Firmenkonto', 'Dazu Werkzeuge, die auf bestimmte Aufgaben zugeschnitten sind'] },
   { dim: 'process', q: 'Gibt es einen Arbeitsablauf, der mit KI neu gestaltet wurde, nicht nur ergänzt?', a: ['Nein', 'Wir planen das', 'Ja, einen', 'Ja, mehrere'] },
-  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Bisher gar nicht, oder jeder probiert für sich', 'Aus einer Sammlung von Ideen und Use Cases', 'Ausgewählt nach Nutzen und Aufwand', 'Ausgehend von konkreten Engpässen in Abläufen'] },
+  { dim: 'process', q: 'Wie entstehen bei Ihnen KI-Vorhaben?', a: ['Bisher gar nicht, oder jeder probiert für sich', 'Aus einer Sammlung von Ideen und Anwendungsfällen', 'Ausgewählt nach Nutzen und Aufwand', 'Ausgehend von konkreten Engpässen in Abläufen'] },
   { dim: 'owner', q: 'Wer ist bei Ihnen für KI verantwortlich?', a: ['Niemand ausdrücklich', 'Die IT oder Interessierte, nebenbei', 'Eine benannte Person, ohne festes Zeitbudget', 'Eine Person mit Mandat und Zeit dafür'] },
   { dim: 'owner', q: 'Gibt es Regeln, wie KI bei Ihnen genutzt werden darf?', a: ['Nein', 'Ungeschrieben, man weiß es ungefähr', 'Eine schriftliche KI-Leitlinie', 'Eine Leitlinie, die bekannt ist und im Alltag angewendet wird'] },
   { dim: 'enable', q: 'Wie lernen Ihre Leute, mit KI zu arbeiten?', a: ['Bisher gar nicht', 'Jeder für sich', 'In Schulungen', 'Begleitet an ihren eigenen Aufgaben'] },
-  { dim: 'enable', q: 'Gibt es Menschen im Team, die andere bei KI mitnehmen?', a: ['Nein', 'Ein paar Interessierte, inoffiziell', 'Benannte Ansprechpartner', 'KI-Botschafter mit festem Zeitbudget'] },
+  { dim: 'enable', q: 'Gibt es Leute im Team, die anderen den Einstieg in KI zeigen?', a: ['Nein', 'Ein paar Interessierte, inoffiziell', 'Benannte Ansprechpersonen', 'KI-Botschafterinnen und -Botschafter mit festem Zeitbudget'] },
   { dim: 'measure', q: 'Wissen Sie, was KI Ihnen bisher bringt?', a: ['Nein', 'Wir haben einen Eindruck', 'An einzelnen Beispielen', 'Ja, gemessen gegen einen Ausgangswert'] },
   { dim: 'measure', q: 'Legen Sie vor einem KI-Vorhaben fest, woran der Erfolg gemessen wird?', a: ['Nie, oder es gab noch keine Vorhaben', 'Manchmal', 'Meistens', 'Immer'] },
 ] : [
@@ -68,11 +68,11 @@ const questions = de ? [
 // specific answers: "Ausprobiert" needs some use, "Ein Prozess läuft anders" needs a redesigned
 // process, "Teil der Arbeitsweise" needs several processes and real measurement.
 const stages = de ? [
-  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie in großer Gesellschaft: In der Bitkom-Befragung vom September 2026 sagte kein einziges KI-nutzendes Unternehmen, es schöpfe das Potenzial voll aus.', textNone: 'KI spielt bei Ihnen noch keine Rolle. Das ist ein guter Ausgangspunkt: Sie können mit einem Prozess anfangen statt mit einer Lizenz, und die typischen Fehler der anderen überspringen.' },
+  { max: 6, name: 'Gekauft', text: 'KI ist da, als Lizenz oder als privates Werkzeug, aber sie verändert noch nichts an der Arbeit. Damit sind Sie nicht allein: In der Bitkom-Befragung vom September 2026 sagten sechs von zehn Unternehmen, die KI nutzen, sie schöpften das Potenzial überhaupt nicht aus.', textNone: 'KI spielt bei Ihnen noch keine Rolle. Das ist ein guter Ausgangspunkt: Sie können mit einem Prozess anfangen statt mit einer Lizenz und die typischen Fehler der anderen vermeiden.' },
   { max: 12, name: 'Ausprobiert', text: 'Einzelne nutzen KI, oft mit Begeisterung, aber zufällig verteilt. Was fehlt, ist der Schritt von „man kann“ zu „wir machen es so“.' },
-  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Sammlung von Piloten.' },
+  { max: 18, name: 'Erste Vorhaben', text: 'Es gibt Vorhaben und Ansätze von Struktur. Jetzt entscheidet sich, ob daraus ein Prozess wird, der wirklich anders läuft, oder eine weitere Sammlung von Pilotprojekten.' },
   { max: 24, name: 'Ein Prozess läuft anders', text: 'Mindestens ein Ablauf ist mit KI neu gestaltet. Die Aufgabe ist jetzt, das Gelernte auf den nächsten Prozess zu übertragen und den Nutzen sichtbar zu machen.' },
-  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Das ist selten: In der Bitkom-Befragung sagten nur 3 Prozent der KI-Anwender, sie schöpften das Potenzial eher stark aus. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
+  { max: 30, name: 'Teil der Arbeitsweise', text: 'KI ist in mehreren Prozessen verankert, verantwortet und gemessen. Das ist selten: In der Bitkom-Befragung sagten nur 3 % der Unternehmen, die KI nutzen, sie schöpften das Potenzial eher stark aus. Hier geht es um Tiefe: eigene Daten, eigene Werkzeuge, mehr Menschen, die selbst bauen.' },
 ] : [
   { max: 6, name: 'Bought', text: 'AI is there, as a licence or as a private tool, but it does not change the work yet. You are in good company: in Bitkom’s survey of German companies from September 2026, not a single AI-using company said it fully exploits the potential.', textNone: 'AI does not play a role for you yet. That is a good starting point: you can start with a process instead of a licence and skip the typical mistakes others made.' },
   { max: 12, name: 'Tried out', text: 'Some people use AI, often with enthusiasm, but scattered at random. What is missing is the step from “we could” to “this is how we do it”.' },
@@ -91,7 +91,7 @@ const t = de ? {
   question: 'Frage', of: 'von', back: '← Zurück', next: 'Weiter',
   evaluation: 'Auswertung', steps: ['Antworten auswerten', 'Mit den fünf Beobachtungen abgleichen', 'Nächste Schritte zusammenstellen'],
   result: 'Ihr Ergebnis', here: 'Sie sind hier', stage: 'Stufe', profile: 'Ihr Profil', adviceTitle: 'Wo ich ansetzen würde',
-  ctaStrong: 'Sie wollen wissen, wie das bei Ihnen konkret aussehen könnte?', ctaBody: 'In 30 Minuten schauen wir gemeinsam auf Ihre Situation und den ersten Ansatzpunkt.', book: 'Erstgespräch buchen',
+  ctaStrong: 'Sie wollen wissen, wie das bei Ihnen konkret aussehen könnte?', ctaBody: 'In 30 Minuten besprechen wir Ihre Lage und wo Sie anfangen könnten. Kostenlos und ohne Verpflichtung.', book: 'Erstgespräch vereinbaren',
   background: 'Hintergrund:', reportLink: 'Report „Gekauft ist nicht eingeführt“', howIWork: 'Wie ich arbeite',
   restart: 'Check neu starten', share: 'Check auf LinkedIn teilen ↗︎', disclaimer: 'Eine Orientierung, kein Gutachten. Die Fragen beruhen auf den fünf Beobachtungen aus meinem Report.',
   impressum: 'Impressum', privacyLink: 'Datenschutz', homeLink: 'Startseite',

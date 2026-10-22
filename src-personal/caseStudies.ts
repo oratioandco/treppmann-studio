@@ -44,8 +44,8 @@ export const caseStudies: CaseStudy[] = [
       title: 'Was ich gemacht habe',
       items: [
         ['Mit der Abteilungsleitung das Ziel geklärt', 'Leichter werden sollte das Schreiben, nicht das Entscheiden. Was in einer Antwort steht, verantwortet weiter ein Mensch.'],
-        ['Den Ablauf angesehen, wie er wirklich ist', 'Die meiste Post kommt auf Papier. Deshalb ist der Assistent bewusst an nichts angebunden: Ein Mensch liest den Brief, entscheidet, ob er den Assistenten nutzt, und gibt den Inhalt selbst ein.'],
-        ['Das Handbuch zum Maßstab gemacht', 'Der Assistent bekommt die Formulierungen, die Formatierung und die Standardsätze des Service-Handbuchs mit. Ändert sich das Handbuch, ändern sich die Entwürfe. Ein Training oder eine eigene Entwicklung war dafür nicht nötig.'],
+        ['Den Ablauf angesehen, wie er wirklich ist', 'Ein großer Teil kommt auf Papier. Deshalb ist der Assistent bewusst an nichts angebunden: Ein Mensch liest den Brief, entscheidet, ob er den Assistenten nutzt, und gibt den Inhalt selbst ein.'],
+        ['Das Handbuch zum Maßstab gemacht', 'Der Assistent bekommt die Formulierungen, die Formatierung und die Standardsätze des Service-Handbuchs mit. Ändert sich das Handbuch, ändern sich die Entwürfe. Ein eigenes KI-Modell zu trainieren oder etwas zu programmieren war dafür nicht nötig.'],
         ['Klare Grenzen eingebaut', 'Keine medizinische, rechtliche oder finanzielle Beratung, keine politischen oder konfessionellen Urteile. Ist die Eingabe gar keine Zuschaueranfrage, schreibt der Assistent keine Antwort, sondern fragt nach.'],
         ['Freiwillig eingeführt', 'Die Teamleitung hat ermutigt, nicht verpflichtet. Eine Woche zum Ausprobieren, danach Einzelgespräche am eigenen Fall.'],
       ],
@@ -63,19 +63,19 @@ export const caseStudies: CaseStudy[] = [
     },
     transfer: {
       title: 'Was das für Ihr Unternehmen heißt',
-      body: 'Überall, wo Ihr Team viele ähnliche, aber nie gleiche Texte schreibt, lässt sich der Entwurf an KI abgeben, ohne die Entscheidung abzugeben. Entscheidend ist nicht das Werkzeug, sondern die Einführung: ein klarer Maßstab, klare Grenzen und Zeit, es am eigenen Fall auszuprobieren.',
+      body: 'Überall, wo Ihr Team viele ähnliche, aber nie gleiche Texte schreibt, lässt sich der Entwurf an KI abgeben, ohne die Entscheidung abzugeben. Es kommt weniger auf das Werkzeug an als auf die Einführung: ein klarer Maßstab, klare Grenzen und Zeit, es am eigenen Fall auszuprobieren.',
       examples: ['Antworten auf Reklamationen', 'Rückfragen zu Aufträgen und Lieferungen', 'Angebotsanschreiben', 'Antworten im Kundenservice'],
     },
     limits: {
       title: 'Was es nicht ist',
-      items: ['Kein eigenes KI-Modell, sondern eine vorhandene Plattform mit gutem Kontext.', 'Kein Autopilot: Nichts wird ohne Menschen verschickt.', 'Keine Anbindung an das Postfach, kein automatisches Lesen.'],
+      items: ['Kein eigenes KI-Modell, sondern eine vorhandene KI-Plattform, die das Service-Handbuch als Grundlage bekommt.', 'Kein Autopilot: Nichts wird ohne Menschen verschickt.', 'Keine Anbindung an das Postfach, kein automatisches Lesen.'],
     },
   },
   {
     slug: 'produktentwicklung-mit-ki',
     label: 'Bibel TV · Produktentwicklung',
-    title: 'Von der Agentur abhängig zu: Wir bauen selbst.',
-    lead: 'Bei Bibel TV hing fast jede Änderung an Apps und Systemen an einer externen Agentur. Eigene Entwicklerinnen und Entwickler gibt es nicht. Heute entsteht ein großer Teil des Backends und erste Teile der Oberflächen im Haus, gebaut von Product Managern und Product Ownern mit KI.',
+    title: 'Selbst bauen statt auf die Agentur warten.',
+    lead: 'Bei Bibel TV hing fast jede Änderung an Apps und Systemen an einer externen Agentur. Eigene Entwicklerinnen und Entwickler gibt es nicht. Heute entstehen ein großer Teil des Backends und erste Teile der Oberflächen im Haus. Gebaut werden sie mit KI, von den Produktverantwortlichen selbst: Product Managern und Product Ownern.',
     description: 'Wie Bibel TV mit KI unabhängiger von einer externen Agentur wurde: Product Manager und Product Owner bauen heute selbst, mit Claude Code, klaren Regeln und Begleitung.',
     object: 'hands',
     shape: 'circle',
@@ -87,8 +87,8 @@ export const caseStudies: CaseStudy[] = [
     situation: {
       title: 'Die Ausgangslage',
       paras: [
-        'Bibel TV entwickelt Apps für iOS, Android, Web und Fernseher, hat aber keine eigene Entwicklungsabteilung. Fast alles lief über eine externe Agentur. Jede Änderung hieß: beschreiben, beauftragen, warten.',
-        'Die Leute, die wissen, was gebraucht wird, sitzen im Haus: Product Manager und Product Owner. Bauen konnten sie bisher nicht selbst.',
+        'Bibel TV bietet Apps für iOS, Android, Web und Fernseher an, hat aber keine eigene Entwicklungsabteilung. Fast alles lief über eine externe Agentur. Jede Änderung hieß: beschreiben, beauftragen, warten.',
+        'Die Leute, die wissen, was gebraucht wird, sitzen im Haus: die Produktverantwortlichen. Bauen konnten sie bisher nicht selbst.',
       ],
     },
     steps: {
@@ -98,8 +98,8 @@ export const caseStudies: CaseStudy[] = [
         ['Vorgemacht statt verordnet', 'Ich habe Prototypen in echtem Code gebaut, gegen echte Daten. Die Entwicklung baut direkt auf diesem Code auf. Das hat gezeigt, was möglich ist, besser als jede Präsentation.'],
         ['Frühjahr 2026: Claude eingeführt', 'Mit dem Team habe ich Claude Code, GitHub mit Spec Kit und MCP-Server für die interne Dokumentation eingeführt. Die Dokumentation hat das Team danach selbst erweitert und aufbereitet.'],
         ['Regeln statt Wildwuchs', 'Im Firmenkonto von Claude gelten feste Regeln, zum Beispiel für Formate, Freigaben und den Umgang mit Quellen. So arbeiten alle nach denselben Standards.'],
-        ['Einzeln begleitet', 'Austausch mit den Product Managern und Product Ownern und Einzelsitzungen an ihren eigenen Aufgaben.'],
-        ['Seit Sommer 2026: selbst entwickeln', 'Das Team baut einzelne Anwendungen und interne Werkzeuge selbst. Werkzeuge für automatisierte Tests und viele interne Tools habe ich selbst gebaut.'],
+        ['Einzeln begleitet', 'Ich habe mich mit den Produktverantwortlichen ausgetauscht und in Einzelsitzungen mit ihnen an ihren eigenen Aufgaben gearbeitet.'],
+        ['Seit Sommer 2026: selbst entwickeln', 'Das Team baut einzelne Anwendungen und interne Werkzeuge selbst. Die Werkzeuge für automatisierte Tests und viele weitere interne Werkzeuge habe ich gebaut.'],
       ],
     },
     images: [
@@ -108,10 +108,10 @@ export const caseStudies: CaseStudy[] = [
     result: {
       title: 'Wo es heute steht',
       big: 'Ohne Agentur',
-      bigLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Das Vertrauen kam aus der bisherigen Arbeit. Gebaut habe ich sie selbst, mit KI.',
+      bigLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Das Vertrauen kam aus meiner bisherigen Arbeit. Gebaut habe ich sie selbst, mit KI.',
       items: [
         'Ein großer Teil des Backends und erste Teile der Oberflächen entstehen heute im Haus.',
-        'Im Team gibt es ein bis zwei interne Ansprechpersonen, die das weitertragen.',
+        'Im Team gibt es ein bis zwei interne Ansprechpersonen, die das Thema im Haus weitertragen.',
         'Die neue App ist noch nicht veröffentlicht.',
       ],
       note: 'Abgeschlossen ist die Umstellung nicht. Das Team arbeitet weiter daran, Schritt für Schritt.',
@@ -123,15 +123,15 @@ export const caseStudies: CaseStudy[] = [
     },
     limits: {
       title: 'Was es nicht ist',
-      items: ['Kein Ersatz für Architektur, IT-Sicherheit und Prüfung.', 'Keine Abschaffung externer Partner: Sie werden für das gebraucht, was sie wirklich besser können.', 'Kein Selbstläufer: Ohne Regeln entsteht Software, die niemand warten kann.'],
+      items: ['Kein Ersatz für Architektur, IT-Sicherheit und Prüfung.', 'Externe Partner bleiben – für das, was sie wirklich besser können.', 'Kein Selbstläufer: Ohne Regeln entsteht Software, die niemand warten kann.'],
     },
   },
   {
     slug: 'ki-onboarding-ninox',
     label: 'Ninox · KI im Produkt',
-    title: 'Aus Alltagssprache wird eine Anwendung, die Nutzer selbst ändern können.',
-    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Mit dem CEO und dem technischen Mitgründer habe ich gestaltet, wie KI diese Hürde abnimmt, ohne dass die Nutzer die Kontrolle verlieren.',
-    description: 'Wie Ninox mit KI aus einer Beschreibung in Alltagssprache ein Datenmodell erzeugt, das Nutzer direkt bearbeiten können. Grundlage der öffentlichen KI-Beta.',
+    title: 'Aus Alltagssprache wird eine Anwendung, die man selbst ändern kann.',
+    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Mit dem CEO und dem technischen Mitgründer habe ich gestaltet, wie KI über diese Hürde hilft, ohne dass jemand die Kontrolle verliert.',
+    description: 'Wie Ninox mit KI aus einer Beschreibung in Alltagssprache ein Datenmodell erzeugt, das man direkt bearbeiten kann. Grundlage der öffentlichen KI-Beta.',
     object: 'blocks',
     shape: 'square',
     facts: [
@@ -143,7 +143,7 @@ export const caseStudies: CaseStudy[] = [
       title: 'Die Ausgangslage',
       paras: [
         'Mit Ninox bauen Kanzleien, Bauunternehmen, Handwerksbetriebe und Sachverständige ihre eigenen Anwendungen: Auftragsverwaltung, Projektlisten, Fallakten. Sobald ein Datenmodell steht, erzeugt Ninox die Oberflächen fast von selbst.',
-        'Genau dieses Datenmodell war die Hürde. Wer keine Datenbankkenntnisse hatte, kam nicht weiter oder holte sich einen Berater. Die Idee: Nutzer beschreiben ihre Arbeit in Alltagssprache, und KI erzeugt daraus das Datenmodell.',
+        'Genau dieses Datenmodell war die Hürde. Wer keine Datenbankkenntnisse hatte, kam nicht weiter oder holte sich Hilfe von außen. Die Idee: Man beschreibt die eigene Arbeit in Alltagssprache, und KI erzeugt daraus das Datenmodell.',
       ],
     },
     steps: {
@@ -151,9 +151,9 @@ export const caseStudies: CaseStudy[] = [
       items: [
         ['Die eigentliche Frage gestellt', 'Dass KI ein Datenmodell erzeugen kann, war gesetzt. Meine Frage war: Was passiert danach, wenn jemand ohne Datenbankwissen vor dem Ergebnis sitzt?'],
         ['Chat allein verworfen', 'Ein realistisches Datenmodell hat acht bis zwölf Tabellen. Als Text im Chat ist das unlesbar, und Änderungen per Chat fühlen sich an wie Programmieren in Prosa. Außerdem schreibt niemand im ersten Satz eine vollständige Beschreibung: Das erste Ergebnis liegt immer etwas daneben.'],
-        ['Ergebnis im echten Editor', 'Die KI erzeugt das Datenmodell direkt im Editor, den Nutzer auch sonst verwenden. Tabellen erscheinen als Karten, Felder sind anklickbar.'],
-        ['Zwei Wege, ein Ergebnis', 'Nutzer ändern per Klick direkt in der Karte oder per Chat, je nachdem, was leichter ist. Vorschläge für naheliegende Ergänzungen helfen weiter.'],
-        ['Kein eigener KI-Modus', 'Ist das Datenmodell fertig, ist es einfach eine Ninox-Anwendung. Nutzer arbeiten im selben Werkzeug weiter.'],
+        ['Ergebnis im echten Editor', 'Die KI erzeugt das Datenmodell direkt im Editor, den man auch sonst verwendet. Tabellen erscheinen als Karten, Felder sind anklickbar.'],
+        ['Zwei Wege, ein Ergebnis', 'Geändert wird per Klick direkt in der Karte oder per Chat, je nachdem, was leichter ist. Vorschläge für naheliegende Ergänzungen helfen weiter.'],
+        ['Kein eigener KI-Modus', 'Ist das Datenmodell fertig, ist es einfach eine Ninox-Anwendung. Man arbeitet im selben Werkzeug weiter.'],
       ],
     },
     images: [
@@ -165,18 +165,18 @@ export const caseStudies: CaseStudy[] = [
       big: 'Direkt bearbeiten',
       bigLabel: 'wurde zum Interaktionsprinzip der öffentlichen KI-Beta von Ninox.',
       items: [
-        'Nutzer müssen nicht erst lernen, wie man mit einer KI spricht. Sie ändern, was sie sehen.',
+        'Niemand muss erst lernen, wie man mit einer KI spricht. Man ändert, was man sieht.',
         'Das erste, unvollständige Ergebnis ist kein Fehler, sondern der normale Start.',
       ],
     },
     transfer: {
       title: 'Was das für Ihr Unternehmen heißt',
-      body: 'Wenn Sie KI in Ihr eigenes Produkt oder Ihre interne Software bringen, ist die Frage nicht, ob die KI etwas erzeugen kann. Die Frage ist, ob Ihre Leute das Ergebnis danach übernehmen können. KI nimmt das leere Blatt ab. Die Kontrolle muss bei den Menschen bleiben.',
+      body: 'Wenn Sie KI in Ihr eigenes Produkt oder Ihre interne Software einbauen, ist die Frage nicht, ob die KI etwas erzeugen kann. Die Frage ist, ob Ihre Leute das Ergebnis danach selbst weiterbearbeiten können. KI nimmt das leere Blatt ab. Die Kontrolle muss bei den Menschen bleiben.',
       examples: ['KI-Funktionen im eigenen Softwareprodukt', 'Konfiguratoren und Angebotswerkzeuge', 'Interne Formulare und Datenerfassung', 'Auswertungen, die Fachleute anpassen'],
     },
     limits: {
       title: 'Was es nicht ist',
-      items: ['Die KI-Erzeugung selbst wurde separat entwickelt. Meine Arbeit war, wie Menschen damit umgehen.', 'Ich habe nicht die gesamte Beta verantwortet.'],
+      items: ['Die Technik, mit der die KI das Datenmodell erzeugt, haben andere entwickelt. Meine Arbeit war, wie Menschen mit dem Ergebnis umgehen.', 'Ich habe nicht die gesamte Beta verantwortet.'],
     },
   },
 ];
@@ -237,7 +237,7 @@ export const caseStudiesEn: CaseStudy[] = [
   {
     slug: 'building-in-house-with-ai',
     label: 'Bibel TV · Product development',
-    title: 'From depending on an agency to: we build it ourselves.',
+    title: 'Building in-house instead of waiting for the agency.',
     lead: 'At Bibel TV, almost every change to apps and systems depended on an external agency. There are no in-house developers. Today a large part of the backend and the first parts of the user interfaces are built in-house, by product managers and product owners working with AI.',
     description: 'How Bibel TV became less dependent on an external agency with AI: product managers and product owners now build themselves, with Claude Code, clear rules and guidance.',
     object: 'hands',
@@ -363,7 +363,7 @@ export const caseVisuals: Record<string, CaseVisuals> = {
   'ki-assistent-zuschauerservice': {
     quote: { text: 'Das leere Blatt abgeben. Nicht die Entscheidung.', by: 'Der Grundsatz hinter dem Assistenten' },
     flow: { title: 'So entsteht eine Antwort heute', kind: 'flow', nodes: [
-      ['Brief kommt an', 'per Post, E-Mail oder Nachricht', 'neutral'],
+      ['Eine Anfrage kommt an', 'per Post, E-Mail oder Nachricht', 'neutral'],
       ['Ein Mensch liest', 'und entscheidet, ob der Assistent hilft', 'human'],
       ['Der Assistent entwirft', 'nach dem Service-Handbuch, im Ton des Hauses', 'ai'],
       ['Ein Mensch prüft', 'und passt den Entwurf an', 'human'],
@@ -371,7 +371,7 @@ export const caseVisuals: Record<string, CaseVisuals> = {
     ] },
     compare: { title: 'Vorher und nachher', beforeTitle: 'Vorher', afterTitle: 'Heute',
       before: ['Jede Antwort vom leeren Blatt', 'Der Ton hängt davon ab, wer schreibt', 'Aushilfen brauchen lange, bis sie ihn treffen', 'Komplexe Briefe: Stunden'],
-      after: ['Entwurf nach den Formulierungen des Handbuchs', 'Aushilfen schreiben ab dem ersten Tag im Ton des Hauses', 'Komplexe Briefe: Minuten', 'Jede Antwort weiter von einem Menschen geprüft'] },
+      after: ['Entwurf nach den Formulierungen des Handbuchs', 'Aushilfen schreiben vom ersten Tag an im Ton des Hauses', 'Komplexe Briefe: Minuten', 'Jede Antwort weiter von einem Menschen geprüft'] },
   },
   'produktentwicklung-mit-ki': {
     quote: { text: 'Vorgemacht statt verordnet.', by: 'Wie die Einführung funktioniert hat' },
@@ -381,7 +381,7 @@ export const caseVisuals: Record<string, CaseVisuals> = {
       ['Sommer 2026', 'Einzelne Anwendungen und interne Werkzeuge selbst entwickelt', 'human'],
     ] },
     compare: { title: 'Vorher und heute', beforeTitle: 'Vorher', afterTitle: 'Heute',
-      before: ['Fast jede Änderung über eine externe Agentur', 'Beschreiben, beauftragen, warten', 'Product Manager und Product Owner können nicht selbst bauen'],
+      before: ['Fast jede Änderung über eine externe Agentur', 'Beschreiben, beauftragen, warten', 'Die Produktverantwortlichen können nicht selbst bauen'],
       after: ['Großer Teil des Backends im Haus', 'Erste Oberflächen im Haus', 'Feste Regeln für Formate, Freigaben und Quellen', 'Ein bis zwei interne Ansprechpersonen'] },
   },
   'ki-onboarding-ninox': {
@@ -389,17 +389,17 @@ export const caseVisuals: Record<string, CaseVisuals> = {
     flow: { title: 'Vom Satz zur Anwendung', kind: 'flow', nodes: [
       ['Beschreiben', 'ein Satz in Alltagssprache', 'human'],
       ['KI erzeugt', 'das Datenmodell direkt im Editor', 'ai'],
-      ['Nutzer ändert', 'per Klick oder per Chat', 'human'],
+      ['Ändern', 'per Klick oder per Chat', 'human'],
       ['Anwendung läuft', 'eine normale Ninox-Anwendung', 'neutral'],
     ] },
-    compare: { title: 'Warum nicht nur Chat', beforeTitle: 'Nur im Chat', afterTitle: 'Im echten Editor',
+    compare: { title: 'Warum Chat allein nicht reicht', beforeTitle: 'Nur im Chat', afterTitle: 'Im echten Editor',
       before: ['Datenmodell als lange Textausgabe', 'Änderungen in Prosa beschreiben', 'Erstes Ergebnis daneben: nächste Chat-Runde'],
       after: ['Tabellen als Karten, Felder anklickbar', 'Ändern per Klick oder per Chat', 'Das erste Ergebnis ist der normale Start'] },
   },
   'ai-assistant-viewer-services': {
     quote: { text: 'Hand over the blank page. Not the decision.', by: 'The principle behind the assistant' },
     flow: { title: 'How a reply is written today', kind: 'flow', nodes: [
-      ['A letter arrives', 'by post, email or message', 'neutral'],
+      ['A request arrives', 'by post, email or message', 'neutral'],
       ['A person reads it', 'and decides whether the assistant helps', 'human'],
       ['The assistant drafts', 'following the service handbook, in the house voice', 'ai'],
       ['A person checks', 'and adapts the draft', 'human'],
