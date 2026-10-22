@@ -33,6 +33,17 @@ const structuredData = {
   author: { '@type': 'Person', name: 'Tobias Treppmann', url: `https://treppmann.de${home}` },
   mainEntityOfPage: url,
 };
+// Article layout (brand/VOICE-DE.md section 7) when the study has chapters; otherwise the classic layout.
+const article = !!study.chapters;
+const pad = (n: number) => String(n).padStart(2, '0');
+const navItems: string[] = article
+  ? [study.situation.nav ?? study.situation.title, ...(study.turn ? [study.turn.nav ?? study.turn.title] : []), ...study.chapters!.map((c) => c.nav ?? c.title), study.result.nav ?? study.result.title, ...(study.takeaways ? [study.takeaways.nav ?? study.takeaways.title] : [])]
+  : t.secs;
+const turnNum = 2;
+const chapterStart = study.turn ? 3 : 2;
+const resultNum = article ? chapterStart + study.chapters!.length : 3;
+const ctaTitle = study.cta?.title ?? t.ctaTitle;
+const ctaBody = study.cta?.body ?? t.ctaBody;
 const deUrl = de ? url : pairUrl;
 const enUrl = de ? pairUrl : url;
 ---
@@ -66,7 +77,7 @@ const enUrl = de ? pairUrl : url;
     </section>
 
     <section class="case-facts section-paper" aria-label={t.facts}>
-      <dl class="section-shell case-facts-list" data-reveal data-stagger>
+      <dl class:list={['section-shell case-facts-list', { 'is-long': study.facts.length > 3 }]} data-reveal data-stagger>
         {study.facts.map(([k, v], i) => (
           <div style={`--i:${i}`}><dt>{k}</dt><dd>{v}</dd></div>
         ))}
@@ -75,10 +86,71 @@ const enUrl = de ? pairUrl : url;
 
     <nav class="case-jump section-paper" aria-label={t.jump}>
       <ol class="section-shell">
-        {t.secs.map((label, i) => <li><a href={`#teil-${i + 1}`}><b>{String(i + 1).padStart(2, '0')}</b>{label}</a></li>)}
+        {navItems.map((label, i) => <li><a href={`#teil-${i + 1}`}><b>{String(i + 1).padStart(2, '0')}</b>{label}</a></li>)}
       </ol>
     </nav>
 
+    {article ? (
+    <section class="case-body section-paper">
+      {study.opening && (
+        <div class="section-shell case-opening" data-reveal>
+          <h2>{study.opening.title}</h2>
+          <div class="case-prose">{study.opening.paras.map((p) => <p>{p}</p>)}</div>
+          {study.nut && <p class="case-nut">{study.nut}</p>}
+        </div>
+      )}
+
+      <div class="section-shell case-grid" id="teil-1" data-reveal>
+        <h2><span class="case-num">01</span>{study.situation.title}</h2>
+        <div class="case-prose">{study.situation.paras.map((p) => <p>{p}</p>)}</div>
+      </div>
+
+      {study.turn && (
+        <div class="section-shell case-grid case-turn" id={`teil-${turnNum}`} data-reveal>
+          <h2><span class="case-num">{pad(turnNum)}</span>{study.turn.title}</h2>
+          <div class="case-prose">{study.turn.paras.map((p) => <p>{p}</p>)}</div>
+        </div>
+      )}
+
+      <blockquote class="section-shell case-quote" data-reveal>
+        <p>{v.quote.text}</p>
+        <cite>{v.quote.by}</cite>
+      </blockquote>
+
+      <figure class={`section-shell case-flow is-${v.flow.kind}`} data-reveal data-stagger>
+        <figcaption>
+          <span>{v.flow.title}</span>
+          {v.flow.kind === 'flow' && <span class="case-flow-legend"><i class="is-human"></i>{t.human}<i class="is-ai"></i>{t.ai}</span>}
+        </figcaption>
+        <ol>
+          {v.flow.nodes.map(([title, sub, who], i) => (
+            <li class={`is-${who}`} style={`--i:${i}; --n:${v.flow.kind === 'timeline' ? Math.round((i + 1) * 5 / v.flow.nodes.length) : 5}`}>
+              {v.flow.kind === 'flow' && who !== 'neutral' && <em>{who === 'ai' ? t.ai : t.human}</em>}
+              <strong>{title}</strong><span>{sub}</span>
+            </li>
+          ))}
+        </ol>
+      </figure>
+
+      {study.chapters!.map((c, i) => (
+        <div class="section-shell case-grid case-chapter" id={`teil-${chapterStart + i}`} data-reveal>
+          <h2><span class="case-num">{pad(chapterStart + i)}</span>{c.title}</h2>
+          <div class="case-prose">{c.paras.map((p) => <p>{p}</p>)}</div>
+        </div>
+      ))}
+
+      {study.images && (
+        <div class="section-shell case-images" data-reveal>
+          {study.images.map((img, i) => (
+            <figure style={`--tilt:${i % 2 ? 1 : -1}deg`}>
+              <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" />
+              <figcaption>{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+    </section>
+    ) : (
     <section class="case-body section-paper">
       <div class="section-shell case-grid" id="teil-1" data-reveal>
         <h2><span class="case-num">01</span>{study.situation.title}</h2>
@@ -101,9 +173,9 @@ const enUrl = de ? pairUrl : url;
       </figure>
 
       <div class="section-shell case-grid" id="teil-2" data-reveal>
-        <h2><span class="case-num">02</span>{study.steps.title}</h2>
+        <h2><span class="case-num">02</span>{study.steps!.title}</h2>
         <ol class="case-steps" data-reveal data-stagger>
-          {study.steps.items.map(([title, body], i) => (
+          {study.steps!.items.map(([title, body], i) => (
             <li style={`--i:${i}; --n:${Math.min(i + 1, 5)}`}><b aria-hidden="true">{i + 1}</b><div><h3>{title}</h3><p>{body}</p></div></li>
           ))}
         </ol>
@@ -126,10 +198,12 @@ const enUrl = de ? pairUrl : url;
       </blockquote>
     </section>
 
-    <section class="case-result section-dark" id="teil-3">
+    )}
+
+    <section class="case-result section-dark" id={`teil-${resultNum}`}>
       <div class="section-shell case-grid" data-reveal>
         <div>
-          <p class="section-label"><span class="case-num">03</span> {study.result.title}</p>
+          <p class="section-label"><span class="case-num">{pad(resultNum)}</span> {study.result.title}</p>
           <p class="case-big">{study.result.big}</p>
           <p class="case-big-label">{study.result.bigLabel}</p>
         </div>
@@ -151,24 +225,61 @@ const enUrl = de ? pairUrl : url;
       </div>
     </section>
 
+    {article ? (
+      <Fragment>
+    {study.callback && (
+      <section class="case-callback section-paper">
+        <div class="section-shell case-grid" data-reveal>
+          <h2>{study.callback.title}</h2>
+          <div class="case-prose">{study.callback.paras.map((p) => <p>{p}</p>)}</div>
+        </div>
+      </section>
+    )}
+
+    {study.takeaways && (
+      <section class="case-transfer case-takeaways-section section-light" id={`teil-${resultNum + 1}`}>
+        <div class="section-shell case-grid" data-reveal>
+          <h2><span class="case-num">{pad(resultNum + 1)}</span>{study.takeaways.title}</h2>
+          <div>
+            <ol class="case-takeaways" data-reveal data-stagger>
+              {study.takeaways.items.map(([head, body], i) => (
+                <li style={`--i:${i}`}><b aria-hidden="true">{i + 1}</b><div><h3>{head}</h3><p>{body}</p></div></li>
+              ))}
+            </ol>
+            <p class="case-notfit"><strong>{study.takeaways.notFitLabel}:</strong> {study.takeaways.notFit}</p>
+          </div>
+        </div>
+        {study.questions && (
+          <div class="section-shell case-grid case-questions" data-reveal>
+            <h3>{study.questions.title}</h3>
+            <ul>{study.questions.items.map((q) => <li>{q}</li>)}</ul>
+          </div>
+        )}
+      </section>
+    )}
+
+      </Fragment>
+    ) : (
     <section class="case-transfer section-light" id="teil-4">
       <div class="section-shell case-grid" data-reveal>
-        <h2><span class="case-num">04</span>{study.transfer.title}</h2>
+        <h2><span class="case-num">04</span>{study.transfer!.title}</h2>
         <div>
-          <p class="lead">{study.transfer.body}</p>
-          <ul class="case-chips">{study.transfer.examples.map((e) => <li>{e}</li>)}</ul>
+          <p class="lead">{study.transfer!.body}</p>
+          <ul class="case-chips">{study.transfer!.examples.map((e) => <li>{e}</li>)}</ul>
         </div>
       </div>
       <div class="section-shell case-grid case-limits" data-reveal>
-        <h3>{study.limits.title}</h3>
-        <ul>{study.limits.items.map((item) => <li>{item}</li>)}</ul>
+        <h3>{study.limits!.title}</h3>
+        <ul>{study.limits!.items.map((item) => <li>{item}</li>)}</ul>
       </div>
     </section>
 
+    )}
+
     <section class="contact leadership-contact section-dark">
       <div class="section-shell contact-inner" data-reveal>
-        <h2>{t.ctaTitle}</h2>
-        <p>{t.ctaBody}</p>
+        <h2>{ctaTitle}</h2>
+        <p>{ctaBody}</p>
         <div class="contact-actions">
           <a class="button button-primary" href={bookUrl} target="_blank" rel="noopener">{t.book}</a>
           <a class="contact-link" href={`mailto:tobias@treppmann.de?subject=${encodeURIComponent(t.subject + study.label)}`}>tobias@treppmann.de<span aria-hidden="true">↗︎</span></a>

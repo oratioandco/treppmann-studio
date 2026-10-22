@@ -1117,3 +1117,42 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 /* Pages without a nav keep their actions on the right */
 .topbar > .topbar-actions:nth-child(2) { grid-column: -2; }
 .check-next span { display: inline-block; margin-left: .4rem; }
+
+/* Case pages, article layout (brand/VOICE-DE.md section 7): scene, nut paragraph, turning point, takeaways */
+.case-facts-list.is-long dd { font-size: 1rem; font-weight: 500; line-height: 1.42; letter-spacing: 0; }
+.case-facts-list.is-long div:nth-child(3n+1) { padding-left: 0; }
+.case-facts-list.is-long div:nth-child(3n) { border-right: 0; }
+.case-facts-list.is-long div:nth-child(n+4) { border-top: 1px solid var(--line); }
+
+.case-opening > * { max-width: 760px; }
+.case-opening h2 { font-family: var(--mono); font-size: .72rem; font-weight: 400; letter-spacing: .06em; line-height: 1.5; text-transform: uppercase; color: var(--signal); }
+.case-opening .case-prose { margin-top: 1.6rem; }
+.case-opening .case-prose p:first-child { font-family: var(--serif); font-size: clamp(1.55rem, 2.8vw, 2.25rem); line-height: 1.2; letter-spacing: -.01em; }
+.case-nut { margin-top: 2.4rem; padding-top: 1.8rem; border-top: 1px solid var(--line); font-size: clamp(1.15rem, 1.7vw, 1.35rem); line-height: 1.5; font-weight: 500; }
+.case-opening + .case-grid { margin-top: clamp(4rem, 7vw, 6rem); }
+
+.case-turn { margin-top: clamp(4rem, 7vw, 6rem); padding: clamp(1.6rem, 4vw, 3rem); background: var(--white); border: 1.5px solid var(--ink); box-shadow: 10px 10px 0 var(--signal); }
+.case-turn .case-prose p:last-child { font-weight: 600; }
+.case-chapter { margin-top: clamp(4rem, 7vw, 6rem); }
+
+.case-callback { padding: clamp(4rem, 7vw, 6rem) 0 clamp(4.5rem, 8vw, 7rem); }
+.case-callback h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 3vw, 2.7rem); line-height: 1.05; letter-spacing: -.02em; }
+
+.case-takeaways { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.case-takeaways li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.2rem; padding: 1.4rem 1.5rem 1.5rem; background: var(--paper); border: 1px solid var(--line); border-left: 6px solid var(--signal); }
+.case-takeaways b { width: 2.4rem; height: 2.4rem; display: grid; place-items: center; font-family: var(--mono); font-size: .85rem; color: var(--ink); background: var(--signal); }
+.case-takeaways h3 { font-size: 1.22rem; line-height: 1.2; letter-spacing: -.015em; }
+.case-takeaways p { margin-top: .5rem; color: var(--muted); max-width: 640px; }
+.case-notfit { margin-top: 1.6rem; padding: 1.2rem 1.4rem; border: 1px dashed var(--line); font-size: 1.02rem; line-height: 1.5; }
+.case-notfit strong { font-family: var(--mono); font-size: .7rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; color: var(--signal); margin-right: .3rem; }
+.case-questions { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.case-questions h3 { font-size: 1.3rem; }
+.case-questions ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.case-questions li { position: relative; padding-left: 2rem; font-family: var(--serif); font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.3; }
+.case-questions li::before { content: '?'; position: absolute; left: 0; top: 0; font-family: var(--mono); font-size: .9rem; line-height: 1.9; color: var(--signal); }
+
+@media (max-width: 860px) {
+  .case-facts-list.is-long div:nth-child(n+4) { border-top: 0; }
+  .case-turn { box-shadow: 6px 6px 0 var(--signal); }
+  .case-takeaways li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: .9rem; padding: 1.1rem 1rem 1.2rem; }
+}

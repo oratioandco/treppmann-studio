@@ -2,6 +2,12 @@
 // Every fact must match brand/CLAIMS.md and my-cv-tailor/CAREER-TRUTH.md. No percentages for Bibel TV
 // development, never "launched" for the app rebuild, never name Bibel TV's development agency.
 
+// A prose section with a statement heading. `nav` is its short label in the jump navigation.
+export interface CaseSection { title: string; nav?: string; paras: string[] }
+
+// Two layouts share this type. The classic one uses situation, steps, result, transfer and limits.
+// The article layout (brand/VOICE-DE.md section 7) adds an opening scene, nut paragraph, turning point,
+// chapters, callback, takeaways and questions. When `chapters` is set, steps/transfer/limits are not rendered.
 export interface CaseStudy {
   slug: string;
   label: string;
@@ -10,12 +16,20 @@ export interface CaseStudy {
   object: string;
   shape: 'circle' | 'arch' | 'square';
   facts: [string, string][];
-  situation: { title: string; paras: string[] };
-  steps: { title: string; items: [string, string][] };
+  opening?: CaseSection;
+  nut?: string;
+  situation: CaseSection;
+  turn?: CaseSection;
+  chapters?: CaseSection[];
+  steps?: { title: string; items: [string, string][] };
   images?: { src: string; alt: string; caption: string; width: number; height: number }[];
-  result: { title: string; big: string; bigLabel: string; items: string[]; note?: string };
-  transfer: { title: string; body: string; examples: string[] };
-  limits: { title: string; items: string[] };
+  result: { title: string; nav?: string; big: string; bigLabel: string; items: string[]; note?: string };
+  callback?: CaseSection;
+  takeaways?: { title: string; nav?: string; items: [string, string][]; notFitLabel: string; notFit: string };
+  questions?: { title: string; items: string[] };
+  transfer?: { title: string; body: string; examples: string[] };
+  limits?: { title: string; items: string[] };
+  cta?: { title: string; body: string };
   description: string;
 }
 
@@ -23,52 +37,118 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ki-assistent-zuschauerservice',
     label: 'Bibel TV · Zuschauerservice',
-    title: 'Ein KI-Assistent, den das Team freiwillig nutzt.',
-    lead: 'Der Zuschauerservice von Bibel TV beantwortet Briefe, E-Mails und Nachrichten, viele davon sehr persönlich. Ich habe einen KI-Assistenten eingeführt, der Antworten im Ton des Hauses vorformuliert. Ein Mensch prüft und verschickt jede einzelne.',
-    description: 'Wie bei Bibel TV ein KI-Assistent im Zuschauerservice eingeführt wurde: freiwillig, mit Testwoche und Einzelgesprächen. Komplexe Briefe in Minuten statt Stunden.',
+    title: 'Wie ein Zuschauerservice KI einführte, ohne jemanden zu zwingen',
+    lead: 'Bibel TV bekommt einen großen Teil seiner Zuschauerpost noch auf Papier. Ein KI-Assistent schreibt dort heute den ersten Entwurf, im Ton des Hauses. Lesen, entscheiden und verschicken bleibt beim Menschen.',
+    description: 'Wie Bibel TV einen KI-Assistenten im Zuschauerservice einführte: freiwillig, an kein Postfach angebunden, mit dem Service-Handbuch als Maßstab. Komplexe Briefe in Minuten statt Stunden.',
     object: 'letters',
     shape: 'arch',
     facts: [
-      ['Prozess', 'Antworten auf Zuschauerpost'],
-      ['Einführung', 'Freiwillig: eine Testwoche, dann Einzelgespräche'],
-      ['Ergebnis', 'Komplexe Briefe in Minuten statt Stunden'],
+      ['Organisation', 'Bibel TV, christlicher Fernsehsender auf dem Weg zu Apps und Streaming'],
+      ['Ausgangslage', 'Persönliche Post, viel davon auf Papier. Jede Antwort entstand vom leeren Blatt, nach dem Service-Handbuch.'],
+      ['Was ich gemacht habe', 'Einen KI-Assistenten gebaut, der Entwürfe nach dem Handbuch schreibt. Von Hand bedient, an kein Postfach angebunden.'],
+      ['Zeitraum', 'Gebaut im Herbst 2025, freiwillig eingeführt mit Testwoche und Einzelgesprächen. Heute im ganzen Team im Alltag.'],
+      ['Ergebnis', 'Komplexe Briefe in Minuten statt Stunden (beobachtet, nicht gemessen). Aushilfen schreiben ab dem ersten Tag im Ton des Hauses.'],
+      ['Drei Erkenntnisse', 'Den Entwurf abgeben, nicht die Entscheidung. Das vorhandene Handbuch zum Maßstab machen. Freiwillig einführen, am schwierigsten Fall testen.'],
     ],
-    situation: {
-      title: 'Die Ausgangslage',
+    opening: {
+      title: 'Die meiste Post kommt hier noch auf Papier',
       paras: [
-        'Bibel TV ist ein christlicher Fernsehsender, der sich gerade vom klassischen Fernsehen zu Apps und Streaming weiterentwickelt. Der Zuschauerservice beantwortet, was Zuschauerinnen und Zuschauer schreiben. Ein großer Teil kommt noch mit der Post.',
-        'Manche Briefe enthalten mehrere Anliegen auf einmal. Jede Antwort soll im Ton des Hauses geschrieben sein und den Formulierungen des Service-Handbuchs folgen. Vom leeren Blatt aus kostet das Zeit. Und der Ton hängt davon ab, wer gerade schreibt: Aushilfen brauchen lange, bis sie ihn treffen.',
+        'Die Post kommt als Brief oder als Postkarte, handschriftlich oder getippt.',
+        'Zuschauerinnen und Zuschauer bedanken sich für eine Sendung und schreiben, was sie ihnen persönlich bedeutet. Sie fragen nach Sendungen und nach Büchern oder Materialien, die darin vorkamen. Und sie kritisieren Inhalte, manche mit ihrer Meinung, manche mit theologischen Argumenten.',
+        'Dann kommt eine Beschwerde: anspruchsvoll geschrieben, mit vielen Punkten auf einmal. Jemand im Zuschauerservice liest sie.',
+        'Die Antwort soll auf jeden Punkt eingehen, im Ton des Hauses und mit den Formulierungen des Service-Handbuchs. Vom leeren Blatt aus dauert das Stunden.',
       ],
     },
-    steps: {
-      title: 'Was ich gemacht habe',
-      items: [
-        ['Mit der Abteilungsleitung das Ziel geklärt', 'Leichter werden sollte das Schreiben, nicht das Entscheiden. Was in einer Antwort steht, verantwortet weiter ein Mensch.'],
-        ['Den Ablauf angesehen, wie er wirklich ist', 'Ein großer Teil kommt auf Papier. Deshalb ist der Assistent bewusst an nichts angebunden: Ein Mensch liest den Brief, entscheidet, ob er den Assistenten nutzt, und gibt den Inhalt selbst ein.'],
-        ['Das Handbuch zum Maßstab gemacht', 'Der Assistent bekommt die Formulierungen, die Formatierung und die Standardsätze des Service-Handbuchs mit. Ändert sich das Handbuch, ändern sich die Entwürfe. Ein eigenes KI-Modell zu trainieren oder etwas zu programmieren war dafür nicht nötig.'],
-        ['Klare Grenzen eingebaut', 'Keine medizinische, rechtliche oder finanzielle Beratung, keine politischen oder konfessionellen Urteile. Ist die Eingabe gar keine Zuschaueranfrage, schreibt der Assistent keine Antwort, sondern fragt nach.'],
-        ['Freiwillig eingeführt', 'Die Teamleitung hat ermutigt, nicht verpflichtet. Eine Woche zum Ausprobieren, danach Einzelgespräche am eigenen Fall.'],
+    nut: 'Heute schreibt bei Bibel TV ein KI-Assistent den ersten Entwurf. Das allein wäre keine Geschichte. Entwürfe schreibt heute fast jedes KI-Werkzeug. Lehrreich ist, wie der Assistent ins Team kam: ohne Pflicht, ohne Anschluss an ein Postfach und mit einem Maßstab, den es schon gab. Das lässt sich auf fast jeden Betrieb übertragen, in dem ein Team viele ähnliche, aber nie gleiche Texte schreibt.',
+    situation: {
+      title: 'Persönliche Post verträgt keinen Autopiloten',
+      nav: 'Ausgangslage',
+      paras: [
+        'Bibel TV ist ein christlicher Fernsehsender auf dem Weg vom klassischen Fernsehen zu Apps und Streaming. Der Zuschauerservice beantwortet Briefe, E-Mails und Nachrichten. Interne Richtlinien legen fest, worauf er antwortet, worauf nicht und wie weit er sich auf strittige Themen einlässt.',
+        'Der Ton einer Antwort hing davon ab, wer gerade schrieb. Aushilfen brauchten lange, bis sie ihn trafen. Und eine Antwort, die falsch klingt, trifft einen Menschen, nicht einen Vorgang.',
+        'Mit der Abteilungsleitung habe ich deshalb zuerst das Ziel geklärt. Leichter werden sollte das Schreiben, nicht das Entscheiden. Was in einer Antwort steht, verantwortet weiter ein Mensch.',
+        'Dazu kam Unsicherheit im Team, wie sie bei neuen Abläufen fast immer entsteht, bei der Digitalisierung genauso wie jetzt bei KI. Dahinter steckt Veränderungsstress: die Last, etwas Neues lernen zu müssen, die Frage, ob man das gut lernen kann, bis hin zur Sorge um den eigenen Arbeitsplatz. Bei KI kommt eine weitere Frage dazu: Welche Arbeit soll beim Menschen bleiben und welche nicht?',
+        'All das begegnete uns hier auch. Zwei im Team wollten zunächst keine KI. Ein Einwand lautete: Eine Antwort an Zuschauerinnen und Zuschauer braucht einen menschlichen Ton. Die Telefon-Hotline soll ohnehin nie durch KI ersetzt werden.',
       ],
     },
+    turn: {
+      title: 'Ein Assistent, der an nichts angeschlossen ist',
+      nav: 'Wendepunkt',
+      paras: [
+        'Bei KI im Kundenservice denken viele zuerst an Automatik: Postfach anschließen, mitlesen lassen, Antworten verschicken. Hier hätte das nicht gepasst. Die meiste Post kommt auf Papier.',
+        'Also ist der Assistent bewusst an nichts angebunden. Ein Mensch liest den Brief. Er entscheidet, ob der Assistent helfen soll, und gibt den Inhalt selbst ein. Den Entwurf bearbeitet er, kopiert ihn in Word, druckt ihn aus und legt ihn in den Postausgang. Bei E-Mails geht es direkter.',
+        'Das klingt nach einem Umweg. Es ist die eigentliche Sicherung. Bevor der Assistent einen Brief sieht, hat ein Mensch ihn gelesen. Ob und wie geantwortet wird, entscheidet immer ein Mensch. Auch gar nicht zu antworten, bleibt eine Möglichkeit.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Das Handbuch gab es schon. Es wurde zum Maßstab.',
+        nav: 'Handbuch',
+        paras: [
+          'Ich habe den Assistenten im September und Oktober 2025 gebaut. Den Maßstab musste ich dafür nicht erfinden: Der Zuschauerservice hatte längst aufgeschrieben, wie eine gute Antwort aussieht. Im Service-Handbuch stehen Formulierungen, Formatierung und Standardsätze. Genau das bekommt der Assistent mit. Ändert sich das Handbuch, ändern sich die Entwürfe.',
+          'Ein eigenes KI-Modell zu trainieren oder etwas zu programmieren war nicht nötig. Der Assistent läuft auf einer vorhandenen KI-Plattform und bekommt das Handbuch als Grundlage. Viele Betriebe haben ihren Maßstab ebenfalls schon aufgeschrieben. Nur eben nicht für eine KI.',
+        ],
+      },
+      {
+        title: 'Grenzen stehen in den Anweisungen, die Prüfung macht ein Mensch',
+        nav: 'Grenzen',
+        paras: [
+          'Der Assistent hat eine Liste von Themen, zu denen er nichts rät: keine medizinische, rechtliche oder finanzielle Beratung, keine politischen oder konfessionellen Urteile. Dazu kommt: keine missionarische Sprache, denn der Sender will sachlich und ökumenisch bleiben. Ist die Eingabe gar keine Zuschaueranfrage, schreibt der Assistent keinen Entwurf.',
+          'Ehrlicherweise: Diese Liste ist eine Anweisung, keine technische Sperre. Nichts prüft den fertigen Entwurf automatisch. Deshalb liest ein Mensch jeden Entwurf, bevor daraus eine Antwort wird.',
+        ],
+      },
+      {
+        title: 'Freiwillig eingeführt, am schwierigsten Fall überzeugt',
+        nav: 'Einführung',
+        paras: [
+          'Ich habe den Assistenten dem Team vorgestellt und die Einführung selbst begleitet. Die Teamleitung hat ermutigt, nicht verpflichtet. Wer wollte, probierte ihn eine Woche lang selbst aus. Danach folgten Einzelgespräche am eigenen Fall.',
+          'Den Ausschlag gab ein Brief wie der vom Anfang. Eine der beiden Personen, die keine KI wollten, probierte den Assistenten an genau so einer Beschwerde aus: anspruchsvoll, mit vielen Punkten auf einmal. Der Entwurf ging auf jeden Punkt ein, im Ton des Handbuchs und des Hauses. Die Rückmeldung danach: Von Hand hätte das mindestens Stunden gedauert. Seitdem nutzt diese Person den Assistenten regelmäßig.',
+          'Die zweite Person war KI gegenüber grundsätzlich skeptisch. Später erzählte sie mir, dass sie den Assistenten inzwischen ebenfalls regelmäßig nutzt. Im Rückblick sahen beide darin ein Hilfsmittel, bei dem sie die Kontrolle behalten.',
+          'An dieser Stelle kippen viele Einführungen: Man zeigt ein Werkzeug an einem leichten Beispiel und wundert sich, dass es im Alltag niemand nutzt. Der schwierige eigene Fall ist der ehrlichere Test.',
+        ],
+      },
+    ],
     result: {
-      title: 'Was sich verändert hat',
+      title: 'Minuten statt Stunden – beobachtet, nicht gemessen',
+      nav: 'Ergebnis',
       big: 'Minuten statt Stunden',
-      bigLabel: 'für Antworten auf komplexe Briefe mit mehreren Anliegen',
+      bigLabel: 'für Antworten auf komplexe Briefe mit vielen Punkten auf einmal',
       items: [
         'Aushilfen schreiben vom ersten Tag an im Ton des Hauses.',
-        'Kolleginnen und Kollegen, die anfangs skeptisch waren, kamen von sich aus zurück, nachdem sie den Assistenten an ihrem schwierigsten Fall ausprobiert hatten.',
+        '2026 nutzte zunächst ein Teil des Teams den Assistenten regelmäßig. Heute gehört er nach allem, was ich höre, im ganzen Team zum Alltag, wenn auch nicht bei jedem Brief.',
+        'Beide, die anfangs keine KI wollten, nutzen ihn heute regelmäßig.',
         'Jede Antwort wird weiterhin von einem Menschen gelesen, angepasst und verschickt.',
       ],
-      note: 'Das sind Beobachtungen aus dem Team, keine Zeitmessung pro Brief.',
+      note: 'Das sind Beobachtungen aus dem Team, keine Zeitmessung pro Brief. Offen bleibt, ob die Themenliste in jedem Entwurf hält. Das sieht man nur, weil jemand jeden Entwurf liest.',
     },
-    transfer: {
-      title: 'Was das für Ihr Unternehmen heißt',
-      body: 'Überall, wo Ihr Team viele ähnliche, aber nie gleiche Texte schreibt, lässt sich der Entwurf an KI abgeben, ohne die Entscheidung abzugeben. Es kommt weniger auf das Werkzeug an als auf die Einführung: ein klarer Maßstab, klare Grenzen und Zeit, es am eigenen Fall auszuprobieren.',
-      examples: ['Antworten auf Reklamationen', 'Rückfragen zu Aufträgen und Lieferungen', 'Angebotsanschreiben', 'Antworten im Kundenservice'],
+    callback: {
+      title: 'Der Brief kommt immer noch mit der Post',
+      paras: [
+        'Jemand öffnet ihn und liest ihn, wie vorher. Was sich verändert hat, ist das Blatt danach. Es ist nicht mehr leer.',
+        'Darauf steht ein Entwurf, der auf jeden Punkt eingeht, mit den Sätzen aus dem Handbuch. Die Person passt ihn an, druckt ihn aus und legt ihn in den Postausgang. Bei einem Brief mit vielen Punkten dauert das jetzt Minuten.',
+      ],
     },
-    limits: {
-      title: 'Was es nicht ist',
-      items: ['Kein eigenes KI-Modell, sondern eine vorhandene KI-Plattform, die das Service-Handbuch als Grundlage bekommt.', 'Kein Autopilot: Nichts wird ohne Menschen verschickt.', 'Keine Anbindung an das Postfach, kein automatisches Lesen.'],
+    takeaways: {
+      title: 'Was Sie daraus mitnehmen können',
+      nav: 'Für Sie',
+      items: [
+        ['Geben Sie den Entwurf ab, nicht die Entscheidung.', 'Legen Sie fest, wer vorher liest und wer hinterher verschickt. Erst wenn Sie beide Stellen benennen können, ist der Rahmen klar.'],
+        ['Machen Sie Ihr vorhandenes Regelwerk zum Maßstab.', 'Handbuch, Textbausteine, Musterbriefe: Was schon schriftlich vorliegt, ist der beste Kontext für eine KI. Prüfen Sie zuerst, ob es dieses Dokument bei Ihnen gibt.'],
+        ['Führen Sie freiwillig ein, und testen Sie am schwierigsten Fall.', 'Eine Woche zum Ausprobieren, dann Einzelgespräche am eigenen Beispiel. Bei Bibel TV nutzen heute beide, die anfangs keine KI wollten, den Assistenten regelmäßig.'],
+      ],
+      notFitLabel: 'Wann es nicht passt',
+      notFit: 'Wenn Sie viele Nachrichten vollautomatisch beantworten wollen, ohne dass jemand sie vorher liest. Oder wenn bestimmte Inhalte nachweislich nie in einer Antwort stehen dürfen. Dann reicht eine Liste in den Anweisungen nicht, und Sie brauchen eine zusätzliche Prüfung.',
+    },
+    questions: {
+      title: 'Zum Weiterdenken',
+      items: [
+        'Wo schreibt Ihr Team heute viele ähnliche, aber nie gleiche Texte – und wer entscheidet, was davon hinausgeht?',
+        'Welches Dokument beschreibt bei Ihnen, wie eine gute Antwort klingt? Und wann hat es zuletzt jemand geöffnet?',
+      ],
+    },
+    cta: {
+      title: 'Haben Sie einen ähnlichen Prozess?',
+      body: 'In 30 Minuten sprechen wir darüber, wo bei Ihnen der erste Entwurf entsteht und ob ein Assistent dort hilft. Kostenlos und ohne Verpflichtung.',
     },
   },
   {
