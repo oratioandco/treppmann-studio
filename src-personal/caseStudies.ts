@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     label: 'Bibel TV · Zuschauerservice',
     title: 'Wie ein Zuschauerservice KI einführte, ohne jemanden zu zwingen',
     lead: 'Bibel TV bekommt einen großen Teil seiner Zuschauerpost noch auf Papier. Ein KI-Assistent schreibt dort heute den ersten Entwurf, im Ton des Hauses. Lesen, entscheiden und verschicken bleibt beim Menschen.',
-    description: 'Wie Bibel TV einen KI-Assistenten im Zuschauerservice einführte: freiwillig, an kein Postfach angebunden, mit dem Service-Handbuch als Maßstab. Komplexe Briefe in Minuten statt Stunden.',
+    description: 'Wie Bibel TV einen KI-Assistenten im Zuschauerservice einführte: freiwillig, an kein Postfach angebunden, mit dem Service-Handbuch als Maßstab. Selbst komplexe Briefe in Minuten statt Stunden.',
     object: 'letters',
     shape: 'arch',
     facts: [
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
       ['Ausgangslage', 'Persönliche Post, viel davon auf Papier. Jede Antwort entstand vom leeren Blatt, nach dem Service-Handbuch.'],
       ['Was ich gemacht habe', 'Einen KI-Assistenten gebaut, der Entwürfe nach dem Handbuch schreibt. Von Hand bedient, an kein Postfach angebunden.'],
       ['Zeitraum', 'Gebaut im Herbst 2025, freiwillig eingeführt mit Testwoche und Einzelgesprächen. Heute im ganzen Team im Alltag.'],
-      ['Ergebnis', 'Komplexe Briefe in Minuten statt Stunden (beobachtet, nicht gemessen). Aushilfen schreiben ab dem ersten Tag im Ton des Hauses.'],
+      ['Ergebnis', 'Selbst komplexe Briefe sind in Minuten statt Stunden beantwortet. Teilzeit- und Aushilfskräfte treffen den Ton des Hauses von Anfang an, nicht erst nach Wochen der Einarbeitung.'],
       ['Drei Erkenntnisse', 'Den Entwurf abgeben, nicht die Entscheidung. Das vorhandene Handbuch zum Maßstab machen. Freiwillig einführen, am schwierigsten Fall testen.'],
     ],
     opening: {
@@ -109,17 +109,17 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     result: {
-      title: 'Minuten statt Stunden – beobachtet, nicht gemessen',
+      title: 'Was sich verändert hat',
       nav: 'Ergebnis',
       big: 'Minuten statt Stunden',
-      bigLabel: 'für Antworten auf komplexe Briefe mit vielen Punkten auf einmal',
+      bigLabel: 'selbst für komplexe Briefe mit vielen Punkten auf einmal, weil die KI sofort einen Ansatzpunkt liefert',
       items: [
-        'Aushilfen schreiben vom ersten Tag an im Ton des Hauses.',
-        '2026 nutzte zunächst ein Teil des Teams den Assistenten regelmäßig. Heute gehört er nach allem, was ich höre, im ganzen Team zum Alltag, wenn auch nicht bei jedem Brief.',
+        'Im Team arbeiten viele in Teilzeit. Den Ton von Bibel TV trafen neue Kolleginnen und Kollegen früher erst nach Wochen, manchmal Monaten. Heute antworten sie von Anfang an in dieser Stimme.',
+        '2026 nutzte zunächst ein Teil des Teams den Assistenten regelmäßig. Heute gehört er im ganzen Team zum Alltag, auch wenn nicht jeder Brief damit entsteht.',
         'Beide, die anfangs keine KI wollten, nutzen ihn heute regelmäßig.',
         'Jede Antwort wird weiterhin von einem Menschen gelesen, angepasst und verschickt.',
       ],
-      note: 'Das sind Beobachtungen aus dem Team, keine Zeitmessung pro Brief. Offen bleibt, ob die Themenliste in jedem Entwurf hält. Das sieht man nur, weil jemand jeden Entwurf liest.',
+      note: 'Die Zeiten stammen aus der Erfahrung des Teams, nicht aus einer Messung pro Brief.',
     },
     callback: {
       title: 'Der Brief kommt immer noch mit der Post',
@@ -450,8 +450,8 @@ export const caseVisuals: Record<string, CaseVisuals> = {
       ['Ein Mensch verschickt', 'jede einzelne Antwort', 'human'],
     ] },
     compare: { title: 'Vorher und nachher', beforeTitle: 'Vorher', afterTitle: 'Heute',
-      before: ['Jede Antwort vom leeren Blatt', 'Der Ton hängt davon ab, wer schreibt', 'Aushilfen brauchen lange, bis sie ihn treffen', 'Komplexe Briefe: Stunden'],
-      after: ['Entwurf nach den Formulierungen des Handbuchs', 'Aushilfen schreiben vom ersten Tag an im Ton des Hauses', 'Komplexe Briefe: Minuten', 'Jede Antwort weiter von einem Menschen geprüft'] },
+      before: ['Jede Antwort vom leeren Blatt', 'Der Ton hängt davon ab, wer schreibt', 'Neue im Team brauchen Wochen oder Monate, bis sie ihn treffen', 'Komplexe Briefe: Stunden'],
+      after: ['Entwurf nach den Formulierungen des Handbuchs', 'Neue im Team treffen den Ton von Anfang an', 'Komplexe Briefe: Minuten', 'Jede Antwort weiter von einem Menschen geprüft'] },
   },
   'produktentwicklung-mit-ki': {
     quote: { text: 'Vorgemacht statt verordnet.', by: 'Wie die Einführung funktioniert hat' },

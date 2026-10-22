@@ -23,6 +23,10 @@ Tobias, in der ersten Person. Ein Praktiker, der selbst baut, kein Berater mit F
   „Garantiert“ nicht. Zukunft und Ergebnis bleiben „meist“, „rund“, „je nach“.
 - **Ehrlich über Grenzen.** Sagen, wo KI sich nicht lohnt, was noch offen ist, was nicht
   funktioniert hat. Das ist bei beiden Vorbildern die stärkste Vertrauensquelle.
+- **Ehrlich, aber nicht defensiv.** Ergebnisse selbstbewusst und mit ihrem Grund formulieren
+  („Selbst komplexe Briefe in Minuten statt Stunden, weil die KI sofort einen Ansatzpunkt liefert“).
+  Einschränkungen wie „beobachtet, nicht gemessen“ stehen **einmal**, ruhig, in einer Fußnote oder
+  Anmerkung – nie als Klammer in jedem Ergebnissatz. Klammer-Vorbehalte klingen nach KI-Text.
 - **Sichtbar als Mensch.** Name, Gesicht, direkte E-Mail. Kleine, echte Details statt Adjektive.
 
 ## 2. Für wen

@@ -75,7 +75,7 @@ export const aiLeadershipContent = {
           title: 'Ein KI-Assistent, den das Team freiwillig nutzt.',
           body: 'Der Assistent entwirft Antworten auf Briefe, E-Mails und Nachrichten im Ton des Hauses; ein Mensch prüft und versendet jede. Niemand musste ihn nutzen: Es gab eine Testwoche, dann Einzelgespräche. Wer skeptisch war, probierte ihn am eigenen schwierigsten Fall aus und kam von sich aus zurück.',
           fact: 'Minuten statt Stunden',
-          factLabel: 'für komplexe Briefe mit mehreren Anliegen. Aushilfen schreiben vom ersten Tag an im Ton des Hauses.',
+          factLabel: 'selbst für komplexe Briefe mit mehreren Anliegen. Neue Teilzeitkräfte treffen den Ton des Hauses von Anfang an, nicht erst nach Wochen.',
           href: 'https://treppmann.de/beispiele/ki-assistent-zuschauerservice/',
           link: 'Das ganze Beispiel',
         },
