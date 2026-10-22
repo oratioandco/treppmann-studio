@@ -21,8 +21,8 @@ export const aiLeadershipContent = {
     nav: { needs: 'Ausgangslage', proof: 'Beispiele', plan: '90 Tage', formats: 'Zusammenarbeit', about: 'Über mich', contact: 'Kontakt' },
     hero: {
       kicker: 'KI-Verantwortung für Mittelstand und Scale-ups – als Projekt, auf Zeit oder fest',
-      title: 'Die KI-Lizenzen sind bezahlt. Genutzt werden sie kaum.',
-      intro: 'Ich bringe KI in Ihre Prozesse – so, dass Ihre Leute sie wirklich nutzen. Mit der Geschäftsführung kläre ich, wo sich KI lohnt, mit Ihren Teams baue ich den ersten Prozess um, und nach rund 90 Tagen ist ein erstes Ergebnis messbar.',
+      title: 'KI passgenau und erfolgreich umsetzen.',
+      intro: 'Mit meiner Erfahrung aus Produktentwicklung, Prozessgestaltung und Teamführung bringe ich KI so in Ihr Unternehmen, dass Ihre Leute sie wirklich nutzen. Mit der Geschäftsführung kläre ich, wo sich KI lohnt, mit Ihren Teams baue ich den ersten Prozess um, und nach rund 90 Tagen ist ein erstes Ergebnis messbar.',
       audience: 'Betriebsrat und Datenschutzbeauftragte binde ich von Anfang an ein.',
       proofLabel: 'Bei Bibel TV',
       proof: 'KI-Schreibassistent für Briefe, E-Mails und Social-Media-Anfragen. Komplexe Briefe in Minuten statt Stunden. Eingeführt ohne Pflicht – heute nutzen ihn auch anfangs skeptische Kolleginnen und Kollegen.',
@@ -227,8 +227,8 @@ export const aiLeadershipContent = {
     nav: { needs: 'Situation', proof: 'Examples', plan: '90 days', formats: 'Working together', about: 'About', contact: 'Contact' },
     hero: {
       kicker: 'AI ownership for mid-sized companies and scale-ups—as a project, interim, or permanent',
-      title: 'The AI licenses are paid for. Hardly anyone uses them.',
-      intro: 'I bring AI into your processes so your people actually use it. With leadership I decide where AI pays off, with your teams I rebuild the first process, and after about 90 days a first result is measurable.',
+      title: 'AI that fits your business, and works.',
+      intro: 'With my experience in product development, process design, and leading teams, I bring AI into your business so your people actually use it. With leadership I decide where AI pays off, with your teams I rebuild the first process, and after about 90 days a first result is measurable.',
       audience: 'Works council and data protection officers are involved from day one.',
       proofLabel: 'At Bibel TV',
       proof: 'An AI writing assistant for letters, emails, and social media requests. Complex letters in minutes instead of hours. Introduced without a mandate—now used by initially skeptical colleagues too.',
