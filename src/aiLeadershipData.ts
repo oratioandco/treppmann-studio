@@ -91,7 +91,7 @@ export const aiLeadershipContent = {
         {
           context: 'Ninox · KI im Produkt',
           title: 'Aus Alltagssprache wird eine Anwendung, die man selbst ändern kann.',
-          body: 'Ich habe gestaltet, wie Menschen mit dem KI-Onboarding arbeiten: Sie beschreiben ihre Arbeit, die KI erzeugt das Datenmodell, und alles bleibt direkt im Editor änderbar.',
+          body: 'Ich habe das KI-Onboarding mitgestaltet: Man beschreibt die eigene Arbeit, die KI erzeugt das Datenmodell, und alles bleibt direkt im Editor änderbar.',
           fact: 'Direkt bearbeiten',
           factLabel: 'wurde zum Interaktionsprinzip der öffentlichen KI-Beta von Ninox',
           href: 'https://treppmann.de/beispiele/ki-onboarding-ninox/',

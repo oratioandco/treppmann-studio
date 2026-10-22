@@ -210,7 +210,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'ki-onboarding-ninox',
     label: 'Ninox · KI im Produkt',
     title: 'Aus Alltagssprache wird eine Anwendung, die man selbst ändern kann.',
-    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Ich habe gestaltet, wie KI über diese Hürde hilft, ohne dass jemand die Kontrolle verliert.',
+    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Ich habe das Onboarding so gestaltet, dass KI über diese Hürde hilft und trotzdem niemand die Kontrolle verliert.',
     description: 'Wie Ninox mit KI aus einer Beschreibung in Alltagssprache ein Datenmodell erzeugt, das man direkt bearbeiten kann. Grundlage der öffentlichen KI-Beta.',
     object: 'blocks',
     shape: 'square',
@@ -256,7 +256,7 @@ export const caseStudies: CaseStudy[] = [
     },
     limits: {
       title: 'Was es nicht ist',
-      items: ['Die Technik, mit der die KI das Datenmodell erzeugt, haben andere entwickelt. Meine Arbeit war, wie Menschen mit dem Ergebnis umgehen.', 'Ich habe nicht die gesamte Beta verantwortet.'],
+      items: ['Die Technik, mit der die KI das Datenmodell erzeugt, haben andere entwickelt. Mein Teil war alles, was danach kommt: das Ergebnis lesen, prüfen und ändern.', 'Ich habe nicht die gesamte Beta verantwortet.'],
     },
   },
 ];

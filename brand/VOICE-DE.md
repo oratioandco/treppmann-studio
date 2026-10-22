@@ -102,6 +102,7 @@ heben“, empowern, Exzellenz, Kriegs- und Heldenmetaphern („in Angriff nehmen
 | Impact | Wirkung |
 | Ich bin bei Ihnen | Da stimme ich Ihnen zu |
 | Machen Sie KI zu Ihrem … | – (Konstruktion meiden) |
+| Ich habe gestaltet, wie … (I designed how …) | Ich habe X gestaltet / mitgestaltet · Ich habe X so gestaltet, dass … · Mein Teil war … |
 | In 2026 | 2026 · im Jahr 2026 |
 | Title Case in Überschriften | Normale Groß-/Kleinschreibung |
 
