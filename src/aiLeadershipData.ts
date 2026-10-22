@@ -91,7 +91,7 @@ export const aiLeadershipContent = {
         {
           context: 'Ninox · KI im Produkt',
           title: 'Aus Alltagssprache wird eine Anwendung, die man selbst ändern kann.',
-          body: 'Mit dem CEO und dem technischen Mitgründer habe ich gestaltet, wie Menschen mit dem KI-Onboarding arbeiten: Sie beschreiben ihre Arbeit, die KI erzeugt das Datenmodell, und alles bleibt direkt im Editor änderbar.',
+          body: 'Ich habe gestaltet, wie Menschen mit dem KI-Onboarding arbeiten: Sie beschreiben ihre Arbeit, die KI erzeugt das Datenmodell, und alles bleibt direkt im Editor änderbar.',
           fact: 'Direkt bearbeiten',
           factLabel: 'wurde zum Interaktionsprinzip der öffentlichen KI-Beta von Ninox',
           href: 'https://treppmann.de/beispiele/ki-onboarding-ninox/',
@@ -299,7 +299,7 @@ export const aiLeadershipContent = {
         {
           context: 'Ninox · AI in the product',
           title: 'Plain language becomes an editable application.',
-          body: 'With the CEO and the technical co-founder, I designed how people work with the AI onboarding: they describe their work, AI generates the data model, and everything stays editable in the Ninox editor.',
+          body: 'I designed how people work with the AI onboarding: they describe their work, AI generates the data model, and everything stays editable in the Ninox editor.',
           fact: 'Edit directly',
           factLabel: 'became the interaction model of Ninox’s public AI beta',
           href: 'https://treppmann.de/en/case-studies/ninox-ai-onboarding/',
