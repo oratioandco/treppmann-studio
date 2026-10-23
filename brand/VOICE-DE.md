@@ -38,6 +38,7 @@ und Referenzen. Die Website soll **bestätigen**, was ein Empfehlender gesagt ha
 überzeugen.
 
 Daraus folgt:
+- **Kein Vorwissen voraussetzen.** Die Leserin kennt weder unsere Gespräche noch interne Notizen noch den Fachjargon. Titel müssen ohne Kontext verständlich sein („Warum manche Spendenbriefe viel mehr bringen als andere“, nicht „Nicht der Monat entscheidet“). Werkzeug- und Fachbegriffe (Claude Code, Spec Kit, Schnittstellen, Backend, Sprint, Datenmodell, Skill) beim ersten Auftreten in einem Halbsatz erklären oder durch Alltagswörter ersetzen.
 - Ihre Welt, ihre Wörter: Betrieb, Angebot, Auftrag, Schicht, Kunde, Fachkräfte, Marge,
   Betriebsrat, Datenschutz. Keine Berliner Szene-Codes, kein Methoden-Jargon ohne Erklärung.
 - Sie liest quer. Jede Überschrift muss allein verständlich sein.

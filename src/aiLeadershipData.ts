@@ -82,7 +82,7 @@ export const aiLeadershipContent = {
         {
           context: 'Bibel TV · Produktentwicklung',
           title: 'Selbst bauen statt auf die Agentur warten.',
-          body: 'Früher hing fast jede Änderung an einer externen Agentur. Eine eigene Entwicklungsabteilung gibt es nicht. Also habe ich mit KI selbst gebaut und gezeigt, was geht. Dann habe ich die Produktverantwortlichen einzeln begleitet: Claude Code, Spec Kit, klare Regeln. Heute entsteht ein großer Teil des Backends im Haus.',
+          body: 'Früher hing fast jede Änderung an einer externen Agentur. Eine eigene Entwicklungsabteilung gibt es nicht. Also habe ich mit KI selbst gebaut und gezeigt, was geht. Dann habe ich die Produktverantwortlichen einzeln begleitet, mit KI-Werkzeugen zum Programmieren und klaren Regeln. Heute entsteht ein großer Teil der Technik hinter den Apps im Haus.',
           fact: 'Ohne Agentur',
           factLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Gebaut habe ich sie selbst, mit KI.',
           href: 'https://treppmann.de/beispiele/produktentwicklung-mit-ki/',
@@ -290,7 +290,7 @@ export const aiLeadershipContent = {
         {
           context: 'Bibel TV · Product development',
           title: 'Building in-house instead of waiting for the agency.',
-          body: 'Almost every change used to depend on an external agency. There’s no in-house development team. So I built with AI myself and showed what was possible. Then I coached the product managers and owners one to one: Claude Code, Spec Kit, clear rules. Today a large part of the backend is built in-house.',
+          body: 'Almost every change used to depend on an external agency. There’s no in-house development team. So I built with AI myself and showed what was possible. Then I coached the product managers and owners one to one, with AI coding tools and clear rules. Today a large part of the technology behind the apps is built in-house.',
           fact: 'No agency',
           factLabel: 'Leadership gave me the rebuild of the app, and I built it myself, with AI.',
           href: 'https://treppmann.de/en/case-studies/building-in-house-with-ai/',
