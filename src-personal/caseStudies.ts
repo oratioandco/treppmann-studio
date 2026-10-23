@@ -268,54 +268,113 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'ki-onboarding-ninox',
     label: 'Ninox · KI im Produkt',
-    title: 'Aus Alltagssprache wird eine Anwendung, die man selbst ändern kann.',
-    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Ich habe das Onboarding so gestaltet, dass KI über diese Hürde hilft und trotzdem niemand die Kontrolle verliert.',
-    description: 'Wie Ninox mit KI aus einer Beschreibung in Alltagssprache ein Datenmodell erzeugt, das man direkt bearbeiten kann. Grundlage der öffentlichen KI-Beta.',
+    title: 'Warum die KI bei Ninox nicht im Chat antwortet, sondern im Editor',
+    lead: 'Ninox ist eine No-Code-Plattform, mit der kleine und mittlere Unternehmen ihre eigenen Geschäftsanwendungen bauen. Die Hürde war das Datenmodell. Ich habe das KI-Onboarding so gestaltet, dass KI über diese Hürde hilft und niemand die Kontrolle verliert.',
+    description: 'Wie Ninox mit KI aus einer kurzen Beschreibung in Alltagssprache ein Datenmodell erzeugt, das man direkt im Editor ändert. Heute das Onboarding der KI-Beta.',
     object: 'blocks',
     shape: 'square',
     facts: [
-      ['Auftrag', 'Freiberuflich, Sommer 2025'],
-      ['Prinzip', 'Direkt bearbeiten statt nur chatten'],
-      ['Ergebnis', 'Interaktionsprinzip der öffentlichen KI-Beta von Ninox'],
+      ['Organisation', 'Ninox, No-Code-Plattform für Geschäftsanwendungen kleiner und mittlerer Unternehmen'],
+      ['Ausgangslage', 'Wer keine Datenbanken kennt, scheitert am Datenmodell: Tabellen, Feldtypen, Verknüpfungen.'],
+      ['Was ich gemacht habe', 'Das KI-Onboarding mitgestaltet: Man beschreibt die eigene Arbeit, die KI schlägt das Datenmodell vor, und man ändert es direkt im Editor.'],
+      ['Zeitraum', 'Freiberuflich, Sommer 2025'],
+      ['Ergebnis', 'Direkt bearbeiten wurde zum Interaktionsprinzip, und das Onboarding zum Onboarding der inzwischen gestarteten KI-Beta.'],
+      ['Drei Erkenntnisse', 'Das erste Ergebnis liegt daneben, also muss das Danach stimmen. Ergebnisse dort zeigen, wo man ohnehin arbeitet. Kein eigener KI-Modus.'],
     ],
-    situation: {
-      title: 'Die Ausgangslage',
+    opening: {
+      title: 'Die erste Frage ist die schwerste',
       paras: [
-        'Mit Ninox bauen Kanzleien, Bauunternehmen, Handwerksbetriebe und Sachverständige ihre eigenen Anwendungen: Auftragsverwaltung, Projektlisten, Fallakten. Sobald ein Datenmodell steht, erzeugt Ninox die Oberflächen fast von selbst.',
-        'Genau dieses Datenmodell war die Hürde. Wer keine Datenbankkenntnisse hatte, kam nicht weiter oder holte sich Hilfe von außen. Die Idee: Man beschreibt die eigene Arbeit in Alltagssprache, und KI erzeugt daraus das Datenmodell.',
+        'Wer mit Ninox anfängt, will meist etwas ganz Konkretes: eine Auftragsverwaltung, eine Projektliste, eine Fallakte.',
+        'Und steht dann vor der ersten Frage: Welche Tabellen braucht das? Welche Felder, mit welchem Feldtyp? Und wie hängen Kunden, Aufträge und Rechnungen zusammen?',
+        'Für viele ist das eine fremde Welt. Ein Datenmodell festzulegen, ist kein Begriff, den man aus dem Arbeitsalltag kennt.',
       ],
     },
-    steps: {
-      title: 'Was ich gemacht habe',
-      items: [
-        ['Die eigentliche Frage gestellt', 'Dass KI ein Datenmodell erzeugen kann, war gesetzt. Meine Frage war: Was passiert danach, wenn jemand ohne Datenbankwissen vor dem Ergebnis sitzt?'],
-        ['Chat allein verworfen', 'Ein realistisches Datenmodell hat acht bis zwölf Tabellen. Als Text im Chat ist das unlesbar, und Änderungen per Chat fühlen sich an wie Programmieren in Prosa. Außerdem schreibt niemand im ersten Satz eine vollständige Beschreibung: Das erste Ergebnis liegt immer etwas daneben.'],
-        ['Ergebnis im echten Editor', 'Die KI erzeugt das Datenmodell direkt im Editor, den man auch sonst verwendet. Tabellen erscheinen als Karten, Felder sind anklickbar.'],
-        ['Zwei Wege, ein Ergebnis', 'Geändert wird per Klick direkt in der Karte oder per Chat, je nachdem, was leichter ist. Vorschläge für naheliegende Ergänzungen helfen weiter.'],
-        ['Kein eigener KI-Modus', 'Ist das Datenmodell fertig, ist es einfach eine Ninox-Anwendung. Man arbeitet im selben Werkzeug weiter.'],
+    nut: 'Dass KI ein Datenmodell erzeugen kann, war gesetzt. Die eigentliche Frage war eine andere: Was passiert danach, wenn jemand ohne Datenbankwissen vor dem Ergebnis sitzt? Diese Frage stellt sich bei fast jeder KI-Funktion in eigener Software. Und die Antwort entscheidet, ob Menschen sie nutzen.',
+    situation: {
+      title: 'Leicht ist relativ',
+      nav: 'Ausgangslage',
+      paras: [
+        'Mit Ninox bauen Kanzleien, Bauunternehmen, Handwerksbetriebe und Sachverständige ihre eigenen Anwendungen. Sobald ein Datenmodell steht, erzeugt Ninox die Oberflächen fast von selbst.',
+        'Wer Datenbanken kennt, schätzt, wie einfach das ist. Wer sie nicht kennt, weiß nicht einmal, dass es viel leichter ist als reines SQL. Für diese Menschen war schon der erste Schritt zu viel: Tabellen anlegen, Feldtypen wählen, Verknüpfungen bauen. Sie kamen nicht weiter oder holten sich Hilfe von außen.',
+        'Die Idee: Man beschreibt die eigene Arbeit in Alltagssprache, und KI erzeugt daraus das Datenmodell.',
       ],
     },
+    turn: {
+      title: 'Das erste Ergebnis liegt fast immer daneben',
+      nav: 'Wendepunkt',
+      paras: [
+        'Aus frühen eigenen Tests und weil ich Ninox kannte, wusste ich: Die meisten beschreiben ihre Arbeit kurz, nicht ausführlich. Der erste Vorschlag der KI wird also selten ganz stimmen. Oder man sieht ihn und merkt erst dann, dass man mehr braucht oder etwas leicht anderes.',
+        'Das ist kein Fehler, das ist der normale Start. Deshalb kommt es weniger auf den ersten Vorschlag an als auf das, was danach passiert.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Chat allein reicht nicht',
+        nav: 'Chat',
+        paras: [
+          'Ein realistisches Datenmodell hat acht bis zwölf Tabellen. Als Text im Chat ist das unlesbar. Und Änderungen per Chat fühlen sich an wie Programmieren in Prosa.',
+          'Wer ohnehin nicht weiß, was ein Feldtyp ist, soll ihn nicht auch noch in Worten beschreiben müssen.',
+        ],
+      },
+      {
+        title: 'Das Ergebnis landet im echten Editor',
+        nav: 'Editor',
+        paras: [
+          'Die KI erzeugt das Datenmodell direkt im Editor, den man auch sonst verwendet. Tabellen erscheinen als Karten, Felder sind anklickbar.',
+          'Geändert wird auf zwei Wegen: per Klick direkt in der Karte oder per Chat, je nachdem, was leichter ist. Vorschläge für naheliegende Ergänzungen helfen weiter.',
+        ],
+      },
+      {
+        title: 'Kein eigener KI-Modus',
+        nav: 'Danach',
+        paras: [
+          'Ist das Datenmodell fertig, ist es einfach eine Ninox-Anwendung. Man arbeitet im selben Werkzeug weiter, ohne Umweg und ohne etwas Neues lernen zu müssen.',
+          'Die Technik, mit der die KI das Datenmodell erzeugt, haben andere entwickelt. Mein Teil war alles, was danach kommt: das Ergebnis lesen, prüfen und ändern.',
+        ],
+      },
+    ],
     images: [
       { src: '/images/beispiele/ninox-zwei-wege.webp', alt: 'Ninox KI-Onboarding: links der Chat, rechts das erzeugte Datenmodell mit bearbeitbaren Tabellenkarten', caption: 'Zwei Wege nebeneinander: links Änderungen per Chat, rechts direkt in den Tabellenkarten.', width: 1600, height: 997 },
       { src: '/images/beispiele/ninox-im-editor.webp', alt: 'Das von der KI erzeugte Datenmodell als normale Ninox-Anwendung im Editor', caption: 'Danach ist es eine normale Ninox-Anwendung, im selben Editor.', width: 1600, height: 1002 },
     ],
     result: {
       title: 'Was daraus wurde',
+      nav: 'Ergebnis',
       big: 'Direkt bearbeiten',
-      bigLabel: 'wurde zum Interaktionsprinzip der öffentlichen KI-Beta von Ninox.',
+      bigLabel: 'wurde zum Interaktionsprinzip. Das Onboarding ist heute das Onboarding der inzwischen gestarteten KI-Beta von Ninox.',
       items: [
         'Niemand muss erst lernen, wie man mit einer KI spricht. Man ändert, was man sieht.',
         'Das erste, unvollständige Ergebnis ist kein Fehler, sondern der normale Start.',
+        'Ich habe nicht die gesamte Beta verantwortet, sondern das Onboarding mitgestaltet.',
       ],
     },
-    transfer: {
-      title: 'Was das für Ihr Unternehmen heißt',
-      body: 'Wenn Sie KI in Ihr eigenes Produkt oder Ihre interne Software einbauen, ist die Frage nicht, ob die KI etwas erzeugen kann. Die Frage ist, ob Ihre Leute das Ergebnis danach selbst weiterbearbeiten können. KI nimmt das leere Blatt ab. Die Kontrolle muss bei den Menschen bleiben.',
-      examples: ['KI-Funktionen im eigenen Softwareprodukt', 'Konfiguratoren und Angebotswerkzeuge', 'Interne Formulare und Datenerfassung', 'Auswertungen, die Fachleute anpassen'],
+    callback: {
+      title: 'Die erste Frage heute',
+      paras: [
+        'Wer heute mit der KI-Beta anfängt, muss nicht mehr wissen, welche Tabellen und Feldtypen nötig sind. Man beschreibt kurz die eigene Arbeit. Dann liegt ein Vorschlag im Editor, und man ändert ihn, bis er passt.',
+      ],
     },
-    limits: {
-      title: 'Was es nicht ist',
-      items: ['Die Technik, mit der die KI das Datenmodell erzeugt, haben andere entwickelt. Mein Teil war alles, was danach kommt: das Ergebnis lesen, prüfen und ändern.', 'Ich habe nicht die gesamte Beta verantwortet.'],
+    takeaways: {
+      title: 'Was Sie daraus mitnehmen können',
+      nav: 'Für Sie',
+      items: [
+        ['Planen Sie für das zweite Ergebnis, nicht für das erste.', 'Menschen beschreiben kurz. Der erste Vorschlag einer KI liegt deshalb oft daneben. Entscheidend ist, wie leicht man ihn korrigiert.'],
+        ['Zeigen Sie Ergebnisse dort, wo man ohnehin arbeitet.', 'Nicht als Text im Chat, sondern im Werkzeug, das Ihre Leute kennen. Dort sehen sie, was nicht stimmt, und können es direkt ändern.'],
+        ['Bauen Sie keinen eigenen KI-Modus.', 'Was die KI erzeugt, sollte danach ganz normal weiterverwendbar sein. Sonst entsteht eine zweite Welt, die niemand pflegt.'],
+      ],
+      notFitLabel: 'Wann es nicht passt',
+      notFit: 'Wenn das Ergebnis kaum Struktur hat, etwa ein kurzer Text oder eine Antwort auf eine Frage. Dann ist ein Chat oft genau richtig. Die Arbeit im Editor lohnt sich, wo das Ergebnis aus vielen zusammenhängenden Teilen besteht.',
+    },
+    questions: {
+      title: 'Zum Weiterdenken',
+      items: [
+        'Wo in Ihrer Software oder Ihren Abläufen scheitern Menschen am ersten Schritt, weil sie ein Fachwissen bräuchten, das sie nicht haben?',
+        'Wenn eine KI dort einen ersten Vorschlag macht: Wie leicht könnten Ihre Leute ihn ändern?',
+      ],
+    },
+    cta: {
+      title: 'Planen Sie eine KI-Funktion in Ihrer eigenen Software?',
+      body: 'In 30 Minuten sprechen wir darüber, wo eine KI-Funktion Ihren Leuten den ersten Schritt abnimmt und wie sie danach die Kontrolle behalten. Kostenlos und ohne Verpflichtung.',
     },
   },
 ];
@@ -556,54 +615,113 @@ export const caseStudiesEn: CaseStudy[] = [
   {
     slug: 'ninox-ai-onboarding',
     label: 'Ninox · AI in the product',
-    title: 'Plain language becomes an application users can change themselves.',
-    lead: 'Ninox is a no-code platform small and mid-sized companies use to build their own business applications. The hurdle was the data model. I designed how AI removes that hurdle without users losing control.',
-    description: 'How Ninox uses AI to turn a plain-language description into a data model users can edit directly. The basis of the public AI beta.',
+    title: 'Why Ninox’s AI answers in the editor, not in a chat',
+    lead: 'Ninox is a no-code platform small and mid-sized companies use to build their own business applications. The hurdle was the data model. I designed the AI onboarding so that AI helps people over that hurdle and nobody loses control.',
+    description: 'How Ninox uses AI to turn a short plain-language description into a data model you change directly in the editor. Today the onboarding of the AI beta.',
     object: 'blocks',
     shape: 'square',
     facts: [
-      ['Engagement', 'Freelance, summer 2025'],
-      ['Principle', 'Edit directly instead of only chatting'],
-      ['Result', 'Interaction model of Ninox’s public AI beta'],
+      ['Organisation', 'Ninox, a no-code platform for business applications at small and mid-sized companies'],
+      ['Starting point', 'People who don’t know databases get stuck on the data model: tables, field types, relations.'],
+      ['What I did', 'Co-designed the AI onboarding: you describe your work, AI proposes the data model, and you change it directly in the editor.'],
+      ['Timeline', 'Freelance, summer 2025'],
+      ['Result', 'Editing directly became the interaction model, and the onboarding became the onboarding of the now-launched AI beta.'],
+      ['Three takeaways', 'The first result will be off, so what comes after has to work. Show results where people already work. No separate AI mode.'],
     ],
-    situation: {
-      title: 'The starting point',
+    opening: {
+      title: 'The first question is the hardest',
       paras: [
-        'Law firms, construction companies, contractors and inspectors use Ninox to build their own applications: order management, project lists, case files. Once a data model exists, Ninox generates the interfaces almost by itself.',
-        'That data model was the hurdle. People without database knowledge got stuck or hired a consultant. The idea: users describe their work in plain language, and AI generates the data model.',
+        'People who start with Ninox usually want something very concrete: order management, a project list, a case file.',
+        'And then they face the first question: Which tables does that need? Which fields, with which field type? And how do customers, orders, and invoices relate to each other?',
+        'For many, that’s a foreign world. Defining a data model isn’t something you know from everyday work.',
       ],
     },
-    steps: {
-      title: 'What I did',
-      items: [
-        ['Asked the real question', 'That AI could generate a data model was a given. My question was: what happens next, when someone without database knowledge sits in front of the result?'],
-        ['Ruled out chat alone', 'A realistic data model has eight to twelve tables. As text in a chat it is unreadable, and changing it by chat feels like programming in prose. And nobody writes a complete description in their first sentence: the first result is always somewhat off.'],
-        ['Result in the real editor', 'The AI generates the data model directly in the editor users already work in. Tables appear as cards, fields are clickable.'],
-        ['Two paths, one result', 'Users change things by clicking directly in the card or by chat, whichever is easier. Suggestions for obvious additions help them along.'],
-        ['No separate AI mode', 'Once the data model is done, it is simply a Ninox application. Users keep working in the same tool.'],
+    nut: 'That AI could generate a data model was a given. The real question was a different one: what happens next, when someone without database knowledge is looking at the result? That question comes up with almost every AI feature in your own software. And the answer decides whether people use it.',
+    situation: {
+      title: 'Easy is relative',
+      nav: 'Starting point',
+      paras: [
+        'Law firms, construction companies, trades businesses, and surveyors use Ninox to build their own applications. Once a data model exists, Ninox generates the interfaces almost by itself.',
+        'People who know databases appreciate how easy that is. People who don’t, don’t even know it’s far easier than plain SQL. For them, the first step was already too much: creating tables, choosing field types, building relations. They got stuck or brought in outside help.',
+        'The idea: you describe your work in plain language, and AI turns it into a data model.',
       ],
     },
+    turn: {
+      title: 'The first result is almost always off',
+      nav: 'Turning point',
+      paras: [
+        'From my own early tests, and from knowing Ninox, I knew most people describe their work briefly, not at length. So the AI’s first proposal will rarely be quite right. Or you see it and only then realise you need more, or something slightly different.',
+        'That isn’t a failure, it’s the normal start. Which is why the first proposal matters less than what happens after it.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Chat alone isn’t enough',
+        nav: 'Chat',
+        paras: [
+          'A realistic data model has eight to twelve tables. As text in a chat, that’s unreadable. And changing it by chat feels like programming in prose.',
+          'Someone who doesn’t know what a field type is shouldn’t also have to describe one in words.',
+        ],
+      },
+      {
+        title: 'The result lands in the real editor',
+        nav: 'Editor',
+        paras: [
+          'The AI creates the data model directly in the editor people use anyway. Tables appear as cards, fields are clickable.',
+          'There are two ways to change it: with a click, right in the card, or by chat, whichever is easier. Suggestions for obvious additions help along the way.',
+        ],
+      },
+      {
+        title: 'No separate AI mode',
+        nav: 'After',
+        paras: [
+          'Once the data model is done, it’s simply a Ninox application. You keep working in the same tool, with no detour and nothing new to learn.',
+          'The technology the AI uses to generate the data model was built by others. My part was everything that comes after: reading, checking, and changing the result.',
+        ],
+      },
+    ],
     images: [
       { src: '/images/beispiele/ninox-zwei-wege.webp', alt: 'Ninox AI onboarding: the chat on the left, the generated data model with editable table cards on the right', caption: 'Two paths side by side: changes by chat on the left, directly in the table cards on the right.', width: 1600, height: 997 },
       { src: '/images/beispiele/ninox-im-editor.webp', alt: 'The AI-generated data model as a normal Ninox application in the editor', caption: 'Afterwards it is a normal Ninox application, in the same editor.', width: 1600, height: 1002 },
     ],
     result: {
       title: 'What came of it',
+      nav: 'Result',
       big: 'Edit directly',
-      bigLabel: 'became the interaction model of Ninox’s public AI beta.',
+      bigLabel: 'became the interaction model. The onboarding is now the onboarding of Ninox’s launched AI beta.',
       items: [
-        'Users do not have to learn how to talk to an AI first. They change what they see.',
-        'The first, incomplete result is not an error but the normal start.',
+        'Nobody has to learn how to talk to an AI first. You change what you see.',
+        'The first, incomplete result isn’t a failure but the normal start.',
+        'I wasn’t responsible for the whole beta; I co-designed the onboarding.',
       ],
     },
-    transfer: {
-      title: 'What this means for your company',
-      body: 'When you bring AI into your own product or internal software, the question is not whether the AI can produce something. The question is whether your people can take ownership of the result. AI removes the blank page. Control has to stay with people.',
-      examples: ['AI features in your own software product', 'Configurators and quoting tools', 'Internal forms and data entry', 'Reports that specialists adjust'],
+    callback: {
+      title: 'The first question today',
+      paras: [
+        'Anyone starting with the AI beta today no longer needs to know which tables and field types they need. You briefly describe your work. Then a proposal appears in the editor, and you change it until it fits.',
+      ],
     },
-    limits: {
-      title: 'What it is not',
-      items: ['The AI generation itself was developed separately. My work was how people deal with it.', 'I was not responsible for the whole beta.'],
+    takeaways: {
+      title: 'What you can take from this',
+      nav: 'For you',
+      items: [
+        ['Plan for the second result, not the first.', 'People describe things briefly, so an AI’s first proposal is often off. What matters is how easily it can be corrected.'],
+        ['Show results where people already work.', 'Not as text in a chat, but in the tool your people know. That’s where they see what’s wrong and can change it directly.'],
+        ['Don’t build a separate AI mode.', 'Whatever the AI creates should be usable normally afterwards. Otherwise you get a second world nobody maintains.'],
+      ],
+      notFitLabel: 'When it doesn’t fit',
+      notFit: 'When the result has little structure, such as a short text or an answer to a question. Then a chat is often exactly right. Working in the editor pays off where the result consists of many connected parts.',
+    },
+    questions: {
+      title: 'Something to think about',
+      items: [
+        'Where in your software or processes do people fail at the first step because they’d need expertise they don’t have?',
+        'If an AI made a first proposal there: how easily could your people change it?',
+      ],
+    },
+    cta: {
+      title: 'Planning an AI feature in your own software?',
+      body: 'In 30 minutes we talk about where an AI feature could take the first step off your people’s hands, and how they keep control afterwards. Free and without obligation.',
     },
   },
 ];
