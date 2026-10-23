@@ -377,6 +377,106 @@ export const caseStudies: CaseStudy[] = [
       body: 'In 30 Minuten sprechen wir darüber, wo eine KI-Funktion Ihren Leuten den ersten Schritt abnimmt und wie sie danach die Kontrolle behalten. Kostenlos und ohne Verpflichtung.',
     },
   },
+  {
+    slug: 'spendenbriefe-mit-ki',
+    label: 'Spendenbriefe · Analyse und KI-Werkzeug',
+    title: 'Nicht der Monat entscheidet, sondern der Brief',
+    lead: 'Eine spendenfinanzierte Organisation wollte wissen, warum manche Spendenbriefe viel mehr bringen als andere. Statt einer KI, die Briefe schreibt, entstand ein Werkzeug, das beim Schreiben fragt und prüft.',
+    description: 'Wie eine spendenfinanzierte Organisation ihre Spendenbriefe fair vergleicht, die echten Ausreißer findet und daraus ein KI-Werkzeug macht, das fragt und prüft, statt in einem Zug zu schreiben.',
+    object: 'envelope',
+    shape: 'circle',
+    facts: [
+      ['Organisation', 'Spendenfinanzierte gemeinnützige Organisation (anonymisiert)'],
+      ['Ausgangslage', 'Spendenbriefe mehrmals im Jahr. Manche brachten weit mehr als andere, und niemand wusste genau, warum.'],
+      ['Was ich gemacht habe', 'Mehrere Jahre Aussendungen ausgewertet, die echten Ausreißer gefunden, die Muster gegen allgemeine Fundraising-Regeln geprüft und daraus ein KI-Werkzeug gebaut, das durch den Brief führt.'],
+      ['Ergebnis', 'Der erste Brief, der mit dem Werkzeug entstand, war ein Erfolg.'],
+      ['Drei Erkenntnisse', 'Erst fair vergleichen, dann urteilen. Nur Muster übernehmen, die auch allgemeinen Regeln standhalten. Die KI fragen und prüfen lassen, statt sie in einem Zug schreiben zu lassen.'],
+    ],
+    opening: {
+      title: 'Im Haus galt eine Regel: Der Monat entscheidet',
+      paras: [
+        'Spendenbriefe haben eine Saison. Manche Monate bringen im Schnitt deutlich mehr als andere. Im Haus galt deshalb der Monat als der wichtigste Grund, warum ein Brief gut oder schlecht lief.',
+        'Nur erklärte das nicht alles. Einige Briefe brachten weit mehr als andere, und niemand konnte genau sagen, warum. Jeder neue Brief begann trotzdem wieder beim leeren Blatt.',
+      ],
+    },
+    nut: 'Das ist kein Problem nur von Spendenorganisationen. Überall, wo ein Betrieb regelmäßig dieselbe Art Text verschickt, liegt in den alten Ergebnissen Wissen, das niemand ausgewertet hat: bei Angeboten, Mailings, Newslettern, Vertriebsanschreiben. Und überall ist die Versuchung groß, einer KI einfach zu sagen: Schreib uns so einen Brief.',
+    situation: {
+      title: 'Erst fair vergleichen',
+      nav: 'Vergleich',
+      paras: [
+        'Bevor man fragt, was einen guten Brief ausmacht, muss klar sein, welche Briefe wirklich gut waren. Das ist weniger selbstverständlich, als es klingt.',
+        'Ich habe die Ergebnisse mehrerer Jahre zuerst vergleichbar gemacht: Ertrag pro tausend verschickte Briefe statt Gesamtsumme, damit eine große und eine kleine Aussendung nebeneinander stehen können. Dann habe ich die Saison herausgerechnet. Jeder Brief wurde nicht mehr mit allen anderen verglichen, sondern mit dem Durchschnitt seines eigenen Monats.',
+      ],
+    },
+    turn: {
+      title: 'Der Monat setzt die Basis. Der Brief entscheidet.',
+      nav: 'Wendepunkt',
+      paras: [
+        'Damit kippte das Bild. In den meisten Monaten gab es Briefe weit über und weit unter dem eigenen Durchschnitt, im selben Monat. Der Monat erklärte das Niveau. Den Unterschied machte der Text.',
+        'Aus dem einen Topf „gute und schlechte Briefe“ wurden drei Gruppen: Briefe im erwartbaren Rahmen, echte Ausreißer nach oben und echte Ausreißer nach unten. Erst jetzt lohnte sich die Frage, was die Ausreißer gemeinsam hatten.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Muster nur übernehmen, wenn sie mehr sind als Zufall',
+        nav: 'Muster',
+        paras: [
+          'Ich habe die starken und die schwachen Briefe nebeneinandergelegt: Wie beginnen sie? Wie konkret ist die Bitte? Welche Rolle spielt der Nachsatz? Dazu kamen die Stilanalyse und das Schreibhandbuch, das es im Haus schon gab.',
+          'Dann der wichtigste Schritt: Jedes gefundene Muster habe ich gegen allgemein bekannte Regeln für Spendenbriefe geprüft. Vieles deckte sich, etwa dass eine konkrete, greifbare Bitte besser wirkt als eine abstrakte Mission. Ins Werkzeug kam nur, was beides bestanden hat: die eigenen Zahlen und das allgemeine Fachwissen. Die Muster, die nur für diese Organisation gelten, bleiben bei ihr.',
+        ],
+      },
+      {
+        title: 'Ein Werkzeug, das fragt, bevor es schreibt',
+        nav: 'Werkzeug',
+        paras: [
+          'Aus Analyse, Regeln und Schreibhandbuch habe ich einen Claude-Skill gebaut. Er schreibt den Brief nicht in einem Zug. Er fragt zuerst: Was ist der Anlass? Für wen ist der Brief? Welches konkrete Vorhaben soll er nennen? Dann führt er Schritt für Schritt durch den Aufbau und prüft den Entwurf gegen die Kriterien, bevor es weitergeht.',
+          'Das ist bewusst langsamer als ein Knopf „Brief erstellen“. Der häufigste Fehler von KI-Texten ist ein Entwurf, der gut klingt, aber genau das Konkrete verfehlt, das nur jemand im Haus weiß. Die Fragen holen dieses Wissen ab. Die Prüfungen sorgen dafür, dass die Erkenntnisse aus der Analyse im Brief ankommen. Was verschickt wird, entscheidet weiter ein Mensch.',
+        ],
+      },
+    ],
+    images: [
+      { src: '/images/beispiele/spendenbriefe-illustration.svg', alt: 'Illustration mit erfundenen Werten: Punkte je Brief über und unter einer Null-Linie, gruppiert nach Monat A bis F. In jedem Monat liegen einzelne Briefe weit über und weit unter dem Monatsdurchschnitt.', caption: 'So sah das Bild aus, nachdem die Saison herausgerechnet war. Die Werte sind erfunden; die echten Zahlen bleiben bei der Organisation.', width: 1200, height: 700 },
+    ],
+    result: {
+      title: 'Der erste Brief',
+      nav: 'Ergebnis',
+      big: 'Ein Erfolg',
+      bigLabel: 'war gleich der erste Spendenbrief, der mit dem Werkzeug entstand.',
+      items: [
+        'Die Organisation weiß jetzt, warum ein Brief wirkt, und dieses Wissen wird bei jedem neuen Brief abgefragt, statt in einzelnen Köpfen zu stecken.',
+        'Das Werkzeug fragt, führt und prüft. Der Mensch entscheidet.',
+      ],
+      note: 'Ob das Werkzeug über viele Aussendungen trägt, zeigt sich mit der Zeit. Zahlen dazu veröffentliche ich nicht.',
+    },
+    callback: {
+      title: 'Zurück zur Regel',
+      paras: [
+        'Der Monat zählt weiterhin. Er setzt die Basis, mit der man einen Brief fair beurteilt. Aber ob ein Brief gut wird, entscheidet sich beim Schreiben. Genau dort hilft jetzt das Werkzeug.',
+      ],
+    },
+    takeaways: {
+      title: 'Was Sie daraus mitnehmen können',
+      nav: 'Für Sie',
+      items: [
+        ['Vergleichen Sie fair, bevor Sie urteilen.', 'Rechnen Sie Größe und Saison heraus und messen Sie jedes Ergebnis an seinem eigenen Umfeld. Sonst halten Sie den Kalender für eine Erkenntnis.'],
+        ['Übernehmen Sie nur Muster, die zwei Prüfungen bestehen.', 'Ihre eigenen Zahlen und das allgemeine Fachwissen. Was nur in einer der beiden Quellen auftaucht, ist oft Zufall.'],
+        ['Lassen Sie die KI fragen und prüfen, nicht in einem Zug schreiben.', 'Das Wissen über den konkreten Anlass liegt bei Ihren Leuten. Ein gutes Werkzeug holt es ab, bevor es formuliert.'],
+      ],
+      notFitLabel: 'Wann es nicht passt',
+      notFit: 'Wenn Sie nur eine Handvoll vergleichbarer Aussendungen haben. Dann sind die Unterschiede zu klein, um echte Muster von Zufall zu trennen. Beginnen Sie dann mit klaren Schreibregeln und sammeln Sie Ergebnisse.',
+    },
+    questions: {
+      title: 'Zum Weiterdenken',
+      items: [
+        'Welche Texte verschickt Ihr Betrieb regelmäßig, deren Ergebnisse Sie kennen, aber nie verglichen haben?',
+        'Woran würden Sie heute erkennen, ob ein Angebot oder Mailing wegen des Textes gut lief oder wegen des Zeitpunkts?',
+      ],
+    },
+    cta: {
+      title: 'Stecken in Ihren alten Zahlen auch Muster?',
+      body: 'In 30 Minuten sprechen wir darüber, welche Ihrer Texte sich auswerten lassen und ob daraus ein Werkzeug für Ihr Team werden kann. Kostenlos und ohne Verpflichtung.',
+    },
+  },
 ];
 
 // English versions: same facts, same order. `pair` is the slug of the other language.
@@ -724,6 +824,106 @@ export const caseStudiesEn: CaseStudy[] = [
       body: 'In 30 minutes we talk about where an AI feature could take the first step off your people’s hands, and how they keep control afterwards. Free and without obligation.',
     },
   },
+  {
+    slug: 'fundraising-letters-with-ai',
+    label: 'Fundraising letters · Analysis and AI tool',
+    title: 'It’s not the month that decides. It’s the letter.',
+    lead: 'A donor-funded organisation wanted to know why some fundraising letters raise far more than others. Instead of an AI that writes letters, the result was a tool that asks and checks while you write.',
+    description: 'How a donor-funded organisation compares its fundraising letters fairly, finds the real outliers, and turns that into an AI tool that asks and checks instead of writing in one go.',
+    object: 'envelope',
+    shape: 'circle',
+    facts: [
+      ['Organisation', 'Donor-funded non-profit (anonymised)'],
+      ['Starting point', 'Fundraising letters several times a year. Some raised far more than others, and nobody knew exactly why.'],
+      ['What I did', 'Analysed several years of mailings, found the real outliers, checked the patterns against general fundraising practice, and built an AI tool that guides you through the letter.'],
+      ['Result', 'The first letter written with the tool was a success.'],
+      ['Three takeaways', 'Compare fairly before you judge. Only adopt patterns that also hold up against general practice. Let the AI ask and check instead of writing in one go.'],
+    ],
+    opening: {
+      title: 'The rule in the house: the month decides',
+      paras: [
+        'Fundraising letters have a season. Some months raise clearly more on average than others. So in the organisation, the month was seen as the main reason a letter did well or badly.',
+        'But that didn’t explain everything. Some letters raised far more than others, and nobody could say exactly why. And every new letter still started from a blank page.',
+      ],
+    },
+    nut: 'That isn’t just a problem for fundraising organisations. Wherever a business regularly sends the same kind of text, its old results hold knowledge nobody has analysed: in quotes, mailings, newsletters, sales letters. And everywhere the temptation is to just tell an AI: write us one of those.',
+    situation: {
+      title: 'Compare fairly first',
+      nav: 'Comparison',
+      paras: [
+        'Before you ask what makes a good letter, you need to know which letters really were good. That’s less obvious than it sounds.',
+        'First I made several years of results comparable: return per thousand letters sent instead of totals, so a large and a small mailing can sit side by side. Then I took out the season. Each letter was no longer compared with all the others, but with the average of its own month.',
+      ],
+    },
+    turn: {
+      title: 'The month sets the baseline. The letter decides.',
+      nav: 'Turning point',
+      paras: [
+        'That flipped the picture. In most months there were letters far above and far below their own average, in the same month. The month explained the level. The text made the difference.',
+        'One pile of “good and bad letters” became three groups: letters within the expected range, real outliers above, and real outliers below. Only then was it worth asking what the outliers had in common.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Only adopt patterns that are more than chance',
+        nav: 'Patterns',
+        paras: [
+          'I put the strong and the weak letters side by side: How do they open? How concrete is the ask? What does the PS do? Add to that the voice analysis and the writing handbook the organisation already had.',
+          'Then the most important step: I checked every pattern against widely known rules for fundraising letters. Much of it matched, for example that a concrete, tangible ask works better than an abstract mission. Only what passed both checks went into the tool: the organisation’s own numbers and general expertise. The patterns that only apply to this organisation stay with it.',
+        ],
+      },
+      {
+        title: 'A tool that asks before it writes',
+        nav: 'Tool',
+        paras: [
+          'From the analysis, the rules, and the writing handbook, I built a Claude skill. It doesn’t write the letter in one go. First it asks: What’s the occasion? Who is the letter for? Which concrete project should it name? Then it guides you through the structure step by step and checks the draft against the criteria before moving on.',
+          'That’s deliberately slower than a “write letter” button. The most common failure of AI writing is a draft that sounds good but misses exactly the specifics only someone in-house knows. The questions collect that knowledge. The checks make sure the findings from the analysis actually reach the letter. A person still decides what gets sent.',
+        ],
+      },
+    ],
+    images: [
+      { src: '/images/beispiele/fundraising-illustration.svg', alt: 'Illustration with invented values: one dot per letter above and below a zero line, grouped by month A to F. Every month has letters far above and far below its average.', caption: 'What the picture looked like once the season was taken out. The values are invented; the real figures stay with the organisation.', width: 1200, height: 700 },
+    ],
+    result: {
+      title: 'The first letter',
+      nav: 'Result',
+      big: 'A success',
+      bigLabel: 'was the very first fundraising letter written with the tool.',
+      items: [
+        'The organisation now knows why a letter works, and that knowledge is asked for with every new letter instead of living in a few people’s heads.',
+        'The tool asks, guides, and checks. A person decides.',
+      ],
+      note: 'Whether the tool holds up across many mailings will show over time. I don’t publish figures on it.',
+    },
+    callback: {
+      title: 'Back to the rule',
+      paras: [
+        'The month still counts. It sets the baseline you need to judge a letter fairly. But whether a letter turns out well is decided while it’s being written. That’s exactly where the tool now helps.',
+      ],
+    },
+    takeaways: {
+      title: 'What you can take from this',
+      nav: 'For you',
+      items: [
+        ['Compare fairly before you judge.', 'Take out size and season, and measure every result against its own context. Otherwise you mistake the calendar for an insight.'],
+        ['Only adopt patterns that pass two checks.', 'Your own numbers and general expertise. What shows up in only one of the two is often chance.'],
+        ['Let the AI ask and check, not write in one go.', 'The knowledge about the specific occasion sits with your people. A good tool collects it before it writes.'],
+      ],
+      notFitLabel: 'When it doesn’t fit',
+      notFit: 'If you only have a handful of comparable mailings. Then the differences are too small to separate real patterns from chance. Start with clear writing rules and collect results.',
+    },
+    questions: {
+      title: 'Something to think about',
+      items: [
+        'Which texts does your business send regularly whose results you know but have never compared?',
+        'How would you tell today whether a quote or mailing did well because of the text or because of the timing?',
+      ],
+    },
+    cta: {
+      title: 'Are there patterns in your old numbers too?',
+      body: 'In 30 minutes we talk about which of your texts could be analysed and whether that could become a tool for your team. Free and without obligation.',
+    },
+  },
 ];
 
 // Language pairs, by position in the two arrays.
@@ -813,5 +1013,31 @@ export const caseVisuals: Record<string, CaseVisuals> = {
     compare: { title: 'Why not chat alone', beforeTitle: 'Chat only', afterTitle: 'In the real editor',
       before: ['Data model as a long text output', 'Describing changes in prose', 'First result off: another chat round'],
       after: ['Tables as cards, fields clickable', 'Change by click or by chat', 'The first result is the normal start'] },
+  },
+  'spendenbriefe-mit-ki': {
+    quote: { text: 'Der Monat setzt die Basis. Der Brief entscheidet.', by: 'Was die Analyse gezeigt hat' },
+    flow: { title: 'Vom Datensatz zum Werkzeug', kind: 'flow', nodes: [
+      ['Vergleichbar machen', 'Ertrag pro tausend Briefe', 'neutral'],
+      ['Saison herausrechnen', 'jeder Brief gegen seinen Monat', 'neutral'],
+      ['Ausreißer finden', 'drei Gruppen statt einer', 'human'],
+      ['Muster doppelt prüfen', 'eigene Zahlen und Fachwissen', 'human'],
+      ['Skill fragt und prüft', 'statt in einem Zug zu schreiben', 'ai'],
+    ] },
+    compare: { title: 'Vorher und heute', beforeTitle: 'Vorher', afterTitle: 'Heute',
+      before: ['Der Monat gilt als Hauptgrund', 'Jeder Brief beginnt beim leeren Blatt', 'Wissen steckt in einzelnen Köpfen'],
+      after: ['Jeder Brief fair gegen seinen Monat bewertet', 'Ein Werkzeug fragt und prüft beim Schreiben', 'Die Erkenntnisse werden bei jedem Brief abgefragt'] },
+  },
+  'fundraising-letters-with-ai': {
+    quote: { text: 'The month sets the baseline. The letter decides.', by: 'What the analysis showed' },
+    flow: { title: 'From data to tool', kind: 'flow', nodes: [
+      ['Make comparable', 'return per thousand letters', 'neutral'],
+      ['Take out the season', 'each letter against its month', 'neutral'],
+      ['Find the outliers', 'three groups instead of one', 'human'],
+      ['Check patterns twice', 'own numbers and expertise', 'human'],
+      ['Skill asks and checks', 'instead of writing in one go', 'ai'],
+    ] },
+    compare: { title: 'Before and today', beforeTitle: 'Before', afterTitle: 'Today',
+      before: ['The month seen as the main reason', 'Every letter starts from a blank page', 'Knowledge lives in a few heads'],
+      after: ['Every letter judged fairly against its month', 'A tool asks and checks while you write', 'The findings are asked for with every letter'] },
   },
 };

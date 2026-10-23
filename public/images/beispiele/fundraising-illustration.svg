@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" font-family="Helvetica, Arial, sans-serif">
+<rect width="1200" height="700" fill="#f3f0e8"/>
+<text x="60" y="62" font-size="30" font-weight="600" fill="#11110f">Each letter against the average of its own month</text>
+<text x="60" y="96" font-size="19" fill="#6b6a63">Illustration with invented values. The real figures stay with the organisation.</text>
+<line x1="150" x2="1150" y1="245.0" y2="245.0" stroke="#d9d5ca" stroke-dasharray="4 6"/>
+<line x1="150" x2="1150" y1="475.0" y2="475.0" stroke="#d9d5ca" stroke-dasharray="4 6"/>
+<line x1="150" x2="1150" y1="360.0" y2="360.0" stroke="#11110f" stroke-width="2"/>
+<text x="136" y="366.0" font-size="17" text-anchor="end" fill="#11110f">0 %</text>
+<text x="136" y="251.0" font-size="17" text-anchor="end" fill="#6b6a63">+50 %</text>
+<text x="136" y="481.0" font-size="17" text-anchor="end" fill="#6b6a63">−50 %</text>
+<line x1="198.33333333333331" x2="198.33333333333331" y1="360.0" y2="222.0" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="198.33333333333331" cy="222.0" r="8" fill="#ff6138"/>
+<line x1="212.33333333333331" x2="212.33333333333331" y1="360.0" y2="224.3" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="212.33333333333331" cy="224.3" r="8" fill="#ff6138"/>
+<line x1="226.33333333333331" x2="226.33333333333331" y1="360.0" y2="251.9" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="226.33333333333331" cy="251.9" r="8" fill="#ff6138"/>
+<line x1="240.33333333333331" x2="240.33333333333331" y1="360.0" y2="364.6" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="240.33333333333331" cy="364.6" r="8" fill="#11110f"/>
+<line x1="254.33333333333331" x2="254.33333333333331" y1="360.0" y2="226.6" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="254.33333333333331" cy="226.6" r="8" fill="#ff6138"/>
+<line x1="268.3333333333333" x2="268.3333333333333" y1="360.0" y2="456.6" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="268.3333333333333" cy="456.6" r="8" fill="#ff6138"/>
+<text x="233.33333333333331" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month A</text>
+<line x1="358.0" x2="358.0" y1="360.0" y2="357.7" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="358.0" cy="357.7" r="8" fill="#11110f"/>
+<line x1="372.0" x2="372.0" y1="360.0" y2="309.4" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="372.0" cy="309.4" r="8" fill="#ff6138"/>
+<line x1="386.0" x2="386.0" y1="360.0" y2="456.6" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="386.0" cy="456.6" r="8" fill="#ff6138"/>
+<line x1="400.0" x2="400.0" y1="360.0" y2="366.9" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="400.0" cy="366.9" r="8" fill="#11110f"/>
+<line x1="414.0" x2="414.0" y1="360.0" y2="472.7" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="414.0" cy="472.7" r="8" fill="#ff6138"/>
+<line x1="428.0" x2="428.0" y1="360.0" y2="334.7" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="428.0" cy="334.7" r="8" fill="#11110f"/>
+<line x1="442.0" x2="442.0" y1="360.0" y2="212.8" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="442.0" cy="212.8" r="8" fill="#ff6138"/>
+<text x="400.0" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month B</text>
+<line x1="524.6666666666666" x2="524.6666666666666" y1="360.0" y2="507.2" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="524.6666666666666" cy="507.2" r="8" fill="#ff6138"/>
+<line x1="538.6666666666666" x2="538.6666666666666" y1="360.0" y2="182.9" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="538.6666666666666" cy="182.9" r="8" fill="#ff6138"/>
+<line x1="552.6666666666666" x2="552.6666666666666" y1="360.0" y2="187.5" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="552.6666666666666" cy="187.5" r="8" fill="#ff6138"/>
+<line x1="566.6666666666666" x2="566.6666666666666" y1="360.0" y2="295.6" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="566.6666666666666" cy="295.6" r="8" fill="#ff6138"/>
+<line x1="580.6666666666666" x2="580.6666666666666" y1="360.0" y2="309.4" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="580.6666666666666" cy="309.4" r="8" fill="#ff6138"/>
+<line x1="594.6666666666666" x2="594.6666666666666" y1="360.0" y2="465.8" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="594.6666666666666" cy="465.8" r="8" fill="#ff6138"/>
+<line x1="608.6666666666666" x2="608.6666666666666" y1="360.0" y2="516.4" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="608.6666666666666" cy="516.4" r="8" fill="#ff6138"/>
+<text x="566.6666666666666" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month C</text>
+<line x1="691.3333333333333" x2="691.3333333333333" y1="360.0" y2="500.3" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="691.3333333333333" cy="500.3" r="8" fill="#ff6138"/>
+<line x1="705.3333333333333" x2="705.3333333333333" y1="360.0" y2="509.5" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="705.3333333333333" cy="509.5" r="8" fill="#ff6138"/>
+<line x1="719.3333333333333" x2="719.3333333333333" y1="360.0" y2="217.4" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="719.3333333333333" cy="217.4" r="8" fill="#ff6138"/>
+<line x1="733.3333333333333" x2="733.3333333333333" y1="360.0" y2="314.0" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="733.3333333333333" cy="314.0" r="8" fill="#11110f"/>
+<line x1="747.3333333333333" x2="747.3333333333333" y1="360.0" y2="251.9" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="747.3333333333333" cy="251.9" r="8" fill="#ff6138"/>
+<line x1="761.3333333333333" x2="761.3333333333333" y1="360.0" y2="408.3" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="761.3333333333333" cy="408.3" r="8" fill="#ff6138"/>
+<line x1="775.3333333333333" x2="775.3333333333333" y1="360.0" y2="316.3" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="775.3333333333333" cy="316.3" r="8" fill="#11110f"/>
+<text x="733.3333333333333" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month D</text>
+<line x1="872.0" x2="872.0" y1="360.0" y2="341.6" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="872.0" cy="341.6" r="8" fill="#11110f"/>
+<line x1="886.0" x2="886.0" y1="360.0" y2="300.2" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="886.0" cy="300.2" r="8" fill="#ff6138"/>
+<line x1="900.0" x2="900.0" y1="360.0" y2="348.5" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="900.0" cy="348.5" r="8" fill="#11110f"/>
+<line x1="914.0" x2="914.0" y1="360.0" y2="293.3" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="914.0" cy="293.3" r="8" fill="#ff6138"/>
+<line x1="928.0" x2="928.0" y1="360.0" y2="362.3" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="928.0" cy="362.3" r="8" fill="#11110f"/>
+<text x="900.0" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month E</text>
+<line x1="1031.6666666666665" x2="1031.6666666666665" y1="360.0" y2="380.7" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="1031.6666666666665" cy="380.7" r="8" fill="#11110f"/>
+<line x1="1045.6666666666665" x2="1045.6666666666665" y1="360.0" y2="330.1" stroke="#11110f" stroke-width="2" opacity=".55"/>
+<circle cx="1045.6666666666665" cy="330.1" r="8" fill="#11110f"/>
+<line x1="1059.6666666666665" x2="1059.6666666666665" y1="360.0" y2="199.0" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="1059.6666666666665" cy="199.0" r="8" fill="#ff6138"/>
+<line x1="1073.6666666666665" x2="1073.6666666666665" y1="360.0" y2="493.4" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="1073.6666666666665" cy="493.4" r="8" fill="#ff6138"/>
+<line x1="1087.6666666666665" x2="1087.6666666666665" y1="360.0" y2="433.6" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="1087.6666666666665" cy="433.6" r="8" fill="#ff6138"/>
+<line x1="1101.6666666666665" x2="1101.6666666666665" y1="360.0" y2="258.8" stroke="#ff6138" stroke-width="2" opacity=".55"/>
+<circle cx="1101.6666666666665" cy="258.8" r="8" fill="#ff6138"/>
+<text x="1066.6666666666665" y="638" font-size="20" text-anchor="middle" fill="#11110f">Month F</text>
+<circle cx="158" cy="672" r="8" fill="#ff6138"/><text x="176" y="678" font-size="17" fill="#11110f">more than 20 % above or below the month average</text>
+</svg>

@@ -955,6 +955,7 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 .case-images img { display: block; width: 100%; height: auto; }
 .case-images figcaption { margin-top: .7rem; font-family: var(--mono); font-size: .66rem; line-height: 1.5; color: var(--muted); }
 .case-images figure:only-child { max-width: 560px; justify-self: end; }
+.case-images figure:only-child:has(img[src$=".svg"]) { max-width: 980px; width: 100%; justify-self: center; --tilt: 0deg; }
 
 .case-result { padding: clamp(4.5rem, 8vw, 7rem) 0; }
 .case-big { margin-top: 1.4rem; font-size: clamp(2.6rem, 6vw, 5.4rem); font-weight: 650; line-height: .95; letter-spacing: -.04em; color: var(--signal); }
