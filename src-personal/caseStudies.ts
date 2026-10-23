@@ -266,52 +266,118 @@ export const caseStudiesEn: CaseStudy[] = [
   {
     slug: 'ai-assistant-viewer-services',
     label: 'Bibel TV · Viewer services',
-    title: 'An AI assistant the team uses by choice.',
-    lead: 'Bibel TV’s viewer services team answers letters, emails and messages, many of them deeply personal. I introduced an AI assistant that drafts replies in the house voice. A person checks and sends every single one.',
-    description: 'How Bibel TV introduced an AI assistant in viewer services: voluntary, with a trial week and one-to-one sessions. Complex letters in minutes instead of hours.',
+    title: 'How a viewer services team adopted AI without anyone being forced to',
+    lead: 'Much of Bibel TV’s viewer mail still arrives on paper. Today an AI assistant writes the first draft, in the house voice. Reading, deciding, and sending stay with people.',
+    description: 'How Bibel TV introduced an AI assistant in viewer services: voluntary, connected to no inbox, with the service handbook as the standard. Even complex letters in minutes instead of hours.',
     object: 'letters',
     shape: 'arch',
     facts: [
-      ['Process', 'Replies to viewer mail'],
-      ['Rollout', 'Voluntary: a trial week, then one-to-one sessions'],
-      ['Result', 'Complex letters in minutes instead of hours'],
+      ['Organisation', 'Bibel TV, a Christian broadcaster moving from linear TV to apps and streaming'],
+      ['Starting point', 'Personal mail, much of it on paper. Every reply started from a blank page, following the service handbook.'],
+      ['What I did', 'Built an AI assistant that drafts replies from the handbook. Operated by hand, connected to no inbox.'],
+      ['Timeline', 'Built in autumn 2025, introduced voluntarily with a trial week and one-to-one sessions. Today part of everyday work across the team.'],
+      ['Result', 'Even complex letters are answered in minutes instead of hours. Part-time and temporary staff hit the house voice from the start, not after weeks of onboarding.'],
+      ['Three takeaways', 'Hand over the draft, not the decision. Make the handbook you already have the standard. Introduce it voluntarily, and test it on the hardest case.'],
     ],
-    situation: {
-      title: 'The starting point',
+    opening: {
+      title: 'Most of the mail here still arrives on paper',
       paras: [
-        'Bibel TV is a Christian broadcaster moving from linear television to apps and streaming. Its viewer services team answers what viewers write. A large share still arrives by post.',
-        'Some letters raise several concerns at once. Every reply should sound like the house and follow the wording of the service handbook. Starting from a blank page takes time. And the tone depends on who is writing: temporary staff take a long time to find it.',
+        'It comes as letters and postcards, handwritten or typed.',
+        'Viewers say thank you for a programme and write about what it means to them. They ask about programmes, and about books or materials mentioned in them. And they criticise content, some with their opinion, some with theological arguments.',
+        'Then a complaint arrives: carefully argued, with many points at once. Someone in viewer services reads it.',
+        'The reply has to address every point, in the house voice and with the wording of the service handbook. From a blank page, that takes hours.',
       ],
     },
-    steps: {
-      title: 'What I did',
-      items: [
-        ['Agreed the goal with the head of the department', 'Writing should get easier, not deciding. What a reply says remains a person’s responsibility.'],
-        ['Looked at the process as it really runs', 'Most mail arrives on paper. So the assistant is deliberately connected to nothing: a person reads the letter, decides whether to use the assistant and enters the content themselves.'],
-        ['Made the handbook the standard', 'The assistant works with the wording, formatting and standard phrases of the service handbook. When the handbook changes, the drafts change. No training and no custom development were needed.'],
-        ['Built in clear limits', 'No medical, legal or financial advice, no political or denominational judgements. If the input is not a viewer enquiry at all, the assistant writes no reply and asks instead.'],
-        ['Introduced it on a voluntary basis', 'The team lead encouraged, never mandated. One week to try it, then one-to-one sessions on people’s own cases.'],
+    nut: 'Today an AI assistant writes the first draft at Bibel TV. That alone wouldn’t be a story; almost every AI tool writes drafts now. What’s worth learning from is how the assistant got into the team: nobody had to use it, it’s connected to no inbox, and its standard already existed. That carries over to almost any business where a team writes lots of similar, but never identical, texts.',
+    situation: {
+      title: 'Personal mail doesn’t do autopilot',
+      nav: 'Starting point',
+      paras: [
+        'Bibel TV is a Christian broadcaster moving from linear TV to apps and streaming. Viewer services answers letters, emails, and messages. Internal guidelines set out what to answer, what not to, and how far to engage with contentious topics.',
+        'The tone of a reply depended on who was writing it. Temporary staff took a long time to get it right. And a reply that sounds wrong hits a person, not a case number.',
+        'So with the head of the department, I settled the goal first: writing should get easier, deciding should not. A person stays responsible for what a reply says.',
+        'On top of that came the uncertainty that almost any new way of working brings, with digitisation just as much as with AI now. Behind it is the stress of change: having to learn something new, wondering whether you can learn it well, all the way to worrying about your job. AI adds one more question: which work should stay with people, and which shouldn’t?',
+        'We met all of that here too. Two people on the team didn’t want AI at first. One objection: a reply to a viewer needs a human tone. And the phone hotline should never be replaced by AI anyway.',
       ],
     },
+    turn: {
+      title: 'An assistant connected to nothing',
+      nav: 'Turning point',
+      paras: [
+        'When people think of AI in customer service, they usually think of automation first: connect the inbox, let it read along, send replies. That wouldn’t have fit here. Most of the mail arrives on paper.',
+        'So the assistant is deliberately connected to nothing. A person reads the letter, decides whether the assistant should help, and types in the content. They edit the draft, copy it into Word, print it, and put it in the outbox. With emails it’s more direct.',
+        'That sounds like a detour. It’s the actual safeguard. Before the assistant sees a letter, a person has read it. Whether and how to reply is always a person’s call. Not replying at all remains an option.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'The handbook already existed. It became the standard.',
+        nav: 'Handbook',
+        paras: [
+          'I built the assistant in September and October 2025. I didn’t have to invent its standard: viewer services had long written down what a good reply looks like. The service handbook holds the wording, the formatting, and the standard phrases. That is exactly what the assistant gets. When the handbook changes, the drafts change.',
+          'No model training and no custom development were needed. The assistant runs on an existing AI platform and gets the handbook as its basis. Many businesses have written down their standard too. Just not for an AI.',
+        ],
+      },
+      {
+        title: 'The limits are in the instructions. A person does the checking.',
+        nav: 'Limits',
+        paras: [
+          'The assistant has a list of topics it doesn’t advise on: no medical, legal, or financial advice, no political or denominational judgements. And no missionary language, because the broadcaster wants to stay objective and ecumenical. If the input isn’t a viewer enquiry at all, the assistant writes no draft.',
+          'To be honest: that list is an instruction, not a technical lock. Nothing checks the finished draft automatically. That’s why a person reads every draft before it becomes a reply.',
+        ],
+      },
+      {
+        title: 'Introduced voluntarily, won over by the hardest case',
+        nav: 'Rollout',
+        paras: [
+          'I presented the assistant to the team and ran the introduction myself. The team lead encouraged people; nobody was required to use it. Whoever wanted to tried it for a week. Then came one-to-one sessions on people’s own cases.',
+          'What tipped it was a letter like the one at the start. One of the two people who didn’t want AI tried the assistant on exactly that kind of complaint: carefully argued, with many points at once. The draft addressed every point, in the tone of the handbook and the house. The feedback afterwards: by hand, that would have taken hours at least. Since then, this person has used the assistant regularly.',
+          'The second person was sceptical of AI in general. Later they told me they now use the assistant regularly too. Looking back, both saw it as a tool that leaves them in control.',
+          'This is where many rollouts tip over: you demo a tool on an easy example and wonder why nobody uses it day to day. Your own hardest case is the more honest test.',
+        ],
+      },
+    ],
     result: {
       title: 'What changed',
+      nav: 'Result',
       big: 'Minutes, not hours',
-      bigLabel: 'for replies to complex letters covering several topics',
+      bigLabel: 'even for complex letters with many points at once, because the AI gives an immediate starting point',
       items: [
-        'Temporary staff write in the house voice from their first day.',
-        'Colleagues who were sceptical at first came back on their own after trying the assistant on their hardest letter.',
-        'Every reply is still read, adapted and sent by a person.',
+        'Many on the team work part-time. New colleagues used to take weeks, sometimes months, to find the Bibel TV voice. Today they reply in that voice from the start.',
+        'In 2026, part of the team used the assistant regularly at first. Today it’s part of everyday work across the team, even if not every letter is written with it.',
+        'Both people who didn’t want AI at first now use it regularly.',
+        'Every reply is still read, adjusted, and sent by a person.',
       ],
-      note: 'These are observations from the team, not a per-letter time measurement.',
+      note: 'The times come from the team’s experience, not from timing each letter.',
     },
-    transfer: {
-      title: 'What this means for your company',
-      body: 'Wherever your team writes many similar but never identical texts, you can hand the draft to AI without handing over the decision. What makes it work is not the tool but the rollout: a clear standard, clear limits and time to try it on real work.',
-      examples: ['Replies to complaints', 'Questions about orders and deliveries', 'Cover letters for quotes', 'Customer service replies'],
+    callback: {
+      title: 'The letter still arrives by post',
+      paras: [
+        'Someone opens it and reads it, as before. What has changed is the page after that. It’s no longer blank.',
+        'On it is a draft that addresses every point, with the sentences from the handbook. The person adjusts it, prints it, and puts it in the outbox. For a letter with many points, that now takes minutes.',
+      ],
     },
-    limits: {
-      title: 'What it is not',
-      items: ['Not a custom AI model, but an existing platform with good context.', 'Not an autopilot: nothing is sent without a person.', 'No connection to the inbox, no automatic reading.'],
+    takeaways: {
+      title: 'What you can take from this',
+      nav: 'For you',
+      items: [
+        ['Hand over the draft, not the decision.', 'Decide who reads before and who sends after. Only when you can name both is the frame clear.'],
+        ['Make the rules you already have the standard.', 'Handbook, text modules, template letters: whatever is already written down is the best context for an AI. Check first whether that document exists in your company.'],
+        ['Introduce it voluntarily, and test it on the hardest case.', 'A week to try it out, then one-to-one sessions on people’s own examples. At Bibel TV, both people who didn’t want AI at first now use the assistant regularly.'],
+      ],
+      notFitLabel: 'When it doesn’t fit',
+      notFit: 'If you want to answer lots of messages fully automatically, without anyone reading them first. Or if certain content must provably never appear in a reply. Then a list in the instructions isn’t enough, and you need an additional check.',
+    },
+    questions: {
+      title: 'Something to think about',
+      items: [
+        'Where does your team write lots of similar, but never identical, texts today – and who decides what goes out?',
+        'Which document describes what a good reply sounds like in your company? And when did someone last open it?',
+      ],
+    },
+    cta: {
+      title: 'Do you have a similar process?',
+      body: 'In 30 minutes we talk about where the first draft gets written in your company and whether an assistant could help there. Free and without obligation.',
     },
   },
   {
@@ -486,8 +552,8 @@ export const caseVisuals: Record<string, CaseVisuals> = {
       ['A person sends', 'every single reply', 'human'],
     ] },
     compare: { title: 'Before and after', beforeTitle: 'Before', afterTitle: 'Today',
-      before: ['Every reply from a blank page', 'The tone depends on who writes', 'Temporary staff take long to find it', 'Complex letters: hours'],
-      after: ['Drafts follow the handbook’s wording', 'Temporary staff write in the house voice from day one', 'Complex letters: minutes', 'Every reply still checked by a person'] },
+      before: ['Every reply from a blank page', 'The tone depends on who writes', 'New people need weeks or months to find it', 'Complex letters: hours'],
+      after: ['Drafts follow the handbook’s wording', 'New people hit the house voice from the start', 'Complex letters: minutes', 'Every reply still checked by a person'] },
   },
   'building-in-house-with-ai': {
     quote: { text: 'Showing, not ordering.', by: 'What made the rollout work' },
