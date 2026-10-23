@@ -169,7 +169,7 @@ export const aiLeadershipContent = {
       stageAlt: 'Tobias Treppmann bei einem Vortrag über Startup-Methoden im Betahaus Berlin',
       stageSlip: 'Think big, start small, scale fast.',
       stageCaption: 'Vortrag bei Startup.Life, Betahaus Berlin, 2020',
-      keynoteAlt: 'Tobias Treppmann spricht lächelnd mit Mikrofon neben einer Folie mit dem Satz „fall in love with the problem, not the solution“',
+      keynoteAlt: 'Collage: Tobias Treppmann lächelnd mit Mikrofon vor einer orangefarbenen Form, daneben ein Foto seiner Folie mit dem Satz „fall in love with the problem, not the solution“',
       keynoteCaption: '„Fall in love with the problem, not the solution.“ Startup.Life, Berlin, 2020',
       body: 'Zugegeben: Ich komme nicht aus der KI-Forschung. Ich komme aus dem Produktdesign. Dort lernt man vor allem eins: Gekaufte Software ist noch lange keine genutzte Software. Das galt für die Analytics-Plattform, deren Design ich bei Datameer für Banken und Versicherer geleitet habe, genauso wie bei Ninox, ChurchDesk und Bibel TV. Bei KI gilt es erst recht. Heute baue ich selbst mit KI. Bei Bibel TV baut die Entwicklung auf dem Code meiner Prototypen auf. Deshalb kann ich mit der Geschäftsführung über Prioritäten sprechen, mit dem Fachbereich über seine Arbeit und mit der IT über das konkrete System.',
       points: [
@@ -377,7 +377,7 @@ export const aiLeadershipContent = {
       stageAlt: 'Tobias Treppmann giving a talk on startup methods at Betahaus Berlin',
       stageSlip: 'Think big, start small, scale fast.',
       stageCaption: 'Talk at Startup.Life, Betahaus Berlin, 2020',
-      keynoteAlt: 'Tobias Treppmann smiling with a microphone next to a slide reading “fall in love with the problem, not the solution”',
+      keynoteAlt: 'Collage: Tobias Treppmann smiling with a microphone in front of an orange shape, next to a photo of his slide reading “fall in love with the problem, not the solution”',
       keynoteCaption: '“Fall in love with the problem, not the solution.” Startup.Life, Berlin, 2020',
       body: 'I have led product and design teams, served on a Senior Leadership Team, and designed software for banks and insurers, media companies, and platforms. Today I build AI-supported processes myself: at Bibel TV, development builds directly on my prototype code. That lets me talk priorities with leadership, real work with business teams, and the actual system with IT. Product design taught me to take people seriously: their context, their goals, and what slows them down every day. An AI rollout needs exactly that, inside the company.',
       points: [
