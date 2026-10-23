@@ -154,56 +154,115 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'produktentwicklung-mit-ki',
     label: 'Bibel TV · Produktentwicklung',
-    title: 'Selbst bauen statt auf die Agentur warten.',
-    lead: 'Bei Bibel TV hing fast jede Änderung an Apps und Systemen an einer externen Agentur. Eigene Entwicklerinnen und Entwickler gibt es nicht. Heute entstehen ein großer Teil des Backends und erste Teile der Oberflächen im Haus. Gebaut werden sie mit KI, von den Produktverantwortlichen selbst: Product Managern und Product Ownern.',
-    description: 'Wie Bibel TV mit KI unabhängiger von einer externen Agentur wurde: Product Manager und Product Owner bauen heute selbst, mit Claude Code, klaren Regeln und Begleitung.',
+    title: 'Wie ein Produktteam ohne Entwicklungsabteilung selbst baut',
+    lead: 'Bei Bibel TV hing fast jede Änderung an einer externen Agentur, und selbst eine kleine dauerte Wochen. Heute bauen die Produktverantwortlichen einen großen Teil des Backends selbst, mit KI.',
+    description: 'Wie bei Bibel TV Product Manager und Product Owner mit KI selbst bauen: vorgemacht statt verordnet, mit Claude Code, Spec Kit, klaren Regeln und Begleitung an der eigenen Aufgabe.',
     object: 'hands',
     shape: 'circle',
     facts: [
-      ['Vorher', 'Fast jede Änderung über eine externe Agentur'],
-      ['Heute', 'Großer Teil des Backends und erste Oberflächen im Haus'],
-      ['Vertrauen', 'Die Geschäftsführung hat mir die Neuentwicklung der App übertragen'],
+      ['Organisation', 'Bibel TV, christlicher Fernsehsender mit Apps für iOS, Android, Web und Fernseher, ohne eigene Entwicklungsabteilung'],
+      ['Ausgangslage', 'Jede Änderung lief über eine externe Agentur: spezifizieren, entscheiden, umsetzen, Fehler beheben, veröffentlichen. Selbst kleine Änderungen dauerten Wochen.'],
+      ['Was ich gemacht habe', 'Mit KI selbst gebaut und gezeigt, was geht. Mit dem Team Claude Code, Spec Kit, Zugriff auf die interne Dokumentation und feste Regeln eingeführt. Einzeln begleitet.'],
+      ['Zeitraum', '2025 KI als bessere Recherche, Frühjahr 2026 Claude im Team, seit Sommer 2026 eigene Entwicklung im Haus'],
+      ['Ergebnis', 'Ein großer Teil des Backends und erste Oberflächen entstehen im Haus. Die Neuentwicklung der App hat die Geschäftsführung mir übertragen, ohne Agentur.'],
+      ['Drei Erkenntnisse', 'Vormachen statt verordnen. Mit einem internen Werkzeug anfangen. Zweifel an der Codequalität mit Regeln beantworten.'],
     ],
-    situation: {
-      title: 'Die Ausgangslage',
+    opening: {
+      title: 'Eine kleine Änderung, viele Wochen',
       paras: [
-        'Bibel TV bietet Apps für iOS, Android, Web und Fernseher an, hat aber keine eigene Entwicklungsabteilung. Fast alles lief über eine externe Agentur. Jede Änderung hieß: beschreiben, beauftragen, warten.',
-        'Die Leute, die wissen, was gebraucht wird, sitzen im Haus: die Produktverantwortlichen. Bauen konnten sie bisher nicht selbst.',
+        'Im Produktteam gibt es eine Idee. Eine kleine Änderung, nichts Großes.',
+        'Zuerst wird sie spezifiziert, rund drei Wochen innerhalb eines Sprints. Dann wird sie geprüft und entschieden. Im besten Fall kommt sie danach in einen dreiwöchigen Umsetzungssprint bei der Agentur. Meist folgt ein weiterer Sprint, um Fehler zu beheben. Dann geht sie in die Veröffentlichung, mit festen Versionen.',
+        'Bis jemand die kleine Änderung in der App sieht, vergehen viele Wochen.',
       ],
     },
-    steps: {
-      title: 'Wie es dazu kam',
-      items: [
-        ['2025: KI als bessere Recherche', 'Das Team nutzte Gemini und Copilot, weil sie schon da waren. Vor allem zum Recherchieren.'],
-        ['Vorgemacht statt verordnet', 'Ich habe Prototypen in echtem Code gebaut, gegen echte Daten. Die Entwicklung baut direkt auf diesem Code auf. Das hat gezeigt, was möglich ist, besser als jede Präsentation.'],
-        ['Frühjahr 2026: Claude eingeführt', 'Mit dem Team habe ich Claude Code, GitHub mit Spec Kit und MCP-Server für die interne Dokumentation eingeführt. Die Dokumentation hat das Team danach selbst erweitert und aufbereitet.'],
-        ['Regeln statt Wildwuchs', 'Im Firmenkonto von Claude gelten feste Regeln, zum Beispiel für Formate, Freigaben und den Umgang mit Quellen. So arbeiten alle nach denselben Standards.'],
-        ['Einzeln begleitet', 'Ich habe mich mit den Produktverantwortlichen ausgetauscht und in Einzelsitzungen mit ihnen an ihren eigenen Aufgaben gearbeitet.'],
-        ['Seit Sommer 2026: selbst entwickeln', 'Das Team baut einzelne Anwendungen und interne Werkzeuge selbst. Die Werkzeuge für automatisierte Tests und viele weitere interne Werkzeuge habe ich gebaut.'],
+    nut: 'Das ist kein Vorwurf an die Agentur. So arbeiten viele Unternehmen ohne eigene Entwicklung. Bei Bibel TV bauen die Produktverantwortlichen heute einen großen Teil des Backends selbst, mit KI. Lehrreich ist, wie es dazu kam: nicht per Anordnung, sondern weil es jemand vorgemacht hat, mit klaren Regeln und mit Begleitung an der eigenen Aufgabe.',
+    situation: {
+      title: 'Die Leute mit den Ideen konnten nicht bauen',
+      nav: 'Ausgangslage',
+      paras: [
+        'Bibel TV bietet Apps für iOS, Android, Web und Fernseher an, hat aber keine eigene Entwicklungsabteilung. Fast alles lief über eine externe Agentur.',
+        'Die Leute, die wissen, was gebraucht wird, sitzen im Haus: Product Manager und Product Owner. Sie konnten genau beschreiben, was sie brauchen. Bauen konnten sie es nicht.',
+        '2025 nutzte das Team KI vor allem als bessere Suche. Gemini und Copilot waren schon da, also nahm man die.',
       ],
     },
+    turn: {
+      title: 'Erst zeigen, dann einführen',
+      nav: 'Wendepunkt',
+      paras: [
+        'Statt eine Schulung anzusetzen, habe ich selbst gebaut: Prototypen in echtem Code, gegen echte Daten und Schnittstellen.',
+        'Die Entwicklung baut heute direkt auf diesem Code auf. Das hat gezeigt, was möglich ist, besser als jede Präsentation. Und es hat Vertrauen geschaffen: Später hat die Geschäftsführung mir die Neuentwicklung der App übertragen, ohne Agentur. Gebaut habe ich sie selbst, mit KI.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Erst Werkzeuge und Regeln, dann loslegen',
+        nav: 'Werkzeuge',
+        paras: [
+          'Im Frühjahr 2026 habe ich mit dem Team Claude eingeführt: Claude Code, GitHub mit Spec Kit und MCP-Server, über die die KI auf die interne Dokumentation zugreift. Diese Dokumentation hat das Team danach selbst erweitert und aufbereitet.',
+          'Im Firmenkonto von Claude gelten feste Regeln, zum Beispiel für Formate, Freigaben und den Umgang mit Quellen. So arbeiten alle nach denselben Standards, statt jeder nach seinen eigenen.',
+        ],
+      },
+      {
+        title: 'Zweifel an der Codequalität sind berechtigt',
+        nav: 'Zweifel',
+        paras: [
+          'Widerstand von der Agentur gab es kaum. Im Team aber gab es Zurückhaltung und klare Meinungen zur Qualität von Code, den eine KI schreibt.',
+          'Überzeugt hat keine Debatte, sondern die Praxis. Je mehr wir KI genutzt haben, desto mehr haben mitgemacht. Viel geholfen hat Spec Kit: Damit wird erst festgelegt, was gebaut werden soll, bevor Code entsteht. Am meisten aber haben Einzelsitzungen gebracht, in denen wir gemeinsam an einer echten Aufgabe gebaut haben.',
+        ],
+      },
+      {
+        title: 'Klein anfangen: ein internes Werkzeug',
+        nav: 'Erste Schritte',
+        paras: [
+          'Das Erste, was das Team selbst gebaut hat, waren im Frühjahr und Sommer 2026 Ergänzungen an einem internen Backend-Werkzeug. Später kam die komplette Neuentwicklung dieses Werkzeugs dazu.',
+          'Ein internes Werkzeug ist ein guter Anfang. Die Menschen, die es nutzen, sitzen im Haus. Rückmeldungen kommen schnell, und ein Fehler trifft keine Zuschauerinnen und Zuschauer.',
+          'Die Werkzeuge für automatisierte Tests und viele weitere interne Werkzeuge habe ich selbst gebaut.',
+        ],
+      },
+    ],
     images: [
       { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Zwei Bildschirme eines Android-Prototyps von Bibel TV mit echten Sendungen', caption: 'Prototyp in echtem Code, auf echten Bibel-TV-Inhalten. Die Entwicklung baut auf diesem Code auf.', width: 1200, height: 1227 },
     ],
     result: {
       title: 'Wo es heute steht',
+      nav: 'Ergebnis',
       big: 'Ohne Agentur',
-      bigLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Das Vertrauen kam aus meiner bisherigen Arbeit. Gebaut habe ich sie selbst, mit KI.',
+      bigLabel: 'hat die Geschäftsführung mir die Neuentwicklung der App übertragen. Das Vertrauen kam aus meiner bisherigen Arbeit.',
       items: [
-        'Ein großer Teil des Backends und erste Teile der Oberflächen entstehen heute im Haus.',
+        'Ein großer Teil des Backends und erste Teile der Oberflächen entstehen heute im Haus, gebaut von den Produktverantwortlichen.',
         'Im Team gibt es ein bis zwei interne Ansprechpersonen, die das Thema im Haus weitertragen.',
-        'Die neue App ist noch nicht veröffentlicht.',
+        'Die neue App ist fertig entwickelt und in der internen Prüfung. Veröffentlicht ist sie noch nicht.',
       ],
       note: 'Abgeschlossen ist die Umstellung nicht. Das Team arbeitet weiter daran, Schritt für Schritt.',
     },
-    transfer: {
-      title: 'Was das für Ihr Unternehmen heißt',
-      body: 'Wenn Sie für jede Änderung an Ihrer Software auf einen Dienstleister warten, können Fachleute im Haus mit KI einen Teil selbst bauen. Das funktioniert, wenn drei Dinge zusammenkommen: jemand, der es vormacht, feste Regeln und Begleitung an der eigenen Aufgabe.',
-      examples: ['Interne Werkzeuge und Auswertungen', 'Schnittstellen zwischen bestehenden Systemen', 'Prototypen, bevor Sie Entwicklung beauftragen', 'Automatisierte Tests'],
+    callback: {
+      title: 'Die kleine Änderung heute',
+      paras: [
+        'Eine Idee aus dem Produktteam muss heute nicht mehr durch alle Sprints. Für interne Werkzeuge und einen großen Teil des Backends legt die verantwortliche Person fest, was gebraucht wird, und baut es selbst, mit KI und nach den gemeinsamen Regeln.',
+        'Die Agentur bleibt. Für das, was sie wirklich besser kann.',
+      ],
     },
-    limits: {
-      title: 'Was es nicht ist',
-      items: ['Kein Ersatz für Architektur, IT-Sicherheit und Prüfung.', 'Externe Partner bleiben – für das, was sie wirklich besser können.', 'Kein Selbstläufer: Ohne Regeln entsteht Software, die niemand warten kann.'],
+    takeaways: {
+      title: 'Was Sie daraus mitnehmen können',
+      nav: 'Für Sie',
+      items: [
+        ['Machen Sie es vor, statt es anzuordnen.', 'Ein funktionierender Prototyp in echtem Code überzeugt mehr als jede Schulung. Wer im Haus selbst baut, zeigt, was möglich ist.'],
+        ['Fangen Sie mit einem internen Werkzeug an.', 'Die Menschen, die es nutzen, sitzen im Haus, Rückmeldungen kommen schnell, und Fehler treffen keine Kunden. Größeres kommt danach.'],
+        ['Beantworten Sie Zweifel an der Codequalität mit Regeln.', 'Erst festlegen, was gebaut wird, dann bauen. Feste Standards im Firmenkonto. Und Begleitung an echten Aufgaben statt Überzeugungsarbeit im Meeting.'],
+      ],
+      notFitLabel: 'Wann es nicht passt',
+      notFit: 'Wenn Ihre Software sicherheitskritisch ist oder strengen Prüfpflichten unterliegt. Dann ersetzt Bauen im Fachbereich keine Architektur, IT-Sicherheit und Prüfung. Es kann dort Prototypen liefern, mehr nicht.',
+    },
+    questions: {
+      title: 'Zum Weiterdenken',
+      items: [
+        'Wie lange dauert bei Ihnen eine kleine Änderung an Ihrer Software, von der Idee bis zum Einsatz?',
+        'Wer in Ihrem Haus weiß genau, was gebraucht wird, und könnte es mit Begleitung selbst bauen?',
+      ],
+    },
+    cta: {
+      title: 'Warten Sie auch auf kleine Änderungen?',
+      body: 'In 30 Minuten sprechen wir darüber, was Ihr Team selbst bauen könnte und wo ein Dienstleister die bessere Wahl bleibt. Kostenlos und ohne Verpflichtung.',
     },
   },
   {
@@ -383,56 +442,115 @@ export const caseStudiesEn: CaseStudy[] = [
   {
     slug: 'building-in-house-with-ai',
     label: 'Bibel TV · Product development',
-    title: 'Building in-house instead of waiting for the agency.',
-    lead: 'At Bibel TV, almost every change to apps and systems depended on an external agency. There are no in-house developers. Today a large part of the backend and the first parts of the user interfaces are built in-house, by product managers and product owners working with AI.',
-    description: 'How Bibel TV became less dependent on an external agency with AI: product managers and product owners now build themselves, with Claude Code, clear rules and guidance.',
+    title: 'How a product team without developers builds its own software',
+    lead: 'At Bibel TV, almost every change depended on an external agency, and even a small one took weeks. Today the product managers and owners build a large part of the backend themselves, with AI.',
+    description: 'How product managers and product owners at Bibel TV build with AI: shown rather than mandated, with Claude Code, Spec Kit, clear rules, and one-to-one guidance on their own tasks.',
     object: 'hands',
     shape: 'circle',
     facts: [
-      ['Before', 'Almost every change went through an external agency'],
-      ['Today', 'Much of the backend and first interfaces built in-house'],
-      ['Trust', 'Leadership gave me the rebuild of the app'],
+      ['Organisation', 'Bibel TV, a Christian broadcaster with apps for iOS, Android, web, and TV, and no development department of its own'],
+      ['Starting point', 'Every change went through an external agency: spec, decide, build, fix, release. Even small changes took weeks.'],
+      ['What I did', 'Built with AI myself and showed what was possible. Introduced Claude Code, Spec Kit, access to internal documentation, and firm rules with the team. Coached people one to one.'],
+      ['Timeline', '2025 AI as a better search, spring 2026 Claude in the team, since summer 2026 in-house development'],
+      ['Result', 'A large part of the backend and the first interfaces are built in-house. Leadership gave me the rebuild of the app, without the agency.'],
+      ['Three takeaways', 'Show it rather than mandate it. Start with an internal tool. Answer doubts about code quality with rules.'],
     ],
-    situation: {
-      title: 'The starting point',
+    opening: {
+      title: 'A small change, many weeks',
       paras: [
-        'Bibel TV builds apps for iOS, Android, web and TV, but has no development department of its own. Almost everything ran through an external agency. Every change meant: describe it, commission it, wait.',
-        'The people who know what is needed work in-house: product managers and product owners. Until then, they could not build anything themselves.',
+        'Someone on the product team has an idea. A small change, nothing big.',
+        'First it gets specced, about three weeks within a sprint. Then it is reviewed and decided. At best it then goes into a three-week build sprint at the agency. Usually another sprint follows to fix defects. Then it joins the release pipeline, with versioned releases.',
+        'By the time anyone sees the small change in the app, many weeks have passed.',
       ],
     },
-    steps: {
-      title: 'How it happened',
-      items: [
-        ['2025: AI as better research', 'The team used Gemini and Copilot because they were already available, mostly for research.'],
-        ['Showing, not ordering', 'I built prototypes in real code, against real data. Development builds directly on that code. It showed what is possible better than any presentation.'],
-        ['Spring 2026: Claude introduced', 'With the team I introduced Claude Code, GitHub with Spec Kit and MCP servers for the internal documentation. The team then extended and prepared that documentation itself.'],
-        ['Rules, not sprawl', 'The company Claude account carries fixed rules, for example on formats, approvals and the use of sources. Everyone works to the same standards.'],
-        ['Guided one by one', 'Exchange with the product managers and product owners, and one-to-one sessions on their own tasks.'],
-        ['Since summer 2026: building in-house', 'The team builds individual applications and internal tools itself. I built the tools for automated testing and many of the internal tools myself.'],
+    nut: 'That’s no criticism of the agency. It’s how many companies without their own developers work. At Bibel TV, the product managers and owners now build a large part of the backend themselves, with AI. What’s worth learning from is how that happened: not by mandate, but because someone showed it could be done, with clear rules and guidance on people’s own tasks.',
+    situation: {
+      title: 'The people with the ideas couldn’t build',
+      nav: 'Starting point',
+      paras: [
+        'Bibel TV offers apps for iOS, Android, web, and TV, but has no development department of its own. Almost everything ran through an external agency.',
+        'The people who know what’s needed work in-house: product managers and product owners. They could describe exactly what they needed. They couldn’t build it.',
+        'In 2025 the team used AI mostly as a better search. Gemini and Copilot were already there, so that’s what people used.',
       ],
     },
+    turn: {
+      title: 'Show it first, then introduce it',
+      nav: 'Turning point',
+      paras: [
+        'Instead of scheduling a training, I built things myself: prototypes in real code, against real data and interfaces.',
+        'Development now builds directly on that code. It showed what was possible better than any presentation could. And it built trust: later, leadership gave me the rebuild of the app, without the agency. I built it myself, with AI.',
+      ],
+    },
+    chapters: [
+      {
+        title: 'Tools and rules first, then go',
+        nav: 'Tools',
+        paras: [
+          'In spring 2026 I introduced Claude with the team: Claude Code, GitHub with Spec Kit, and MCP servers that give the AI access to the internal documentation. The team then extended and prepared that documentation themselves.',
+          'Firm rules apply in the company’s Claude account, for example on formats, approvals, and how sources are used. That way everyone works to the same standards rather than their own.',
+        ],
+      },
+      {
+        title: 'Doubts about code quality are fair',
+        nav: 'Doubts',
+        paras: [
+          'There was little resistance from the agency. Inside the team, though, there was hesitation and strong opinions about the quality of code an AI writes.',
+          'What changed minds wasn’t a debate but practice. The more we used AI, the more people joined in. Spec Kit helped a lot: it pins down what should be built before any code gets written. But what helped most were one-to-one sessions where we built something together on a real task.',
+        ],
+      },
+      {
+        title: 'Start small: an internal tool',
+        nav: 'First steps',
+        paras: [
+          'The first things the team built themselves, in spring and summer 2026, were additions to an internal backend tool. Later came a complete rebuild of that tool.',
+          'An internal tool is a good place to start. The people who use it work in-house. Feedback comes fast, and a bug doesn’t hit any viewers.',
+          'The tools for automated testing and many other internal tools I built myself.',
+        ],
+      },
+    ],
     images: [
       { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Two screens of an Android prototype for Bibel TV with real programmes', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1200, height: 1227 },
     ],
     result: {
-      title: 'Where it stands',
+      title: 'Where it stands today',
+      nav: 'Result',
       big: 'No agency',
-      bigLabel: 'Leadership gave me the rebuild of the app. The trust came from the work before it. I built it myself, with AI.',
+      bigLabel: 'Leadership gave me the rebuild of the app. The trust came from my earlier work.',
       items: [
-        'A large part of the backend and the first parts of the interfaces are now built in-house.',
-        'The team has one or two internal champions who carry it forward.',
-        'The new app has not been released yet.',
+        'A large part of the backend and the first parts of the interfaces are now built in-house, by the product managers and owners.',
+        'The team has one or two internal go-to people who carry the topic forward.',
+        'The new app is fully developed and in internal review. It hasn’t been released yet.',
       ],
-      note: 'The change is not finished. The team keeps working on it, step by step.',
+      note: 'The shift isn’t finished. The team keeps working on it, step by step.',
     },
-    transfer: {
-      title: 'What this means for your company',
-      body: 'If you wait for a supplier for every change to your software, people in your company can build part of it themselves with AI. It works when three things come together: someone who shows how, fixed rules, and guidance on their own tasks.',
-      examples: ['Internal tools and reports', 'Interfaces between existing systems', 'Prototypes before you commission development', 'Automated tests'],
+    callback: {
+      title: 'The small change today',
+      paras: [
+        'An idea from the product team no longer has to go through every sprint. For internal tools and a large part of the backend, the person responsible pins down what’s needed and builds it themselves, with AI and the shared rules.',
+        'The agency stays. For what it genuinely does better.',
+      ],
     },
-    limits: {
-      title: 'What it is not',
-      items: ['No replacement for architecture, IT security and review.', 'No end to external partners: they are needed for what they really do better.', 'Not self-running: without rules you get software nobody can maintain.'],
+    takeaways: {
+      title: 'What you can take from this',
+      nav: 'For you',
+      items: [
+        ['Show it rather than mandate it.', 'A working prototype in real code convinces more than any training. Someone in-house who builds shows what’s possible.'],
+        ['Start with an internal tool.', 'The people who use it work in-house, feedback comes fast, and mistakes don’t hit customers. Bigger things come after.'],
+        ['Answer doubts about code quality with rules.', 'Decide what gets built before building it. Firm standards in the company account. And guidance on real tasks instead of persuasion in meetings.'],
+      ],
+      notFitLabel: 'When it doesn’t fit',
+      notFit: 'If your software is safety-critical or subject to strict audit requirements. Then building in the business team doesn’t replace architecture, IT security, and review. There it can deliver prototypes, nothing more.',
+    },
+    questions: {
+      title: 'Something to think about',
+      items: [
+        'How long does a small change to your software take today, from idea to use?',
+        'Who in your company knows exactly what’s needed and could build it themselves with some guidance?',
+      ],
+    },
+    cta: {
+      title: 'Are you waiting on small changes too?',
+      body: 'In 30 minutes we talk about what your team could build itself and where an external provider remains the better choice. Free and without obligation.',
     },
   },
   {
