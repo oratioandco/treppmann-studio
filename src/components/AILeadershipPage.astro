@@ -250,7 +250,7 @@ const structuredData = {
       </div>
       <div class="section-shell engagement-extra" data-reveal>
         <div><h3>{c.formats.extra.title}</h3><p class="engagement-meta">{c.formats.extra.meta}</p></div>
-        <div><p>{c.formats.extra.body}</p><a href={mail(c.formats.extra.subject)}>{c.formats.extra.action}<span aria-hidden="true"> →</span></a></div>
+        <div><p>{c.formats.extra.body}</p><div class="engagement-links"><a href={mail(c.formats.extra.subject)}>{c.formats.extra.action}<span aria-hidden="true"> →</span></a><a href={c.formats.extra.secondaryHref} download>{c.formats.extra.secondary}<span aria-hidden="true"> ↓</span></a></div></div>
       </div>
       <div class="section-shell requirements">
         <div>
