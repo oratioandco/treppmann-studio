@@ -113,6 +113,7 @@ export const aiLeadershipContent = {
     },
     formats: {
       label: 'Zusammenarbeit',
+      diagram: { label: 'So greifen die Angebote ineinander', assessment: 'Standortbestimmung', assessmentBody: 'Erfahrungen, Ideen und Hürden sammeln. Prioritäten festlegen.', delivery: 'Umsetzung', deliveryBody: 'Einen Prozess gemeinsam verbessern. Wirkung messen.', enablement: 'Befähigung', enablementBody: 'Von Anfang an: Menschen begleiten, Wissen verankern und selbstständig weiterarbeiten.', note: 'Einzeln anfragbar oder miteinander kombinierbar.' },
       title: 'Klarheit gewinnen. Umsetzen. Ihr Team befähigen.',
       intro: 'Je nachdem, wo Sie stehen, klären wir zuerst die Prioritäten, bauen einen Prozess um oder befähigen Ihr Team zur eigenen Umsetzung. Im kostenlosen Erstgespräch finden wir heraus, welcher Einstieg passt.',
       items: [
@@ -135,6 +136,7 @@ export const aiLeadershipContent = {
         },
         {
           title: 'Umsetzung und KI-Verantwortung',
+          id: 'delivery',
           meta: 'Als Projekt oder Interimsmandat · erster Durchlauf rund 90 Tage',
           body: 'Ich übernehme die Verantwortung für KI auf Zeit, nach dem 90-Tage-Plan. Und ich arbeite daran, überflüssig zu werden: Am Ende übergebe ich an eine Person aus Ihrem Haus, die ich eingearbeitet habe. Auf Wunsch helfe ich bei Stellenprofil und Auswahl. Oder wir verlängern. Oder Sie besetzen die Rolle fest, gern auch mit mir.',
           action: 'Verfügbarkeit per E-Mail anfragen',
@@ -142,6 +144,7 @@ export const aiLeadershipContent = {
         },
         {
           title: 'Befähigung und Sparring',
+          id: 'enablement',
           meta: 'einzeln oder ergänzend zu einem Projekt · z. B. monatlich mit festen Sprechstunden',
           body: 'Für Geschäftsführung und KI-Verantwortliche, die selbst umsetzen und jemanden zum Gegenhalten wollen. Einzelcoaching, feste Sprechstunden für Ihr Team und Trainings an echter Arbeit statt im Schulungsraum.',
           action: 'Begleitung per E-Mail anfragen',
@@ -324,6 +327,7 @@ export const aiLeadershipContent = {
     },
     formats: {
       label: 'Working together',
+      diagram: { label: 'How the services work together', assessment: 'Assessment', assessmentBody: 'Gather experience, ideas, and barriers. Set priorities.', delivery: 'Delivery', deliveryBody: 'Improve a process together. Measure the impact.', enablement: 'Enablement', enablementBody: 'From day one: support people, share knowledge, and build independence.', note: 'Available individually or in combination.' },
       title: 'Find clarity. Deliver. Equip your team.',
       intro: 'Depending on where you stand, we clarify priorities, redesign a process, or equip your team to lead the work themselves. A free intro call helps us choose the right starting point.',
       items: [
@@ -346,6 +350,7 @@ export const aiLeadershipContent = {
         },
         {
           title: 'Delivery and AI ownership',
+          id: 'delivery',
           meta: 'Project or interim mandate · first cycle about 90 days',
           body: 'I take ownership of AI for a defined period, following the 90-day plan. And I work on making myself unnecessary: at the end I hand over to someone in-house I’ve onboarded, and can help with the role profile and selection. Or we extend. Or you fill the role permanently, possibly with me.',
           action: 'Ask about availability by email',
@@ -353,6 +358,7 @@ export const aiLeadershipContent = {
         },
         {
           title: 'Enablement and sparring',
+          id: 'enablement',
           meta: 'on its own or alongside a project · e.g. monthly, with fixed office hours',
           body: 'For leaders and AI owners who do the work themselves and want someone to push back. One-to-one coaching, fixed office hours for your team, and training on real work instead of in a classroom.',
           action: 'Ask about guidance by email',

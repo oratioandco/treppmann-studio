@@ -1157,3 +1157,21 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
   .case-turn { box-shadow: 6px 6px 0 var(--signal); }
   .case-takeaways li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: .9rem; padding: 1.1rem 1rem 1.2rem; }
 }
+
+/* Services: delivery path with enablement supporting the whole journey. */
+.service-map { margin-top: 3rem; }
+.service-map-path { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; gap: 2rem; }
+.service-map-path a { display: flex; flex-direction: column; gap: .65rem; padding: 1.4rem 0; border-top: 1px solid var(--ink); }
+.service-map strong { font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 600; line-height: 1.2; }
+.service-map span { display: block; max-width: 48ch; color: var(--muted); line-height: 1.5; }
+.service-map-arrow { width: 80px; height: 24px; color: var(--ink); }
+.service-map-support { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center; padding: 1.4rem 1.6rem; background: var(--ink); color: var(--paper); }
+.service-map-support span { color: inherit; max-width: 65ch; }
+.service-map a:hover strong { text-decoration: underline; text-underline-offset: .2em; }
+.service-map a:focus-visible { outline: 2px solid var(--signal); outline-offset: 6px; }
+.service-map-note { margin-top: .8rem; font-size: .9rem; color: var(--muted); }
+@media (max-width: 760px) {
+  .service-map-path { grid-template-columns: 1fr; gap: .6rem; }
+  .service-map-arrow { width: 48px; transform: rotate(90deg); margin: .4rem 0 .4rem auto; }
+  .service-map-support { grid-template-columns: 1fr; gap: .65rem; padding: 1.2rem; }
+}

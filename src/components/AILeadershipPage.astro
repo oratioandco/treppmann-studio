@@ -233,6 +233,15 @@ const structuredData = {
         <p class="section-label">{c.formats.label}</p>
         <div><h2>{c.formats.title}</h2><p class="lead">{c.formats.intro}</p></div>
       </div>
+      <nav class="section-shell service-map" aria-label={c.formats.diagram.label}>
+        <div class="service-map-path">
+          <a href="#assessment"><strong>{c.formats.diagram.assessment}</strong><span>{c.formats.diagram.assessmentBody}</span></a>
+          <svg class="service-map-arrow" viewBox="0 0 80 24" fill="none" aria-hidden="true"><path d="M2 12h74m-10-9 10 9-10 9" stroke="currentColor" stroke-width="2" /></svg>
+          <a href="#delivery"><strong>{c.formats.diagram.delivery}</strong><span>{c.formats.diagram.deliveryBody}</span></a>
+        </div>
+        <a class="service-map-support" href="#enablement"><strong>{c.formats.diagram.enablement}</strong><span>{c.formats.diagram.enablementBody}</span></a>
+        <p class="service-map-note">{c.formats.diagram.note}</p>
+      </nav>
       <div class="section-shell engagement-grid" data-reveal data-stagger>
         {c.formats.items.map((item, i) => (
           <article id={'id' in item ? item.id : undefined} style={`--i:${i}`}>
