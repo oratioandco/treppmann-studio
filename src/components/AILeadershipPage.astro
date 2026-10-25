@@ -82,7 +82,7 @@ const structuredData = {
           <p class="hero-audience">{c.hero.audience}</p>
           <div class="hero-actions leadership-actions">
             <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.hero.primary}</a>
-            <a class="button button-ghost" href="#plan">{c.hero.secondary}</a>
+            <a class="button button-ghost" href="#assessment">{c.hero.secondary}</a>
           </div>
           <p class="hero-proof"><strong>{c.hero.proofLabel}:</strong> {c.hero.proof}</p>
           {report && (
@@ -235,7 +235,7 @@ const structuredData = {
       </div>
       <div class="section-shell engagement-grid" data-reveal data-stagger>
         {c.formats.items.map((item, i) => (
-          <article style={`--i:${i}`}>
+          <article id={'id' in item ? item.id : undefined} style={`--i:${i}`}>
             <h3>{item.title}</h3>
             <p class="engagement-meta">{item.meta}</p>
             <p>{item.body}</p>
@@ -243,6 +243,7 @@ const structuredData = {
             {'note' in item && <p class="engagement-note">{item.note}</p>}
             <div class="engagement-links">
               <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> →</span></a>
+              {'booking' in item && <a href={c.contact.bookUrl} target="_blank" rel="noopener">{item.booking}<span aria-hidden="true"> ↗</span></a>}
               {'secondary' in item && <a href={item.secondaryHref} download>{item.secondary}<span aria-hidden="true"> ↓</span></a>}
             </div>
           </article>
