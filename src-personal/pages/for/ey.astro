@@ -1,0 +1,302 @@
+---
+import Layout from '../../../src/layouts/Layout.astro';
+
+const canonical = 'https://treppmann.de/for/ey/';
+const email = 'Tobias@treppmann.de';
+const mailto = `mailto:${email}?subject=${encodeURIComponent('AI Experience bei EY Studio+')}`;
+const proof = [
+  {
+    number: '01',
+    eyebrow: 'Vom Arbeitsablauf zur Anwendung',
+    title: 'KI-Assistent im Zuschauerservice',
+    body: 'Aus wiederkehrenden Servicefragen entstand ein produktiver Microsoft-Copilot-Skill. Ich verband Prozessverständnis, Prompt- und Wissensstruktur mit freiwilligen Tests, Demonstrationen und individuellem Coaching.',
+    result: 'Produktiv eingesetzt',
+    note: 'und über konkrete Nutzung statt Nutzungszwang im Team verankert',
+    href: '/beispiele/ki-assistent-zuschauerservice/',
+    link: 'Fallbeispiel ansehen',
+  },
+  {
+    number: '02',
+    eyebrow: 'Von Medienbestand zu nutzbaren Signalen',
+    title: 'Aktive KI- und n8n-Pipeline',
+    body: 'Für einen Video-Studienbibel-Prototyp definierte und betreibe ich einen Workflow für Transkription, Inhaltsanalyse, Retrieval und virtuelle Clip-Erzeugung – verbunden mit bestehenden APIs und dem Produktkonzept.',
+    result: 'Ein durchgängiger Workflow',
+    note: 'statt isolierter KI-Demos oder unverbundener Einzelschritte',
+  },
+  {
+    number: '03',
+    eyebrow: 'Von Prompt zu öffentlicher Beta',
+    title: 'KI-Onboarding für Ninox',
+    body: 'Ich führte Produkt, UX und Prototyping für ein Onboarding, das natürliche Sprache in eine erste Datenbankanwendung übersetzt. Die Richtung wurde zur Grundlage der öffentlichen Ninox-AI-Beta.',
+    result: 'Produktentscheidung ermöglicht',
+    note: 'durch einen testbaren Ansatz für ein komplexes No-Code-Produkt',
+    href: '/beispiele/ki-onboarding-ninox/',
+    link: 'Fallbeispiel ansehen',
+  },
+];
+
+const capabilities = [
+  ['Chancen erkennen', 'Arbeitsabläufe, Nutzerbedürfnisse und Geschäftsziele gemeinsam betrachten – bevor ein Tool ausgewählt wird.'],
+  ['Schnell konkret werden', 'LLM-Workflows, API-verbundene Prototypen und n8n-Pipelines so weit bauen, dass Wert und Machbarkeit überprüfbar werden.'],
+  ['Menschen beteiligen', 'Workshops auf Deutsch und Englisch moderieren, Anforderungen sichtbar machen und Teams beim eigenen Ausprobieren begleiten.'],
+  ['Entscheidungen vorbereiten', 'Erfolgskriterien, Risiken und nächste Schritte so formulieren, dass Product, Design, Engineering und Führung anschließen können.'],
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  name: 'Tobias Treppmann für EY Studio+',
+  url: canonical,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Tobias Treppmann',
+    jobTitle: 'AI Product & Transformation Leader',
+    email,
+    url: 'https://treppmann.de/',
+    address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' },
+  },
+};
+---
+
+<Layout
+  lang="de-DE"
+  title="Tobias Treppmann für EY Studio+ – AI Experience"
+  description="Wie Tobias Treppmann Arbeitsabläufe in testbare KI-Produkte, Automationen und neue Arbeitsweisen übersetzt."
+  canonical={canonical}
+  alternateDe={canonical}
+  alternateEn="https://treppmann.de/en/"
+  alternateDefault={canonical}
+  noindex={true}
+  image="https://treppmann.de/images/tobias-treppmann.jpg"
+  structuredData={structuredData}
+>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <header class="topbar ey-topbar">
+    <a class="brand" href="/" aria-label="Tobias Treppmann – Startseite">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>für EY</span>
+    </a>
+    <nav aria-label="Seitennavigation">
+      <a href="#belege">Belege</a>
+      <a href="#beitrag">Beitrag</a>
+      <a href="#profil">Profil</a>
+    </nav>
+    <a class="topbar-contact" href={mailto}>Kontakt</a>
+  </header>
+
+  <main id="main" class="ey-page">
+    <section class="ey-hero section-dark">
+      <div class="section-shell ey-hero-grid">
+        <div class="ey-hero-copy">
+          <p class="ey-kicker">AI Experience · Product · Transformation</p>
+          <h1>Aus KI-Potenzial wird eine <em>erlebbare Entscheidung.</em></h1>
+          <p class="ey-lead">Ich verbinde Seniorität in Product und UX mit aktueller, praktischer KI-Umsetzung: Arbeitsabläufe verstehen, die richtige Intervention finden, einen funktionierenden Pilot bauen und Menschen bei der Einführung mitnehmen.</p>
+          <div class="ey-actions">
+            <a class="button button-primary" href="/downloads/Tobias-Treppmann-CV-EY.pdf" download>Lebenslauf herunterladen <span aria-hidden="true">↓</span></a>
+            <a class="button button-ghost" href="#belege">Ausgewählte Belege</a>
+          </div>
+          <p class="ey-context"><strong>Mein Beitrag zu EY Studio+:</strong> eine Brücke zwischen Nutzer- und Prozessverständnis, LLM-Workflows, schneller Prototypisierung und einer tragfähigen Übergabe an Produkt- und Engineering-Teams.</p>
+        </div>
+        <aside class="ey-portrait" aria-label="Profil Tobias Treppmann">
+          <div class="ey-orbit ey-orbit-one" aria-hidden="true"></div>
+          <div class="ey-orbit ey-orbit-two" aria-hidden="true"></div>
+          <img src="/images/tobias-treppmann-halftone.webp" alt="Tobias Treppmann" width="800" height="830" />
+          <div class="ey-id">
+            <strong>Tobias Treppmann</strong>
+            <span>AI Product &amp; Transformation Leader</span>
+            <span>Berlin · Deutsch / Englisch</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ey-signal section-paper" aria-label="Erfahrungsschwerpunkte">
+      <ul class="section-shell">
+        <li><strong>Product &amp; UX</strong><span>komplexe B2B- und Plattformprodukte</span></li>
+        <li><strong>AI Building</strong><span>Copilot, Claude, LLM-Workflows, APIs, n8n</span></li>
+        <li><strong>Enablement</strong><span>Workshops, Coaching und Einführung</span></li>
+        <li><strong>Leadership</strong><span>Entscheidungen und Teams über Funktionen hinweg</span></li>
+      </ul>
+    </section>
+
+    <section class="ey-proof section-paper" id="belege">
+      <div class="section-shell ey-heading" data-reveal>
+        <p class="ey-label">Ausgewählte Belege</p>
+        <div>
+          <h2>Nicht nur zeigen, was KI kann. Zeigen, <em>was als Nächstes sinnvoll ist.</em></h2>
+          <p>Die folgenden Arbeiten decken unterschiedliche Teile desselben Musters ab: vom echten Arbeitsablauf über den Pilot bis zur Nutzung.</p>
+        </div>
+      </div>
+      <div class="section-shell ey-proof-grid" data-reveal data-stagger>
+        {proof.map((item, i) => (
+          <article style={`--i:${i}`}>
+            <div class="ey-proof-meta"><b>{item.number}</b><span>{item.eyebrow}</span></div>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <div class="ey-proof-result"><strong>{item.result}</strong><span>{item.note}</span></div>
+            {item.href && <a href={item.href}>{item.link} <span aria-hidden="true">→</span></a>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="ey-contribution section-dark" id="beitrag">
+      <div class="section-shell ey-heading ey-heading-dark" data-reveal>
+        <p class="ey-label">Arbeitsweise</p>
+        <div>
+          <h2>Vier Dinge, die ich in ein AI-Experience-Team einbringe.</h2>
+          <p>Praktisches Bauen ist für mich kein Selbstzweck. Es verkürzt den Weg zu einer besseren Produkt- und Transformationsentscheidung.</p>
+        </div>
+      </div>
+      <ol class="section-shell ey-capabilities" data-reveal data-stagger>
+        {capabilities.map(([title, body], i) => (
+          <li style={`--i:${i}`}><b>{String(i + 1).padStart(2, '0')}</b><div><h3>{title}</h3><p>{body}</p></div></li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="ey-profile section-light" id="profil">
+      <div class="section-shell ey-profile-grid" data-reveal>
+        <div>
+          <p class="ey-label">Profil</p>
+          <h2>Breit genug für den Kontext. Praktisch genug für den Pilot.</h2>
+        </div>
+        <div class="ey-profile-copy">
+          <p>Meine Laufbahn verbindet Produktführung, User Research, Service- und Prozessgestaltung, Facilitation sowie agentisches Engineering. Bei Bibel TV arbeite ich aktuell an AI-gestützten Produkten und internen Workflows; zuvor habe ich bei Ninox, Hypoport, ChurchDesk, Datameer und Spreadshirt komplexe Produkt- und Transformationsentscheidungen mitgestaltet.</p>
+          <p>Diese Breite ist besonders dann wertvoll, wenn eine KI-Idee nicht nur technisch funktionieren, sondern für Nutzer verständlich, für Teams übernehmbar und für das Geschäft begründbar sein muss.</p>
+          <div class="ey-profile-links">
+            <a href="/beispiele/produktentwicklung-mit-ki/">KI-gestützte Produktentwicklung <span aria-hidden="true">→</span></a>
+            <a href="/beispiele/spendenbriefe-mit-ki/">KI-System für Spendenbriefe <span aria-hidden="true">→</span></a>
+            <a href="https://treppmann.design">Design-Portfolio <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ey-contact section-dark" id="contact">
+      <div class="section-shell ey-contact-grid" data-reveal>
+        <p class="ey-label">Nächster Schritt</p>
+        <div>
+          <h2>Lassen Sie uns über die passende Rolle und den möglichen Beitrag sprechen.</h2>
+          <p>Gern zeige ich einen der Workflows im Detail – einschließlich der Entscheidungen, Iterationen und Grenzen hinter dem Ergebnis.</p>
+          <div class="ey-contact-actions">
+            <a class="button button-primary" href={mailto}>{email}</a>
+            <a href="/downloads/Tobias-Treppmann-CV-EY.pdf" download>Lebenslauf herunterladen <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ey-footer">
+    <span>Tobias Treppmann · Berlin</span>
+    <div><a href="/">treppmann.de</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></div>
+  </footer>
+
+  <style>
+    .ey-topbar { grid-template-columns: 1fr auto auto; }
+    .ey-topbar nav { display: flex; gap: 1.5rem; }
+    .ey-topbar nav a { font-size: .69rem; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; }
+    .ey-hero { min-height: 900px; padding: 160px 0 88px; position: relative; overflow: hidden; }
+    .ey-hero::before { content: ''; position: absolute; width: 38vw; height: 38vw; border-radius: 50%; background: #d7ff3f; filter: blur(1px); right: -13vw; top: -16vw; opacity: .9; }
+    .ey-hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(350px, .75fr); gap: clamp(3rem, 8vw, 9rem); align-items: center; }
+    .ey-kicker, .ey-label { margin: 0; font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+    .ey-hero h1 { margin: 1.6rem 0 0; max-width: 980px; font-size: clamp(4.6rem, 7vw, 8.1rem); line-height: .92; letter-spacing: -.055em; font-weight: 540; }
+    .ey-hero h1 em, .ey-heading h2 em { color: var(--signal); font-family: var(--serif); font-style: normal; font-weight: 400; }
+    .ey-lead { margin: 3rem 0 0; max-width: 790px; font-size: clamp(1.25rem, 1.75vw, 1.75rem); line-height: 1.35; color: rgba(255,253,247,.78); }
+    .ey-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.4rem; }
+    .ey-context { max-width: 820px; margin: 3.2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line-dark); font-size: .9rem; color: rgba(255,253,247,.7); }
+    .ey-context strong { color: var(--white); }
+    .ey-portrait { position: relative; min-height: 630px; align-self: stretch; display: flex; align-items: flex-end; justify-content: center; }
+    .ey-portrait::before { content: ''; position: absolute; inset: 6% 0 8%; border-radius: 50% 50% 4% 4%; background: var(--paper); transform: rotate(-2deg); }
+    .ey-portrait img { position: relative; z-index: 2; width: min(100%, 590px); height: auto; filter: contrast(1.08); }
+    .ey-orbit { position: absolute; z-index: 3; border: 1px solid rgba(17,17,15,.55); border-radius: 50%; }
+    .ey-orbit-one { width: 86%; aspect-ratio: 1; top: 8%; transform: rotate(18deg); }
+    .ey-orbit-two { width: 65%; aspect-ratio: 1; top: 21%; border-style: dashed; transform: rotate(-26deg); }
+    .ey-id { position: absolute; z-index: 4; left: -1.3rem; right: 1.5rem; bottom: 1rem; padding: 1rem 1.2rem; background: var(--acid); color: var(--ink); transform: rotate(-1.5deg); box-shadow: 8px 8px 0 var(--signal); display: grid; gap: .15rem; }
+    .ey-id strong { font-size: 1.15rem; }
+    .ey-id span { font-size: .7rem; }
+    .ey-signal ul { list-style: none; margin: 0 auto; padding-top: 1.6rem; padding-bottom: 1.6rem; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .ey-signal li { min-height: 80px; padding: 0 1.5rem; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; gap: .3rem; }
+    .ey-signal li:first-child { padding-left: 0; }
+    .ey-signal li:last-child { border: 0; }
+    .ey-signal strong { font-size: .9rem; }
+    .ey-signal span { color: var(--muted); font-size: .7rem; line-height: 1.4; }
+    .ey-proof, .ey-contribution, .ey-profile, .ey-contact { padding: 8rem 0; }
+    .ey-heading { display: grid; grid-template-columns: minmax(190px, .32fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+    .ey-heading h2, .ey-profile h2, .ey-contact h2 { margin: 0; max-width: 1030px; font-size: clamp(3.3rem, 5.3vw, 6.2rem); line-height: .98; letter-spacing: -.045em; font-weight: 520; }
+    .ey-heading > div > p { max-width: 720px; margin: 2rem 0 0; color: var(--muted); font-size: 1.08rem; }
+    .ey-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 5.5rem; border-top: 1px solid var(--line); }
+    .ey-proof-grid article { min-height: 600px; padding: 1.5rem 2rem 2rem 0; border-right: 1px solid var(--line); display: flex; flex-direction: column; }
+    .ey-proof-grid article:not(:first-child) { padding-left: 2rem; }
+    .ey-proof-grid article:last-child { border-right: 0; }
+    .ey-proof-meta { min-height: 65px; display: flex; justify-content: space-between; gap: 2rem; font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; }
+    .ey-proof-meta b { font-family: var(--mono); }
+    .ey-proof-meta span { max-width: 220px; text-align: right; }
+    .ey-proof-grid h3 { margin: 4.5rem 0 1.2rem; font-size: clamp(2rem, 2.7vw, 3.2rem); line-height: 1.02; letter-spacing: -.035em; }
+    .ey-proof-grid article > p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .ey-proof-result { margin-top: auto; padding-top: 3rem; display: grid; gap: .5rem; }
+    .ey-proof-result strong { font-size: 1.35rem; }
+    .ey-proof-result span { color: var(--muted); font-size: .72rem; max-width: 320px; }
+    .ey-proof-grid a { align-self: flex-start; margin-top: 1.8rem; padding-bottom: .25rem; border-bottom: 1px solid; font-size: .75rem; font-weight: 650; }
+    .ey-heading-dark > div > p { color: rgba(255,253,247,.67); }
+    .ey-capabilities { list-style: none; padding-top: 4.5rem; padding-left: 0; display: grid; grid-template-columns: repeat(2, 1fr); }
+    .ey-capabilities li { min-height: 280px; padding: 1.5rem 3rem 2rem 0; border-top: 1px solid var(--line-dark); display: grid; grid-template-columns: 70px 1fr; gap: 1rem; }
+    .ey-capabilities li:nth-child(even) { padding-left: 3rem; border-left: 1px solid var(--line-dark); }
+    .ey-capabilities b { font-family: var(--mono); color: var(--acid); font-size: .7rem; }
+    .ey-capabilities h3 { margin: 3.2rem 0 1rem; font-size: clamp(1.7rem, 2.2vw, 2.7rem); }
+    .ey-capabilities p { margin: 0; max-width: 480px; color: rgba(255,253,247,.67); font-size: .9rem; }
+    .ey-profile-grid, .ey-contact-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(3rem, 8vw, 9rem); }
+    .ey-profile h2, .ey-contact h2 { margin-top: 2rem; font-size: clamp(3rem, 4.6vw, 5.4rem); }
+    .ey-profile-copy { padding-top: 2rem; }
+    .ey-profile-copy > p { margin: 0 0 1.4rem; font-size: 1.08rem; color: var(--muted); }
+    .ey-profile-copy > p:first-child { color: var(--ink); font-size: 1.25rem; }
+    .ey-profile-links { margin-top: 3rem; display: grid; border-top: 1px solid var(--line); }
+    .ey-profile-links a { padding: 1rem 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 2rem; font-size: .82rem; font-weight: 650; }
+    .ey-contact-grid { align-items: start; }
+    .ey-contact p:not(.ey-label) { max-width: 760px; color: rgba(255,253,247,.7); font-size: 1.1rem; }
+    .ey-contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2.5rem; }
+    .ey-contact-actions > a:not(.button) { border-bottom: 1px solid var(--line-dark); font-size: .76rem; }
+    .ey-footer { padding: 1.5rem 32px; background: var(--ink); color: rgba(255,253,247,.65); border-top: 1px solid var(--line-dark); display: flex; justify-content: space-between; gap: 2rem; font-size: .68rem; }
+    .ey-footer div { display: flex; gap: 1.2rem; }
+
+    @media (max-width: 900px) {
+      .ey-hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); gap: 3rem; }
+      .ey-hero h1 { font-size: clamp(4rem, 8vw, 5.8rem); }
+      .ey-portrait { min-height: 520px; }
+      .ey-signal ul, .ey-proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .ey-signal li:nth-child(2) { border-right: 0; }
+      .ey-proof-grid article:nth-child(2) { border-right: 0; }
+      .ey-proof-grid article:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); min-height: 470px; }
+      .ey-profile-grid, .ey-contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .ey-topbar { grid-template-columns: 1fr auto; padding: 0 20px; }
+      .ey-topbar nav { display: none; }
+      .ey-hero { min-height: auto; padding: 124px 0 72px; }
+      .ey-hero::before { width: 80vw; height: 80vw; top: -42vw; right: -35vw; }
+      .ey-hero-grid { grid-template-columns: 1fr; }
+      .ey-hero h1 { font-size: clamp(3.45rem, 16vw, 4.7rem); }
+      .ey-kicker { max-width: 100%; font-size: .57rem; letter-spacing: .045em; }
+      .ey-lead { font-size: 1.15rem; }
+      .ey-actions .button { width: 100%; }
+      .ey-portrait { min-height: 520px; margin-top: 1rem; }
+      .ey-id { left: .3rem; right: .3rem; }
+      .ey-signal ul { grid-template-columns: 1fr 1fr; }
+      .ey-signal li { padding: .9rem; border-bottom: 1px solid var(--line); }
+      .ey-signal li:first-child { padding-left: .9rem; }
+      .ey-signal li:nth-child(2) { border-right: 0; }
+      .ey-signal li:nth-child(3), .ey-signal li:nth-child(4) { border-bottom: 0; }
+      .ey-proof, .ey-contribution, .ey-profile, .ey-contact { padding: 5.5rem 0; }
+      .ey-heading { grid-template-columns: 1fr; gap: 1.2rem; }
+      .ey-heading h2, .ey-profile h2, .ey-contact h2 { font-size: 3.2rem; }
+      .ey-proof-grid { grid-template-columns: 1fr; margin-top: 3.5rem; }
+      .ey-proof-grid article, .ey-proof-grid article:not(:first-child), .ey-proof-grid article:last-child { grid-column: auto; min-height: 480px; padding: 1.4rem 0 2rem; border-right: 0; border-top: 0; border-bottom: 1px solid var(--line); }
+      .ey-proof-grid h3 { margin-top: 3rem; }
+      .ey-capabilities { grid-template-columns: 1fr; }
+      .ey-capabilities li, .ey-capabilities li:nth-child(even) { padding: 1.2rem 0 2rem; border-left: 0; grid-template-columns: 48px 1fr; min-height: 240px; }
+      .ey-profile-grid, .ey-contact-grid { gap: 2rem; }
+      .ey-footer { padding: 1.5rem 20px; flex-direction: column; }
+    }
+  </style>
+</Layout>
