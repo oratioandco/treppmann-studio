@@ -31,7 +31,7 @@ Tobias, in der ersten Person. Ein Praktiker, der selbst baut, kein Berater mit F
 
 ## 2. Für wen
 
-Geschäftsführung im Mittelstand (und Scale-ups): Inhaber oder angestellte GF, oft 45–65,
+Geschäftsführung und KI-Verantwortliche in Unternehmen aller Branchen. „Mittelstand“ gehört nicht in Titel, Hero oder Einstieg, weil es andere Leser ausschließt; in Studien und im Report darf es stehen. Typisch: Inhaber oder angestellte GF, oft 45–65,
 Verantwortung für Umsatz, Marge, Leute, Nachfolge. Hat schon viele KI-Versprechen gehört
 („sophisticated market“), ist skeptisch gegenüber Hype und Beratern, entscheidet nach Empfehlung
 und Referenzen. Die Website soll **bestätigen**, was ein Empfehlender gesagt hat, nicht allein
@@ -195,7 +195,9 @@ bei der Leserin.
 - [ ] Durchgehend „Sie“, ein Gender-System, keine Calques (Tabelle oben).
 - [ ] Jede Überschrift allein verständlich; H1 klar, nicht verspielt.
 - [ ] Jede Behauptung mit Beleg im nächsten Satz; Zahlen mit Basis, Zeitraum, Quelle.
-- [ ] Mindestens eine ehrliche Grenze genannt.
+- [ ] Nichts Defensives: kein „zugegeben“, kein „obwohl ich kein …“, keine Rechtfertigung des eigenen Werdegangs. Die Seite verkauft; geprüft wird intern gegen CAREER-TRUTH.
+- [ ] Lesetest für jeden Abschnitt: Denkt eine Führungskraft „Der hat es verstanden, mit dem sollten wir arbeiten“?
+- [ ] Gebaut heißt gebaut, „live“ erst, wenn es live ist.
 - [ ] Verben statt Substantivketten; keine Wörter aus der Verbotsliste.
 - [ ] Humor höchstens an den Rändern, nie bei Ergebnissen.
 - [ ] Die Leserin bekommt etwas mit (Erkenntnis, Frage, Werkzeug, nächster Schritt).

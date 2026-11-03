@@ -1175,3 +1175,30 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
   .service-map-arrow { width: 48px; transform: rotate(90deg); margin: .4rem 0 .4rem auto; }
   .service-map-support { grid-template-columns: 1fr; gap: .65rem; padding: 1.2rem; }
 }
+
+/* Five roles: hero teaser, Zusammenarbeit list, About pitch */
+.hero-roles { max-width: 760px; margin: 1.8rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .55rem; }
+.hero-roles a { display: inline-block; padding: .5rem .8rem; border: 1px solid var(--line-dark); font-size: .92rem; font-weight: 600; color: var(--white); transition: border-color 160ms ease, color 160ms ease; }
+.hero-roles a:hover, .hero-roles a:focus-visible { border-color: var(--signal); color: var(--signal); }
+.collage-portrait-link { display: contents; }
+.collage-portrait-link:focus-visible img { outline: 2px solid var(--signal); outline-offset: 4px; }
+.role-list { margin-top: 4rem; border-top: 1px solid var(--line); }
+.role-list article { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; padding: 2.4rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+.role-list h3 { font-size: clamp(1.7rem, 2.4vw, 2.5rem); }
+.role-situation { margin-top: .8rem; font-size: 1.05rem; color: var(--muted); }
+.role-body > p { max-width: 640px; font-size: 1.02rem; color: #4d4c45; }
+.role-body > p + p { margin-top: .9rem; }
+.role-body .engagement-meta { color: var(--ink); font-size: .9rem; font-weight: 650; }
+.role-body .role-proof { color: var(--ink); font-weight: 550; }
+.role-body .engagement-note { font-size: .88rem; color: var(--muted); }
+.role-body .engagement-links { margin-top: 1.3rem; }
+.role-body .engagement-links a { font-weight: 650; font-size: .9rem; border-bottom: 1px solid; }
+.about-pitch { margin-top: 1.4rem; }
+.about-pitch p { max-width: 680px; font-size: 1.05rem; }
+.about-pitch p + p { margin-top: 1rem; }
+.about-link { display: flex; flex-wrap: wrap; gap: 1.6rem; }
+@media (max-width: 760px) { .role-list article { grid-template-columns: 1fr; gap: 1.1rem; padding: 2rem 0; } }
+@media (min-width: 761px) { .hero-title-line { display: block; } }
+.hero-collage:has(.collage-portrait-link) .collage-portrait { bottom: 10%; }
+.hero-collage:has(.collage-portrait-link) { aspect-ratio: 4 / 5; }
+.role-list article:last-child { border-bottom: 0; }

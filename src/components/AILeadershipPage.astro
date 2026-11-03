@@ -77,14 +77,14 @@ const structuredData = {
       <div class="section-shell leadership-hero-shell">
         <div class="leadership-hero-copy">
           <p class="hero-role">{c.hero.kicker}</p>
-          <h1>{c.hero.title}</h1>
+          <h1>{c.hero.title.split(/(?<=\.) /).map((part) => <span class="hero-title-line">{part} </span>)}</h1>
           <p class="hero-intro">{c.hero.intro}</p>
+          <ul class="hero-roles">{c.hero.roles.map(([name, href]) => <li><a href={href}>{name}</a></li>)}</ul>
           <p class="hero-audience">{c.hero.audience}</p>
           <div class="hero-actions leadership-actions">
             <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.hero.primary}</a>
-            <a class="button button-ghost" href="#assessment">{c.hero.secondary}</a>
+            <a class="button button-ghost" href="#formats">{c.hero.secondary}</a>
           </div>
-          <p class="hero-proof"><strong>{c.hero.proofLabel}:</strong> {c.hero.proof}</p>
           {report && (
             <p class="hero-tools">
               <a href={checkHref}><span class="hero-tools-mark" aria-hidden="true"><i></i><i></i><i></i></span>{report.heroCheck}<span aria-hidden="true"> →</span></a>
@@ -94,17 +94,7 @@ const structuredData = {
         </div>
         <figure class="hero-collage">
           <div class="collage-sun" aria-hidden="true"></div>
-          <nav class="collage-steps" aria-label={c.hero.stepsLabel}>
-            <p class="collage-steps-label"><span>{c.hero.stepsLabel}</span> <a href={c.hero.stepsHref}>{c.hero.stepsAction}<span aria-hidden="true"> →</span></a></p>
-            <ol>
-              {c.hero.stages.map((name, i) => (
-                <li style={`--n:${i + 1}`}>
-                  <a href={c.hero.stepsHref}><b>{i + 1}</b><span class="collage-step-name">{name}</span></a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-          <img class="collage-portrait" src="/images/tobias-treppmann-halftone.webp" alt={c.hero.portraitAlt} width="800" height="830" />
+          <a class="collage-portrait-link" href="#about" aria-label={c.hero.portraitLink}><img class="collage-portrait" src="/images/tobias-treppmann-halftone.webp" alt={c.hero.portraitAlt} width="800" height="830" /></a>
           <p class="collage-ticket" aria-hidden="true">
             <span>{c.hero.ticket[0]}</span>
             <strong>{c.hero.ticket[1]}</strong>
@@ -233,34 +223,26 @@ const structuredData = {
         <p class="section-label">{c.formats.label}</p>
         <div><h2>{c.formats.title}</h2><p class="lead">{c.formats.intro}</p></div>
       </div>
-      <nav class="section-shell service-map" aria-label={c.formats.diagram.label}>
-        <div class="service-map-path">
-          <a href="#assessment"><strong>{c.formats.diagram.assessment}</strong><span>{c.formats.diagram.assessmentBody}</span></a>
-          <svg class="service-map-arrow" viewBox="0 0 80 24" fill="none" aria-hidden="true"><path d="M2 12h74m-10-9 10 9-10 9" stroke="currentColor" stroke-width="2" /></svg>
-          <a href="#delivery"><strong>{c.formats.diagram.delivery}</strong><span>{c.formats.diagram.deliveryBody}</span></a>
-        </div>
-        <a class="service-map-support" href="#enablement"><strong>{c.formats.diagram.enablement}</strong><span>{c.formats.diagram.enablementBody}</span></a>
-        <p class="service-map-note">{c.formats.diagram.note}</p>
-      </nav>
-      <div class="section-shell engagement-grid" data-reveal data-stagger>
+      <div class="section-shell role-list" data-reveal data-stagger>
         {c.formats.items.map((item, i) => (
-          <article id={'id' in item ? item.id : undefined} style={`--i:${i}`}>
-            <h3>{item.title}</h3>
-            <p class="engagement-meta">{item.meta}</p>
-            <p>{item.body}</p>
-            {'includes' in item && <ul class="engagement-includes">{item.includes.map((x) => <li>{x}</li>)}</ul>}
-            {'note' in item && <p class="engagement-note">{item.note}</p>}
-            <div class="engagement-links">
-              <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> →</span></a>
-              {'booking' in item && <a href={c.contact.bookUrl} target="_blank" rel="noopener">{item.booking}<span aria-hidden="true"> ↗</span></a>}
-              {'secondary' in item && <a href={item.secondaryHref} download>{item.secondary}<span aria-hidden="true"> ↓</span></a>}
+          <article id={item.id} style={`--i:${i}`}>
+            <div class="role-head">
+              <h3>{item.title}</h3>
+              <p class="role-situation">{item.situation}</p>
+            </div>
+            <div class="role-body">
+              <p class="engagement-meta">{item.meta}</p>
+              <p>{item.body}</p>
+              {'proof' in item && <p class="role-proof">{item.proof}</p>}
+              {'includes' in item && <ul class="engagement-includes">{item.includes.map((x) => <li>{x}</li>)}</ul>}
+              {'note' in item && <p class="engagement-note">{item.note}</p>}
+              <div class="engagement-links">
+                <a href={mail(item.subject)}>{item.action}<span aria-hidden="true"> →</span></a>
+                {'booking' in item && <a href={c.contact.bookUrl} target="_blank" rel="noopener">{item.booking}<span aria-hidden="true"> ↗</span></a>}
+              </div>
             </div>
           </article>
         ))}
-      </div>
-      <div class="section-shell engagement-extra" data-reveal>
-        <div><h3>{c.formats.extra.title}</h3><p class="engagement-meta">{c.formats.extra.meta}</p></div>
-        <div><p>{c.formats.extra.body}</p><div class="engagement-links"><a href={mail(c.formats.extra.subject)}>{c.formats.extra.action}<span aria-hidden="true"> →</span></a><a href={c.formats.extra.secondaryHref} download>{c.formats.extra.secondary}<span aria-hidden="true"> ↓</span></a></div></div>
       </div>
       <div class="section-shell requirements">
         <div>
@@ -285,7 +267,8 @@ const structuredData = {
             <figcaption>{c.about.stageCaption}</figcaption>
           </figure>
         </div>
-        <div><h2>{c.about.title}</h2><p class="lead">{c.about.body}</p>
+        <div><h2>{c.about.title}</h2><p class="lead">{c.about.lead}</p>
+          <div class="about-pitch">{c.about.paragraphs.map((text) => <p>{text}</p>)}</div>
           <figure class="about-keynote">
             <img src="/images/collage/tobias-talk-2020-collage.webp" alt={c.about.keynoteAlt} width="960" height="640" loading="lazy" />
             {c.about.keynoteLabel && <span class="about-keynote-pill">{c.about.keynoteLabel}</span>}
@@ -298,7 +281,7 @@ const structuredData = {
           <article style={`--i:${i}`}><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
-      <div class="section-shell about-link"><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗︎</span></a></div>
+      <div class="section-shell about-link"><a class="text-link" href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗︎</span></a><a class="text-link" href={c.about.cvHref} download>{c.about.cv}<span aria-hidden="true"> ↓</span></a><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗︎</span></a></div>
     </section>
 
     <section class="faq-section section-light" id="faq">

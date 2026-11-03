@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
       bigLabel: 'selbst für komplexe Briefe mit vielen Punkten auf einmal, weil die KI sofort einen Ansatzpunkt liefert',
       items: [
         'Im Team arbeiten viele in Teilzeit. Den Ton von Bibel TV trafen neue Kolleginnen und Kollegen früher erst nach Wochen, manchmal Monaten. Heute antworten sie von Anfang an in dieser Stimme.',
-        '2026 nutzte zunächst ein Teil des Teams den Assistenten regelmäßig. Heute gehört er im ganzen Team zum Alltag, auch wenn nicht jeder Brief damit entsteht.',
+        '2026 nutzte zunächst ein Teil des Teams den Assistenten regelmäßig. Heute gehört er im ganzen Team zum Alltag.',
         'Beide, die anfangs keine KI wollten, nutzen ihn heute regelmäßig.',
         'Jede Antwort wird weiterhin von einem Menschen gelesen, angepasst und verschickt.',
       ],
@@ -562,7 +562,7 @@ export const caseStudiesEn: CaseStudy[] = [
       bigLabel: 'even for complex letters with many points at once, because the AI gives an immediate starting point',
       items: [
         'Many on the team work part-time. New colleagues used to take weeks, sometimes months, to find the Bibel TV voice. Today they reply in that voice from the start.',
-        'In 2026, part of the team used the assistant regularly at first. Today it’s part of everyday work across the team, even if not every letter is written with it.',
+        'In 2026, part of the team used the assistant regularly at first. Today it’s part of everyday work across the team.',
         'Both people who didn’t want AI at first now use it regularly.',
         'Every reply is still read, adjusted, and sent by a person.',
       ],
