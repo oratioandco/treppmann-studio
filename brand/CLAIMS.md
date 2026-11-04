@@ -34,6 +34,7 @@ not in this table does not go into a post, deck, video, print-out or page.** The
 | 26 | More than 11,000 video clips from about 3,500 videos; new videos go through the pipeline automatically | case study, counted Oct 9, 2026 | yes, floor figures | Tobias | yes — refresh when a new count exists |
 | 27 | Color API live in production; Aperto app headed to the App Store in November 2026 | CT §2 Bibel TV (g) | as stated by Tobias | Tobias | yes — change the Aperto line once it is live or if the date moves |
 | 28 | Engineers at HairDirect asked on their own whether to test with users first, after almost a year | CT §2 Bibel TV (g) | his account | Tobias | yes — paraphrase, company unnamed on the site |
+| 29 | AI system for an unnamed donor-funded organization, built from an analysis of past fundraising letters; with human input and guidance it writes measurably more successful letters; the first was a success | CT §2 Bibel TV (b); `data/verification-log/2026-11-04-fundraising-system-measurably-more-successful.md` | yes, as stated by Tobias, no public figure | Tobias | yes: organization unnamed, no years, no amounts, no basis for "measurably" |
 
 ## Never
 

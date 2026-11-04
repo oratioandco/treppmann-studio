@@ -83,7 +83,7 @@ export const content = {
       ],
       moreTitle: 'Weitere Workflow-Systeme',
       more: [
-        ['Fundraising', 'Vergangene Spendenbriefe analysiert und daraus einen geführten, menschlich kontrollierten Multi-Channel-Workflow gebaut.'],
+        ['Fundraising', 'Vergangene Spendenbriefe ausgewertet und daraus ein KI-System gebaut, das mit menschlichem Input messbar erfolgreichere Briefe schreibt.'],
         ['Zuschauerservice', 'Ein Copilot erstellt Antworten aus dem Servicehandbuch; Prüfung, Bearbeitung und Versand bleiben beim Team.'],
         ['Video-Metadaten', 'Manuelles Logging in strukturierte KI-gestützte Erfassung übersetzt, ohne redaktionelles Urteil zu entfernen.'],
         ['Design-System-API', 'Wiederkehrende Entscheidungen und Plattform-Synchronisation als gemeinsames, maschinenlesbares System organisiert.'],
@@ -209,7 +209,7 @@ export const content = {
       ],
       moreTitle: 'More workflow systems',
       more: [
-        ['Fundraising', 'Analyzed past fundraising letters and turned the findings into a guided, human-controlled multi-channel workflow.'],
+        ['Fundraising', 'Analyzed past fundraising letters and built the findings into an AI system that, with human input, writes measurably more successful letters.'],
         ['Customer support', 'A copilot drafts answers from the service handbook; the team retains review, editing and send decisions.'],
         ['Video metadata', 'Turned manual logging into structured AI-assisted capture without removing editorial judgment.'],
         ['Design system API', 'Organized repeated decisions and cross-platform synchronization as a shared, machine-readable system.'],

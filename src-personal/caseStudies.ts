@@ -378,18 +378,18 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'spendenbriefe-mit-ki',
-    label: 'Spendenbriefe · Analyse und KI-Werkzeug',
-    title: 'Warum manche Spendenbriefe viel mehr bringen als andere, und wie KI beim nächsten hilft',
-    lead: 'Eine spendenfinanzierte Organisation wollte wissen, warum manche Spendenbriefe viel mehr bringen als andere. Statt einer KI, die Briefe schreibt, entstand ein Werkzeug, das beim Schreiben fragt und prüft.',
-    description: 'Wie eine spendenfinanzierte Organisation ihre Spendenbriefe fair vergleicht, die echten Ausreißer findet und daraus ein KI-Werkzeug macht, das fragt und prüft, statt in einem Zug zu schreiben.',
+    label: 'Spendenbriefe · KI-System',
+    title: 'Ein KI-System, das messbar erfolgreichere Spendenbriefe schreibt',
+    lead: 'Für eine spendenfinanzierte Organisation habe ich ein KI-System gebaut, das messbar erfolgreichere Spendenbriefe schreibt. Der Mensch gibt Input und Richtung vor. Das System bringt mit, was die Auswertung mehrerer Jahre Aussendungen gezeigt hat.',
+    description: 'Wie aus der Auswertung mehrerer Jahre Spendenbriefe ein KI-System wurde, das mit menschlichem Input messbar erfolgreichere Briefe schreibt.',
     object: 'envelope',
     shape: 'circle',
     facts: [
       ['Organisation', 'Spendenfinanzierte gemeinnützige Organisation (anonymisiert)'],
       ['Ausgangslage', 'Spendenbriefe mehrmals im Jahr. Manche brachten weit mehr als andere, und niemand wusste genau, warum.'],
-      ['Was ich gemacht habe', 'Mehrere Jahre Aussendungen ausgewertet, die echten Ausreißer gefunden, die Muster gegen allgemeine Fundraising-Regeln geprüft und daraus ein KI-Werkzeug gebaut, das durch den Brief führt.'],
-      ['Ergebnis', 'Der erste Brief, der mit dem Werkzeug entstand, war ein Erfolg.'],
-      ['Drei Erkenntnisse', 'Erst fair vergleichen, dann urteilen. Nur Muster übernehmen, die auch allgemeinen Regeln standhalten. Die KI fragen und prüfen lassen, statt sie in einem Zug schreiben zu lassen.'],
+      ['Was ich gemacht habe', 'Mehrere Jahre Aussendungen ausgewertet, die echten Ausreißer gefunden, die Muster gegen allgemeine Fundraising-Regeln geprüft und daraus ein KI-System gebaut, das die Briefe mit Input und Richtung vom Menschen schreibt.'],
+      ['Ergebnis', 'Die Briefe aus dem System sind messbar erfolgreicher. Schon der erste war ein Erfolg.'],
+      ['Drei Erkenntnisse', 'Erst fair vergleichen, dann urteilen. Nur Muster übernehmen, die auch allgemeinen Regeln standhalten. Die Erkenntnisse in das System einbauen, das schreibt.'],
     ],
     opening: {
       title: 'Im Haus galt eine Regel: Der Monat entscheidet',
@@ -421,15 +421,15 @@ export const caseStudies: CaseStudy[] = [
         nav: 'Muster',
         paras: [
           'Ich habe die starken und die schwachen Briefe nebeneinandergelegt: Wie beginnen sie? Wie konkret ist die Bitte? Welche Rolle spielt der Nachsatz? Dazu kamen die Stilanalyse und das Schreibhandbuch, das es im Haus schon gab.',
-          'Dann der wichtigste Schritt: Jedes gefundene Muster habe ich gegen allgemein bekannte Regeln für Spendenbriefe geprüft. Vieles deckte sich, etwa dass eine konkrete, greifbare Bitte besser wirkt als eine abstrakte Mission. Ins Werkzeug kam nur, was beides bestanden hat: die eigenen Zahlen und das allgemeine Fachwissen. Die Muster, die nur für diese Organisation gelten, bleiben bei ihr.',
+          'Dann der wichtigste Schritt: Jedes gefundene Muster habe ich gegen allgemein bekannte Regeln für Spendenbriefe geprüft. Vieles deckte sich, etwa dass eine konkrete, greifbare Bitte besser wirkt als eine abstrakte Mission. Ins System kam nur, was beides bestanden hat: die eigenen Zahlen und das allgemeine Fachwissen. Die Muster, die nur für diese Organisation gelten, bleiben bei ihr.',
         ],
       },
       {
-        title: 'Ein Werkzeug, das fragt, bevor es schreibt',
-        nav: 'Werkzeug',
+        title: 'Aus der Auswertung wird ein System, das schreibt',
+        nav: 'System',
         paras: [
-          'Aus Analyse, Regeln und Schreibhandbuch habe ich ein KI-Werkzeug gebaut, auf Basis von Claude, einem KI-Modell wie ChatGPT. Es schreibt den Brief nicht in einem Zug. Es fragt zuerst: Was ist der Anlass? Für wen ist der Brief? Welches konkrete Vorhaben soll er nennen? Dann führt es Schritt für Schritt durch den Aufbau und prüft den Entwurf gegen die Kriterien, bevor es weitergeht.',
-          'Das ist bewusst langsamer als ein Knopf „Brief erstellen“. Der häufigste Fehler von KI-Texten ist ein Entwurf, der gut klingt, aber genau das Konkrete verfehlt, das nur jemand im Haus weiß. Die Fragen holen dieses Wissen ab. Die Prüfungen sorgen dafür, dass die Erkenntnisse aus der Analyse im Brief ankommen. Was verschickt wird, entscheidet weiter ein Mensch.',
+          'Aus Analyse, Regeln und Schreibhandbuch habe ich ein KI-System gebaut, auf Basis von Claude, einem KI-Modell wie ChatGPT. Der Mensch gibt Input und Richtung vor. Das System fragt zuerst: Was ist der Anlass? Für wen ist der Brief? Welches konkrete Vorhaben soll er nennen? Dann schreibt es den Brief Schritt für Schritt und prüft den Entwurf gegen die Kriterien, bevor es weitergeht.',
+          'Das ist bewusst mehr als ein Knopf „Brief erstellen“. Der häufigste Fehler von KI-Texten ist ein Entwurf, der gut klingt, aber genau das Konkrete verfehlt, das nur jemand im Haus weiß. Die Fragen holen dieses Wissen ab. Die Prüfungen sorgen dafür, dass die Erkenntnisse aus der Analyse im Brief ankommen.',
         ],
       },
     ],
@@ -437,19 +437,19 @@ export const caseStudies: CaseStudy[] = [
       { src: '/images/beispiele/spendenbriefe-illustration.svg', alt: 'Illustration mit erfundenen Werten: Punkte je Brief über und unter einer Null-Linie, gruppiert nach Monat A bis F. In jedem Monat liegen einzelne Briefe weit über und weit unter dem Monatsdurchschnitt.', caption: 'So sah das Bild aus, nachdem die Saison herausgerechnet war. Die Werte sind erfunden; die echten Zahlen bleiben bei der Organisation.', width: 1200, height: 700 },
     ],
     result: {
-      title: 'Der erste Brief',
+      title: 'Messbar erfolgreichere Briefe',
       nav: 'Ergebnis',
-      big: 'Ein Erfolg',
-      bigLabel: 'war gleich der erste Spendenbrief, der mit dem Werkzeug entstand.',
+      big: 'Messbar erfolgreicher',
+      bigLabel: 'sind die Spendenbriefe, die mit dem System entstehen. Schon der erste war ein Erfolg.',
       items: [
-        'Die Organisation weiß jetzt, warum ein Brief wirkt, und dieses Wissen wird bei jedem neuen Brief abgefragt, statt in einzelnen Köpfen zu stecken.',
-        'Das Werkzeug fragt, führt und prüft. Der Mensch entscheidet.',
+        'Was einen starken Brief ausmacht, steckt jetzt im System, das den nächsten schreibt, statt in einzelnen Köpfen.',
+        'Der Mensch gibt Input und Richtung vor, das System bringt die Auswertung mit. Die Zahlen bleiben bei der Organisation.',
       ],
     },
     callback: {
       title: 'Zurück zur Regel',
       paras: [
-        'Der Monat zählt weiterhin. Er setzt die Basis, mit der man einen Brief fair beurteilt. Aber ob ein Brief gut wird, entscheidet sich beim Schreiben. Genau dort hilft jetzt das Werkzeug.',
+        'Der Monat zählt weiterhin. Er setzt die Basis, mit der man einen Brief fair beurteilt. Aber ob ein Brief gut wird, entscheidet sich beim Schreiben. Genau dort arbeitet jetzt das System.',
       ],
     },
     takeaways: {
@@ -458,7 +458,7 @@ export const caseStudies: CaseStudy[] = [
       items: [
         ['Vergleichen Sie fair, bevor Sie urteilen.', 'Rechnen Sie Größe und Saison heraus und messen Sie jedes Ergebnis an seinem eigenen Umfeld. Sonst halten Sie den Kalender für eine Erkenntnis.'],
         ['Übernehmen Sie nur Muster, die zwei Prüfungen bestehen.', 'Ihre eigenen Zahlen und das allgemeine Fachwissen. Was nur in einer der beiden Quellen auftaucht, ist oft Zufall.'],
-        ['Lassen Sie die KI fragen und prüfen, nicht in einem Zug schreiben.', 'Das Wissen über den konkreten Anlass liegt bei Ihren Leuten. Ein gutes Werkzeug holt es ab, bevor es formuliert.'],
+        ['Bauen Sie Ihre Erkenntnisse in das System ein, das schreibt.', 'Lassen Sie die KI fragen und prüfen, statt nur auf Knopfdruck zu formulieren. Das Wissen über den konkreten Anlass liegt bei Ihren Leuten. Ein gutes System holt es ab, bevor es schreibt.'],
       ],
       notFitLabel: 'Wann es nicht passt',
       notFit: 'Wenn Sie nur eine Handvoll vergleichbarer Aussendungen haben. Dann sind die Unterschiede zu klein, um echte Muster von Zufall zu trennen. Beginnen Sie dann mit klaren Schreibregeln und sammeln Sie Ergebnisse.',
@@ -472,7 +472,7 @@ export const caseStudies: CaseStudy[] = [
     },
     cta: {
       title: 'Stecken in Ihren alten Zahlen auch Muster?',
-      body: 'In 30 Minuten sprechen wir darüber, welche Ihrer Texte sich auswerten lassen und ob daraus ein Werkzeug für Ihr Team werden kann. Kostenlos und ohne Verpflichtung.',
+      body: 'In 30 Minuten sprechen wir darüber, welche Ihrer Texte sich auswerten lassen und ob daraus ein System für Ihr Team werden kann. Kostenlos und ohne Verpflichtung.',
     },
   },
 ];
@@ -1012,16 +1012,16 @@ export const caseVisuals: Record<string, CaseVisuals> = {
   },
   'spendenbriefe-mit-ki': {
     quote: { text: 'Der Monat setzt die Basis. Der Brief entscheidet.', by: 'Was die Analyse gezeigt hat' },
-    flow: { title: 'Vom Datensatz zum Werkzeug', kind: 'flow', nodes: [
+    flow: { title: 'Vom Datensatz zum System', kind: 'flow', nodes: [
       ['Vergleichbar machen', 'Ertrag pro tausend Briefe', 'neutral'],
       ['Saison herausrechnen', 'jeder Brief gegen seinen Monat', 'neutral'],
       ['Ausreißer finden', 'drei Gruppen statt einer', 'human'],
       ['Muster doppelt prüfen', 'eigene Zahlen und Fachwissen', 'human'],
-      ['Werkzeug fragt und prüft', 'statt in einem Zug zu schreiben', 'ai'],
+      ['System fragt, schreibt, prüft', 'mit Input und Richtung vom Menschen', 'ai'],
     ] },
     compare: { title: 'Vorher und heute', beforeTitle: 'Vorher', afterTitle: 'Heute',
       before: ['Der Monat gilt als Hauptgrund', 'Jeder Brief beginnt beim leeren Blatt', 'Wissen steckt in einzelnen Köpfen'],
-      after: ['Jeder Brief fair gegen seinen Monat bewertet', 'Ein Werkzeug fragt und prüft beim Schreiben', 'Die Erkenntnisse werden bei jedem Brief abgefragt'] },
+      after: ['Jeder Brief fair gegen seinen Monat bewertet', 'Ein System schreibt mit, fragt und prüft', 'Die Erkenntnisse fließen in jeden neuen Brief ein'] },
   },
   'fundraising-letters-with-ai': {
     quote: { text: 'The month sets the baseline. The letter decides.', by: 'What the analysis showed' },
