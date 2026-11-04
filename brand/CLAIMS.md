@@ -30,7 +30,7 @@ not in this table does not go into a post, deck, video, print-out or page.** The
 | 22 | First cycle usually about 90 days, depending on approvals | method, his framing | promise style | Tobias | yes — "meist", "rund"; never a guarantee |
 | 23 | Engagement forms: project, interim mandate (2–3 days/week, from 3 months), guidance and sparring; a permanent role is one quiet option, named in About only | site, Tobias 2026-11-03 | yes | Tobias | yes — secondary-employment clause cleared (2026-10-19) |
 | 24 | Keynote "Missional by Design – Startup & Innovation for the Church", ICCM Europe, Brussels, 2023 | CT keynote entry | yes | Tobias | yes |
-| 25 | Complete AI study Bible app built in about two months for a Christian media company (iOS, Android, server, AI search) | CT §2 Bibel TV (g), `vsb` history | yes | Tobias | yes — unnamed; "built", never "launched" |
+| 25 | Complete AI Bible study app built in about two months for Bibel TV (iOS, Android, server, AI search) | CT §2 Bibel TV (g), `vsb` history | yes | Tobias | yes — name Bibel TV (Tobias, Nov 4, 2026); working app name stays internal; "built", never "launched" |
 | 26 | More than 11,000 video clips from about 3,500 videos; new videos go through the pipeline automatically | case study, counted Oct 9, 2026 | yes, floor figures | Tobias | yes — refresh when a new count exists |
 | 27 | Color API live in production; Aperto app headed to the App Store in November 2026 | CT §2 Bibel TV (g) | as stated by Tobias | Tobias | yes — change the Aperto line once it is live or if the date moves |
 | 28 | Engineers at HairDirect asked on their own whether to test with users first, after almost a year | CT §2 Bibel TV (g) | his account | Tobias | yes — paraphrase, company unnamed on the site |

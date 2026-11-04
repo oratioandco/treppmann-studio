@@ -98,7 +98,7 @@ export const aiLeadershipContent = {
         },
         {
           context: 'Spendenbriefe · KI-System',
-          role: 'Rolle: Herausfinden, wo KI sich lohnt',
+          role: 'Rolle: Herausfinden, wo KI sich lohnt, Werkzeuge bauen',
           title: 'Ein KI-System, das messbar erfolgreichere Spendenbriefe schreibt.',
           body: 'Für eine spendenfinanzierte Organisation habe ich mehrere Jahre Aussendungen ausgewertet und herausgefunden, was starke Briefe von schwachen unterscheidet. Daraus habe ich ein System gebaut, das Spendenbriefe schreibt. Der Mensch gibt Input und Richtung vor, das System bringt die Auswertung mit.',
           fact: 'Messbar erfolgreicher',
@@ -129,7 +129,7 @@ export const aiLeadershipContent = {
           title: 'Herausfinden, wo KI sich lohnt',
           id: 'assessment',
           situation: 'Sie wollen anfangen, wissen aber nicht, wo.',
-          meta: 'KI-Standortbestimmung · zwei Wochen · Festpreis',
+          meta: 'KI-Standortbestimmung · zwei Wochen · 7.500 € netto',
           body: 'In zwei Wochen spreche ich mit Ihren Leuten, werte aus, was schon genutzt wird und was bremst, und sammle Ideen aus dem Team. Sie bekommen drei priorisierte Vorhaben und klare nächste Schritte.',
           proof: 'Für eine spendenfinanzierte Organisation habe ich mehrere Jahre Aussendungen ausgewertet und aus den Mustern ein KI-System gebaut, das messbar erfolgreichere Briefe schreibt.',
           includes: [
@@ -170,7 +170,7 @@ export const aiLeadershipContent = {
           situation: 'Sie wollen ein neues Produkt, und niemand baut es.',
           meta: 'Projekt oder auf Zeit',
           body: 'Konzept, Gestaltung, Entwicklung und KI aus einer Hand.',
-          proof: 'In rund zwei Monaten habe ich eine komplette KI-Studienbibel-App für ein christliches Medienhaus gebaut, für iOS und Android, samt Server und KI-Suche. Dahinter stehen über 11.000 Videoclips aus rund 3.500 Videos. Neue Videos durchlaufen die Aufbereitung automatisch.',
+          proof: 'In rund zwei Monaten habe ich eine komplette KI-Studienbibel-App für Bibel TV gebaut, für iOS und Android, samt Server und KI-Suche. Dahinter stehen über 11.000 Videoclips aus rund 3.500 Videos. Neue Videos durchlaufen die Aufbereitung automatisch.',
           action: 'Vorhaben besprechen',
           subject: 'Neues Produkt',
         },
@@ -227,7 +227,7 @@ export const aiLeadershipContent = {
         ['Wem gehört am Ende, was Sie bauen?', 'Ihnen. Während der Arbeit nutze ich auch eigene Werkzeuge und Zugänge. Das fertige System, seine Dokumentation und alle Zugänge übergebe ich Ihnen, und es läuft auf Ihrer Infrastruktur.'],
         ['Wie viel Aufwand ist das für uns?', 'Für die KI-Standortbestimmung: rund zwei Stunden mit der Geschäftsführung. Für Ihr Team nutzen wir je nach vereinbartem Umfang eine Befragung oder Interviews; ein Interview dauert etwa eine Stunde. Den Aufwand und die gemeinsame Ergebnisbesprechung stimmen wir vorab ab. Im Interimsmandat brauche ich eine verantwortliche Person im Fachbereich mit etwa vier Stunden pro Woche. Den Rest übernehme ich.'],
         ['Kennen Sie unsere Branche?', 'Ich habe Software für Banken und Versicherer gestaltet, Abläufe in einem börsennotierten Finanzkonzern neu aufgesetzt und KI in einem Medienhaus eingeführt. Reklamation, Angebot, Auftragsabwicklung: Überall steckt viel Fachwissen, mit Ausnahmen und Übergaben. Genau dort setze ich an, gemeinsam mit Ihren Fachleuten.'],
-        ['Was kostet das?', 'Das Erstgespräch kostet nichts. Die KI-Standortbestimmung hat einen Festpreis. Für alles Weitere bekommen Sie ein Angebot mit Rahmen, Ergebnis und Preis.'],
+        ['Was kostet das?', 'Das Erstgespräch kostet nichts. Die KI-Standortbestimmung kostet 7.500 € netto zum Festpreis, mit bis zu 8 Interviews. Für alles Weitere bekommen Sie ein Angebot mit Rahmen, Ergebnis und Preis.'],
       ],
     },
     contact: {
@@ -343,7 +343,7 @@ export const aiLeadershipContent = {
         },
         {
           context: 'Fundraising letters · AI system',
-          role: 'Role: finding where AI pays off',
+          role: 'Role: finding where AI pays off, building tools',
           title: 'An AI system that writes measurably more successful fundraising letters.',
           body: 'For a donor-funded organization I analyzed several years of mailings and found what separates strong letters from weak ones. From that I built a system that writes fundraising letters. People bring the input and guidance; the system brings the analysis.',
           fact: 'Measurably more successful',
@@ -374,7 +374,7 @@ export const aiLeadershipContent = {
           title: 'Find where AI pays off',
           id: 'assessment',
           situation: 'You want to start but don’t know where.',
-          meta: 'AI assessment · two weeks · fixed price',
+          meta: 'AI assessment · two weeks · €7,500 plus VAT',
           body: 'In two weeks I talk with your people, assess what’s already in use and what’s holding things back, and gather ideas from the team. You get three prioritized initiatives and clear next steps.',
           proof: 'For a donor-funded organization I analyzed several years of mailings and built an AI system from the patterns that writes measurably more successful letters.',
           includes: [
@@ -415,7 +415,7 @@ export const aiLeadershipContent = {
           situation: 'You want a new product and nobody is building it.',
           meta: 'Project or interim',
           body: 'Concept, design, development, and AI from one person.',
-          proof: 'In about two months I built a complete AI study Bible app for a Christian media company: iOS and Android, with its server and AI search. Behind it are more than 11,000 video clips from about 3,500 videos. New videos go through the pipeline automatically.',
+          proof: 'In about two months I built a complete AI Bible study app for Bibel TV: iOS and Android, with its server and AI search. Behind it are more than 11,000 video clips from about 3,500 videos. New videos go through the pipeline automatically.',
           action: 'Discuss your project',
           subject: 'New product',
         },
@@ -472,7 +472,7 @@ export const aiLeadershipContent = {
         ['Who owns what you build?', 'You do. While I work, I also use my own tools and accounts. The finished system, its documentation, and all access are handed over to you, and it runs on your infrastructure.'],
         ['How much effort is this for us?', 'For the AI assessment: about two hours with leadership. Depending on the agreed scope, your team takes part in a survey or interviews; each interview takes about an hour. We agree the time commitment and joint results review beforehand. In an interim mandate, I need one responsible person in the business unit with about four hours a week. I take care of the rest.'],
         ['Do you know our industry?', 'I’ve designed software for banks and insurers, reworked processes in a listed financial group, and introduced AI at a media company. Complaints, quotes, order handling: all full of expertise, exceptions, and handoffs. That’s where I start, together with your experts.'],
-        ['What does it cost?', 'The intro call is free. The AI assessment has a fixed price. For everything else, you get a proposal with scope, outcome, and price.'],
+        ['What does it cost?', 'The intro call is free. The AI assessment is a fixed €7,500 plus VAT, with up to 8 interviews. For everything else, you get a proposal with scope, outcome, and price.'],
       ],
     },
     contact: {
