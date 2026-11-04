@@ -131,7 +131,7 @@ export const aiLeadershipContent = {
           situation: 'Sie wollen anfangen, wissen aber nicht, wo.',
           meta: 'KI-Standortbestimmung · zwei Wochen · Festpreis',
           body: 'In zwei Wochen spreche ich mit Ihren Leuten, werte aus, was schon genutzt wird und was bremst, und sammle Ideen aus dem Team. Sie bekommen drei priorisierte Vorhaben und klare nächste Schritte.',
-          proof: 'Für eine spendenfinanzierte Organisation habe ich mehrere Jahre Aussendungen ausgewertet und aus den Mustern ein KI-Werkzeug gebaut.',
+          proof: 'Für eine spendenfinanzierte Organisation habe ich mehrere Jahre Aussendungen ausgewertet und aus den Mustern ein KI-System gebaut, das messbar erfolgreichere Briefe schreibt.',
           includes: [
             'Auswertung der bestehenden KI-Nutzung, Chancen und Hürden',
             'Ideen und Wünsche aus der Belegschaft, nach Einsatzbereich gebündelt',
@@ -360,7 +360,7 @@ export const aiLeadershipContent = {
       steps: [
         ['Step 1', 'Set the goal', 'Handle more work with the same team, reply faster, or reduce rework: what should get better, and how good is it today? We settle that with leadership before choosing a tool. Outcome: goals, baseline, and measures, in writing.'],
         ['Step 2', 'Understand the work', 'A survey or interviews show how your team works, which AI tools they use, what gets in the way, and who could support others. Employees’ own ideas feed in too. We then explore the chosen process through a task in progress, with its handoffs and exceptions. Outcome: a process map and clear support needs.'],
-        ['Step 3', 'Choose where to start', 'Using the process map, we assess where AI helps, where simpler automation is enough, and where human judgement is needed. Every initiative has to pass three questions: Is it worth it? Can it be done? What could go wrong? Outcome: three initiatives in a fixed order, and a list of what we deliberately won’t do. Not every answer needs AI. At ChurchDesk, days of phone tag became a booking capability for every customer, without any AI.'],
+        ['Step 3', 'Choose where to start', 'Using the process map, we assess where AI helps, where simpler automation is enough, and where human judgment is needed. Every initiative has to pass three questions: Is it worth it? Can it be done? What could go wrong? Outcome: three initiatives in a fixed order, and a list of what we deliberately won’t do. Not every answer needs AI. At ChurchDesk, days of phone tag became a booking capability for every customer, without any AI.'],
         ['Step 4', 'Design and build', 'With the people involved, I redesign one important process and build the solution so your team can still run it themselves a year from now. Plus two quick improvements people notice right away.'],
         ['Step 5', 'Guide and measure', 'I guide your people directly on their own tasks. AI champions get dedicated time for it. Plus an AI guideline and the training Article 4 of the EU AI Act requires. At the end: a measured result and the next initiative.'],
       ],
@@ -376,7 +376,7 @@ export const aiLeadershipContent = {
           situation: 'You want to start but don’t know where.',
           meta: 'AI assessment · two weeks · fixed price',
           body: 'In two weeks I talk with your people, assess what’s already in use and what’s holding things back, and gather ideas from the team. You get three prioritized initiatives and clear next steps.',
-          proof: 'For a donor-funded organization I analyzed several years of mailings and built an AI tool from the patterns.',
+          proof: 'For a donor-funded organization I analyzed several years of mailings and built an AI system from the patterns that writes measurably more successful letters.',
           includes: [
             'Assessment of current AI use, opportunities, and barriers',
             'Ideas and requests from employees, grouped by area',

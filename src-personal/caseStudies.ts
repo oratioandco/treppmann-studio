@@ -538,7 +538,7 @@ export const caseStudiesEn: CaseStudy[] = [
         title: 'The limits are in the instructions. A person does the checking.',
         nav: 'Limits',
         paras: [
-          'The assistant has a list of topics it doesn’t advise on: no medical, legal, or financial advice, no political or denominational judgements. And no missionary language, because the broadcaster wants to stay objective and ecumenical. If the input isn’t a viewer enquiry at all, the assistant writes no draft.',
+          'The assistant has a list of topics it doesn’t advise on: no medical, legal, or financial advice, no political or denominational judgments. And no missionary language, because the broadcaster wants to stay objective and ecumenical. If the input isn’t a viewer enquiry at all, the assistant writes no draft.',
           'To be honest: that list is an instruction, not a technical lock. Nothing checks the finished draft automatically. That’s why a person reads every draft before it becomes a reply.',
         ],
       },
@@ -548,7 +548,7 @@ export const caseStudiesEn: CaseStudy[] = [
         paras: [
           'I presented the assistant to the team and ran the introduction myself. The team lead encouraged people; nobody was required to use it. Whoever wanted to tried it for a week. Then came one-to-one sessions on people’s own cases.',
           'What tipped it was a letter like the one at the start. One of the two people who didn’t want AI tried the assistant on exactly that kind of complaint: carefully argued, with many points at once. The draft addressed every point, in the tone of the handbook and the house. The feedback afterwards: by hand, that would have taken hours at least. Since then, this person has used the assistant regularly.',
-          'The second person was sceptical of AI in general. Later they told me they now use the assistant regularly too. Looking back, both saw it as a tool that leaves them in control.',
+          'The second person was skeptical of AI in general. Later they told me they now use the assistant regularly too. Looking back, both saw it as a tool that leaves them in control.',
           'This is where many rollouts tip over: you demo a tool on an easy example and wonder why nobody uses it day to day. Your own hardest case is the more honest test.',
         ],
       },
