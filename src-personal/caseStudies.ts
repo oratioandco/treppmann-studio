@@ -823,18 +823,18 @@ export const caseStudiesEn: CaseStudy[] = [
   },
   {
     slug: 'fundraising-letters-with-ai',
-    label: 'Fundraising letters · Analysis and AI tool',
-    title: 'Why some fundraising letters raise far more than others, and how AI helps with the next one',
-    lead: 'A donor-funded organization wanted to know why some fundraising letters raise far more than others. Instead of an AI that writes letters, the result was a tool that asks and checks while you write.',
-    description: 'How a donor-funded organization compares its fundraising letters fairly, finds the real outliers, and turns that into an AI tool that asks and checks instead of writing in one go.',
+    label: 'Fundraising letters · AI system',
+    title: 'An AI system that writes measurably more successful fundraising letters',
+    lead: 'For a donor-funded organization I built an AI system that writes measurably more successful fundraising letters. People bring the input and guidance. The system brings what the analysis of several years of mailings showed.',
+    description: 'How an analysis of several years of fundraising letters became an AI system that, with human input, writes measurably more successful letters.',
     object: 'envelope',
     shape: 'circle',
     facts: [
       ['Organization', 'Donor-funded non-profit (anonymized)'],
       ['Starting point', 'Fundraising letters several times a year. Some raised far more than others, and nobody knew exactly why.'],
-      ['What I did', 'Analyzed several years of mailings, found the real outliers, checked the patterns against general fundraising practice, and built an AI tool that guides you through the letter.'],
-      ['Result', 'The first letter written with the tool was a success.'],
-      ['Three takeaways', 'Compare fairly before you judge. Only adopt patterns that also hold up against general practice. Let the AI ask and check instead of writing in one go.'],
+      ['What I did', 'Analyzed several years of mailings, found the real outliers, checked the patterns against general fundraising practice, and built an AI system that writes the letters with human input and guidance.'],
+      ['Result', 'Letters from the system are measurably more successful. The very first was already a success.'],
+      ['Three takeaways', 'Compare fairly before you judge. Only adopt patterns that also hold up against general practice. Build the findings into the system that writes.'],
     ],
     opening: {
       title: 'The rule in the house: the month decides',
@@ -866,15 +866,15 @@ export const caseStudiesEn: CaseStudy[] = [
         nav: 'Patterns',
         paras: [
           'I put the strong and the weak letters side by side: How do they open? How concrete is the ask? What does the PS do? Add to that the voice analysis and the writing handbook the organization already had.',
-          'Then the most important step: I checked every pattern against widely known rules for fundraising letters. Much of it matched, for example that a concrete, tangible ask works better than an abstract mission. Only what passed both checks went into the tool: the organization’s own numbers and general expertise. The patterns that only apply to this organization stay with it.',
+          'Then the most important step: I checked every pattern against widely known rules for fundraising letters. Much of it matched, for example that a concrete, tangible ask works better than an abstract mission. Only what passed both checks went into the system: the organization’s own numbers and general expertise. The patterns that only apply to this organization stay with it.',
         ],
       },
       {
-        title: 'A tool that asks before it writes',
-        nav: 'Tool',
+        title: 'The analysis becomes a system that writes',
+        nav: 'System',
         paras: [
-          'From the analysis, the rules, and the writing handbook, I built an AI tool on top of Claude, an AI model like ChatGPT. It doesn’t write the letter in one go. First it asks: What’s the occasion? Who is the letter for? Which concrete project should it name? Then it guides you through the structure step by step and checks the draft against the criteria before moving on.',
-          'That’s deliberately slower than a “write letter” button. The most common failure of AI writing is a draft that sounds good but misses exactly the specifics only someone in-house knows. The questions collect that knowledge. The checks make sure the findings from the analysis actually reach the letter. A person still decides what gets sent.',
+          'From the analysis, the rules, and the writing handbook, I built an AI system on top of Claude, an AI model like ChatGPT. People bring the input and guidance. First the system asks: What’s the occasion? Who is the letter for? Which concrete project should it name? Then it writes the letter step by step and checks the draft against the criteria before moving on.',
+          'That’s deliberately more than a “write letter” button. The most common failure of AI writing is a draft that sounds good but misses exactly the specifics only someone in-house knows. The questions collect that knowledge. The checks make sure the findings from the analysis actually reach the letter.',
         ],
       },
     ],
@@ -882,19 +882,19 @@ export const caseStudiesEn: CaseStudy[] = [
       { src: '/images/beispiele/fundraising-illustration.svg', alt: 'Illustration with invented values: one dot per letter above and below a zero line, grouped by month A to F. Every month has letters far above and far below its average.', caption: 'What the picture looked like once the season was taken out. The values are invented; the real figures stay with the organization.', width: 1200, height: 700 },
     ],
     result: {
-      title: 'The first letter',
+      title: 'Measurably more successful letters',
       nav: 'Result',
-      big: 'A success',
-      bigLabel: 'was the very first fundraising letter written with the tool.',
+      big: 'Measurably more successful',
+      bigLabel: 'letters come out of the system. The very first was already a success.',
       items: [
-        'The organization now knows why a letter works, and that knowledge is asked for with every new letter instead of living in a few people’s heads.',
-        'The tool asks, guides, and checks. A person decides.',
+        'What makes a letter strong now lives in the system that writes the next one, not in a few people’s heads.',
+        'People bring the input and guidance; the system brings the analysis. The numbers stay with the organization.',
       ],
     },
     callback: {
       title: 'Back to the rule',
       paras: [
-        'The month still counts. It sets the baseline you need to judge a letter fairly. But whether a letter turns out well is decided while it’s being written. That’s exactly where the tool now helps.',
+        'The month still counts. It sets the baseline you need to judge a letter fairly. But whether a letter turns out well is decided while it’s being written. That’s exactly where the system now works.',
       ],
     },
     takeaways: {
@@ -903,7 +903,7 @@ export const caseStudiesEn: CaseStudy[] = [
       items: [
         ['Compare fairly before you judge.', 'Take out size and season, and measure every result against its own context. Otherwise you mistake the calendar for an insight.'],
         ['Only adopt patterns that pass two checks.', 'Your own numbers and general expertise. What shows up in only one of the two is often chance.'],
-        ['Let the AI ask and check, not write in one go.', 'The knowledge about the specific occasion sits with your people. A good tool collects it before it writes.'],
+        ['Build your findings into the system that writes.', 'Let the AI ask and check, not just produce text at the push of a button. The knowledge about the specific occasion sits with your people. A good system collects it before it writes.'],
       ],
       notFitLabel: 'When it doesn’t fit',
       notFit: 'If you only have a handful of comparable mailings. Then the differences are too small to separate real patterns from chance. Start with clear writing rules and collect results.',
@@ -917,7 +917,7 @@ export const caseStudiesEn: CaseStudy[] = [
     },
     cta: {
       title: 'Are there patterns in your old numbers too?',
-      body: 'In 30 minutes we talk about which of your texts could be analyzed and whether that could become a tool for your team. Free and without obligation.',
+      body: 'In 30 minutes we talk about which of your texts could be analyzed and whether that could become a system for your team. Free and without obligation.',
     },
   },
 ];
@@ -1025,15 +1025,15 @@ export const caseVisuals: Record<string, CaseVisuals> = {
   },
   'fundraising-letters-with-ai': {
     quote: { text: 'The month sets the baseline. The letter decides.', by: 'What the analysis showed' },
-    flow: { title: 'From data to tool', kind: 'flow', nodes: [
+    flow: { title: 'From data to system', kind: 'flow', nodes: [
       ['Make comparable', 'return per thousand letters', 'neutral'],
       ['Take out the season', 'each letter against its month', 'neutral'],
       ['Find the outliers', 'three groups instead of one', 'human'],
       ['Check patterns twice', 'own numbers and expertise', 'human'],
-      ['Tool asks and checks', 'instead of writing in one go', 'ai'],
+      ['System asks, writes, checks', 'with human input and guidance', 'ai'],
     ] },
     compare: { title: 'Before and today', beforeTitle: 'Before', afterTitle: 'Today',
       before: ['The month seen as the main reason', 'Every letter starts from a blank page', 'Knowledge lives in a few heads'],
-      after: ['Every letter judged fairly against its month', 'A tool asks and checks while you write', 'The findings are asked for with every letter'] },
+      after: ['Every letter judged fairly against its month', 'A system writes along, asks and checks', 'The findings go into every new letter'] },
   },
 };
