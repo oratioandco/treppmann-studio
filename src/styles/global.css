@@ -1202,3 +1202,17 @@ main a > span[aria-hidden="true"], .footer-links a > span[aria-hidden="true"] { 
 .hero-collage:has(.collage-portrait-link) .collage-portrait { bottom: 10%; }
 .hero-collage:has(.collage-portrait-link) { aspect-ratio: 4 / 5; }
 .role-list article:last-child { border-bottom: 0; }
+
+/* Four examples in two rows; role tag under the context line. */
+.proof-role { display: block; margin-top: .25rem; font-weight: 500; }
+@media (min-width: 761px) {
+  .compact-proof-grid:has(> :nth-child(4)) { grid-template-columns: repeat(2, 1fr); }
+  .compact-proof-grid:has(> :nth-child(4)) .compact-proof-card:nth-child(even) { border-right: 0; }
+  .compact-proof-grid:has(> :nth-child(4)) .compact-proof-card:nth-child(odd) { padding-left: 0; }
+  .compact-proof-grid:has(> :nth-child(4)) .compact-proof-card:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+/* Stat band directly after the situation section: no heading above it. */
+.why-section .why-grid { margin-top: 0; }
+/* Stage caption clears the figure's feet on small screens. */
+@media (max-width: 900px) { .about-stage { margin-bottom: 1.6rem; } .about-stage figcaption { bottom: -1.6rem; } }
+

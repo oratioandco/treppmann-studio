@@ -119,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
         'Beide, die anfangs keine KI wollten, nutzen ihn heute regelmäßig.',
         'Jede Antwort wird weiterhin von einem Menschen gelesen, angepasst und verschickt.',
       ],
-      note: 'Die Zeiten stammen aus der Erfahrung des Teams, nicht aus einer Messung pro Brief.',
+      note: 'Die Zeiten stammen aus der Erfahrung des Teams.',
     },
     callback: {
       title: 'Der Brief kommt immer noch mit der Post',
@@ -175,7 +175,7 @@ export const caseStudies: CaseStudy[] = [
         'Bis jemand die kleine Änderung in der App sieht, vergehen viele Wochen.',
       ],
     },
-    nut: 'Das ist kein Vorwurf an die Agentur. So arbeiten viele Unternehmen ohne eigene Entwicklung. Bei Bibel TV bauen die Produktverantwortlichen heute einen großen Teil des Backends selbst, mit KI. Lehrreich ist, wie es dazu kam: nicht per Anordnung, sondern weil es jemand vorgemacht hat, mit klaren Regeln und mit Begleitung an der eigenen Aufgabe.',
+    nut: 'So arbeiten viele Unternehmen ohne eigene Entwicklung. Bei Bibel TV bauen die Produktverantwortlichen heute einen großen Teil des Backends selbst, mit KI. Lehrreich ist, wie es dazu kam: nicht per Anordnung, sondern weil es jemand vorgemacht hat, mit klaren Regeln und mit Begleitung an der eigenen Aufgabe.',
     situation: {
       title: 'Die Leute mit den Ideen konnten nicht bauen',
       nav: 'Ausgangslage',
@@ -276,7 +276,7 @@ export const caseStudies: CaseStudy[] = [
     facts: [
       ['Organisation', 'Ninox, No-Code-Plattform für Geschäftsanwendungen kleiner und mittlerer Unternehmen'],
       ['Ausgangslage', 'Wer keine Datenbanken kennt, scheitert am Datenmodell: Tabellen, Feldtypen, Verknüpfungen.'],
-      ['Was ich gemacht habe', 'Das KI-Onboarding mitgestaltet: Man beschreibt die eigene Arbeit, die KI schlägt das Datenmodell vor, und man ändert es direkt im Editor.'],
+      ['Was ich gemacht habe', 'Das KI-Onboarding gemeinsam mit dem CEO gestaltet: Man beschreibt die eigene Arbeit, die KI schlägt das Datenmodell vor, und man ändert es direkt im Editor.'],
       ['Zeitraum', 'Freiberuflich, Sommer 2025'],
       ['Ergebnis', 'Direkt bearbeiten wurde zum Interaktionsprinzip, und das Onboarding zum Onboarding der inzwischen gestarteten KI-Beta.'],
       ['Drei Erkenntnisse', 'Das erste Ergebnis liegt daneben, also muss das Danach stimmen. Ergebnisse dort zeigen, wo man ohnehin arbeitet. Kein eigener KI-Modus.'],
@@ -345,7 +345,6 @@ export const caseStudies: CaseStudy[] = [
       items: [
         'Niemand muss erst lernen, wie man mit einer KI spricht. Man ändert, was man sieht.',
         'Das erste, unvollständige Ergebnis ist kein Fehler, sondern der normale Start.',
-        'Ich habe nicht die gesamte Beta verantwortet, sondern das Onboarding mitgestaltet.',
       ],
     },
     callback: {
@@ -565,7 +564,7 @@ export const caseStudiesEn: CaseStudy[] = [
         'Both people who didn’t want AI at first now use it regularly.',
         'Every reply is still read, adjusted, and sent by a person.',
       ],
-      note: 'The times come from the team’s experience, not from timing each letter.',
+      note: 'The times come from the team’s experience.',
     },
     callback: {
       title: 'The letter still arrives by post',
@@ -621,7 +620,7 @@ export const caseStudiesEn: CaseStudy[] = [
         'By the time anyone sees the small change in the app, many weeks have passed.',
       ],
     },
-    nut: 'That’s no criticism of the agency. It’s how many companies without their own developers work. At Bibel TV, the product managers and owners now build a large part of the backend themselves, with AI. What’s worth learning from is how that happened: not by mandate, but because someone showed it could be done, with clear rules and guidance on people’s own tasks.',
+    nut: 'It’s how many companies without their own developers work. At Bibel TV, the product managers and owners now build a large part of the backend themselves, with AI. What’s worth learning from is how that happened: not by mandate, but because someone showed it could be done, with clear rules and guidance on people’s own tasks.',
     situation: {
       title: 'The people with the ideas couldn’t build',
       nav: 'Starting point',
@@ -791,7 +790,6 @@ export const caseStudiesEn: CaseStudy[] = [
       items: [
         'Nobody has to learn how to talk to an AI first. You change what you see.',
         'The first, incomplete result isn’t a failure but the normal start.',
-        'I wasn’t responsible for the whole beta; I co-designed the onboarding.',
       ],
     },
     callback: {
@@ -941,7 +939,7 @@ export interface CaseVisuals {
 
 export const caseVisuals: Record<string, CaseVisuals> = {
   'ki-assistent-zuschauerservice': {
-    quote: { text: 'Das leere Blatt abgeben. Nicht die Entscheidung.', by: 'Der Grundsatz hinter dem Assistenten' },
+    quote: { text: 'Das leere Blatt gibt man ab, die Entscheidung bleibt beim Menschen.', by: 'Der Grundsatz hinter dem Assistenten' },
     flow: { title: 'So entsteht eine Antwort heute', kind: 'flow', nodes: [
       ['Eine Anfrage kommt an', 'per Post, E-Mail oder Nachricht', 'neutral'],
       ['Ein Mensch liest', 'und entscheidet, ob der Assistent hilft', 'human'],
@@ -977,7 +975,7 @@ export const caseVisuals: Record<string, CaseVisuals> = {
       after: ['Tabellen als Karten, Felder anklickbar', 'Ändern per Klick oder per Chat', 'Das erste Ergebnis ist der normale Start'] },
   },
   'ai-assistant-viewer-services': {
-    quote: { text: 'Hand over the blank page. Not the decision.', by: 'The principle behind the assistant' },
+    quote: { text: 'You hand over the blank page. The decision stays with people.', by: 'The principle behind the assistant' },
     flow: { title: 'How a reply is written today', kind: 'flow', nodes: [
       ['A request arrives', 'by post, email or message', 'neutral'],
       ['A person reads it', 'and decides whether the assistant helps', 'human'],

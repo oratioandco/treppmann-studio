@@ -10,7 +10,7 @@ not in this table does not go into a post, deck, video, print-out or page.** The
 | 2 | Introduced without obligation: a trial week, then one-to-one sessions | CT §2 (a) Rollout | yes | Tobias | yes |
 | 3 | Complex letters in minutes instead of hours; temps write in the house style from day one; sceptics came back after their hardest case | CT §2 (a) Outcomes | yes (qualitative, not measured) | Tobias | yes |
 | 4 | Bibel TV development: from depending on an external agency to building much in-house; no in-house developers; PMs/POs build with Claude Code, Spec Kit, clear rules | CT §2 (f) | yes | Tobias | yes — never name the agency |
-| 5 | Development builds on Tobias's prototype code | CT §2 (f) | yes | Tobias | yes — **no percentage** |
+| 5 | Development builds on Tobias's prototype code | CT §2 (f) | yes | Tobias | yes — percentages only in the approved CT wording (64 %, release 6.0, in beta), in the case study, not on the homepage |
 | 6 | Management gave Tobias the app rebuild, without the agency; he built it himself, with AI | CT §2 (f) | yes | Tobias | yes — the decision was the CEO's; app **not launched** (in internal review) |
 | 7 | Ninox: AI onboarding (freelance, summer 2025; worked with the CEO, who is the technical founder — not mentioned on the site, decided 2026-10-22); users describe their work, AI generates the data model, everything stays editable; "direct editing" became the interaction principle of the public AI beta | CT §2 Ninox; case study | yes | Tobias | yes |
 | 8 | ChurchDesk: booking rebuilt as a platform capability, without AI; 70 % less coordination time, 90 % acceptance | CT §2 ChurchDesk | yes | client figures, his architecture call | yes — always "without AI"; never "delivered the suite" |

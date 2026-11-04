@@ -196,6 +196,7 @@ bei der Leserin.
 - [ ] Jede Überschrift allein verständlich; H1 klar, nicht verspielt.
 - [ ] Jede Behauptung mit Beleg im nächsten Satz; Zahlen mit Basis, Zeitraum, Quelle.
 - [ ] Nichts Defensives: kein „zugegeben“, kein „obwohl ich kein …“, keine Rechtfertigung des eigenen Werdegangs. Die Seite verkauft; geprüft wird intern gegen CAREER-TRUTH.
+- [ ] Kein „X, nicht Y“ und kein Stakkato-Nachsatz („Nicht aus Folien.“, „In dieser Reihenfolge.“), wenn niemand X behauptet hat. „Echt“ und „wirklich“ nur, wo sie etwas unterscheiden. Konkrete Offenheit über die Funktionsweise bleibt erlaubt.
 - [ ] Lesetest für jeden Abschnitt: Denkt eine Führungskraft „Der hat es verstanden, mit dem sollten wir arbeiten“?
 - [ ] Gebaut heißt gebaut, „live“ erst, wenn es live ist.
 - [ ] Verben statt Substantivketten; keine Wörter aus der Verbotsliste.

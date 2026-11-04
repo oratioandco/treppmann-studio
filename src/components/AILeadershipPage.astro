@@ -60,11 +60,11 @@ const structuredData = {
     </a>
     <nav aria-label={locale === 'de' ? 'Hauptnavigation' : 'Primary navigation'}>
       <a href="#needs">{c.nav.needs}</a>
+      <a href="#formats">{c.nav.formats}</a>
       <a href="#proof">{c.nav.proof}</a>
       <a href="#plan">{c.nav.plan}</a>
-      <a href="#formats">{c.nav.formats}</a>
-      {report && <a href="#check">{report.nav}</a>}
       <a href="#about">{c.nav.about}</a>
+      {report && <a href="#check">{report.nav}</a>}
     </nav>
     <div class="topbar-actions">
       <a class="topbar-contact" href="#contact">{c.nav.contact}</a>
@@ -83,12 +83,10 @@ const structuredData = {
           <p class="hero-audience">{c.hero.audience}</p>
           <div class="hero-actions leadership-actions">
             <a class="button button-primary" href={c.contact.bookUrl} target="_blank" rel="noopener">{c.hero.primary}</a>
-            <a class="button button-ghost" href="#formats">{c.hero.secondary}</a>
           </div>
           {report && (
             <p class="hero-tools">
               <a href={checkHref}><span class="hero-tools-mark" aria-hidden="true"><i></i><i></i><i></i></span>{report.heroCheck}<span aria-hidden="true"> →</span></a>
-              <a href={reportHref}><span class="hero-tools-mark is-report" aria-hidden="true"><i></i><i></i><i></i></span>{report.heroReport}<span aria-hidden="true"> →</span></a>
             </p>
           )}
         </div>
@@ -135,11 +133,7 @@ const structuredData = {
       <div class="section-shell"><p class="needs-closing">{c.needs.closing}</p></div>
     </section>
 
-    <section class="why-section section-dark" aria-labelledby="why-title">
-      <div class="section-shell leadership-heading leadership-heading-dark" data-reveal>
-        <p class="section-label">{c.why.label}</p>
-        <div><h2 id="why-title">{c.why.title}</h2></div>
-      </div>
+    <section class="why-section section-dark" aria-label={c.why.label}>
       <div class="section-shell why-grid" data-reveal data-stagger data-count-group>
         {c.why.items.map(([figure, text, source, url], i) => (
           <article style={`--i:${i}`}>
@@ -149,73 +143,6 @@ const structuredData = {
           </article>
         ))}
       </div>
-    </section>
-
-    {report && (
-      <section class="tools-section section-light" id="check">
-        <div class="section-shell leadership-heading" data-reveal>
-          <p class="section-label">{report.toolsLabel}</p>
-          <div><h2>{report.toolsTitle}</h2></div>
-        </div>
-        <div class="section-shell tools-grid" data-reveal data-stagger>
-          <a class="tool-card tool-card-dark" href={checkHref} style="--i:0">
-            <div class="tool-visual tool-ladder" aria-hidden="true">
-              {[1, 2, 3, 4, 5].map((n) => <span style={`--n:${n}`}><b>{n}</b></span>)}
-            </div>
-            <p class="tool-meta">{report.checkMeta}</p>
-            <h3>{report.checkTitle}</h3>
-            <p>{report.checkBody}</p>
-            <span class="tool-action">{report.checkAction}<span aria-hidden="true"> →</span></span>
-          </a>
-          <a class="tool-card" href={reportHref} style="--i:1">
-            <div class="tool-visual tool-bars" aria-hidden="true">
-              {[0, 3, 28, 59].map((v, k) => [v, report.bars[k]]).map(([v, l]) => <span style={`--v:${v}`}><i></i><em>{l}</em><b>{v}&#8239;%</b></span>)}
-            </div>
-            <p class="tool-meta">{report.reportMeta}</p>
-            <h3>{report.quoteOpen}{report.title}{report.quoteClose}</h3>
-            <p>{report.reportBody}</p>
-            <span class="tool-action">{report.reportAction}<span aria-hidden="true"> →</span></span>
-          </a>
-        </div>
-      </section>
-    )}
-
-    <section class="proof-section section-paper" id="proof">
-      <div class="section-shell leadership-heading" data-reveal>
-        <p class="section-label">{c.proof.label}</p>
-        <div><h2>{c.proof.title}</h2></div>
-      </div>
-      <div class="section-shell compact-proof-grid" data-reveal data-stagger>
-        {c.proof.cases.map((item, i) => (
-          <article class="compact-proof-card" style={`--i:${i}`}>
-            <div class="proof-context"><p>{item.context}</p></div>
-            <figure class={`collage-object shape-${['arch', 'circle', 'square'][i]}`} aria-hidden="true"><img src={`/images/collage/${['letters', 'hands', 'blocks'][i]}.webp`} alt="" loading="lazy" /></figure>
-            <h3>{item.title}</h3>
-            <p class="proof-body">{item.body}</p>
-            <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
-            {'href' in item && <a class="proof-link" href={isPersonal ? new URL(item.href).pathname : item.href}>{item.link}<span aria-hidden="true"> →</span></a>}
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="method-section section-dark" id="plan">
-      <div class="section-shell leadership-heading leadership-heading-dark" data-reveal>
-        <p class="section-label">{c.plan.label}</p>
-        <div><h2>{c.plan.title}</h2><p class="lead">{c.plan.body}</p></div>
-      </div>
-      <ol class="section-shell method-path" data-reveal data-stagger data-steps>
-        {c.plan.steps.map(([when, title, body], i) => (
-          <li style={`--i:${i}`}>
-            <figure class={`collage-object method-object shape-${['circle', 'arch', 'square', 'circle', 'arch'][i]}`} aria-hidden="true">
-              <img src={`/images/collage/plan-${['goal', 'process', 'choice', 'build', 'measure'][i]}.webp`} alt="" loading="lazy" />
-            </figure>
-            <span>{when}</span>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </li>
-        ))}
-      </ol>
     </section>
 
     <section class="engagements-section section-light" id="formats">
@@ -256,6 +183,44 @@ const structuredData = {
       </div>
     </section>
 
+    <section class="proof-section section-paper" id="proof">
+      <div class="section-shell leadership-heading" data-reveal>
+        <p class="section-label">{c.proof.label}</p>
+        <div><h2>{c.proof.title}</h2></div>
+      </div>
+      <div class="section-shell compact-proof-grid" data-reveal data-stagger>
+        {c.proof.cases.map((item, i) => (
+          <article class="compact-proof-card" style={`--i:${i}`}>
+            <div class="proof-context"><p>{item.context}{'role' in item && <span class="proof-role">{item.role}</span>}</p></div>
+            <figure class={`collage-object shape-${['arch', 'circle', 'square', 'circle'][i]}`} aria-hidden="true"><img src={`/images/collage/${['letters', 'hands', 'blocks', 'envelope'][i]}.webp`} alt="" loading="lazy" /></figure>
+            <h3>{item.title}</h3>
+            <p class="proof-body">{item.body}</p>
+            <div class="proof-result"><strong>{item.fact}</strong><span>{item.factLabel}</span></div>
+            {'href' in item && <a class="proof-link" href={isPersonal ? new URL(item.href).pathname : item.href}>{item.link}<span aria-hidden="true"> →</span></a>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="method-section section-dark" id="plan">
+      <div class="section-shell leadership-heading leadership-heading-dark" data-reveal>
+        <p class="section-label">{c.plan.label}</p>
+        <div><h2>{c.plan.title}</h2><p class="lead">{c.plan.body}</p></div>
+      </div>
+      <ol class="section-shell method-path" data-reveal data-stagger data-steps>
+        {c.plan.steps.map(([when, title, body], i) => (
+          <li style={`--i:${i}`}>
+            <figure class={`collage-object method-object shape-${['circle', 'arch', 'square', 'circle', 'arch'][i]}`} aria-hidden="true">
+              <img src={`/images/collage/plan-${['goal', 'process', 'choice', 'build', 'measure'][i]}.webp`} alt="" loading="lazy" />
+            </figure>
+            <span>{when}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
     <section class="about-section section-paper" id="about">
       <div class="section-shell leadership-heading" data-reveal>
         <div class="about-side">
@@ -281,8 +246,37 @@ const structuredData = {
           <article style={`--i:${i}`}><h3>{title}</h3><p>{body}</p></article>
         ))}
       </div>
-      <div class="section-shell about-link"><a class="text-link" href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗︎</span></a><a class="text-link" href={c.about.cvHref} download>{c.about.cv}<span aria-hidden="true"> ↓</span></a><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗︎</span></a></div>
+      <div class="section-shell about-link"><a class="text-link" href={c.contact.linkedinUrl}>{c.contact.linkedin}<span aria-hidden="true"> ↗︎</span></a><a class="text-link" href={portfolioUrl}>{c.about.portfolio}<span aria-hidden="true"> ↗︎</span></a></div>
     </section>
+
+    {report && (
+      <section class="tools-section section-light" id="check">
+        <div class="section-shell leadership-heading" data-reveal>
+          <p class="section-label">{report.toolsLabel}</p>
+          <div><h2>{report.toolsTitle}</h2></div>
+        </div>
+        <div class="section-shell tools-grid" data-reveal data-stagger>
+          <a class="tool-card tool-card-dark" href={checkHref} style="--i:0">
+            <div class="tool-visual tool-ladder" aria-hidden="true">
+              {[1, 2, 3, 4, 5].map((n) => <span style={`--n:${n}`}><b>{n}</b></span>)}
+            </div>
+            <p class="tool-meta">{report.checkMeta}</p>
+            <h3>{report.checkTitle}</h3>
+            <p>{report.checkBody}</p>
+            <span class="tool-action">{report.checkAction}<span aria-hidden="true"> →</span></span>
+          </a>
+          <a class="tool-card" href={reportHref} style="--i:1">
+            <div class="tool-visual tool-bars" aria-hidden="true">
+              {[0, 3, 28, 59].map((v, k) => [v, report.bars[k]]).map(([v, l]) => <span style={`--v:${v}`}><i></i><em>{l}</em><b>{v}&#8239;%</b></span>)}
+            </div>
+            <p class="tool-meta">{report.reportMeta}</p>
+            <h3>{report.quoteOpen}{report.title}{report.quoteClose}</h3>
+            <p>{report.reportBody}</p>
+            <span class="tool-action">{report.reportAction}<span aria-hidden="true"> →</span></span>
+          </a>
+        </div>
+      </section>
+    )}
 
     <section class="faq-section section-light" id="faq">
       <div class="section-shell leadership-heading" data-reveal>
