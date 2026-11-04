@@ -231,9 +231,9 @@ export const caseStudies: CaseStudy[] = [
       items: [
         'Ein großer Teil des Backends und erste Teile der Oberflächen entstehen heute im Haus, gebaut von den Produktverantwortlichen.',
         'Im Team gibt es ein bis zwei interne Ansprechpersonen, die das Thema im Haus weitertragen.',
-        'Die neue App ist fertig entwickelt und in der internen Prüfung. Veröffentlicht ist sie noch nicht.',
+        'Die neue App ist fertig entwickelt und in der internen Prüfung.',
       ],
-      note: 'Abgeschlossen ist die Umstellung nicht. Das Team arbeitet weiter daran, Schritt für Schritt.',
+      note: 'Das Team baut das Schritt für Schritt weiter aus.',
     },
     callback: {
       title: 'Die kleine Änderung heute',
@@ -446,7 +446,6 @@ export const caseStudies: CaseStudy[] = [
         'Die Organisation weiß jetzt, warum ein Brief wirkt, und dieses Wissen wird bei jedem neuen Brief abgefragt, statt in einzelnen Köpfen zu stecken.',
         'Das Werkzeug fragt, führt und prüft. Der Mensch entscheidet.',
       ],
-      note: 'Ob das Werkzeug über viele Aussendungen trägt, zeigt sich mit der Zeit. Zahlen dazu veröffentliche ich nicht.',
     },
     callback: {
       title: 'Zurück zur Regel',
@@ -490,7 +489,7 @@ export const caseStudiesEn: CaseStudy[] = [
     object: 'letters',
     shape: 'arch',
     facts: [
-      ['Organisation', 'Bibel TV, a Christian broadcaster moving from linear TV to apps and streaming'],
+      ['Organization', 'Bibel TV, a Christian broadcaster moving from linear TV to apps and streaming'],
       ['Starting point', 'Personal mail, much of it on paper. Every reply started from a blank page, following the service handbook.'],
       ['What I did', 'Built an AI assistant that drafts replies from the handbook. Operated by hand, connected to no inbox.'],
       ['Timeline', 'Built in autumn 2025, introduced voluntarily with a trial week and one-to-one sessions. Today part of everyday work across the team.'],
@@ -501,7 +500,7 @@ export const caseStudiesEn: CaseStudy[] = [
       title: 'Most of the mail here still arrives on paper',
       paras: [
         'It comes as letters and postcards, handwritten or typed.',
-        'Viewers say thank you for a programme and write about what it means to them. They ask about programmes, and about books or materials mentioned in them. And they criticise content, some with their opinion, some with theological arguments.',
+        'Viewers say thank you for a program and write about what it means to them. They ask about programs, and about books or materials mentioned in them. And they criticize content, some with their opinion, some with theological arguments.',
         'Then a complaint arrives: carefully argued, with many points at once. Someone in viewer services reads it.',
         'The reply has to address every point, in the house voice and with the wording of the service handbook. From a blank page, that takes hours.',
       ],
@@ -607,7 +606,7 @@ export const caseStudiesEn: CaseStudy[] = [
     object: 'hands',
     shape: 'circle',
     facts: [
-      ['Organisation', 'Bibel TV, a Christian broadcaster with apps for iOS, Android, web, and TV, and no development department of its own'],
+      ['Organization', 'Bibel TV, a Christian broadcaster with apps for iOS, Android, web, and TV, and no development department of its own'],
       ['Starting point', 'Every change went through an external agency: spec, decide, build, fix, release. Even small changes took weeks.'],
       ['What I did', 'Built with AI myself and showed what was possible. Introduced Claude Code, Spec Kit, access to internal documentation, and firm rules with the team. Coached people one to one.'],
       ['Timeline', '2025 AI as a better search, spring 2026 Claude in the team, since summer 2026 in-house development'],
@@ -668,7 +667,7 @@ export const caseStudiesEn: CaseStudy[] = [
       },
     ],
     images: [
-      { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Two screens of an Android prototype for Bibel TV with real programmes', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1200, height: 1227 },
+      { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Two screens of an Android prototype for Bibel TV with real programs', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1200, height: 1227 },
     ],
     result: {
       title: 'Where it stands today',
@@ -678,9 +677,9 @@ export const caseStudiesEn: CaseStudy[] = [
       items: [
         'A large part of the backend and the first parts of the interfaces are now built in-house, by the product managers and owners.',
         'The team has one or two internal go-to people who carry the topic forward.',
-        'The new app is fully developed and in internal review. It hasn’t been released yet.',
+        'The new app is fully developed and in internal review.',
       ],
-      note: 'The shift isn’t finished. The team keeps working on it, step by step.',
+      note: 'The team keeps building on this, step by step.',
     },
     callback: {
       title: 'The small change today',
@@ -721,7 +720,7 @@ export const caseStudiesEn: CaseStudy[] = [
     object: 'blocks',
     shape: 'square',
     facts: [
-      ['Organisation', 'Ninox, a no-code platform for business applications at small and mid-sized companies'],
+      ['Organization', 'Ninox, a no-code platform for business applications at small and mid-sized companies'],
       ['Starting point', 'People who don’t know databases get stuck on the data model: tables, field types, relations.'],
       ['What I did', 'Co-designed the AI onboarding: you describe your work, AI proposes the data model, and you change it directly in the editor.'],
       ['Timeline', 'Freelance, summer 2025'],
@@ -828,25 +827,25 @@ export const caseStudiesEn: CaseStudy[] = [
     slug: 'fundraising-letters-with-ai',
     label: 'Fundraising letters · Analysis and AI tool',
     title: 'Why some fundraising letters raise far more than others, and how AI helps with the next one',
-    lead: 'A donor-funded organisation wanted to know why some fundraising letters raise far more than others. Instead of an AI that writes letters, the result was a tool that asks and checks while you write.',
-    description: 'How a donor-funded organisation compares its fundraising letters fairly, finds the real outliers, and turns that into an AI tool that asks and checks instead of writing in one go.',
+    lead: 'A donor-funded organization wanted to know why some fundraising letters raise far more than others. Instead of an AI that writes letters, the result was a tool that asks and checks while you write.',
+    description: 'How a donor-funded organization compares its fundraising letters fairly, finds the real outliers, and turns that into an AI tool that asks and checks instead of writing in one go.',
     object: 'envelope',
     shape: 'circle',
     facts: [
-      ['Organisation', 'Donor-funded non-profit (anonymised)'],
+      ['Organization', 'Donor-funded non-profit (anonymized)'],
       ['Starting point', 'Fundraising letters several times a year. Some raised far more than others, and nobody knew exactly why.'],
-      ['What I did', 'Analysed several years of mailings, found the real outliers, checked the patterns against general fundraising practice, and built an AI tool that guides you through the letter.'],
+      ['What I did', 'Analyzed several years of mailings, found the real outliers, checked the patterns against general fundraising practice, and built an AI tool that guides you through the letter.'],
       ['Result', 'The first letter written with the tool was a success.'],
       ['Three takeaways', 'Compare fairly before you judge. Only adopt patterns that also hold up against general practice. Let the AI ask and check instead of writing in one go.'],
     ],
     opening: {
       title: 'The rule in the house: the month decides',
       paras: [
-        'Fundraising letters have a season. Some months raise clearly more on average than others. So in the organisation, the month was seen as the main reason a letter did well or badly.',
+        'Fundraising letters have a season. Some months raise clearly more on average than others. So in the organization, the month was seen as the main reason a letter did well or badly.',
         'But that didn’t explain everything. Some letters raised far more than others, and nobody could say exactly why. And every new letter still started from a blank page.',
       ],
     },
-    nut: 'That isn’t just a problem for fundraising organisations. Wherever a business regularly sends the same kind of text, its old results hold knowledge nobody has analysed: in quotes, mailings, newsletters, sales letters. And everywhere the temptation is to just tell an AI: write us one of those.',
+    nut: 'That isn’t just a problem for fundraising organizations. Wherever a business regularly sends the same kind of text, its old results hold knowledge nobody has analyzed: in quotes, mailings, newsletters, sales letters. And everywhere the temptation is to just tell an AI: write us one of those.',
     situation: {
       title: 'Compare fairly first',
       nav: 'Comparison',
@@ -868,8 +867,8 @@ export const caseStudiesEn: CaseStudy[] = [
         title: 'Only adopt patterns that are more than chance',
         nav: 'Patterns',
         paras: [
-          'I put the strong and the weak letters side by side: How do they open? How concrete is the ask? What does the PS do? Add to that the voice analysis and the writing handbook the organisation already had.',
-          'Then the most important step: I checked every pattern against widely known rules for fundraising letters. Much of it matched, for example that a concrete, tangible ask works better than an abstract mission. Only what passed both checks went into the tool: the organisation’s own numbers and general expertise. The patterns that only apply to this organisation stay with it.',
+          'I put the strong and the weak letters side by side: How do they open? How concrete is the ask? What does the PS do? Add to that the voice analysis and the writing handbook the organization already had.',
+          'Then the most important step: I checked every pattern against widely known rules for fundraising letters. Much of it matched, for example that a concrete, tangible ask works better than an abstract mission. Only what passed both checks went into the tool: the organization’s own numbers and general expertise. The patterns that only apply to this organization stay with it.',
         ],
       },
       {
@@ -882,7 +881,7 @@ export const caseStudiesEn: CaseStudy[] = [
       },
     ],
     images: [
-      { src: '/images/beispiele/fundraising-illustration.svg', alt: 'Illustration with invented values: one dot per letter above and below a zero line, grouped by month A to F. Every month has letters far above and far below its average.', caption: 'What the picture looked like once the season was taken out. The values are invented; the real figures stay with the organisation.', width: 1200, height: 700 },
+      { src: '/images/beispiele/fundraising-illustration.svg', alt: 'Illustration with invented values: one dot per letter above and below a zero line, grouped by month A to F. Every month has letters far above and far below its average.', caption: 'What the picture looked like once the season was taken out. The values are invented; the real figures stay with the organization.', width: 1200, height: 700 },
     ],
     result: {
       title: 'The first letter',
@@ -890,10 +889,9 @@ export const caseStudiesEn: CaseStudy[] = [
       big: 'A success',
       bigLabel: 'was the very first fundraising letter written with the tool.',
       items: [
-        'The organisation now knows why a letter works, and that knowledge is asked for with every new letter instead of living in a few people’s heads.',
+        'The organization now knows why a letter works, and that knowledge is asked for with every new letter instead of living in a few people’s heads.',
         'The tool asks, guides, and checks. A person decides.',
       ],
-      note: 'Whether the tool holds up across many mailings will show over time. I don’t publish figures on it.',
     },
     callback: {
       title: 'Back to the rule',
@@ -921,7 +919,7 @@ export const caseStudiesEn: CaseStudy[] = [
     },
     cta: {
       title: 'Are there patterns in your old numbers too?',
-      body: 'In 30 minutes we talk about which of your texts could be analysed and whether that could become a tool for your team. Free and without obligation.',
+      body: 'In 30 minutes we talk about which of your texts could be analyzed and whether that could become a tool for your team. Free and without obligation.',
     },
   },
 ];

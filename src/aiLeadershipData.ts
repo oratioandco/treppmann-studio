@@ -46,7 +46,7 @@ export const aiLeadershipContent = {
       title: 'Die Lizenz ist nicht das Problem.',
       body: 'Copilot ist bezahlt, der KI-Chat eingerichtet. Und trotzdem entstehen Angebote, Antworten und Berichte wie vor zwei Jahren. Das liegt selten an der Technik. Meist fehlt dreierlei: eine klare Priorität, ein besserer Ablauf und jemand, der Geschäftsführung, Fachbereich und IT an einen Tisch bringt.',
       items: [
-        ['Oben ist die Begeisterung groß. Das Team kommt nicht mit.', 'Die Geschäftsführung ist überzeugt und drückt aufs Tempo. Im Team fehlen Zugang und Schulung, trotzdem soll alles schneller gehen. Dazu kommt die Frage, was das für den eigenen Arbeitsplatz heißt. Genau hier verlieren Unternehmen ihre Leute.'],
+        ['Viel Zugang, wenig Nutzung', 'Die Geschäftsführung drückt aufs Tempo, ein paar Begeisterte probieren alles aus. Der Rest arbeitet weiter wie bisher und fragt sich, was das für den eigenen Arbeitsplatz heißt. Genau hier verlieren Unternehmen ihre Leute.'],
         ['Viele Ideen, keine Reihenfolge', 'Jede Abteilung probiert etwas anderes. Niemand entscheidet, welcher Prozess sich zuerst ändert und woran man den Erfolg erkennt. So entstehen zehn Pilotprojekte und kein Ergebnis.'],
         ['Ein Kernprozess hakt', 'Fachwissen, Ausnahmen und Übergaben passen in keine Standardsoftware. Das Team braucht zuerst einen besseren Ablauf, dann ein Werkzeug, das dazu passt. In dieser Reihenfolge.'],
       ],
@@ -279,7 +279,7 @@ export const aiLeadershipContent = {
       title: 'The license isn’t the problem.',
       body: 'Copilot is paid for, the AI chat is set up. And yet quotes, replies, and reports get written the way they were two years ago. That’s rarely the technology. What’s usually missing is three things: a clear priority, a better workflow, and someone who gets leadership, the business team, and IT around one table.',
       items: [
-        ['Leadership is excited. The team isn’t keeping up.', 'Leadership is convinced and pushing for speed. The team lacks access and training, yet everything is supposed to move faster. Then there’s the question of what this means for their own jobs. This is where companies lose their people.'],
+        ['Lots of access, little use', 'Leadership is pushing for speed, and a few enthusiasts try everything. Everyone else works the way they always have and wonders what this means for their own jobs. This is exactly where companies lose their people.'],
         ['Many ideas, no order', 'Every department tries something different. Nobody decides which process changes first or how you’d know it worked. That’s how you get ten pilots and no result.'],
         ['A core process is stuck', 'Domain knowledge, exceptions, and handoffs don’t fit any off-the-shelf software. The team needs a better workflow first, then a tool that fits it. In that order.'],
       ],
