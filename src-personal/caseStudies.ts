@@ -221,7 +221,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     images: [
-      { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Zwei Bildschirme eines Android-Prototyps von Bibel TV mit echten Sendungen', caption: 'Prototyp in echtem Code, auf echten Bibel-TV-Inhalten. Die Entwicklung baut auf diesem Code auf.', width: 1200, height: 1227 },
+      { src: '/images/beispiele/bibeltv-native-home.jpg', alt: 'Zwei Bildschirme eines Android-Prototyps von Bibel TV mit echten Sendungen', caption: 'Prototyp in echtem Code, auf echten Bibel-TV-Inhalten. Die Entwicklung baut auf diesem Code auf.', width: 1800, height: 1891 },
     ],
     result: {
       title: 'Wo es heute steht',
@@ -666,7 +666,7 @@ export const caseStudiesEn: CaseStudy[] = [
       },
     ],
     images: [
-      { src: '/images/beispiele/bibeltv-prototyp.webp', alt: 'Two screens of an Android prototype for Bibel TV with real programs', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1200, height: 1227 },
+      { src: '/images/beispiele/bibeltv-native-home.jpg', alt: 'Two screens of an Android prototype for Bibel TV with real programs', caption: 'Prototype in real code, on real Bibel TV content. Development builds on this code.', width: 1800, height: 1891 },
     ],
     result: {
       title: 'Where it stands today',
