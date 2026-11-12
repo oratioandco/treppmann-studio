@@ -16,6 +16,8 @@ await writeFile(new URL('sitemap.xml', out), `<?xml version="1.0" encoding="UTF-
   <url><loc>https://treppmann.de/ki-check/</loc></url>
   <url><loc>https://treppmann.de/en/ai-check/</loc></url>
   <url><loc>https://treppmann.de/en/report/</loc></url>
+  <url><loc>https://treppmann.de/warum-ki-projekte-scheitern/</loc></url>
+  <url><loc>https://treppmann.de/en/why-ai-projects-fail/</loc></url>
   <url><loc>https://treppmann.de/beispiele/ki-assistent-zuschauerservice/</loc></url>
   <url><loc>https://treppmann.de/beispiele/produktentwicklung-mit-ki/</loc></url>
   <url><loc>https://treppmann.de/beispiele/ki-onboarding-ninox/</loc></url>

@@ -30,6 +30,10 @@ not in this table does not go into a post, deck, video, print-out or page.** The
 | 22 | First cycle usually about 90 days, depending on approvals | method, his framing | promise style | Tobias | yes — "meist", "rund"; never a guarantee |
 | 23 | Formats: project, interim mandate (2–3 days/week, from 3 months), permanent role, guidance and sparring | site | yes | Tobias | yes — secondary-employment clause cleared (2026-10-19) |
 | 24 | Keynote "Missional by Design – Startup & Innovation for the Church", ICCM Europe, Brussels, 2023 | CT keynote entry | yes | Tobias | yes |
+| 25 | More than 80 % of AI projects fail, about twice the rate of IT projects without AI (estimate); five root causes from 65 interviews | RAND, RRA2680-1, 13 Aug 2024 | yes | RAND | yes, with source — "estimates", never as RAND's own measurement |
+| 26 | ~95 % of company GenAI pilots show no measurable contribution; ~5 % make a measurable difference; bought tools/partnerships succeed ~67 %, internal builds much less often | MIT NANDA, The GenAI Divide 2025 (via Fortune, 18 Aug 2025) | as stated, preliminary sample | MIT NANDA | yes, with source — never an exact figure for internal builds (sources differ) |
+| 27 | Cagan's four product risks: value, usability, feasibility, viability | SVPG, Product Risk Taxonomies | yes | Cagan | yes |
+| 28 | Merantix (AI Canvas) treats the AI lifecycle as its own pillar | it-daily.net, Nicole Büttner | yes | Merantix | yes, with source |
 
 ## Never
 
