@@ -1,0 +1,129 @@
+---
+import Layout from '../../../../src/layouts/Layout.astro';
+
+const url = 'https://treppmann.de/en/why-ai-projects-fail/';
+const deUrl = 'https://treppmann.de/warum-ki-projekte-scheitern/';
+const title = 'Why AI projects fail – and what product development has long known about it';
+const description = 'More than 80 percent of AI projects fail, rarely because of the model. Most of the reasons are familiar from software and product development. And there, proven remedies exist.';
+const bookUrl = 'https://fantastical.app/tobiastreppmann';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'en',
+  datePublished: '2026-11-12',
+  author: { '@type': 'Person', name: 'Tobias Treppmann', url: 'https://treppmann.de/en/' },
+  mainEntityOfPage: url,
+};
+---
+
+<Layout lang="en" title={`Why AI projects fail – Tobias Treppmann`} description={description} canonical={url} alternateDe={deUrl} alternateEn={url} alternateDefault={deUrl} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href="/en/" aria-label="Tobias Treppmann – home">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>AI Transformation</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="/en/#contact">Contact</a>
+      <a class="language" href="/warum-ki-projekte-scheitern/" lang="de">DE</a>
+    </div>
+  </header>
+
+  <main class="legal-page report-page section-paper" id="main">
+    <article class="section-shell legal-article report-article">
+      <p class="section-label">Article · November 2026</p>
+      <h1>Why AI projects fail</h1>
+      <p class="report-subtitle">Most AI projects don’t fail because of the model. They fail for reasons software and product teams have known for years. That’s the good news: there are proven remedies.</p>
+      <p class="report-byline">Tobias Treppmann · 12 November 2026 · 7 minutes · <a href="/warum-ki-projekte-scheitern/" lang="de">German version</a></p>
+
+      <p class="report-lead">More than 80&#8239;percent of AI projects fail, according to estimates cited by the RAND Corporation. That is about twice the rate of IT projects without AI.<sup><a href="#q1">1</a></sup></p>
+      <p>For its study, RAND interviewed 65 experienced data scientists and engineers, the people who build these systems. Generative AI looks no better. An analysis by MIT’s NANDA initiative concludes that around 95&#8239;percent of company pilots deliver no measurable contribution to results.<sup><a href="#q2">2</a></sup></p>
+      <p>Both studies agree on one point: the model is rarely the problem. MIT points to a learning gap in tools and organisations, and to poor integration into how companies actually work.</p>
+      <p>I know these reasons. For more than 15 years I have designed processes people like to use. Almost every way an AI project fails has a counterpart there. And almost every one has a proven remedy.</p>
+
+      <aside class="report-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">Four questions every product has to answer</h2>
+        <ol>
+          <li><strong>Is it needed?</strong> Does it solve a real problem for real people?</li>
+          <li><strong>Can people work with it?</strong> Does it fit into their work?</li>
+          <li><strong>Does it hold up?</strong> Does it reach operations, and does it pay off?</li>
+          <li><strong>Can it be built?</strong> With the data and technology available?</li>
+        </ol>
+      </aside>
+      <p>These four questions go back to Marty Cagan, one of the best-known thinkers in product management.<sup><a href="#q3">3</a></sup> With AI projects, one thing stands out: only the last one is technical. Yet that is exactly where most initiatives start.</p>
+
+      <h2>The most common problem is the wrong problem</h2>
+      <p>The first root cause RAND names: the people involved misunderstand, or miscommunicate, what problem the AI is supposed to solve. The third is closely related. The organisation cares more about the latest technology than about the real problems of the people meant to use it.<sup><a href="#q1">1</a></sup></p>
+      <p>In software, this is called a feature factory: teams ship feature after feature, but nobody checks whether anything changes. “We need an AI agent too” is the successor of “We need an app too”.</p>
+      <p>The remedy is unspectacular. Before anyone builds anything, talk to the people who have the problem and watch them work. Then decide what should be measurably different afterwards: less time per case, fewer follow-up questions, fewer errors.</p>
+
+      <h2>What doesn’t fit the daily work doesn’t get used</h2>
+      <p>MIT names brittle workflows, systems that don’t retain feedback, and a poor fit with day-to-day work as the main reasons pilots fail.<sup><a href="#q2">2</a></sup> The tool works in the demo. In daily work it ends up next to the real work, not inside it.</p>
+      <p>Product teams know this pattern well. It appears when a team skips user research. Then a process gets built the way it looks on paper, not the way it actually runs.</p>
+      <p>The remedy: look at the work where it happens, and try AI on a real task first, not on an example from a slide. At Bibel TV, an AI assistant drafts replies to viewer letters in the house style. A person checks and sends every reply. Using it was voluntary: a trial week, then one-to-one sessions on people’s own cases. <a href="/en/case-studies/ai-assistant-viewer-services/">Read the case study</a></p>
+
+      <h2>A pilot is not a product</h2>
+      <p>In the MIT analysis, only around 5&#8239;percent of pilots get far enough to make a measurable difference.<sup><a href="#q2">2</a></sup> The rest stay stuck in the trial stage. In software, this is called innovation theatre: many prototypes, lots of enthusiasm, nothing in operation.</p>
+      <p>Three things help. First, build a thin but complete path into operations early, instead of a perfect prototype that isn’t connected to anything. Second, decide before the start how success will be measured. Third, a team that stays with one problem long enough. RAND recommends committing a team to the same problem for at least a year, or not starting the project at all.<sup><a href="#q1">1</a></sup></p>
+
+      <h2>Only then comes the technology</h2>
+      <p>Of course there are technical reasons too. RAND names three: the data needed to train a good model is missing. The infrastructure to manage data and deploy finished models is missing. Or the problem is simply too hard for AI.<sup><a href="#q1">1</a></sup></p>
+      <p>That is the classic feasibility risk of any product. You settle it early and cheaply: with a short technical test, a look at the data you have, and the question of whether the solution can already be bought. According to MIT, purchased tools and partnerships succeed in about two thirds of cases, internal builds much less often.<sup><a href="#q2">2</a></sup></p>
+      <p>And sometimes the honest answer is: this problem doesn’t need AI.</p>
+
+      <h2>What really is different with AI</h2>
+      <p>For all the parallels, there are three points where classic product work isn’t enough.</p>
+      <p><strong>AI is sometimes wrong, even when everything is built correctly.</strong> A calculator always calculates the same way. An AI system makes suggestions, and some don’t fit. So the interface has to make it easy for people to check, change and discard a suggestion.</p>
+      <aside class="report-practice" aria-label="From my practice: Ninox">
+        <p class="report-voice">From my practice: Ninox</p>
+        <p>Ninox is a platform small and mid-sized companies use to build their own business applications without programming. I designed an AI onboarding for getting started: you describe your work in plain language, and the AI generates the data model from it, meaning the tables and how they connect.</p>
+        <p>I knew the first proposal would rarely be quite right. So everything stays directly editable, by chat or right in the tables. This direct editing became the interaction model of Ninox’s AI beta. <a href="/en/case-studies/ninox-ai-onboarding/">Read the case study</a></p>
+      </aside>
+      <p><strong>The system changes after launch.</strong> When data, goals or the organisation change, so does how well the AI works. The Berlin AI consultancy Merantix Momentum gives this its own lifecycle in its planning framework, the AI Canvas.<sup><a href="#q4">4</a></sup> In other words: an AI solution is never “done”. It gets reassessed regularly.</p>
+      <p><strong>Rules and skills are part of it.</strong> Since February 2025, Article 4 of the EU AI Act requires companies that use AI to ensure sufficient AI literacy among their staff.<sup><a href="#q5">5</a></sup> Data protection, security and liability are therefore not questions for later, but requirements for the product.</p>
+
+      <h2>What follows: four steps in a fixed order</h2>
+      <p>Running an AI initiative as a product rather than a technology project lowers the risk considerably. This is how I work:</p>
+      <ol class="report-steps-diagram" aria-label="Four steps for AI projects that land">
+        <li><strong>Clarify the problem</strong><span>With the people who have it. And decide what should be measurably different afterwards.</span></li>
+        <li><strong>Check feasibility</strong><span>Data, technology, cost. And the question: buy, build or drop it?</span></li>
+        <li><strong>Try it on real work</strong><span>With a small group, in the real process, with support.</span></li>
+        <li><strong>Into operations early</strong><span>Small but complete. With measurement and a way to give feedback.</span></li>
+        <li class="report-step-end">Then: measure, refine, and reassess when data or goals change.</li>
+      </ol>
+      <p class="report-closing">AI projects rarely fail because of the AI. They fail because nobody runs the product behind it.</p>
+      <div class="report-cta">
+        <p>If you are planning an AI initiative, or one is stuck, let’s spend 30 minutes on where it catches.</p>
+        <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">Book an intro call<span aria-hidden="true"> ↗︎</span></a>
+        <p class="report-cta-alt">Or write to me: <a href="mailto:tobias@treppmann.de?subject=AI%20project">tobias@treppmann.de</a> · <a href="/en/report/">Report: Bought is not adopted</a> · <a href="/en/ai-check/">AI check: where do you stand?</a></p>
+      </div>
+
+      <div class="report-author">
+        <img src="/images/tobias-treppmann.jpg" alt="Tobias Treppmann" width="84" height="84" loading="lazy" />
+        <p><strong>Tobias Treppmann</strong> brings AI into the way companies work, so that people actually use it. He comes from product and design leadership, including at Bibel TV, ChurchDesk and Ninox, and builds the systems he introduces himself. <a href="/en/">More about his work</a></p>
+      </div>
+
+      <section class="report-about" aria-labelledby="about-title">
+        <h2 id="about-title">Sources</h2>
+        <ol class="report-sources">
+          <li id="q1">RAND Corporation (2024): <a href="https://www.rand.org/pubs/research_reports/RRA2680-1.html" target="_blank" rel="noopener">The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed</a>. Published 13 August 2024. Interviews with 65 data scientists and engineers with at least five years of experience.</li>
+          <li id="q2">MIT NANDA (2025): The GenAI Divide – State of AI in Business 2025. Summarised by <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener">Fortune, 18 August 2025</a>. A preliminary analysis based on interviews, surveys and publicly known deployments.</li>
+          <li id="q3">Marty Cagan (SVPG): <a href="https://svpg.com/product-risk-taxonomies" target="_blank" rel="noopener">Product Risk Taxonomies</a>.</li>
+          <li id="q4">Nicole Büttner (MerantixLABS): <a href="https://www.it-daily.net/?p=23167" target="_blank" rel="noopener">AI Canvas: Das Rezept für erfolgreiche KI-Transformationen</a> (German). it-daily.net.</li>
+          <li id="q5">Regulation (EU) 2024/1689 (AI Act), Article 4: AI literacy.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · AI Transformation</span>
+    <div class="footer-links">
+      <a href="/impressum/">Legal notice</a>
+      <a href="/datenschutz/">Privacy</a>
+      <a href="/en/ai-check/">AI check</a>
+      <a href="/en/">Home</a>
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,128 @@
+---
+import Layout from '../../../src/layouts/Layout.astro';
+
+const url = 'https://treppmann.de/warum-ki-projekte-scheitern/';
+const enUrl = 'https://treppmann.de/en/why-ai-projects-fail/';
+const title = 'Warum KI-Projekte scheitern – und was die Produktentwicklung dagegen längst weiß';
+const description = 'Mehr als 80 Prozent der KI-Projekte scheitern, selten am Modell. Die meisten Gründe kennt man aus der Software- und Produktentwicklung. Und dort gibt es bewährte Mittel dagegen.';
+const bookUrl = 'https://fantastical.app/tobiastreppmann';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: 'de-DE',
+  datePublished: '2026-11-12',
+  author: { '@type': 'Person', name: 'Tobias Treppmann', url: 'https://treppmann.de/' },
+  mainEntityOfPage: url,
+};
+---
+
+<Layout lang="de-DE" title={`Warum KI-Projekte scheitern – Tobias Treppmann`} description={description} canonical={url} alternateDe={url} alternateEn={enUrl} alternateDefault={url} image="https://treppmann.de/images/tobias-treppmann.jpg" structuredData={structuredData}>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="topbar leadership-topbar">
+    <a class="brand" href="/" aria-label="Tobias Treppmann – Startseite">
+      <span>Tobias Treppmann</span><span class="brand-mark">/</span><span>KI-Transformation</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="topbar-contact" href="/#contact">Kontakt</a>
+      <a class="language" href="/en/why-ai-projects-fail/" lang="en">EN</a>
+    </div>
+  </header>
+
+  <main class="legal-page report-page section-paper" id="main">
+    <article class="section-shell legal-article report-article">
+      <p class="section-label">Artikel · November 2026</p>
+      <h1>Warum KI-Projekte scheitern</h1>
+      <p class="report-subtitle">Die meisten KI-Projekte scheitern nicht am Modell, sondern an Dingen, die man aus der Software- und Produktentwicklung seit Jahren kennt. Das ist die gute Nachricht: Gegen diese Fehler gibt es bewährte Mittel.</p>
+      <p class="report-byline">Tobias Treppmann · 12. November 2026 · 7 Minuten Lesezeit</p>
+
+      <p class="report-lead">Mehr als 80&#8239;Prozent aller KI-Projekte scheitern, schätzt die RAND Corporation. Das ist etwa doppelt so oft wie bei IT-Projekten ohne KI.<sup><a href="#q1">1</a></sup></p>
+      <p>Für ihre Studie hat RAND 65 erfahrene Data Scientists und Engineers befragt, also die Leute, die solche Systeme bauen. Bei generativer KI sieht es nicht besser aus. Eine Auswertung der MIT-Initiative NANDA kommt zu dem Schluss, dass rund 95&#8239;Prozent der Pilotprojekte in Unternehmen keinen messbaren Beitrag zum Ergebnis bringen.<sup><a href="#q2">2</a></sup></p>
+      <p>Beide Studien sind sich in einem Punkt einig: Am Modell liegt es selten. MIT spricht von einer Lernlücke bei Werkzeugen und Organisationen und von schlechter Einbindung in die Abläufe im Unternehmen.</p>
+      <p>Diese Gründe kenne ich. Seit mehr als 15 Jahren gestalte ich Prozesse, die Menschen gern nutzen. Fast jeder Fehler, an dem KI-Projekte scheitern, hat dort ein Gegenstück. Und für fast jeden gibt es ein erprobtes Mittel.</p>
+
+      <aside class="report-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">Vier Fragen, die jedes Produkt beantworten muss</h2>
+        <ol>
+          <li><strong>Wird es gebraucht?</strong> Löst es ein echtes Problem für echte Menschen?</li>
+          <li><strong>Kommen die Leute damit zurecht?</strong> Passt es in ihre Arbeit?</li>
+          <li><strong>Trägt es sich?</strong> Kommt es in den Betrieb und rechnet es sich?</li>
+          <li><strong>Lässt es sich bauen?</strong> Mit den Daten und der Technik, die es gibt?</li>
+        </ol>
+      </aside>
+      <p>Diese vier Fragen gehen auf Marty Cagan zurück, einen der bekanntesten Vordenker im Produktmanagement.<sup><a href="#q3">3</a></sup> Bei KI-Projekten fällt auf: Nur die letzte ist eine technische. Trotzdem beginnen die meisten Vorhaben genau dort.</p>
+
+      <h2>Das häufigste Problem ist das falsche Problem</h2>
+      <p>Die erste Ursache, die RAND nennt: Die Beteiligten missverstehen, welches Problem die KI eigentlich lösen soll, oder sie kommunizieren es falsch. Die dritte ist eng verwandt. Das Unternehmen interessiert sich mehr für die neueste Technik als für die echten Probleme der Menschen, die sie nutzen sollen.<sup><a href="#q1">1</a></sup></p>
+      <p>In der Softwareentwicklung heißt das „Feature Factory“: Teams liefern Funktion um Funktion, aber niemand prüft, ob sich dadurch etwas verändert. Der Satz „Wir brauchen auch einen KI-Agenten“ ist der Nachfolger von „Wir brauchen auch eine App“.</p>
+      <p>Was hilft, ist unspektakulär. Bevor jemand etwas baut, spricht man mit den Leuten, die das Problem haben, und schaut ihnen bei der Arbeit zu. Dann legt man fest, was danach messbar anders sein soll: weniger Zeit pro Vorgang, weniger Rückfragen, weniger Fehler.</p>
+
+      <h2>Was nicht in den Arbeitsalltag passt, wird nicht genutzt</h2>
+      <p>MIT nennt als Hauptgründe für gescheiterte Piloten brüchige Abläufe, Systeme, die kein Feedback behalten, und eine schlechte Passung zur täglichen Arbeit.<sup><a href="#q2">2</a></sup> Das Werkzeug funktioniert in der Vorführung. Im Alltag landet es neben der eigentlichen Arbeit, nicht in ihr.</p>
+      <p>Aus der Produktentwicklung kennt man dieses Muster gut. Es entsteht, wenn ein Team die Nutzerforschung überspringt. Dann wird ein Ablauf gebaut, wie er auf dem Papier aussieht, nicht wie er wirklich läuft.</p>
+      <p>Das Gegenmittel: die Arbeit dort ansehen, wo sie passiert, und die KI zuerst an einer echten Aufgabe ausprobieren, nicht an einem Beispiel aus der Präsentation. Bei Bibel TV entwirft ein KI-Assistent Antworten auf Zuschauerbriefe im Ton des Hauses. Ein Mensch prüft und verschickt jede Antwort selbst. Die Nutzung war freiwillig: eine Probewoche, danach Einzelgespräche am eigenen Fall. <a href="/beispiele/ki-assistent-zuschauerservice/">Zum Fallbeispiel</a></p>
+
+      <h2>Ein Pilot ist noch kein Produkt</h2>
+      <p>In der MIT-Auswertung kommen nur rund 5&#8239;Prozent der Pilotprojekte so weit, dass sie messbar etwas bewirken.<sup><a href="#q2">2</a></sup> Der Rest bleibt im Versuchsstadium hängen. In der Softwareentwicklung heißt das Innovationstheater: viele Prototypen, viel Begeisterung, nichts im Betrieb.</p>
+      <p>Drei Dinge helfen dagegen. Erstens früh einen dünnen, aber vollständigen Weg bis in den Betrieb bauen, statt einen perfekten Prototyp, der nirgends angeschlossen ist. Zweitens vor dem Start festlegen, woran man Erfolg misst. Drittens ein Team, das lange genug bei einem Problem bleibt. RAND empfiehlt, ein Team mindestens ein Jahr lang auf dasselbe Problem anzusetzen, oder das Projekt gar nicht erst anzufangen.<sup><a href="#q1">1</a></sup></p>
+
+      <h2>Erst dann kommt die Technik</h2>
+      <p>Natürlich gibt es auch technische Gründe. RAND nennt drei: Es fehlen die Daten, um ein gutes Modell zu trainieren. Es fehlt die Infrastruktur, um Daten zu verwalten und fertige Modelle in Betrieb zu nehmen. Oder das Problem ist für KI schlicht zu schwer.<sup><a href="#q1">1</a></sup></p>
+      <p>Das ist das klassische Machbarkeitsrisiko jeder Produktentwicklung. Man klärt es früh und günstig: mit einem kurzen technischen Test, einem Blick auf die vorhandenen Daten und der Frage, ob es die Lösung schon zu kaufen gibt. Laut MIT erreichen eingekaufte Werkzeuge und Partnerschaften in rund zwei Dritteln der Fälle das Ziel, Eigenentwicklungen deutlich seltener.<sup><a href="#q2">2</a></sup></p>
+      <p>Und manchmal lautet die ehrliche Antwort: Für dieses Problem braucht es keine KI.</p>
+
+      <h2>Was bei KI wirklich anders ist</h2>
+      <p>Bei allen Parallelen gibt es drei Punkte, an denen klassische Produktarbeit nicht ausreicht.</p>
+      <p><strong>KI liegt manchmal daneben, auch wenn alles richtig gebaut ist.</strong> Ein Taschenrechner rechnet immer gleich. Ein KI-System macht Vorschläge, und manche passen nicht. Deshalb muss die Oberfläche so gestaltet sein, dass Menschen einen Vorschlag leicht prüfen, ändern und verwerfen können.</p>
+      <aside class="report-practice" aria-label="Aus meiner Praxis: Ninox">
+        <p class="report-voice">Aus meiner Praxis: Ninox</p>
+        <p>Ninox ist eine Plattform, mit der kleine und mittlere Unternehmen eigene Geschäftsanwendungen bauen, ohne zu programmieren. Für den Einstieg habe ich ein KI-Onboarding gestaltet: Man beschreibt seine Arbeit in Alltagssprache, und die KI erzeugt daraus das Datenmodell, also die Tabellen und wie sie zusammenhängen.</p>
+        <p>Mir war klar, dass der erste Vorschlag selten ganz stimmt. Deshalb bleibt alles direkt bearbeitbar, per Chat oder direkt in den Tabellen. Dieses direkte Bearbeiten wurde zum Interaktionsprinzip der KI-Beta von Ninox. <a href="/beispiele/ki-onboarding-ninox/">Zum Fallbeispiel</a></p>
+      </aside>
+      <p><strong>Das System verändert sich nach dem Start.</strong> Ändern sich Daten, Ziele oder die Organisation, ändert sich auch, wie gut die KI arbeitet. Die Berliner KI-Beratung Merantix Momentum hat dafür in ihrem Planungsrahmen, dem AI Canvas, einen eigenen Lebenszyklus vorgesehen.<sup><a href="#q4">4</a></sup> Heißt: Eine KI-Lösung ist nie „fertig“. Sie wird regelmäßig neu bewertet.</p>
+      <p><strong>Regeln und Kompetenz gehören dazu.</strong> Seit Februar 2025 müssen Unternehmen, die KI einsetzen, nach Artikel 4 der EU-KI-Verordnung für ausreichende KI-Kompetenz ihrer Beschäftigten sorgen.<sup><a href="#q5">5</a></sup> Datenschutz, Sicherheit und Haftung sind damit keine Fragen für später, sondern Anforderungen an das Produkt.</p>
+
+      <h2>Was daraus folgt: vier Schritte in fester Reihenfolge</h2>
+      <p>Wer ein KI-Vorhaben wie ein Produkt führt und nicht wie ein Technikprojekt, senkt das Risiko deutlich. So gehe ich vor:</p>
+      <ol class="report-steps-diagram" aria-label="Vier Schritte für KI-Projekte, die ankommen">
+        <li><strong>Das Problem klären</strong><span>Mit den Menschen, die es haben. Und festlegen, was danach messbar anders sein soll.</span></li>
+        <li><strong>Machbarkeit prüfen</strong><span>Daten, Technik, Kosten. Und die Frage: kaufen, bauen oder lassen?</span></li>
+        <li><strong>An echter Arbeit ausprobieren</strong><span>Mit einer kleinen Gruppe, im echten Ablauf, mit Begleitung.</span></li>
+        <li><strong>Früh in den Betrieb</strong><span>Klein, aber vollständig. Mit Messung und einem Weg für Rückmeldungen.</span></li>
+        <li class="report-step-end">Danach: messen, nachschärfen und neu bewerten, wenn sich Daten oder Ziele ändern.</li>
+      </ol>
+      <p class="report-closing">KI-Projekte scheitern selten an der KI. Sie scheitern daran, dass niemand das Produkt dahinter führt.</p>
+      <div class="report-cta">
+        <p>Wenn Sie ein KI-Vorhaben planen oder eines feststeckt, sprechen wir 30 Minuten darüber, wo es hakt.</p>
+        <a class="button button-ink" href={bookUrl} target="_blank" rel="noopener">Erstgespräch vereinbaren<span aria-hidden="true"> ↗︎</span></a>
+        <p class="report-cta-alt">Oder schreiben Sie mir: <a href="mailto:tobias@treppmann.de?subject=KI-Projekt">tobias@treppmann.de</a> · <a href="/gekauft-ist-nicht-eingefuehrt/">Report: Gekauft ist nicht eingeführt</a> · <a href="/ki-check/">KI-Check: Wo stehen Sie?</a></p>
+      </div>
+
+      <div class="report-author">
+        <img src="/images/tobias-treppmann.jpg" alt="Tobias Treppmann" width="84" height="84" loading="lazy" />
+        <p><strong>Tobias Treppmann</strong> bringt KI in die Arbeit von Unternehmen, und zwar so, dass die Leute sie auch nutzen. Er kommt aus der Produkt- und Designführung, unter anderem bei Bibel TV, ChurchDesk und Ninox, und baut die Systeme, die er einführt, selbst mit. <a href="/">Mehr über seine Arbeit</a></p>
+      </div>
+
+      <section class="report-about" aria-labelledby="about-title">
+        <h2 id="about-title">Quellen</h2>
+        <ol class="report-sources">
+          <li id="q1">RAND Corporation (2024): <a href="https://www.rand.org/pubs/research_reports/RRA2680-1.html" target="_blank" rel="noopener">The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed</a>. Veröffentlicht am 13. August 2024. Interviews mit 65 Data Scientists und Engineers mit mindestens fünf Jahren Erfahrung.</li>
+          <li id="q2">MIT NANDA (2025): The GenAI Divide – State of AI in Business 2025. Zusammengefasst bei <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener">Fortune, 18. August 2025</a>. Vorläufige Auswertung, die Ergebnisse beruhen auf Interviews, Befragungen und öffentlich bekannten Projekten.</li>
+          <li id="q3">Marty Cagan (SVPG): <a href="https://svpg.com/product-risk-taxonomies" target="_blank" rel="noopener">Product Risk Taxonomies</a>.</li>
+          <li id="q4">Nicole Büttner (MerantixLABS): <a href="https://www.it-daily.net/?p=23167" target="_blank" rel="noopener">AI Canvas: Das Rezept für erfolgreiche KI-Transformationen</a>. it-daily.net.</li>
+          <li id="q5">Verordnung (EU) 2024/1689 (KI-Verordnung), Artikel 4: KI-Kompetenz.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+
+  <footer class="leadership-footer">
+    <span>Tobias Treppmann · KI-Transformation</span>
+    <div class="footer-links">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/">Startseite</a>
+    </div>
+  </footer>
+</Layout>
